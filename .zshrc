@@ -17,7 +17,6 @@ check_env CHANCELLOR_TOKEN
 check_env KUP_TOKEN
 check_env KUP_USER_ID
 check_env KUP_USER_NAME
-check_env GITHUB_TOKEN
 check_env SONATYPE_USERNAME
 check_env SONATYPE_PASSWORD
 
