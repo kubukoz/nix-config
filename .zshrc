@@ -21,7 +21,10 @@ check_env SONATYPE_USERNAME
 check_env SONATYPE_PASSWORD
 
 
-
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+#yeah sure -jk
+export SDKMAN_DIR="/Users/j.kozlowski/.sdkman"
+[[ -s "/Users/j.kozlowski/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/j.kozlowski/.sdkman/bin/sdkman-init.sh"
 
 ############################################
 # nix
@@ -32,8 +35,6 @@ source /Users/j.kozlowski/.nix-profile/etc/profile.d/nix.sh
 
 source $HOME/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias nss="nix-shell"
-alias yarn="/Users/j.kozlowski/.sdkman/candidates/java/current/languages/js/bin/yarn"
-
 ############################################
 
 
@@ -82,6 +83,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# font
+export LC_CTYPE="en_US.UTF-8"
+
 ############################################
 
 
@@ -155,11 +160,6 @@ export NODE_EXTRA_CA_CERTS=~/certs/lastmile-root.pem
 
 
 
-
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/j.kozlowski/.sdkman"
-[[ -s "/Users/j.kozlowski/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/j.kozlowski/.sdkman/bin/sdkman-init.sh"
 
 export PATH=/Users/j.kozlowski/.local/share/fury/bin:/Users/j.kozlowski/.local/share/fury/opt:$PATH # Added by Fury
 fpath=(/Users/j.kozlowski/.local/share/fury/usr/0.18.9/script /Users/j.kozlowski/.local/share/fury/completions $fpath) # Added by Fury
