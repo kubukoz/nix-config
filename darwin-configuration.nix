@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 let
-  bloop = pkgs.callPackage (builtins.fetchurl
-    "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")
-    { };
   nodePackages = pkgs.callPackage ./node { };
+  scalaPackages = pkgs.callPackage ./scala { };
 in {
   nixpkgs.overlays = let
     graalvm = self: super: rec {
@@ -56,15 +54,8 @@ in {
     pkgs.tree
     pkgs.ytop # in the future this will be pkgs.bottom
     pkgs.zsh
-    pkgs.jdk
-    pkgs.sbt
-    pkgs.scala
-    pkgs.ammonite
-    pkgs.scalafmt
-    pkgs.coursier
-    bloop
     pkgs.nodePackages.node2nix
-  ] ++ nodePackages;
+  ] ++ nodePackages ++ scalaPackages;
 
   nixpkgs.config.allowUnfree = true;
 
