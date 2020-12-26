@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, unzip, setJavaClassPath, freetype }:
+{ stdenv, setJavaClassPath, freetype }:
 
 let
   version = "20.3.0";
