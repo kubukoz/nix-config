@@ -57,6 +57,11 @@ in {
     pkgs.nodePackages.node2nix
   ] ++ nodePackages ++ scalaPackages;
 
+  environment.variables = {
+    JAVA_HOME = "${pkgs.jdk}";
+    LANG = "en_US.UTF-8";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   # Auto upgrade nix package and the daemon service.
@@ -64,18 +69,25 @@ in {
   # better not XD
   #  nix.package = pkgs.nix;
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
-  programs.zsh.enable = true; # default shell on catalina
-  # programs.fish.enable = true;
+  environment.shellAliases = {
+    lsd = "exa --long --header --git --all";
+    dps = "docker-compose ps";
+    dcp = "docker-compose";
+    nss = "nix-shell";
+    nb = "nix-build";
+  };
+
+  imports = [ ./zsh ];
 
   # https://github.com/LnL7/nix-darwin/issues/145
   # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
   # fixed according to https://github.com/LnL7/nix-darwin/blob/b3e96fdf6623dffa666f8de8f442cc1d89c93f60/CHANGELOG
   nix.nixPath = pkgs.lib.mkForce [
+    # this should be made a little more independent from $HOME
     "darwin-config=/Users/kubukoz/.nixpkgs/darwin-configuration.nix:/Users/kubukoz/.nix-defexpr/channels"
   ];
 
-  # Used for backwards compatibility, please read the changelog before changing.
-  # $ darwin-rebuild changelog
+  networking.hostName = "kubukoz-pro";
+
   system.stateVersion = 4;
 }
