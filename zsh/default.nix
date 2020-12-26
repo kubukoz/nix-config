@@ -13,16 +13,6 @@
         "docker-compose"
         "zsh-interactive-cd"
       ];
-      p10kInstantPrompt = ''
-        "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
-      '';
-      # todo: figure out why this isn't working 😡
-      enableInstantPrompt = ''
-        if [[ -r ${p10kInstantPrompt} ]]; then
-          source ${p10kInstantPrompt}
-        fi
-      '';
-
     in ''
       plugins=(${builtins.concatStringsSep " " plugins})
     '';
