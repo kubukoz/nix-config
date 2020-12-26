@@ -68,6 +68,10 @@ in {
   programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
 
+  nix.nixPath = pkgs.lib.mkForce [
+    "darwin-config=/Users/kubukoz/.nixpkgs/darwin-configuration.nix:/Users/kubukoz/.nix-defexpr/channels"
+  ];
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
