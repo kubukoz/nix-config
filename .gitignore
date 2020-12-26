@@ -1,1 +1,3 @@
 graalvm/*.tar.gz
+node/node2nix
+!node/node2nix/package.json

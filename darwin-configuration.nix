@@ -3,6 +3,7 @@ let
   bloop = pkgs.callPackage (builtins.fetchurl
     "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")
     { };
+  nodePackages = pkgs.callPackage ./node { };
 in {
   nixpkgs.overlays = let
     graalvm = self: super: rec {
@@ -62,7 +63,8 @@ in {
     pkgs.scalafmt
     pkgs.coursier
     bloop
-  ];
+    pkgs.nodePackages.node2nix
+  ] ++ nodePackages;
 
   nixpkgs.config.allowUnfree = true;
 
