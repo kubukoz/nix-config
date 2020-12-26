@@ -1,12 +1,16 @@
 { config, pkgs, ... }:
 let
-  graalvm = import ./graalvm { inherit pkgs; };
-  graalvm-overlay = self: super: {
-    jdk = graalvm;
-    jre = graalvm // { home = graalvm; };
-  };
-  bloop = import ./bloop { inherit pkgs; };
+  bloop = pkgs.callPackage (builtins.fetchurl
+    "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")
+    { };
 in {
+  nixpkgs.overlays = let
+    graalvm = self: super: rec {
+      jre = pkgs.callPackage ./graalvm { };
+      jdk = jre;
+    };
+  in [ graalvm ];
+
   environment.systemPackages = [
     pkgs.exa
     pkgs.aria2
@@ -49,23 +53,23 @@ in {
     pkgs.wget
     pkgs.youtube-dl
     pkgs.tree
-    pkgs.ytop
+    pkgs.ytop # in the future this will be pkgs.bottom
     pkgs.zsh
     pkgs.jdk
     pkgs.sbt
     pkgs.scala
     pkgs.ammonite
-    # pkgs.scalafmt
+    pkgs.scalafmt
     pkgs.coursier
     bloop
   ];
 
-  nixpkgs.overlays = [ graalvm-overlay ];
   nixpkgs.config.allowUnfree = true;
 
   # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-  nix.package = pkgs.nix;
+  #  services.nix-daemon.enable = true;
+  # better not XD
+  #  nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.zsh.enable = true; # default shell on catalina
