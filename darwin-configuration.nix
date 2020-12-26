@@ -1,15 +1,6 @@
 { config, pkgs, ... }:
-let
-  nodePackages = pkgs.callPackage ./node { };
-  scalaPackages = pkgs.callPackage ./scala { };
+let nodePackages = pkgs.callPackage ./node { };
 in {
-  nixpkgs.overlays = let
-    graalvm = self: super: rec {
-      jre = pkgs.callPackage ./graalvm { };
-      jdk = jre;
-    };
-  in [ graalvm ];
-
   environment.systemPackages = [
     pkgs.exa
     pkgs.aria2
@@ -55,12 +46,9 @@ in {
     pkgs.ytop # in the future this will be pkgs.bottom
     pkgs.zsh
     pkgs.nodePackages.node2nix
-  ] ++ nodePackages ++ scalaPackages;
+  ] ++ nodePackages;
 
-  environment.variables = {
-    JAVA_HOME = "${pkgs.jdk}";
-    LANG = "en_US.UTF-8";
-  };
+  environment.variables = { LANG = "en_US.UTF-8"; };
 
   nixpkgs.config.allowUnfree = true;
 
@@ -77,7 +65,7 @@ in {
     nb = "nix-build";
   };
 
-  imports = [ ./zsh ];
+  imports = [ ./zsh ./scala ];
 
   # https://github.com/LnL7/nix-darwin/issues/145
   # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
