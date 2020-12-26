@@ -5,16 +5,33 @@
     enableFzfCompletion = true;
     enableFzfHistory = true;
 
-    shellInit =
-      let plugins = [ "git" "zsh-autosuggestions" "docker" "docker-compose" ];
-      in ''
-        plugins=(${builtins.concatStringsSep " " plugins})
+    shellInit = let
+      plugins = [
+        "git"
+        "zsh-autosuggestions"
+        "docker"
+        "docker-compose"
+        "zsh-interactive-cd"
+      ];
+      p10kInstantPrompt = ''
+        "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
       '';
+      # todo: figure out why this isn't working 😡
+      enableInstantPrompt = ''
+        if [[ -r ${p10kInstantPrompt} ]]; then
+          source ${p10kInstantPrompt}
+        fi
+      '';
+
+    in ''
+      plugins=(${builtins.concatStringsSep " " plugins})
+    '';
 
     variables = {
       ZSH_THEME = "powerlevel10k/powerlevel10k";
       POWERLEVEL9K_MODE = "awesome-patched";
       HYPHEN_INSENSITIVE = "true";
+      COMPLETION_WAITING_DOTS = "true";
       ZSH_HIGHLIGHT_MAXLENGTH = "20";
       ZSH = "$HOME/.oh-my-zsh";
     };
