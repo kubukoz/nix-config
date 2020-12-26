@@ -1,5 +1,5 @@
 { symlinkJoin, makeWrapper, mvn-search }:
-symlinkJoin rec {
+symlinkJoin {
   name = "sbt-search";
   paths = [ mvn-search ];
   buildInputs = [ makeWrapper ];

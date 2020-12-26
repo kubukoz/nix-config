@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-let nodePackages = pkgs.callPackage ./node { };
-in {
+{ config, pkgs, ... }: {
   environment.systemPackages = [
     pkgs.exa
     pkgs.aria2
@@ -45,8 +43,7 @@ in {
     pkgs.tree
     pkgs.ytop # in the future this will be pkgs.bottom
     pkgs.zsh
-    pkgs.nodePackages.node2nix
-  ] ++ nodePackages;
+  ];
 
   environment.variables = { LANG = "en_US.UTF-8"; };
 
@@ -65,7 +62,7 @@ in {
     nb = "nix-build";
   };
 
-  imports = [ ./zsh ./scala ];
+  imports = [ ./zsh ./scala ./node ];
 
   # https://github.com/LnL7/nix-darwin/issues/145
   # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
