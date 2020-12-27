@@ -9,6 +9,7 @@
     htop.enable = true;
     jq.enable = true;
     neovim.enable = true;
+    # todo new file
     ssh = {
       enable = true;
       matchBlocks = {
@@ -24,6 +25,7 @@
         };
       };
     };
+    # todo new file
     git = {
       enable = true;
       userName = "Jakub Kozłowski";
@@ -54,7 +56,7 @@
     };
   };
 
-  imports = [ ./zsh ./scala ./node ];
+  imports = [ ./zsh ./scala ./node ./secrets-module.nix ];
 
   home = {
     sessionVariables = {
@@ -72,6 +74,7 @@
       dhall-lsp-server
       ffmpeg
       ghc
+      git-crypt
       gnuplot
       httpie
       imgcat
@@ -98,4 +101,6 @@
       ytop # in the future this will be 'bottom'
     ];
   };
+
+  secrets = import ./secrets.nix;
 }

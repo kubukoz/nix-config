@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   bloop = pkgs.callPackage (builtins.fetchurl
@@ -26,10 +26,9 @@ in {
     ];
 
     credentials = let
-      genericOcadoCredential = {
+      genericOcadoCredential = with config.secrets.ocado.nexus; {
         realm = "Sonatype Nexus Repository Manager";
-        user = builtins.getEnv "OCEAN_NEXUS_USERNAME";
-        password = builtins.getEnv "OCEAN_NEXUS_PASSWORD";
+        inherit user password;
       };
 
     in {

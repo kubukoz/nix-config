@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, ... }:
 
 with lib;
 
@@ -46,8 +46,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-
-    home.packages = [ pkgs.gnupg ];
 
     home.file."${baseSbtConfigPath}/plugins/plugins.sbt".text =
       concatStringsSep "\n" (map makePlugin cfg.plugins);
