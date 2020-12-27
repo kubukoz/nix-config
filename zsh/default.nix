@@ -42,11 +42,9 @@
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
         [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-        echo ${zsh-interactive-cd}
-        source ${zsh-interactive-cd}
-
         source $ZSH/oh-my-zsh.sh
+        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        source ${zsh-interactive-cd}
 
         # todo: fetch automatically: curl -L https://iterm2.com/shell_integration/zsh
         test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
