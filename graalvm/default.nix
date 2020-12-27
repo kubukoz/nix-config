@@ -8,10 +8,7 @@ let
   #     "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${version}/graalvm-ce-java11-${arch}-${version}.tar.gz";
   #   sha256 = "22b869fbf590c461278efae5e06fdd5ba32b4d5b302da838d9f50cb71aa20d01";
   # };
-  sources = callPackage ./untar.nix {
-    path = ./graalvm-ce-java11-darwin-amd64-20.3.0.tar.gz;
-    name = "graalvm-ce-java11-darwin-amd64-20.3.0";
-  };
+  sources = ./graalvm-ce-java11-darwin-amd64-20.3.0.tar.gz;
 
   jdk = stdenv.mkDerivation rec {
     name = "graalvm-${version}";
@@ -19,7 +16,8 @@ let
     buildInputs = [ freetype ];
 
     installPhase = ''
-      cp -r $src/graalvm-ce-java11-${version}/Contents/Home $out;
+      # This got here thanks to unpackPhase
+      cp -r ./Contents/Home $out;
     '';
 
     # inspired by nixpkgs/pkgs/development/compilers/openjdk/darwin/default.nix
