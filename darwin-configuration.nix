@@ -1,78 +1,40 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
+  imports = [ <home-manager/nix-darwin> ./system/zsh ];
 
-  environment.systemPackages = with pkgs; [
-    aria2
-    asciinema
-    bat
-    broot
-    cachix
-    ctop
-    dhall
-    dhall-json
-    dhall-lsp-server
-    exa
-    ffmpeg
-    fzf
-    ghc
-    git
-    github-cli
-    gnuplot
-    htop
-    httpie
-    imgcat
-    jekyll
-    jq
-    lame
-    neovim
-    niv
-    nixfmt
-    pirate-get
-    plantuml
-    postgresql
-    pstree
-    python2
-    redis
-    sl
-    speedtest-cli
-    tig
-    tldr
-    tokei
-    tree
-    unrar
-    websocat
-    wget
-    youtube-dl
-    ytop # in the future this will be 'bottom'
-  ];
+  nix = {
+    # Auto upgrade nix package and the daemon service.
+    # better not XD
+    #  services.nix-daemon.enable = true;
+    package = pkgs.nix;
 
-  environment.variables = { LANG = "en_US.UTF-8"; };
-
-  nixpkgs.config.allowUnfree = true;
-
-  # Auto upgrade nix package and the daemon service.
-  #  services.nix-daemon.enable = true;
-  # better not XD
-  nix.package = pkgs.nix;
-
-  environment.shellAliases = {
-    lsd = "exa --long --header --git --all";
-    dps = "docker-compose ps";
-    dcp = "docker-compose";
-    nss = "nix-shell";
-    nb = "nix-build";
+    # https://github.com/LnL7/nix-darwin/issues/145
+    # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
+    # fixed according to https://github.com/LnL7/nix-darwin/blob/b3e96fdf6623dffa666f8de8f442cc1d89c93f60/CHANGELOG
+    nixPath = pkgs.lib.mkForce [{
+      darwin-config = builtins.concatStringsSep ":" [
+        "$HOME/.nixpkgs/darwin-configuration.nix"
+        "$HOME/.nix-defexpr/channels"
+      ];
+    }];
   };
 
-  imports = [ ./zsh ./scala ./node ];
+  nixpkgs = {
+    config.allowUnfree = true;
 
-  # https://github.com/LnL7/nix-darwin/issues/145
-  # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
-  # fixed according to https://github.com/LnL7/nix-darwin/blob/b3e96fdf6623dffa666f8de8f442cc1d89c93f60/CHANGELOG
-  nix.nixPath = pkgs.lib.mkForce [{
-    darwin-config = builtins.concatStringsSep ":" [
-      "$HOME/.nixpkgs/darwin-configuration.nix"
-      "$HOME/.nix-defexpr/channels"
-    ];
-  }];
+    overlays = let
+      graalvm = self: super:
+        let
+          jre = pkgs.callPackage ./graalvm { };
+          jdk = jre;
+        in { inherit jre jdk; };
+    in [ graalvm ];
+  };
+
+  home-manager = {
+    useUserPackages = true;
+    useGlobalPkgs = true;
+    users.kubukoz = import ./home.nix;
+  };
 
   networking.hostName = "kubukoz-pro";
 

@@ -8,5 +8,5 @@ let
 in {
   # might need to ignore localPackages on fresh machines / after new packages are added.
   # make sure to run node2nix first
-  environment.systemPackages = [ pkgs.nodePackages.node2nix ] ++ localPackages;
+  home.packages = [ pkgs.nodePackages.node2nix ] ++ localPackages;
 }
