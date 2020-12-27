@@ -6,10 +6,11 @@ let
     { };
 in {
   nixpkgs.overlays = let
-    graalvm = self: super: rec {
-      jre = pkgs.callPackage ../graalvm { };
-      jdk = jre;
-    };
+    graalvm = self: super:
+      let
+        jre = pkgs.callPackage ../graalvm { };
+        jdk = jre;
+      in { inherit jre jdk; };
   in [ graalvm ];
 
   environment.systemPackages = with pkgs; [

@@ -10,7 +10,7 @@ let
   # };
   sources = ./graalvm-ce-java11-darwin-amd64-20.3.0.tar.gz;
 
-  jdk = stdenv.mkDerivation rec {
+  jdk = stdenv.mkDerivation {
     name = "graalvm-${version}";
     src = sources;
     buildInputs = [ freetype ];
