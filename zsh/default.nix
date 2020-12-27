@@ -1,4 +1,10 @@
-{
+{ pkgs, ... }: {
+
+  environment.systemPackages = [
+    pkgs.zsh
+    pkgs.oh-my-zsh # pkgs.zsh-powerlevel10k
+  ];
+
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
@@ -23,7 +29,8 @@
       HYPHEN_INSENSITIVE = "true";
       COMPLETION_WAITING_DOTS = "true";
       ZSH_HIGHLIGHT_MAXLENGTH = "20";
-      ZSH = "$HOME/.oh-my-zsh";
+      ZSH = "${pkgs.oh-my-zsh}/share/oh-my-zsh";
+      ZSH_CUSTOM = "$HOME/.oh-my-zsh/custom";
     };
 
     interactiveShellInit = ''

@@ -42,7 +42,6 @@
     pkgs.youtube-dl
     pkgs.tree
     pkgs.ytop # in the future this will be pkgs.bottom
-    pkgs.zsh
   ];
 
   environment.variables = { LANG = "en_US.UTF-8"; };
