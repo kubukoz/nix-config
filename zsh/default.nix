@@ -43,11 +43,16 @@
     initExtraBeforeCompInit = ''
       # powerlevel10k
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ~/.p10k.zsh # todo keep in repo
+      ${builtins.readFile ./p10k.zsh}
     '';
-    initExtra = ''
-      # todo: fetch automatically: curl -L https://iterm2.com/shell_integration/zsh
-      test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
+
+    initExtra = let
+      iterm2-shell-integration = builtins.fetchurl {
+        url = "https://iterm2.com/shell_integration/zsh";
+        sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
+      };
+    in ''
+      source ${iterm2-shell-integration}
     '';
   };
 
