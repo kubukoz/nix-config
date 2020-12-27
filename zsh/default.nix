@@ -1,13 +1,18 @@
 { pkgs, ... }: {
 
-  environment.systemPackages =
-    [ pkgs.zsh pkgs.oh-my-zsh pkgs.zsh-powerlevel10k pkgs.zsh-autosuggestions ];
+  environment.systemPackages = with pkgs; [
+    zsh
+    oh-my-zsh
+    zsh-powerlevel10k
+    zsh-autosuggestions
+  ];
 
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
     enableFzfCompletion = true;
     enableFzfHistory = true;
+    enableFzfGit = true; # todo: verify it even works
 
     shellInit = let
       plugins = [
@@ -38,6 +43,7 @@
 
       source $ZSH/oh-my-zsh.sh
 
+      # todo: fetch automatically: curl -L https://iterm2.com/shell_integration/zsh
       test -e "$HOME/.iterm2_shell_integration.zsh" && source "$HOME/.iterm2_shell_integration.zsh"
     '';
   };

@@ -1,47 +1,48 @@
 { config, pkgs, ... }: {
-  environment.systemPackages = [
-    pkgs.exa
-    pkgs.aria2
-    pkgs.asciinema
-    pkgs.bat
-    pkgs.broot
-    pkgs.cachix
-    pkgs.ctop
-    pkgs.dhall
-    pkgs.dhall-json
-    pkgs.dhall-lsp-server
-    pkgs.ffmpeg
-    pkgs.fzf
-    pkgs.ghc
-    pkgs.git
-    pkgs.github-cli
-    pkgs.gnuplot
-    pkgs.htop
-    pkgs.httpie
-    pkgs.imgcat
-    pkgs.jekyll
-    pkgs.jq
-    pkgs.lame
-    pkgs.neovim
-    pkgs.niv
-    pkgs.nixfmt
-    pkgs.pirate-get
-    pkgs.plantuml
-    pkgs.postgresql
-    pkgs.pstree
-    pkgs.python2
-    pkgs.redis
-    pkgs.sl
-    pkgs.speedtest-cli
-    pkgs.tig
-    pkgs.tldr
-    pkgs.tokei
-    pkgs.unrar
-    pkgs.websocat
-    pkgs.wget
-    pkgs.youtube-dl
-    pkgs.tree
-    pkgs.ytop # in the future this will be pkgs.bottom
+
+  environment.systemPackages = with pkgs; [
+    aria2
+    asciinema
+    bat
+    broot
+    cachix
+    ctop
+    dhall
+    dhall-json
+    dhall-lsp-server
+    exa
+    ffmpeg
+    fzf
+    ghc
+    git
+    github-cli
+    gnuplot
+    htop
+    httpie
+    imgcat
+    jekyll
+    jq
+    lame
+    neovim
+    niv
+    nixfmt
+    pirate-get
+    plantuml
+    postgresql
+    pstree
+    python2
+    redis
+    sl
+    speedtest-cli
+    tig
+    tldr
+    tokei
+    tree
+    unrar
+    websocat
+    wget
+    youtube-dl
+    ytop # in the future this will be 'bottom'
   ];
 
   environment.variables = { LANG = "en_US.UTF-8"; };
