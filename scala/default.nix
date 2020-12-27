@@ -24,5 +24,18 @@ in {
         version = "0.10.0-RC1";
       }
     ];
+
+    credentials = let
+      genericOcadoCredential = {
+        realm = "Sonatype Nexus Repository Manager";
+        user = builtins.getEnv "OCEAN_NEXUS_USERNAME";
+        password = builtins.getEnv "OCEAN_NEXUS_PASSWORD";
+      };
+
+    in {
+      "nexus.ocean.ocado.tech" = genericOcadoCredential;
+      "ospcfc.nexus.ocado.tech" = genericOcadoCredential;
+      "ocean.nexus.ocado.tech" = genericOcadoCredential;
+    };
   };
 }
