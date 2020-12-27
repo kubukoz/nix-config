@@ -9,11 +9,16 @@
     enableFzfCompletion = true;
     enableFzfHistory = true;
 
-    shellInit =
-      let plugins = [ "git" "docker" "docker-compose" "zsh-interactive-cd" ];
-      in ''
-        plugins=(${builtins.concatStringsSep " " plugins})
-      '';
+    shellInit = let
+      plugins = [
+        "git"
+        "docker"
+        "docker-compose"
+        "zsh-interactive-cd" # installed manually in ~/.oh-my-zsh/custom/plugins
+      ];
+    in ''
+      plugins=(${builtins.concatStringsSep " " plugins})
+    '';
 
     variables = {
       POWERLEVEL9K_MODE = "awesome-patched";
