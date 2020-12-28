@@ -54,6 +54,7 @@
       wget
       youtube-dl
       ytop # in the future this will be 'bottom'
+      (callPackage ./brew-exiles/pidof.nix { })
     ];
   };
 

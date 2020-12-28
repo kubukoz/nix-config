@@ -1,4 +1,4 @@
-{ stdenv, setJavaClassPath, freetype, callPackage }:
+{ stdenv, setJavaClassPath, freetype }:
 
 let
   version = "20.3.0";
