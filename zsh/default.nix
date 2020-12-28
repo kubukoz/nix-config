@@ -43,7 +43,7 @@
     initExtraBeforeCompInit = ''
       # powerlevel10k
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      ${builtins.readFile ./p10k.zsh}
+      source ${./p10k.zsh}
     '';
 
     initExtra = let
