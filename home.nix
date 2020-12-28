@@ -11,7 +11,15 @@
     neovim.enable = true;
   };
 
-  imports = [ ./ssh.nix ./git.nix ./zsh ./scala ./node ./secrets-module.nix ];
+  imports = [
+    ./ssh.nix
+    ./git.nix
+    ./ngrok.nix
+    ./zsh
+    ./scala
+    ./node
+    ./secrets-module.nix
+  ];
 
   home = {
     sessionVariables = {
