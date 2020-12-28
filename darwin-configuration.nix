@@ -24,15 +24,25 @@
     overlays = let
       graalvm = self: super:
         let
-          jre = pkgs.callPackage ./graalvm { };
+          jre = self.callPackage ./graalvm { };
           jdk = jre;
         in { inherit jre jdk; };
       bloop = self: super: {
-        bloop = pkgs.callPackage (builtins.fetchurl
+        bloop = self.callPackage (builtins.fetchurl
           "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")
           { };
       };
-    in [ graalvm bloop ];
+      metals = self: super: {
+        vscode-extensions = self.lib.recursiveUpdate super.vscode-extensions {
+          scalameta.metals = self.vscode-utils.extensionFromVscodeMarketplace {
+            name = "metals";
+            publisher = "scalameta";
+            version = "1.9.10";
+            sha256 = "0v599yssvk358gxfxnyzzkyk0y5krsbp8n4rkp9wb2ncxqsqladr";
+          };
+        };
+      };
+    in [ graalvm bloop metals ];
   };
 
   home-manager = {

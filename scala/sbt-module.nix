@@ -31,6 +31,7 @@ in {
       default = [ ];
       apply = v: concatStrings (map renderPlugin v);
     };
+
     credentials = mkOption {
       type = types.attrsOf (types.submodule {
         options = {

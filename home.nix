@@ -23,6 +23,7 @@
     ./scala
     ./node
     ./secrets-module.nix
+    ./vscode.nix
   ];
 
   home = {
