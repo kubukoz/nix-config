@@ -12,9 +12,9 @@
   };
 
   imports = [
-    ./ssh.nix
-    ./git.nix
-    ./ngrok.nix
+    ./programs/ssh.nix
+    ./programs/git.nix
+    ./programs/ngrok.nix
     ./zsh
     ./scala
     ./node
@@ -62,7 +62,7 @@
       wget
       youtube-dl
       ytop # in the future this will be 'bottom'
-      (callPackage ./brew-exiles/pidof.nix { })
+      (callPackage ./derivations/pidof.nix { })
     ];
   };
 
