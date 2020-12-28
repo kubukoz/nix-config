@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ./sbt-module.nix ];
+  imports = [ ./sbt-module.nix ./bloop.nix ];
 
   home.packages = with pkgs; [
     jdk
@@ -10,7 +10,6 @@
     ammonite
     scalafmt
     coursier
-    bloop
     # (callPackage ./fury.nix { })
   ];
   home.sessionVariables = { JAVA_HOME = "${pkgs.jdk}"; };

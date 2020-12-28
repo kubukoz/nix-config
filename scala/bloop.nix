@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.packages = [ bloop ];
+  home.packages = [ pkgs.bloop ];
 
   programs.sbt = {
     plugins = [{
@@ -8,4 +8,7 @@
       version = "1.4.6";
     }];
   };
+
+  home.file.".bloop/bloop.json".text =
+    builtins.toJSON { javaOptions = [ "-Xmx2G" ]; };
 }
