@@ -2,13 +2,17 @@
 
 {
   programs = {
-    bat.enable = true;
+    bat = {
+      enable = true;
+      config.theme = "ansi-dark";
+    };
     broot.enable = true;
     fzf.enable = true;
     gh.enable = true;
     htop.enable = true;
     jq.enable = true;
     neovim.enable = true;
+    aria2.enable = true;
   };
 
   imports = [
@@ -28,7 +32,6 @@
     };
 
     packages = with pkgs; [
-      aria2
       asciinema
       cachix
       ctop
