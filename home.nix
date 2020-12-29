@@ -47,7 +47,6 @@
       gnuplot
       httpie
       imgcat
-      jekyll
       lame
       niv
       nixfmt
