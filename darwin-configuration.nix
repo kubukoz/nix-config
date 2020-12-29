@@ -40,6 +40,13 @@
             version = "1.9.10";
             sha256 = "0v599yssvk358gxfxnyzzkyk0y5krsbp8n4rkp9wb2ncxqsqladr";
           };
+          ms-azuretools.vscode-docker =
+            self.vscode-utils.extensionFromVscodeMarketplace {
+              name = "vscode-docker";
+              publisher = "ms-azuretools";
+              version = "1.9.0";
+              sha256 = "10xih3djdbxvndlz8s98rf635asjx8hmdza49y67v624i59jdn3x";
+            };
         };
       };
     in [ graalvm bloop metals ];
