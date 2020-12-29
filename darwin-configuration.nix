@@ -40,6 +40,12 @@
             version = "1.9.10";
             sha256 = "0v599yssvk358gxfxnyzzkyk0y5krsbp8n4rkp9wb2ncxqsqladr";
           };
+          scala-lang.scala = self.vscode-utils.extensionFromVscodeMarketplace {
+            name = "scala";
+            publisher = "scala-lang";
+            version = "0.5.0";
+            sha256 = "0rhdnj8vfpcvy771l6nhh4zxyqspyh84n9p1xp45kq6msw22d7rx";
+          };
           ms-azuretools.vscode-docker =
             self.vscode-utils.extensionFromVscodeMarketplace {
               name = "vscode-docker";

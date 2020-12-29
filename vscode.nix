@@ -100,8 +100,12 @@
       when = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
     };
     extensions = with pkgs.vscode-extensions;
-      [ scalameta.metals ms-azuretools.vscode-docker bbenoist.Nix ]
-      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      [
+        scalameta.metals
+        scala-lang.scala
+        ms-azuretools.vscode-docker
+        bbenoist.Nix
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "dhall-lang";
           publisher = "dhall";
