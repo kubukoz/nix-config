@@ -40,7 +40,6 @@
       dhall-json
       dhall-lsp-server
       ffmpeg
-      ghc
       git-crypt
       gnuplot
       httpie
