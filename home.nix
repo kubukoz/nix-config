@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   programs = {
@@ -30,6 +30,9 @@
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
+      # for pitgull
+      GIT_API_URL = "https://gitlab.com";
+      GIT_API_TOKEN = config.secrets.gitlab-com.token;
     };
 
     packages = with pkgs; [

@@ -33,9 +33,9 @@
           scala = super.scala.override { inherit jre; };
         };
       bloop = self: super: {
-        bloop = self.callPackage (builtins.fetchurl
-          "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")
-          { };
+        bloop = self.callPackage ./derivations/bloop.nix {
+          version = "1.4.6-15-209c2a5c";
+        };
       };
     in [ graalvm bloop (import ./overlays/vscode.nix) ];
   };
