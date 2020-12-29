@@ -4,8 +4,11 @@ let
   updatedExtensions = attrsets:
     let
       extension = attrs: {
-        name = "${attrs.publisher}.${attrs.name}";
-        value = self.vscode-utils.extensionFromVscodeMarketplace attrs;
+        name = attrs.publisher;
+        value = {
+          "${attrs.name}" =
+            self.vscode-utils.extensionFromVscodeMarketplace attrs;
+        };
       };
     in builtins.listToAttrs (map extension attrsets);
 in {
@@ -15,7 +18,7 @@ in {
         name = "metals";
         publisher = "scalameta";
         version = "1.9.10";
-        sha256 = "0v599yssvk358gxfxnyzzkyk0y5krsbp8n4rkp9wb2ncxqsqladr";
+        sha256 = "1afmqzlw3bl9bv59l9b2jrljhbq8djb7vl8rjv58c5wi7nvm2qab";
       }
       {
         name = "scala";
