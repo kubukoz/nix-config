@@ -26,7 +26,12 @@
         let
           jre = self.callPackage ./graalvm { };
           jdk = jre;
-        in { inherit jre jdk; };
+        in {
+          inherit jre jdk;
+          # Override necessary because the scala package is configured (via callPackage)
+          # to use jdk8 (at the time of writing, that's zulu).
+          scala = super.scala.override { inherit jre; };
+        };
       bloop = self: super: {
         bloop = self.callPackage (builtins.fetchurl
           "https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix")

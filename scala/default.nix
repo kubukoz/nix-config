@@ -12,6 +12,7 @@
     coursier
     # (callPackage ./fury.nix { })
   ];
+
   home.sessionVariables = { JAVA_HOME = "${pkgs.jdk}"; };
 
   programs.sbt = {
