@@ -4,12 +4,10 @@ let
   updatedExtensions = attrsets:
     let
       extension = attrs: {
-        "${attrs.publisher}.${attrs.name}" =
-          self.vscode-utils.extensionFromVscodeMarketplace {
-            inherit (attrs) name publisher version sha256;
-          };
+        name = "${attrs.publisher}.${attrs.name}";
+        value = self.vscode-utils.extensionFromVscodeMarketplace attrs;
       };
-    in builtins.foldl' self.lib.recursiveUpdate { } (map extension attrsets);
+    in builtins.listToAttrs (map extension attrsets);
 in {
   vscode-extensions = self.lib.recursiveUpdate super.vscode-extensions
     (updatedExtensions [
