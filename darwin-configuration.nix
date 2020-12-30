@@ -43,7 +43,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users.kubukoz = import ./home.nix;
+    users.kubukoz = ./home.nix;
   };
 
   networking.hostName = "kubukoz-pro";
