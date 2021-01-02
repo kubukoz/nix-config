@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
     userName = "Jakub Kozłowski";
@@ -27,4 +27,6 @@
 
     extraConfig = { pull = { ff = "only"; }; };
   };
+
+  home.packages = [ pkgs.git-crypt ];
 }

@@ -43,7 +43,6 @@
       dhall-json
       dhall-lsp-server
       ffmpeg
-      git-crypt
       gnuplot
       httpie
       imgcat
