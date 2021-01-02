@@ -240,6 +240,12 @@
               version = "3.2.1";
               sha256 = "14d68rcnjx4a20r0ps9g2aycv5myyhks5lpfz0syr2rxr4kd1vh6";
             }
+            {
+              name = "shellcheck";
+              publisher = "timonwong";
+              version = "0.12.3";
+              sha256 = "1i9rszgnac2z1kyahmgxmz05ib7z14s458fvvjlzmvl64fa1fdvf";
+            }
           ];
       };
     in mergeAll [
