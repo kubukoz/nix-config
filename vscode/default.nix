@@ -50,10 +50,14 @@
           "workbench.colorTheme" = themeName;
           "oneDarkPro.italic" = false;
           "editor.tokenColorCustomizations" = {
-            "[${themeName}]" = {
-              "functions" = "#e5c07b";
-              "variables" = "#e5c07b";
-              "types" = "#61afef";
+            "[${themeName}]" = let
+              # These have been stolen from https://github.com/joshdick/onedark.vim
+              yellow = "#e5c07b";
+              blue = "#61afef";
+            in {
+              "functions" = yellow;
+              "variables" = yellow;
+              "types" = blue;
             };
           };
         };
