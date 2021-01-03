@@ -128,7 +128,7 @@
         enable = true;
         userSettings = {
           "editor.fontFamily" =
-            "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace";
+            "'JetBrains Mono', 'Meslo LGS NF', Monaco, 'Courier New', monospace";
           "breadcrumbs.enabled" = true;
           "debug.allowBreakpointsEverywhere" = true;
           "editor.cursorBlinking" = "solid";
