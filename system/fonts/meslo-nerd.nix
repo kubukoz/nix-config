@@ -1,13 +1,15 @@
 { stdenv }:
 
-let name = "meslo-nerd";
+let
+  name = "meslo-nerd";
+  version = "32c7d40239c93507277f14522be90b5750f442c9";
 in stdenv.mkDerivation {
-  inherit name;
+  name = "${name}-${version}";
   src = let
     mkVariant = { variant, sha256 }:
       let
         baseUrl =
-          "https://github.com/romkatv/powerlevel10k-media/raw/32c7d40239c93507277f14522be90b5750f442c9";
+          "https://github.com/romkatv/powerlevel10k-media/raw/${version}";
         variantEscaped = spaceReplacement:
           builtins.replaceStrings [ " " ] [ spaceReplacement ] variant;
 
