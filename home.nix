@@ -8,7 +8,6 @@
     };
     broot.enable = true;
     fzf.enable = true;
-    gh.enable = true;
     htop.enable = true;
     jq.enable = true;
     neovim.enable = true;
@@ -43,6 +42,7 @@
       dhall-json
       dhall-lsp-server
       ffmpeg
+      github-cli
       gnuplot
       httpie
       imgcat
@@ -61,12 +61,12 @@
       tldr
       tokei
       tree
-      unrar
+      # unrar
       websocat
       wget
       youtube-dl
       ytop # in the future this will be 'bottom'
-      (callPackage ./derivations/pidof.nix { })
+      #      (callPackage ./derivations/pidof.nix { })
     ];
   };
 
