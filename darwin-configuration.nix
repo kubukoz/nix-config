@@ -48,5 +48,29 @@
 
   networking.hostName = "kubukoz-pro";
 
+  system.defaults = {
+    LaunchServices = { LSQuarantine = false; };
+    NSGlobalDomain = {
+      ApplePressAndHoldEnabled = false;
+      KeyRepeat = 2; # I am speed
+      InitialKeyRepeat = 15;
+      AppleKeyboardUIMode = 3; # full control
+      NSAutomaticQuoteSubstitutionEnabled = false;
+      NSAutomaticDashSubstitutionEnabled = false;
+      NSNavPanelExpandedStateForSaveMode = true;
+      NSNavPanelExpandedStateForSaveMode2 = true; # don't ask
+    };
+    dock = {
+      autohide = true;
+      show-recents = false;
+      tilesize = 45;
+    };
+    finder = {
+      AppleShowAllExtensions = true;
+      _FXShowPosixPathInTitle = true;
+    };
+    trackpad.Clicking = true;
+    loginwindow.GuestEnabled = false;
+  };
   system.stateVersion = 4;
 }

@@ -133,12 +133,12 @@
           "debug.allowBreakpointsEverywhere" = true;
           "editor.cursorBlinking" = "solid";
           "editor.formatOnSave" = true;
+          "editor.formatOnPaste" = true;
           "editor.minimap.enabled" = false;
           "editor.renderIndentGuides" = false;
           "editor.suggestSelection" = "first";
           "editor.tabSize" = 2;
           "files.autoSave" = "onFocusChange";
-          "files.autoSaveDelay" = 500;
           "files.defaultLanguage" = "markdown";
           "files.insertFinalNewline" = true;
           "files.trimTrailingWhitespace" = true;
@@ -147,6 +147,7 @@
           "workbench.editor.enablePreview" = false;
           "workbench.editor.limit.value" = 5;
           "workbench.editor.showTabs" = true;
+          "workbench.editor.highlightModifiedTabs" = true;
         };
         keybindings = [
           {
