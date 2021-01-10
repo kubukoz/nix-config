@@ -179,12 +179,12 @@
               version = "0.0.4";
               sha256 = "1zin7s827bpf9yvzpxpr5n6mv0b5rhh3civsqzmj52mdq365d2js";
             }
-            {
-              name = "dotty";
-              publisher = "lampepfl";
-              version = "0.1.16";
-              sha256 = "1mg43scrshv96mmwf5cqfrj1gi5h7h02nny0qwkd743dwx4ilcqa";
-            }
+            # {
+            #   name = "dotty";
+            #   publisher = "lampepfl";
+            #   version = "0.1.16";
+            #   sha256 = "1mg43scrshv96mmwf5cqfrj1gi5h7h02nny0qwkd743dwx4ilcqa";
+            # }
             {
               name = "errorlens";
               publisher = "usernamehw";
