@@ -10,7 +10,6 @@
     fzf.enable = true;
     htop.enable = true;
     jq.enable = true;
-    neovim.enable = true;
     aria2.enable = true;
   };
 
@@ -23,6 +22,7 @@
     ./node
     ./secrets-module.nix
     ./vscode
+    ./neovim.nix
   ];
 
   home = {
