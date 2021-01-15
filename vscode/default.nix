@@ -163,6 +163,14 @@
           command = "editor.action.rename";
           when =
             "editorHasRenameProvider && editorTextFocus && !editorReadonly";
+        } ++ overrideKeyBinding "shift-alt+f5" {
+          key = "ctrl+shift+alt+up";
+          command = "workbench.action.editor.previousChange";
+          when = "editorTextFocus";
+        } ++ overrideKeyBinding "alt+f5" {
+          key = "ctrl+shift+alt+down";
+          command = "workbench.action.editor.nextChange";
+          when = "editorTextFocus";
         };
         extensions = with pkgs.vscode-extensions;
           [ ms-azuretools.vscode-docker bbenoist.Nix ]
