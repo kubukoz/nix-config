@@ -83,7 +83,9 @@
         "/bin/launchctl"
       ];
       commandsString = builtins.concatStringsSep ", " commands;
-    in "%admin ALL=(ALL:ALL) NOPASSWD: ${commandsString}";
+    in ''
+      %admin ALL=(ALL:ALL) NOPASSWD: ${commandsString}
+    '';
   };
 
   system.stateVersion = 4;
