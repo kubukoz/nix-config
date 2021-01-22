@@ -1,14 +1,13 @@
 { stdenv, setJavaClassPath, freetype }:
 
 let
-  version = "20.3.0";
+  version = "21.0.0";
   arch = "darwin-amd64";
   sources = fetchTarball {
     url =
       "https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${version}/graalvm-ce-java11-${arch}-${version}.tar.gz";
     sha256 = "0xwxwp4770bwvi8527zmzin9ilz9v6h75yn1p5yp94hz12snpnqj";
   };
-  # sources = ./graalvm-ce-java11-darwin-amd64-20.3.0.tar.gz;
 
   jdk = stdenv.mkDerivation {
     name = "graalvm-${version}";
