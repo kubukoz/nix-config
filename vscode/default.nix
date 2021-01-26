@@ -125,18 +125,17 @@
         settings = { "liveshare.featureSet" = "insiders"; };
       };
       tla = configuredExtension {
-        # extension = marketplaceExtension {
-        #   name = "vscode-tlaplus";
-        #   publisher = "alygin";
-        #   version = "1.5.2";
-        #   sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
-        # };
-        extension = pkgs.vscode-utils.buildVscodeExtension rec {
-          src = ../../IdeaProjects/vscode-tlaplus;
+        extension = marketplaceExtension rec {
           name = "vscode-tlaplus";
           publisher = "alygin";
-          vscodeExtUniqueId = "${publisher}.${name}";
-          version = "1.5.2";
+          version = "1.5.3-alpha1";
+          sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
+          vsix = builtins.fetchurl {
+            name = "${publisher}-${name}-${version}.zip";
+            url =
+              "https://github.com/alygin/vscode-tlaplus/releases/download/v${version}/vscode-tlaplus-1.5.3.vsix";
+            sha256 = "0ypg423c5rlsf3vvcdr4yln0bagpagsy0azy73pvaqzmdrc8a6i7";
+          };
         };
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
       };
@@ -149,7 +148,6 @@
           "debug.allowBreakpointsEverywhere" = true;
           "editor.cursorBlinking" = "solid";
           "editor.formatOnSave" = true;
-          "editor.formatOnPaste" = true;
           "editor.minimap.enabled" = false;
           "editor.renderIndentGuides" = false;
           "editor.suggestSelection" = "first";
