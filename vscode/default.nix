@@ -124,6 +124,15 @@
         };
         settings = { "liveshare.featureSet" = "insiders"; };
       };
+      tla = configuredExtension {
+        extension = marketplaceExtension {
+          name = "vscode-tlaplus";
+          publisher = "alygin";
+          version = "1.5.2";
+          sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
+        };
+        settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
+      };
       baseSettings = {
         enable = true;
         userSettings = {
@@ -260,12 +269,6 @@
               version = "0.12.3";
               sha256 = "1i9rszgnac2z1kyahmgxmz05ib7z14s458fvvjlzmvl64fa1fdvf";
             }
-            {
-              name = "vscode-tlaplus";
-              publisher = "alygin";
-              version = "1.5.2";
-              sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
-            }
           ];
       };
     in mergeAll [
@@ -279,6 +282,7 @@
       gitlens
       multiclip
       liveshare
+      tla
     ];
 
 }
