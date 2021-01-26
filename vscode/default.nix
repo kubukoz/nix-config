@@ -148,6 +148,7 @@
           "workbench.editor.limit.value" = 5;
           "workbench.editor.showTabs" = true;
           "workbench.editor.highlightModifiedTabs" = true;
+          "workbench.startupEditor" = "none";
         };
         keybindings = [
           {
