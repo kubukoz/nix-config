@@ -57,16 +57,17 @@
       redis
       sl
       speedtest-cli
+      texlive.combined.scheme-basic
       tig
       tldr
       tokei
       tree
-      # unrar
       websocat
       wget
+      # (callPackage ./derivations/pidof.nix { })
+      # unrar
       youtube-dl
       ytop # in the future this will be 'bottom'
-      #      (callPackage ./derivations/pidof.nix { })
     ];
   };
 
