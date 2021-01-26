@@ -125,11 +125,18 @@
         settings = { "liveshare.featureSet" = "insiders"; };
       };
       tla = configuredExtension {
-        extension = marketplaceExtension {
+        # extension = marketplaceExtension {
+        #   name = "vscode-tlaplus";
+        #   publisher = "alygin";
+        #   version = "1.5.2";
+        #   sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
+        # };
+        extension = pkgs.vscode-utils.buildVscodeExtension rec {
+          src = ../../IdeaProjects/vscode-tlaplus;
           name = "vscode-tlaplus";
           publisher = "alygin";
+          vscodeExtUniqueId = "${publisher}.${name}";
           version = "1.5.2";
-          sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
         };
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
       };
