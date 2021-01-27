@@ -138,6 +138,10 @@
           };
         };
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
+        keybindings = [{
+          key = "ctrl+cmd+enter";
+          command = "tlaplus.model.check.run";
+        }];
       };
       baseSettings = {
         enable = true;
