@@ -62,15 +62,15 @@
           };
         };
       };
-      prettier = configuredExtension {
-        extension = marketplaceExtension {
-          name = "prettier-vscode";
-          publisher = "esbenp";
-          version = "5.8.0";
-          sha256 = "0h7wc4pffyq1i8vpj4a5az02g2x04y7y1chilmcfmzg2w42xpby7";
-        };
-        formatterFor = [ "json" "jsonc" ];
-      };
+      # prettier = configuredExtension {
+      #   extension = marketplaceExtension {
+      #     name = "prettier-vscode";
+      #     publisher = "esbenp";
+      #     version = "5.8.0";
+      #     sha256 = "0h7wc4pffyq1i8vpj4a5az02g2x04y7y1chilmcfmzg2w42xpby7";
+      #   };
+      #   formatterFor = [ "json" "jsonc" ];
+      # };
       markdown = configuredExtension {
         extension = marketplaceExtension {
           name = "markdown-all-in-one";
@@ -97,8 +97,8 @@
         extension = marketplaceExtension {
           name = "gitlens";
           publisher = "eamodio";
-          version = "11.1.0";
-          sha256 = "1g8ayhsfq6yzbbrvffsdqgms3nsijd5x0x13vdldfqsp6yfkh0f1";
+          version = "11.1.3";
+          sha256 = "1x9bkf9mb56l84n36g3jmp3hyfbyi8vkm2d4wbabavgq6gg618l6";
         };
         settings = { "gitlens.currentLine.enabled" = false; };
       };
@@ -119,8 +119,8 @@
         extension = marketplaceExtension {
           name = "vsliveshare";
           publisher = "ms-vsliveshare";
-          version = "1.0.3375";
-          sha256 = "0mfjlfs24m8s2z0a80gh4j6sxwa7vwi6gqsgm0wk2wggb2bjvd0w";
+          version = "1.0.3577";
+          sha256 = "1aprpx2mhkdg26x35hxlnlr0hx28znha1y6wrrd4cw549scssp9a";
         };
         settings = { "liveshare.featureSet" = "insiders"; };
       };
@@ -219,12 +219,12 @@
               version = "3.2.4";
               sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
             }
-            {
-              name = "vscode-eslint";
-              publisher = "dbaeumer";
-              version = "2.1.14";
-              sha256 = "113w2iis4zi4z3sqc3vd2apyrh52hbh2gvmxjr5yvjpmrsksclbd";
-            }
+            # {
+            #   name = "vscode-eslint";
+            #   publisher = "dbaeumer";
+            #   version = "2.1.14";
+            #   sha256 = "113w2iis4zi4z3sqc3vd2apyrh52hbh2gvmxjr5yvjpmrsksclbd";
+            # }
             {
               name = "gitignore";
               publisher = "codezombiech";
@@ -249,12 +249,12 @@
               version = "0.0.1";
               sha256 = "07w35c69vk1l6vipnq3qfack36qcszqxn8j3v332bl0w6m02aa7k";
             }
-            {
-              name = "plantuml";
-              publisher = "jebbs";
-              version = "2.14.1";
-              sha256 = "0phwv3iapzx4xwx0l6axwnhmph969gwn5lfa02a8yd5lj92sak7j";
-            }
+            # {
+            #   name = "plantuml";
+            #   publisher = "jebbs";
+            #   version = "2.14.1";
+            #   sha256 = "0phwv3iapzx4xwx0l6axwnhmph969gwn5lfa02a8yd5lj92sak7j";
+            # }
             {
               name = "vscode-remote-extensionpack";
               publisher = "ms-vscode-remote";
@@ -286,7 +286,7 @@
       scala
       metals
       oneDarkPro
-      prettier
+      # prettier
       markdown
       local-history
       gitlens

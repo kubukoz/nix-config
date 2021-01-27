@@ -17,20 +17,20 @@ in {
       {
         name = "metals";
         publisher = "scalameta";
-        version = "1.9.10";
-        sha256 = "1afmqzlw3bl9bv59l9b2jrljhbq8djb7vl8rjv58c5wi7nvm2qab";
+        version = "1.9.13";
+        sha256 = "0vrg25ygmyjx1lwif2ypyv688b290ycfn1qf0izxbmgi2z3f0wf9";
       }
       {
         name = "scala";
         publisher = "scala-lang";
-        version = "0.5.0";
-        sha256 = "0rhdnj8vfpcvy771l6nhh4zxyqspyh84n9p1xp45kq6msw22d7rx";
+        version = "0.5.1";
+        sha256 = "0p9nhds2xn08xz8x822q15jdrdlqkg2wa1y7mk9k89n8n2kfh91g";
       }
       {
         name = "vscode-docker";
         publisher = "ms-azuretools";
-        version = "1.9.0";
-        sha256 = "10xih3djdbxvndlz8s98rf635asjx8hmdza49y67v624i59jdn3x";
+        version = "1.9.1";
+        sha256 = "1l7pm3s5kbf2vark164ykz4qbpa1ac9ls691hham36f6v91dmff9";
       }
     ]);
 }
