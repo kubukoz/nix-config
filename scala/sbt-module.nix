@@ -40,23 +40,29 @@ in {
     package = mkOption {
       type = types.package;
       default = pkgs.sbt;
+      description = "The package with sbt to be installed";
     };
 
     baseConfigPath = mkOption {
       type = types.str;
       default = ".sbt/1.0";
+      description = "Where the plugins and credentials should be located";
     };
 
     plugins = mkOption {
       type = types.listOf (sbtTypes.plugin);
       default = [ ];
       apply = v: concatStrings (map renderPlugin v);
+      description =
+        "A list of plugins to place in the sbt configuration directory";
     };
 
     credentials = mkOption {
       type = types.attrsOf (sbtTypes.credential);
       default = { };
       apply = v: concatStrings (mapAttrsWithValues renderCredential v);
+      description =
+        "A list of credentials to define in the sbt configuration directory";
     };
   };
 
