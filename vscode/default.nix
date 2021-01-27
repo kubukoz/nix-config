@@ -62,15 +62,6 @@
           };
         };
       };
-      # prettier = configuredExtension {
-      #   extension = marketplaceExtension {
-      #     name = "prettier-vscode";
-      #     publisher = "esbenp";
-      #     version = "5.8.0";
-      #     sha256 = "0h7wc4pffyq1i8vpj4a5az02g2x04y7y1chilmcfmzg2w42xpby7";
-      #   };
-      #   formatterFor = [ "json" "jsonc" ];
-      # };
       markdown = configuredExtension {
         extension = marketplaceExtension {
           name = "markdown-all-in-one";
@@ -207,24 +198,12 @@
               version = "0.0.4";
               sha256 = "1zin7s827bpf9yvzpxpr5n6mv0b5rhh3civsqzmj52mdq365d2js";
             }
-            # {
-            #   name = "dotty";
-            #   publisher = "lampepfl";
-            #   version = "0.1.16";
-            #   sha256 = "1mg43scrshv96mmwf5cqfrj1gi5h7h02nny0qwkd743dwx4ilcqa";
-            # }
             {
               name = "errorlens";
               publisher = "usernamehw";
               version = "3.2.4";
               sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
             }
-            # {
-            #   name = "vscode-eslint";
-            #   publisher = "dbaeumer";
-            #   version = "2.1.14";
-            #   sha256 = "113w2iis4zi4z3sqc3vd2apyrh52hbh2gvmxjr5yvjpmrsksclbd";
-            # }
             {
               name = "gitignore";
               publisher = "codezombiech";
@@ -249,12 +228,6 @@
               version = "0.0.1";
               sha256 = "07w35c69vk1l6vipnq3qfack36qcszqxn8j3v332bl0w6m02aa7k";
             }
-            # {
-            #   name = "plantuml";
-            #   publisher = "jebbs";
-            #   version = "2.14.1";
-            #   sha256 = "0phwv3iapzx4xwx0l6axwnhmph969gwn5lfa02a8yd5lj92sak7j";
-            # }
             {
               name = "vscode-remote-extensionpack";
               publisher = "ms-vscode-remote";
@@ -286,7 +259,6 @@
       scala
       metals
       oneDarkPro
-      # prettier
       markdown
       local-history
       gitlens
