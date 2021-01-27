@@ -12,11 +12,6 @@
         hostname = "home.kubukoz.com";
         user = "debian";
       };
-      ocado-machine = lib.hm.dag.entryAfter [ "gh" ] {
-        host = "kubukoz-pro-oc.local";
-        hostname = "kubukoz-pro-oc.local";
-        user = "j.kozlowski";
-      };
     };
   };
 }
