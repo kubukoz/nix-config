@@ -20,24 +20,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-
-    overlays = let
-      graalvm = self: super:
-        let
-          jre = self.callPackage ./graalvm { };
-          jdk = jre;
-        in {
-          inherit jre jdk;
-          # Override necessary because the scala package is configured (via callPackage)
-          # to use jdk8 (at the time of writing, that's zulu).
-          scala = super.scala.override { inherit jre; };
-        };
-      bloop = self: super: {
-        bloop = self.callPackage ./derivations/bloop.nix {
-          version = "1.4.6-15-209c2a5c";
-        };
-      };
-    in [ graalvm bloop (import ./overlays/vscode.nix) ];
+    overlays = [ (import ./overlays/jvm.nix) (import ./overlays/vscode.nix) ];
   };
 
   home-manager = {
