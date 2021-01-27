@@ -34,13 +34,15 @@
   system.defaults = {
     LaunchServices = { LSQuarantine = false; };
     NSGlobalDomain = {
-      ApplePressAndHoldEnabled = false;
+      AppleInterfaceStyle = "Dark"; # Dark mode
+      ApplePressAndHoldEnabled = false; # No accents
       KeyRepeat = 2; # I am speed
       InitialKeyRepeat = 15;
       AppleKeyboardUIMode = 3; # full control
-      NSAutomaticQuoteSubstitutionEnabled = false;
-      NSAutomaticDashSubstitutionEnabled = false;
-      NSNavPanelExpandedStateForSaveMode = true;
+      NSAutomaticQuoteSubstitutionEnabled = false; # No smart quotes
+      NSAutomaticDashSubstitutionEnabled = false; # No em dash
+      NSNavPanelExpandedStateForSaveMode =
+        true; # Default to expanded "save" windows
       NSNavPanelExpandedStateForSaveMode2 = true; # don't ask
     };
     dock = {
