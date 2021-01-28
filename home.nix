@@ -11,6 +11,7 @@
     htop.enable = true;
     jq.enable = true;
     aria2.enable = true;
+    gpg.enable = true;
   };
 
   imports = [
