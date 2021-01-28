@@ -11,6 +11,15 @@
           };
         };
       };
+      prettier = configuredExtension {
+        extension = marketplaceExtension {
+          name = "prettier-vscode";
+          publisher = "esbenp";
+          version = "5.8.0";
+          sha256 = "0h7wc4pffyq1i8vpj4a5az02g2x04y7y1chilmcfmzg2w42xpby7";
+        };
+        formatterFor = [ "typescript" ];
+      };
       metals = configuredExtension {
         extension = pkgs.vscode-extensions.scalameta.metals;
         formatterFor = [ "scala" ];
@@ -259,6 +268,7 @@
       scala
       metals
       oneDarkPro
+      prettier
       markdown
       local-history
       gitlens
