@@ -1,0 +1,6 @@
+# This needs to be owned by root. `sudo visudo` is your friend too
+%admin ALL = NOPASSWD:	/nix/store/*/activate, \
+			/run/current-system/sw/bin/darwin-rebuild, \
+			/run/current-system/sw/bin/nix*, \
+			/run/current-system/sw/bin/ln, \
+			/bin/launchctl
