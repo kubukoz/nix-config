@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... }:
 
-let unstablePkgs = import ./unstable.nix { };
-in {
+{
   programs = {
     bat = {
       enable = true;
@@ -66,8 +65,7 @@ in {
       tree
       websocat
       wget
-      # Current unstable has fixed some of the native library problems on Big Sur
-      (unstablePkgs.callPackage ./derivations/pidof.nix { })
+      (callPackage ./derivations/pidof.nix { })
       unrar
       youtube-dl
       bottom
