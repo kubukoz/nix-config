@@ -20,7 +20,11 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [ (import ./overlays/jvm.nix) (import ./overlays/vscode.nix) ];
+    overlays = [
+      (import ./overlays/unstable.nix)
+      (import ./overlays/jvm.nix)
+      (import ./overlays/vscode.nix)
+    ];
   };
 
   home-manager = {
