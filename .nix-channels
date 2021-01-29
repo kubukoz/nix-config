@@ -1,3 +1,4 @@
 https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
 https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
 https://nixos.org/channels/nixpkgs-20.09-darwin nixpkgs
+https://releases.nixos.org/nixpkgs/nixpkgs-21.03pre266581.e5ce05cc1ee unstable
