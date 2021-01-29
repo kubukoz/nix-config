@@ -1,7 +1,9 @@
-{ pkgs }:
-pkgs.fetchFromGitHub {
-  owner = "nixos";
-  repo = "nixpkgs";
-  rev = "552d7182874ef1b8fcf25c55d3777719a5ec7bfb";
-  sha256 = "1v1ds70rcadpi20l6cbjkpbhwnpw6b83ws6nbqs7f1v3yci1saw1";
-}
+args:
+
+let
+  rev = "e19491e24c98c9da4900b7c890ded47f7bfb58ee";
+  src = builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/${rev}.zip";
+    sha256 = "1wfdndmic20n8srszh79pmic5268amj01xh1rnm09yrq9z2k7wiy";
+  };
+in import src ({ config.allowUnfree = true; } // args)
