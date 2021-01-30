@@ -53,6 +53,7 @@
       };
     in ''
       source ${iterm2-shell-integration}
+      source ${toString ./secret-gitlab.sh}
     '';
   };
 
