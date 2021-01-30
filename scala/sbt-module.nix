@@ -49,9 +49,21 @@ in {
     plugins = mkOption {
       type = types.listOf (sbtTypes.plugin);
       default = [ ];
-      apply = v: concatStrings (map renderPlugin v);
       description =
         "A list of plugins to place in the sbt configuration directory";
+      example = [
+        {
+          org = "net.virtual-void";
+          artifact = "sbt-dependency-graph";
+          version = "0.10.0-RC1";
+        }
+        {
+          org = "com.dwijnand";
+          artifact = "sbt-project-graph";
+          version = "0.4.0";
+        }
+      ];
+      apply = v: concatStrings (map renderPlugin v);
     };
 
     credentials = mkOption {
