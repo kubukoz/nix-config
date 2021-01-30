@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  imports = [ ./sbt-module.nix ./bloop.nix ];
+  imports = [ ./bloop.nix ];
 
   home.packages = with pkgs; [
     jdk
