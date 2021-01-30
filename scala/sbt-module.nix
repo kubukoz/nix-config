@@ -3,9 +3,6 @@
 with lib;
 
 let
-  mapAttrsWithValues = f2: attrs:
-    map (k: f2 k (attrs."${k}")) (attrNames attrs);
-
   renderPlugin = plugin: ''
     addSbtPlugin("${plugin.org}" % "${plugin.artifact}" % "${plugin.version}")
   '';
@@ -60,7 +57,7 @@ in {
     credentials = mkOption {
       type = types.attrsOf (sbtTypes.credential);
       default = { };
-      apply = v: concatStrings (mapAttrsWithValues renderCredential v);
+      apply = v: concatStrings (mapAttrsToList renderCredential v);
       description =
         "A list of credentials to define in the sbt configuration directory";
     };
