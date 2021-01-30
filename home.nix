@@ -17,11 +17,9 @@
   imports = [
     ./programs/ssh.nix
     ./programs/git.nix
-    ./programs/ngrok.nix
     ./zsh
     ./scala
     ./node
-    ./secrets-module.nix
     ./vscode
     ./neovim.nix
   ];
@@ -45,6 +43,7 @@
       httpie
       imgcat
       lame
+      ngrok
       niv
       nixfmt
       pirate-get
@@ -68,6 +67,4 @@
       bottom
     ];
   };
-
-  secrets = import ./secrets.nix;
 }
