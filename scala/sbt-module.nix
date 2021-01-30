@@ -66,9 +66,16 @@ in {
     credentials = mkOption {
       type = types.attrsOf (sbtTypes.credential);
       default = { };
-      apply = v: concatStrings (mapAttrsToList renderCredential v);
       description =
         "A list of credentials to define in the sbt configuration directory";
+      example = {
+        "example.com" = {
+          realm = "Sonatype Nexus Repository Manager";
+          user = "user";
+          password = "password";
+        };
+      };
+      apply = v: concatStrings (mapAttrsToList renderCredential v);
     };
   };
 
