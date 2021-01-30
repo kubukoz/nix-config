@@ -6,6 +6,7 @@ let
   renderPlugin = plugin: ''
     addSbtPlugin("${plugin.org}" % "${plugin.artifact}" % "${plugin.version}")
   '';
+  renderPlugins = plugins: concatStrings (map renderPlugin plugins);
 
   renderCredential = host: cred: ''
     credentials += Credentials("${cred.realm}", "${host}", "${cred.user}", "${cred.password}")
@@ -47,11 +48,19 @@ in {
     };
 
     plugins = mkOption {
-      type = types.listOf (sbtTypes.plugin);
-      default = [ ];
-      apply = v: concatStrings (map renderPlugin v);
-      description =
-        "A list of plugins to place in the sbt configuration directory";
+      type = types.attrsOf (types.listOf (sbtTypes.plugin));
+      default = { };
+      description = ''
+        A map of file names to lists of plugins to place in the directories.
+        All the files will be placed under ''${sbt.programs.baseConfigPath}/plugins.'';
+      example = {
+        "plugins.sbt" = [{
+          org = "net.virtual-void";
+          artifact = "sbt-dependency-graph";
+          version = "0.10.0-RC1";
+        }];
+      };
+      apply = mapAttrs (_: renderPlugins);
     };
 
     credentials = mkOption {
@@ -63,11 +72,15 @@ in {
     };
   };
 
-  config = mkIf cfg.enable (mkMerge [
+  config = let
+
+  in mkIf cfg.enable (mkMerge [
     { home.packages = [ cfg.package ]; }
 
-    (mkIf (cfg.plugins != "") {
-      home.file."${cfg.baseConfigPath}/plugins/plugins.sbt".text = cfg.plugins;
+    (mkIf (cfg.plugins != { }) {
+      home.file = mkMerge (mapAttrsToList (filename: plugins: {
+        "${cfg.baseConfigPath}/plugins/${filename}".text = plugins;
+      }) cfg.plugins);
     })
 
     (mkIf (cfg.credentials != "") {

@@ -27,6 +27,6 @@
         artifact = "sbt-project-graph";
         version = "0.4.0";
       };
-    in [ dependencyGraph projectGraph ];
+    in { "plugins.sbt" = [ dependencyGraph projectGraph ]; };
   };
 }
