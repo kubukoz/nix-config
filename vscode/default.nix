@@ -183,6 +183,12 @@
             key = "alt+cmd+z";
             command = "git.revertSelectedRanges";
           }
+          {
+            key = "ctrl+cmd+enter";
+            command = "command-runner.run";
+            args = { command = "darwin-rebuild switch"; };
+            when = "editorLangId == nix";
+          }
         ] ++ overrideKeyBinding "f2" {
           key = "cmd+r cmd+r";
           command = "editor.action.rename";
