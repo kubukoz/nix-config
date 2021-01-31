@@ -52,6 +52,7 @@
       pstree
       python2
       redis
+      (callPackage ./derivations/signal.nix { })
       sl
       speedtest-cli
       texlive.combined.scheme-basic
@@ -66,5 +67,9 @@
       youtube-dl
       bottom
     ];
+
+    file."Applications".source =
+      "/nix/var/nix/profiles/per-user/kubukoz/home-manager/home-path/Applications";
   };
+
 }
