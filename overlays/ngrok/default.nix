@@ -1,12 +1,12 @@
 self: super: {
-  ngrok = self.symlinkJoin {
+  ngrok = let
+    printToken = "${self.bash}/bin/bash ${toString ./secret-ngrok.sh}";
+
+    wrapper = self.writeScriptBin "ngrok"
+      ''${super.ngrok}/bin/ngrok "$@" -authtoken $(${printToken});'';
+
+  in self.symlinkJoin {
     name = "ngrok";
-    paths = [ super.ngrok ];
-    buildInputs = [ self.makeWrapper ];
-    postBuild = ''
-      TOKEN=$(${self.bash}/bin/bash ${toString ./secret-ngrok.sh})
-      wrapProgram $out/bin/ngrok \
-        --add-flags "-authtoken $TOKEN"
-    '';
+    paths = [ wrapper super.ngrok ];
   };
 }
