@@ -24,6 +24,7 @@
         extension = pkgs.vscode-extensions.scalameta.metals;
         formatterFor = [ "scala" ];
         settings = {
+          "metals.serverVersion" = "0.9.10+56-d9432b9e-SNAPSHOT";
           "metals.serverProperties" = [ "-Dmetals.verbose" ];
           "metals.superMethodLensesEnabled" = true;
           "files.watcherExclude" = { "**/.metals" = true; };
@@ -40,6 +41,10 @@
           {
             key = "shift+cmd+i";
             command = "metals.toggle-implicit-parameters";
+          }
+          {
+            key = "shift+alt+cmd+t";
+            command = "metals.toggle-show-inferred-type";
           }
           {
             key = "ctrl+shift+cmd+up";
