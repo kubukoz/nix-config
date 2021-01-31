@@ -24,6 +24,7 @@
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
       (import ./overlays/ngrok)
+      (import ./overlays/github-cli)
     ];
   };
 

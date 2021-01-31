@@ -17,6 +17,7 @@
   imports = [
     ./programs/ssh.nix
     ./programs/git.nix
+    ./programs/gh.nix
     ./zsh
     ./scala
     ./node
@@ -38,7 +39,6 @@
       dhall-json
       dhall-lsp-server
       ffmpeg
-      github-cli
       gnuplot
       httpie
       imgcat
