@@ -20,11 +20,6 @@
       ".bsp/"
     ];
 
-    includes = [{
-      condition = "gitdir:~/dev/";
-      path = "~/dev/.gitconfig";
-    }];
-
     extraConfig = { pull = { ff = "only"; }; };
   };
 
