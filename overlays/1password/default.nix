@@ -2,25 +2,28 @@ self: super:
 
 let
   key = "_1password";
-  base = super."${key}";
   mainBinaryName = "op";
+  printToken = ./secret-1password.sh;
+
+  base = super."${key}";
+  completionFileName = "_${mainBinaryName}";
   mainBinary = "${base}/bin/${mainBinaryName}";
 
-  printToken = "${self.bash}/bin/bash ${toString ./secret-1password.sh}";
-
-  wrapper = self.writeScriptBin mainBinaryName
-    ''OP_SESSION_my=$(${printToken}) ${mainBinary} "$@"'';
+  wrapper = self.writeScriptBin mainBinaryName ''
+    OP_SESSION_my=$(${self.bash}/bin/bash ${
+      toString printToken
+    }) ${mainBinary} "$@"'';
 
   completions = self.runCommand "${mainBinaryName}-zsh-completions" {
     nativeBuildInputs = [ self.installShellFiles ];
   } ''
-    ${mainBinary} completion zsh > op-zsh
-    installShellCompletion --name _op --zsh ./op-zsh
+    ${mainBinary} completion zsh > ${mainBinaryName}-zsh
+    installShellCompletion --name ${completionFileName} --zsh ./${mainBinaryName}-zsh
   '';
 
 in {
   "${key}" = self.symlinkJoin {
-    name = "op-wrapper";
+    name = "${key}-wrapper";
     paths = [ wrapper base completions ];
   };
 }
