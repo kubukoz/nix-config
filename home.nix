@@ -18,11 +18,12 @@
     ./programs/ssh.nix
     ./programs/git.nix
     ./programs/gh.nix
-    ./zsh
+    ./programs/neovim.nix
+    ./programs/zsh
+    ./programs/openconnect
     ./scala
     ./node
     ./vscode
-    ./neovim.nix
   ];
 
   home = {
