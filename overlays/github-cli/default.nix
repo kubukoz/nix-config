@@ -1,11 +1,20 @@
 self: super:
 let
-  printToken = "${self.bash}/bin/bash ${toString ./secret-github-cli.sh}";
-  wrapper = self.writeScriptBin "gh"
-    ''GITHUB_TOKEN=$(${printToken}) ${super.gh}/bin/gh "$@"'';
-  gh = self.symlinkJoin {
-    name = "gh-wrapper";
-    paths = [ wrapper super.gh ];
-  };
+  key = "gh";
+  mainBinaryName = "gh";
+  printToken = ./secret-github-cli.sh;
 
-in { gh = gh; }
+  base = super."${key}";
+  mainBinary = "${base}/bin/${mainBinaryName}";
+
+  wrapper = self.writeScriptBin mainBinaryName ''
+    GITHUB_TOKEN=$(${self.bash}/bin/bash ${
+      toString printToken
+    }) ${mainBinary} "$@"'';
+
+in {
+  "${key}" = self.symlinkJoin {
+    name = "${key}-wrapper";
+    paths = [ wrapper base ];
+  };
+}

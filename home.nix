@@ -21,7 +21,6 @@
     ./programs/neovim.nix
     ./programs/zsh
     ./programs/openconnect
-    ./programs/1password
     ./scala
     ./node
     ./vscode
