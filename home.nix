@@ -21,6 +21,7 @@
     ./programs/neovim.nix
     ./programs/zsh
     ./programs/openconnect
+    ./programs/1password
     ./scala
     ./node
     ./vscode
@@ -53,7 +54,7 @@
       pstree
       python2
       redis
-      (callPackage ./derivations/signal.nix { })
+      signal-desktop
       sl
       speedtest-cli
       texlive.combined.scheme-basic

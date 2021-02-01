@@ -23,6 +23,8 @@
     overlays = [
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
+      (import ./overlays/signal.nix)
+      (import ./overlays/1password)
       (import ./overlays/ngrok)
       (import ./overlays/github-cli)
     ];
