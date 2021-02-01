@@ -1,5 +1,11 @@
 { pkgs, ... }: {
-  imports = [ <home-manager/nix-darwin> ./system/zsh ./system/fonts ];
+  imports = [
+    <home-manager/nix-darwin>
+    ./system/zsh
+    ./system/fonts
+    ./system/vpnc
+    ./semisecret.nix
+  ];
 
   nix = {
     # Auto upgrade nix package and the daemon service.
