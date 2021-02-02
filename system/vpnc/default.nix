@@ -1,15 +1,14 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 
 {
   environment.etc = {
-    # todo finally manage firefox with nix
     "vpnc/post-connect.d/setup".text = ''
-      #!${pkgs.bash}
-      networksetup -setdnsservers Wi-Fi $INTERNAL_IP4_DNS
-      sudo --user=kubukoz /Applications/Firefox.app/Contents/MacOS/firefox ${config.semisecret.vpn-home-page}
+      #!${pkgs.bash}/bin/bash
+      networksetup -setdnsservers Wi-Fi "$INTERNAL_IP4_DNS"
     '';
+
     "vpnc/post-disconnect.d/reset".text = ''
-      #!${pkgs.bash}
+      #!${pkgs.bash}/bin/bash
       networksetup -setdnsservers Wi-Fi Empty
     '';
   };
