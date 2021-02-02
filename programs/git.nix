@@ -28,7 +28,10 @@
       };
     }];
 
-    extraConfig = { pull = { ff = "only"; }; };
+    extraConfig = {
+      pull = { ff = "only"; };
+      init.defaultBranch = "main";
+    };
   };
 
   home.packages = [ pkgs.git-crypt ];
