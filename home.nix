@@ -21,6 +21,7 @@
     ./programs/neovim.nix
     ./programs/zsh
     ./programs/openconnect
+    ./programs/aws
     ./scala
     ./node
     ./vscode
@@ -35,7 +36,6 @@
 
     packages = with pkgs; [
       asciinema
-      awscli
       cachix
       ctop
       dhall
