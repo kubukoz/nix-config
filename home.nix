@@ -35,6 +35,7 @@
 
     packages = with pkgs; [
       asciinema
+      awscli
       cachix
       ctop
       dhall
