@@ -26,7 +26,6 @@
       (import ./overlays/vscode.nix)
       (import ./overlays/signal.nix)
       (import ./overlays/ngrok)
-      (import ./overlays/github-cli)
     ];
   };
 

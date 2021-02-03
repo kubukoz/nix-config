@@ -17,10 +17,10 @@
   imports = [
     ./programs/ssh.nix
     ./programs/git.nix
-    ./programs/gh.nix
     ./programs/neovim.nix
-    ./programs/zsh
     ./programs/openconnect
+    ./programs/gh
+    ./programs/zsh
     ./programs/aws
     ./scala
     ./node
