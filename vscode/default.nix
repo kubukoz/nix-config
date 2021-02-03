@@ -266,6 +266,12 @@
               version = "0.12.3";
               sha256 = "1i9rszgnac2z1kyahmgxmz05ib7z14s458fvvjlzmvl64fa1fdvf";
             }
+            {
+              name = "vscode-pull-request-github";
+              publisher = "github";
+              version = "0.22.0";
+              sha256 = "13p3z86vkra26npp5a78pxdwa4z6jqjzsd38arhgdnjgwmi6bnrw";
+            }
           ];
       };
     in mergeAll [
