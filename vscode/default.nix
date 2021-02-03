@@ -167,7 +167,7 @@
           "files.insertFinalNewline" = true;
           "files.trimTrailingWhitespace" = true;
           "typescript.preferences.quoteStyle" = "single";
-          "window.zoomLevel" = 1;
+          "window.zoomLevel" = 0;
           "workbench.editor.enablePreview" = false;
           "workbench.editor.limit.value" = 5;
           "workbench.editor.showTabs" = true;
