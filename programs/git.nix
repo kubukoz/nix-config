@@ -18,6 +18,7 @@
       ".bloop/"
       ".scalafmt.conf"
       ".bsp/"
+      "drop-fatals.diff"
     ];
 
     includes = [{
