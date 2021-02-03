@@ -57,6 +57,7 @@
       redis
       signal-desktop
       sl
+      slack
       speedtest-cli
       texlive.combined.scheme-basic
       tig
