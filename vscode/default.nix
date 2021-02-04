@@ -105,7 +105,13 @@
           version = "11.1.3";
           sha256 = "1x9bkf9mb56l84n36g3jmp3hyfbyi8vkm2d4wbabavgq6gg618l6";
         };
-        settings = { "gitlens.currentLine.enabled" = false; };
+        settings = {
+          "gitlens.currentLine.enabled" = false;
+          "gitlens.remotes" = [{
+            domain = "github.bamtech.co";
+            type = "GitHub";
+          }];
+        };
       };
       multiclip = configuredExtension {
         extension = marketplaceExtension {

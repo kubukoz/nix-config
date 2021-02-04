@@ -25,7 +25,6 @@
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
       (import ./overlays/signal.nix)
-      (import ./overlays/ngrok)
     ];
   };
 

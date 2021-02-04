@@ -21,6 +21,7 @@
     ./programs/openconnect
     ./programs/gh
     ./programs/zsh
+    ./programs/ngrok
     ./programs/aws
     ./scala
     ./node
@@ -46,7 +47,6 @@
       httpie
       imgcat
       lame
-      ngrok
       niv
       nixfmt
       pirate-get

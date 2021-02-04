@@ -11,4 +11,3 @@ My Nix / nix-darwin / Home Manager config.
 - Symlink `~/.nix-channels` to this repo's channels file.
 - Refresh channels (`nix-channel --update`, might need adding the channels to be tracked first).
 - `mysudo` - see contents, copy it to sudoers.d - linking is not recommended to avoid inconsistencies while editing, which could break sudo.
-- copy/symlink `programs/gh/secret-hosts.yml` to `~/.config/gh/hosts.yml`. This can't be done by Nix without putting secrets in the store (yet).

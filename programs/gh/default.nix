@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   programs.gh = {
     enable = true;
     gitProtocol = "ssh";
@@ -7,4 +7,7 @@
       open = "repo view --web";
     };
   };
+
+  home.file.".config/gh/hosts.yml".source =
+    config.lib.file.mkOutOfStoreSymlink ./secret-hosts.yml;
 }
