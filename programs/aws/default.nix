@@ -16,4 +16,6 @@ in {
 
   home.file.".aws/credentials".source =
     config.lib.file.mkOutOfStoreSymlink ./secret-credentials;
+
+  home.file.".aws/config".text = builtins.readFile ./semisecret-config;
 }
