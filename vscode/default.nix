@@ -179,6 +179,10 @@
             key = "cmd+k cmd+b";
             command = "explorer.newFolder";
           }
+          {
+            key = "alt+cmd+z";
+            command = "git.revertSelectedRanges";
+          }
         ] ++ overrideKeyBinding "f2" {
           key = "cmd+r cmd+r";
           command = "editor.action.rename";
