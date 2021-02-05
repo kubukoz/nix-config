@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 
 let
   nix-dss = import (builtins.fetchGit {
@@ -13,4 +13,7 @@ in {
     (pkgs.callPackage ./ssm-helpers.nix { })
     nix-dss.bamc
   ];
+
+  home.file.".aws/credentials".source =
+    config.lib.file.mkOutOfStoreSymlink ./secret-credentials;
 }

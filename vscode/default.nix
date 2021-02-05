@@ -12,19 +12,14 @@
         };
       };
       prettier = configuredExtension {
-        extension = marketplaceExtension {
-          name = "prettier-vscode";
-          publisher = "esbenp";
-          version = "5.8.0";
-          sha256 = "0h7wc4pffyq1i8vpj4a5az02g2x04y7y1chilmcfmzg2w42xpby7";
-        };
+        extension = pkgs.vscode-extensions.esbenp.prettier-vscode;
         formatterFor = [ "typescript" "typescriptreact" "json" "jsonc" ];
       };
       metals = configuredExtension {
         extension = pkgs.vscode-extensions.scalameta.metals;
         formatterFor = [ "scala" ];
         settings = {
-          "metals.serverVersion" = "0.9.10+56-d9432b9e-SNAPSHOT";
+          "metals.serverVersion" = "0.9.10+104-1ee67d24-SNAPSHOT";
           "metals.serverProperties" = [ "-Dmetals.verbose" ];
           "metals.superMethodLensesEnabled" = true;
           "files.watcherExclude" = { "**/.metals" = true; };
@@ -99,12 +94,7 @@
         };
       };
       gitlens = configuredExtension {
-        extension = marketplaceExtension {
-          name = "gitlens";
-          publisher = "eamodio";
-          version = "11.1.3";
-          sha256 = "1x9bkf9mb56l84n36g3jmp3hyfbyi8vkm2d4wbabavgq6gg618l6";
-        };
+        extension = pkgs.vscode-extensions.eamodio.gitlens;
         settings = {
           "gitlens.currentLine.enabled" = false;
           "gitlens.remotes" = [{
@@ -204,20 +194,14 @@
           when = "editorTextFocus";
         };
         extensions = with pkgs.vscode-extensions;
-          [ ms-azuretools.vscode-docker bbenoist.Nix ]
-          ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-            {
-              name = "dhall-lang";
-              publisher = "dhall";
-              version = "0.0.4";
-              sha256 = "0sa04srhqmngmw71slnrapi2xay0arj42j4gkan8i11n7bfi1xpf";
-            }
-            {
-              name = "vscode-dhall-lsp-server";
-              publisher = "dhall";
-              version = "0.0.4";
-              sha256 = "1zin7s827bpf9yvzpxpr5n6mv0b5rhh3civsqzmj52mdq365d2js";
-            }
+          [
+            ms-azuretools.vscode-docker
+            bbenoist.Nix
+            dhall.dhall-lang
+            dhall.vscode-dhall-lsp-server
+            graphql.vscode-graphql
+            brettm12345.nixfmt-vscode
+          ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             {
               name = "errorlens";
               publisher = "usernamehw";
@@ -235,18 +219,6 @@
               publisher = "mishkinf";
               version = "0.0.5";
               sha256 = "0kgzap1k924i95al0a63hxcsv8skhaapgfpi9d7vvaxm0fc10l1i";
-            }
-            {
-              name = "vscode-graphql";
-              publisher = "graphql";
-              version = "0.3.13";
-              sha256 = "0kk3x1qv2w34zf94qnmmdl74pf47vpphkz6aaafqhlfha5yiwc96";
-            }
-            {
-              name = "nixfmt-vscode";
-              publisher = "brettm12345";
-              version = "0.0.1";
-              sha256 = "07w35c69vk1l6vipnq3qfack36qcszqxn8j3v332bl0w6m02aa7k";
             }
             {
               name = "vscode-remote-extensionpack";
