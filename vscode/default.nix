@@ -21,7 +21,6 @@
         settings = {
           "metals.serverVersion" = "0.9.10+104-1ee67d24-SNAPSHOT";
           "metals.serverProperties" = [ "-Dmetals.verbose" ];
-          "metals.superMethodLensesEnabled" = true;
           "files.watcherExclude" = { "**/.metals" = true; };
         };
         keybindings = [
