@@ -3,7 +3,7 @@ let
   passwordCommand = "${bash}/bin/bash ${builtins.toString ./secret-vpn.sh}";
   vpnDance = ''
     echo "VPN Dance!"
-    COOKIE_FILE_NAME=(mktemp "/var/tmp/vpn-dance-cookies.txt")
+    COOKIE_FILE_NAME=$(mktemp)
     VPN_HOST="${config.semisecret.vpn-host}" \
       VPN_PORTAL_ID="${config.semisecret.vpn-portal-id}" \
       COOKIE_FILE_NAME="$COOKIE_FILE_NAME" \
