@@ -145,6 +145,21 @@
           when = "editorLangId == tlaplus";
         }];
       };
+      command-runner = configuredExtension {
+        extension = marketplaceExtension {
+          name = "vscode-command-runner";
+          publisher = "edonet";
+          version = "0.0.116";
+          sha256 = "0fxvplyk080m0cdsvzynp6wjillrd4flr5qz7af7fibb2jbmfdkn";
+        };
+
+        keybindings = [{
+          key = "ctrl+cmd+enter";
+          command = "command-runner.run";
+          args = { command = "darwin-rebuild switch"; };
+          when = "editorLangId == nix";
+        }];
+      };
       baseSettings = {
         enable = true;
         userSettings = {
@@ -182,12 +197,6 @@
           {
             key = "alt+cmd+z";
             command = "git.revertSelectedRanges";
-          }
-          {
-            key = "ctrl+cmd+enter";
-            command = "command-runner.run";
-            args = { command = "darwin-rebuild switch"; };
-            when = "editorLangId == nix";
           }
         ] ++ overrideKeyBinding "f2" {
           key = "cmd+r cmd+r";
@@ -274,6 +283,7 @@
       multiclip
       liveshare
       tla
+      command-runner
     ];
 
 }
