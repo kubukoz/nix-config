@@ -47,12 +47,7 @@
         ];
       };
       oneDarkPro = configuredExtension {
-        extension = marketplaceExtension {
-          name = "material-theme";
-          publisher = "zhuangtongfa";
-          version = "3.9.12";
-          sha256 = "017h9hxplf2rhmlhn3vag0wypcx6gxi7p9fgllj5jzwrl2wsjl0g";
-        };
+        extension = pkgs.vscode-extensions.zhuangtongfa.material-theme;
         settings = let themeName = "One Dark Pro";
         in {
           "workbench.colorTheme" = themeName;
@@ -71,21 +66,11 @@
         };
       };
       markdown = configuredExtension {
-        extension = marketplaceExtension {
-          name = "markdown-all-in-one";
-          publisher = "yzhang";
-          version = "3.4.0";
-          sha256 = "0ihfrsg2sc8d441a2lkc453zbw1jcpadmmkbkaf42x9b9cipd5qb";
-        };
+        extension = pkgs.vscode-extensions.yzhang.markdown-all-in-one;
         formatterFor = [ "markdown" ];
       };
       local-history = configuredExtension {
-        extension = marketplaceExtension {
-          name = "local-history";
-          publisher = "xyz";
-          version = "1.8.1";
-          sha256 = "1mfmnbdv76nvwg4xs3rgsqbxk8hw9zr1b61har9c3pbk9r4cay7v";
-        };
+        extension = pkgs.vscode-extensions.xyz.local-history;
         settings = let historyGlobPath = "**/.history";
         in {
           "files.watcherExclude" = { "${historyGlobPath}" = true; };
@@ -103,12 +88,7 @@
         };
       };
       multiclip = configuredExtension {
-        extension = marketplaceExtension {
-          name = "vscode-multiclip";
-          publisher = "slevesque";
-          version = "0.1.5";
-          sha256 = "1cg8dqj7f10fj9i0g6mi3jbyk61rs6rvg9aq28575rr52yfjc9f9";
-        };
+        extension = pkgs.vscode-extensions.slevesque.vscode-multiclip;
         settings = { "multiclip.bufferSize" = 100; };
         keybindings = [{
           key = "shift+cmd+v shift+cmd+v";
@@ -125,12 +105,7 @@
         settings = { "liveshare.featureSet" = "insiders"; };
       };
       tla = configuredExtension {
-        extension = marketplaceExtension rec {
-          name = "vscode-tlaplus";
-          publisher = "alygin";
-          version = "1.5.3";
-          sha256 = "1cy0qn8iyjrinscn9p5ckpsa2hyryapxfi7is6s2zk2mpligbb1d";
-        };
+        extension = pkgs.vscode-extensions.alygin.vscode-tlaplus;
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
         keybindings = [{
           key = "ctrl+cmd+enter";
@@ -139,13 +114,7 @@
         }];
       };
       command-runner = configuredExtension {
-        extension = marketplaceExtension {
-          name = "vscode-command-runner";
-          publisher = "edonet";
-          version = "0.0.116";
-          sha256 = "0fxvplyk080m0cdsvzynp6wjillrd4flr5qz7af7fibb2jbmfdkn";
-        };
-
+        extension = pkgs.vscode-extensions.edonet.vscode-command-runner;
         keybindings = [{
           key = "ctrl+cmd+enter";
           command = "command-runner.run";
@@ -213,6 +182,12 @@
             dhall.vscode-dhall-lsp-server
             graphql.vscode-graphql
             brettm12345.nixfmt-vscode
+            codezombiech.gitignore
+            mishkinf.goto-next-previous-member
+            baccata.scaladex-search
+            shyykoserhiy.vscode-spotify
+            timonwong.shellcheck
+            github.vscode-pull-request-github
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
             # no license for this one lol
             {
@@ -222,46 +197,10 @@
               sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
             }
             {
-              name = "gitignore";
-              publisher = "codezombiech";
-              version = "0.6.0";
-              sha256 = "0gnc0691pwkd9s8ldqabmpfvj0236rw7bxvkf0bvmww32kv1ia0b";
-            }
-            {
-              name = "goto-next-previous-member";
-              publisher = "mishkinf";
-              version = "0.0.5";
-              sha256 = "0kgzap1k924i95al0a63hxcsv8skhaapgfpi9d7vvaxm0fc10l1i";
-            }
-            {
               name = "vscode-remote-extensionpack";
               publisher = "ms-vscode-remote";
               version = "0.20.0";
               sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
-            }
-            {
-              name = "scaladex-search";
-              publisher = "baccata";
-              version = "0.0.1";
-              sha256 = "1y8p4rr8qq5ng52g4pbx8ayq04gi2869wrx68k69rl7ga7bzcyp9";
-            }
-            {
-              name = "vscode-spotify";
-              publisher = "shyykoserhiy";
-              version = "3.2.1";
-              sha256 = "14d68rcnjx4a20r0ps9g2aycv5myyhks5lpfz0syr2rxr4kd1vh6";
-            }
-            {
-              name = "shellcheck";
-              publisher = "timonwong";
-              version = "0.12.3";
-              sha256 = "1i9rszgnac2z1kyahmgxmz05ib7z14s458fvvjlzmvl64fa1fdvf";
-            }
-            {
-              name = "vscode-pull-request-github";
-              publisher = "github";
-              version = "0.22.0";
-              sha256 = "13p3z86vkra26npp5a78pxdwa4z6jqjzsd38arhgdnjgwmi6bnrw";
             }
           ];
       };
