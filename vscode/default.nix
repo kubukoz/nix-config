@@ -128,14 +128,8 @@
         extension = marketplaceExtension rec {
           name = "vscode-tlaplus";
           publisher = "alygin";
-          version = "1.5.3-alpha1";
-          sha256 = "183fd7j9zncyn8lrq25wwx2pcvdimj0vphisx6d3pzj1hrdxlk21";
-          vsix = builtins.fetchurl {
-            name = "${publisher}-${name}-${version}.zip";
-            url =
-              "https://github.com/alygin/vscode-tlaplus/releases/download/v${version}/vscode-tlaplus-1.5.3.vsix";
-            sha256 = "0ypg423c5rlsf3vvcdr4yln0bagpagsy0azy73pvaqzmdrc8a6i7";
-          };
+          version = "1.5.3";
+          sha256 = "1cy0qn8iyjrinscn9p5ckpsa2hyryapxfi7is6s2zk2mpligbb1d";
         };
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
         keybindings = [{
@@ -220,6 +214,7 @@
             graphql.vscode-graphql
             brettm12345.nixfmt-vscode
           ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+            # no license for this one lol
             {
               name = "errorlens";
               publisher = "usernamehw";
