@@ -48,7 +48,6 @@
       imgcat
       lame
       niv
-      nixfmt
       rnix-lsp
       nixpkgs-fmt
       pirate-get
@@ -68,7 +67,7 @@
       tree
       websocat
       wget
-      (callPackage ./derivations/pidof.nix { })
+      (callPackage ./derivations/pidof.nix {})
       unrar
       youtube-dl
       bottom
