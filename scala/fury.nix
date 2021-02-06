@@ -9,7 +9,8 @@ let
     url = "${ipfsGateway}/${ipfsHash}";
     sha256 = "1iwsvwvlijx2i9ym1v3w14v77a99kv1ykj84h3hf0qlpl073pp73";
   };
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   name = "fury";
   buildInputs = [ gnutar coursier bloop ipfs ];
 

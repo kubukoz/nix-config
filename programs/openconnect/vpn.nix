@@ -11,7 +11,8 @@ let
       ${bash}/bin/bash ${./vpn-dance.sh}
     rm "$COOKIE_FILE_NAME"'';
 
-in writeScriptBin "vpn" ''
+in
+writeScriptBin "vpn" ''
   ${passwordCommand} | \
     sudo openconnect vpn.disneystreaming.com \
       --user jkoslowski \

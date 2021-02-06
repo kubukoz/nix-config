@@ -16,17 +16,19 @@
 
   programs.sbt = {
     enable = true;
-    plugins = let
-      dependencyGraph = {
-        org = "net.virtual-void";
-        artifact = "sbt-dependency-graph";
-        version = "0.10.0-RC1";
-      };
-      projectGraph = {
-        org = "com.dwijnand";
-        artifact = "sbt-project-graph";
-        version = "0.4.0";
-      };
-    in [ dependencyGraph projectGraph ];
+    plugins =
+      let
+        dependencyGraph = {
+          org = "net.virtual-void";
+          artifact = "sbt-dependency-graph";
+          version = "0.10.0-RC1";
+        };
+        projectGraph = {
+          org = "com.dwijnand";
+          artifact = "sbt-project-graph";
+          version = "0.4.0";
+        };
+      in
+      [ dependencyGraph projectGraph ];
   };
 }

@@ -46,15 +46,17 @@
       source ${./p10k.zsh}
     '';
 
-    initExtra = let
-      iterm2-shell-integration = builtins.fetchurl {
-        url = "https://iterm2.com/shell_integration/zsh";
-        sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
-      };
-    in ''
-      source ${iterm2-shell-integration}
-      source ${toString ./secret-gitlab.sh}
-    '';
+    initExtra =
+      let
+        iterm2-shell-integration = builtins.fetchurl {
+          url = "https://iterm2.com/shell_integration/zsh";
+          sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
+        };
+      in
+      ''
+        source ${iterm2-shell-integration}
+        source ${toString ./secret-gitlab.sh}
+      '';
   };
 
 }

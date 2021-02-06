@@ -1,7 +1,15 @@
 # Basically a clone of https://raw.githubusercontent.com/Tomahna/nixpkgs/16f488b0902e3b7c096ea08075407e04f99c938d/pkgs/development/tools/build-managers/bloop/default.nix
 # with customizable versions
-{ stdenv, fetchurl, coursier, autoPatchelfHook, installShellFiles, jre, lib
-, zlib, version }:
+{ stdenv
+, fetchurl
+, coursier
+, autoPatchelfHook
+, installShellFiles
+, jre
+, lib
+, zlib
+, version
+}:
 
 stdenv.mkDerivation rec {
   pname = "bloop";
@@ -34,12 +42,13 @@ stdenv.mkDerivation rec {
   bloop-coursier = stdenv.mkDerivation rec {
     name = "${pname}-coursier-${version}";
 
-    platform = if stdenv.isLinux && stdenv.isx86_64 then
-      "x86_64-pc-linux"
-    else if stdenv.isDarwin && stdenv.isx86_64 then
-      "x86_64-apple-darwin"
-    else
-      throw "unsupported platform";
+    platform =
+      if stdenv.isLinux && stdenv.isx86_64 then
+        "x86_64-pc-linux"
+      else if stdenv.isDarwin && stdenv.isx86_64 then
+        "x86_64-apple-darwin"
+      else
+        throw "unsupported platform";
 
     phases = [ "installPhase" ];
     installPhase = ''
@@ -56,12 +65,13 @@ stdenv.mkDerivation rec {
 
     outputHashMode = "recursive";
     outputHashAlgo = "sha256";
-    outputHash = if stdenv.isLinux && stdenv.isx86_64 then
-      "1hg02a3ildgqv8864zg08hvk4y0kmsxsg7ncbsl933rclhk2lybd"
-    else if stdenv.isDarwin && stdenv.isx86_64 then
-      "1wcgrnbjrhn9v6lx6bm2g9ddx7zjbdbrb04i22mbqmp384j8d7fj"
-    else
-      throw "unsupported platform";
+    outputHash =
+      if stdenv.isLinux && stdenv.isx86_64 then
+        "1hg02a3ildgqv8864zg08hvk4y0kmsxsg7ncbsl933rclhk2lybd"
+      else if stdenv.isDarwin && stdenv.isx86_64 then
+        "1wcgrnbjrhn9v6lx6bm2g9ddx7zjbdbrb04i22mbqmp384j8d7fj"
+      else
+        throw "unsupported platform";
   };
 
   dontUnpack = true;

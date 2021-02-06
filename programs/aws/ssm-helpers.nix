@@ -1,7 +1,8 @@
 { stdenv, gnutar }:
 let version = "1.0.0";
 
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   name = "ssm-helpers-${version}";
   buildInputs = [ gnutar ];
 

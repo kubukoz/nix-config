@@ -6,7 +6,8 @@ let
         name = "[${languageName}]";
         value = { "editor.defaultFormatter" = vscodeExtUniqueId; };
       };
-    in builtins.listToAttrs (map toLine formatterFor);
+    in
+    builtins.listToAttrs (map toLine formatterFor);
 
   # Simplified version of https://stackoverflow.com/a/54505212
   # which also throws in the weird case
@@ -24,7 +25,8 @@ let
       else
         throw "Duplicate, but unmergeable key: ${n}");
 
-in {
+in
+{
   inherit mergeAll;
   configuredExtension =
     { extension, settings ? { }, keybindings ? [ ], formatterFor ? [ ] }: {

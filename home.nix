@@ -49,6 +49,8 @@
       lame
       niv
       nixfmt
+      rnix-lsp
+      nixpkgs-fmt
       pirate-get
       plantuml
       postgresql

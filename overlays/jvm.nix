@@ -2,7 +2,8 @@ self: super:
 let
   jre = self.callPackage ../derivations/graalvm { };
   jdk = jre;
-in {
+in
+{
   inherit jre jdk;
   # Override necessary because the scala package is configured (via callPackage)
   # to use jdk8 (at the time of writing, that's zulu).

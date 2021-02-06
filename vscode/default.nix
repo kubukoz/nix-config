@@ -1,4 +1,4 @@
-{ pkgs, lib, vscode-extensions, ... }: {
+{ pkgs, lib, ... }: {
   programs.vscode = with (pkgs.callPackage ./lib.nix { });
     let
       marketplaceExtension = pkgs.vscode-utils.extensionFromVscodeMarketplace;
@@ -48,22 +48,27 @@
       };
       oneDarkPro = configuredExtension {
         extension = pkgs.vscode-extensions.zhuangtongfa.material-theme;
-        settings = let themeName = "One Dark Pro";
-        in {
-          "workbench.colorTheme" = themeName;
-          "oneDarkPro.italic" = false;
-          "editor.tokenColorCustomizations" = {
-            "[${themeName}]" = let
-              # These have been stolen from https://github.com/joshdick/onedark.vim
-              yellow = "#e5c07b";
-              blue = "#61afef";
-            in {
-              "functions" = yellow;
-              "variables" = yellow;
-              "types" = blue;
+        settings =
+          let
+            themeName = "One Dark Pro";
+          in
+          {
+            "workbench.colorTheme" = themeName;
+            "oneDarkPro.italic" = false;
+            "editor.tokenColorCustomizations" = {
+              "[${themeName}]" =
+                let
+                  # These have been stolen from https://github.com/joshdick/onedark.vim
+                  yellow = "#e5c07b";
+                  blue = "#61afef";
+                in
+                {
+                  "functions" = yellow;
+                  "variables" = yellow;
+                  "types" = blue;
+                };
             };
           };
-        };
       };
       markdown = configuredExtension {
         extension = pkgs.vscode-extensions.yzhang.markdown-all-in-one;
@@ -71,29 +76,36 @@
       };
       local-history = configuredExtension {
         extension = pkgs.vscode-extensions.xyz.local-history;
-        settings = let historyGlobPath = "**/.history";
-        in {
-          "files.watcherExclude" = { "${historyGlobPath}" = true; };
-          "files.exclude" = { "${historyGlobPath}" = true; };
-        };
+        settings =
+          let
+            historyGlobPath = "**/.history";
+          in
+          {
+            "files.watcherExclude" = { "${historyGlobPath}" = true; };
+            "files.exclude" = { "${historyGlobPath}" = true; };
+          };
       };
       gitlens = configuredExtension {
         extension = pkgs.vscode-extensions.eamodio.gitlens;
         settings = {
           "gitlens.currentLine.enabled" = false;
-          "gitlens.remotes" = [{
-            domain = "github.bamtech.co";
-            type = "GitHub";
-          }];
+          "gitlens.remotes" = [
+            {
+              domain = "github.bamtech.co";
+              type = "GitHub";
+            }
+          ];
         };
       };
       multiclip = configuredExtension {
         extension = pkgs.vscode-extensions.slevesque.vscode-multiclip;
         settings = { "multiclip.bufferSize" = 100; };
-        keybindings = [{
-          key = "shift+cmd+v shift+cmd+v";
-          command = "multiclip.list";
-        }];
+        keybindings = [
+          {
+            key = "shift+cmd+v shift+cmd+v";
+            command = "multiclip.list";
+          }
+        ];
       };
       liveshare = configuredExtension {
         extension = marketplaceExtension {
@@ -107,20 +119,28 @@
       tla = configuredExtension {
         extension = pkgs.vscode-extensions.alygin.vscode-tlaplus;
         settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
-        keybindings = [{
-          key = "ctrl+cmd+enter";
-          command = "tlaplus.model.check.run";
-          when = "editorLangId == tlaplus";
-        }];
+        keybindings = [
+          {
+            key = "ctrl+cmd+enter";
+            command = "tlaplus.model.check.run";
+            when = "editorLangId == tlaplus";
+          }
+        ];
       };
       command-runner = configuredExtension {
         extension = pkgs.vscode-extensions.edonet.vscode-command-runner;
-        keybindings = [{
-          key = "ctrl+cmd+enter";
-          command = "command-runner.run";
-          args = { command = "darwin-rebuild switch"; };
-          when = "editorLangId == nix";
-        }];
+        keybindings = [
+          {
+            key = "ctrl+cmd+enter";
+            command = "command-runner.run";
+            args = { command = "darwin-rebuild switch"; };
+            when = "editorLangId == nix";
+          }
+        ];
+      };
+      nix-ide = configuredExtension {
+        extension = pkgs.vscode-extensions.jnoortheen.nix-ide;
+        settings = { "nix.enableLanguageServer" = true; };
       };
       baseSettings = {
         enable = true;
@@ -177,11 +197,9 @@
         extensions = with pkgs.vscode-extensions;
           [
             ms-azuretools.vscode-docker
-            bbenoist.Nix
             dhall.dhall-lang
             dhall.vscode-dhall-lsp-server
             graphql.vscode-graphql
-            brettm12345.nixfmt-vscode
             codezombiech.gitignore
             mishkinf.goto-next-previous-member
             baccata.scaladex-search
@@ -204,7 +222,8 @@
             }
           ];
       };
-    in mergeAll [
+    in
+    mergeAll [
       baseSettings
       scala
       metals
@@ -217,6 +236,7 @@
       liveshare
       tla
       command-runner
+      nix-ide
     ];
 
 }

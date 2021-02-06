@@ -10,8 +10,10 @@ let
             self.vscode-utils.extensionFromVscodeMarketplace attrs;
         };
       };
-    in builtins.listToAttrs (map extension attrsets);
-in {
+    in
+    builtins.listToAttrs (map extension attrsets);
+in
+{
   vscode-extensions =
     # no overrides for now
     self.lib.recursiveUpdate super.vscode-extensions (updatedExtensions [ ]);

@@ -3,7 +3,8 @@ let
   version = "1.39.6";
   sha256 = "0sayvjimxavd4c4h7n4i78rny4nk94cnlblwq90kw0ypfkx8garf";
 
-in stdenv.mkDerivation {
+in
+stdenv.mkDerivation {
   name = "signal-desktop-mac-${version}";
   buildInputs = [ undmg ];
   src = builtins.fetchurl {

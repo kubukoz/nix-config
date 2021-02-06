@@ -1,5 +1,4 @@
 { stdenv, setJavaClassPath, freetype }:
-
 let
   version = "21.0.0";
   arch = "darwin-amd64";
@@ -41,4 +40,5 @@ let
       jre = jdk;
     };
   };
-in jdk
+in
+jdk
