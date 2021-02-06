@@ -67,6 +67,6 @@
 
   system.activationScripts.postActivation.text = ''
     echo "Clearing ~/Applications for Home Manager..." >&2
-    rm ~/Applications
+    rm -r ~/Applications
   '';
 }
