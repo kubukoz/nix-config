@@ -5,57 +5,8 @@ let
 
   baseSettings = {
     enable = true;
-    userSettings = {
-      "editor.fontFamily" =
-        "'JetBrains Mono', 'Meslo LGS NF', Monaco, 'Courier New', monospace";
-      "breadcrumbs.enabled" = true;
-      "debug.allowBreakpointsEverywhere" = true;
-      "editor.cursorBlinking" = "solid";
-      "editor.formatOnSave" = true;
-      "editor.minimap.enabled" = false;
-      "editor.renderIndentGuides" = false;
-      "editor.suggestSelection" = "first";
-      "editor.tabSize" = 2;
-      "files.autoSave" = "onFocusChange";
-      "files.defaultLanguage" = "markdown";
-      "files.insertFinalNewline" = true;
-      "files.trimTrailingWhitespace" = true;
-      "typescript.preferences.quoteStyle" = "single";
-      "window.zoomLevel" = 0;
-      "workbench.editor.enablePreview" = false;
-      "workbench.editor.limit.value" = 5;
-      "workbench.editor.showTabs" = true;
-      "workbench.editor.highlightModifiedTabs" = true;
-      "workbench.startupEditor" = "none";
-    };
-
-    keybindings = [
-      {
-        key = "cmd+k cmd+n";
-        command = "explorer.newFile";
-      }
-      {
-        key = "cmd+k cmd+b";
-        command = "explorer.newFolder";
-      }
-      {
-        key = "alt+cmd+z";
-        command = "git.revertSelectedRanges";
-      }
-    ] ++ overrideKeyBinding "f2" {
-      key = "cmd+r cmd+r";
-      command = "editor.action.rename";
-      when =
-        "editorHasRenameProvider && editorTextFocus && !editorReadonly";
-    } ++ overrideKeyBinding "shift-alt+f5" {
-      key = "ctrl+shift+alt+up";
-      command = "workbench.action.editor.previousChange";
-      when = "editorTextFocus";
-    } ++ overrideKeyBinding "alt+f5" {
-      key = "ctrl+shift+alt+down";
-      command = "workbench.action.editor.nextChange";
-      when = "editorTextFocus";
-    };
+    userSettings = import ./global-settings.nix;
+    keybindings = import ./global-keybindings.nix { inherit pkgs; };
 
     extensions = with pkgs.vscode-extensions;
       [
