@@ -29,6 +29,10 @@
           version = "0.4.0";
         };
       in
-      [ dependencyGraph projectGraph ];
+        [ dependencyGraph projectGraph ];
   };
+
+  home.file.".sbt/1.0/global.sbt".text = ''
+    libraryDependencies ++= Seq("com.kubukoz" %% "debug-utils" % "1.0.0")
+  '';
 }
