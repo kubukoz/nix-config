@@ -1,5 +1,8 @@
-{ pkgs }:
-with (pkgs.callPackage ./lib.nix {});[
+{ vscode-lib }:
+let
+  inherit (vscode-lib) overrideKeyBinding;
+in
+[
   {
     key = "cmd+k cmd+n";
     command = "explorer.newFile";

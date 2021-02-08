@@ -1,14 +1,18 @@
-{ pkgs, lib, ... }: with (pkgs.callPackage ./lib.nix {});
+{ pkgs, lib, ... }:
 
 let
-  marketplaceExtension = pkgs.vscode-utils.extensionFromVscodeMarketplace;
+  inherit (pkgs) vscode-utils vscode-extensions;
+  marketplaceExtension = vscode-utils.extensionFromVscodeMarketplace;
+  vscode-lib = pkgs.callPackage ./lib.nix {};
+  inherit (vscode-lib) configuredExtension;
 
   baseSettings = {
     enable = true;
     userSettings = import ./global-settings.nix;
-    keybindings = import ./global-keybindings.nix { inherit pkgs; };
+    keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
-    extensions = with pkgs.vscode-extensions;
+    extensions = (
+      with vscode-extensions;
       [
         ms-azuretools.vscode-docker
         dhall.dhall-lang
@@ -20,25 +24,26 @@ let
         shyykoserhiy.vscode-spotify
         timonwong.shellcheck
         github.vscode-pull-request-github
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        # no license for this one lol
-        {
-          name = "errorlens";
-          publisher = "usernamehw";
-          version = "3.2.4";
-          sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
-        }
-        {
-          name = "vscode-remote-extensionpack";
-          publisher = "ms-vscode-remote";
-          version = "0.20.0";
-          sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
-        }
-      ];
+      ]
+    ) ++ vscode-utils.extensionsFromVscodeMarketplace [
+      # no license for this one lol
+      {
+        name = "errorlens";
+        publisher = "usernamehw";
+        version = "3.2.4";
+        sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
+      }
+      {
+        name = "vscode-remote-extensionpack";
+        publisher = "ms-vscode-remote";
+        version = "0.20.0";
+        sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
+      }
+    ];
   };
 
   scala = configuredExtension {
-    extension = pkgs.vscode-extensions.scala-lang.scala;
+    extension = vscode-extensions.scala-lang.scala;
     settings = {
       "files.watcherExclude" = {
         "**/.bloop" = true;
@@ -48,12 +53,12 @@ let
   };
 
   prettier = configuredExtension {
-    extension = pkgs.vscode-extensions.esbenp.prettier-vscode;
+    extension = vscode-extensions.esbenp.prettier-vscode;
     formatterFor = [ "typescript" "typescriptreact" "json" "jsonc" ];
   };
 
   metals = configuredExtension {
-    extension = pkgs.vscode-extensions.scalameta.metals;
+    extension = vscode-extensions.scalameta.metals;
     formatterFor = [ "scala" ];
     settings = {
       "metals.serverVersion" = "0.9.10+104-1ee67d24-SNAPSHOT";
@@ -85,7 +90,7 @@ let
   };
 
   oneDarkPro = configuredExtension {
-    extension = pkgs.vscode-extensions.zhuangtongfa.material-theme;
+    extension = vscode-extensions.zhuangtongfa.material-theme;
     settings =
       let
         themeName = "One Dark Pro";
@@ -110,12 +115,12 @@ let
   };
 
   markdown = configuredExtension {
-    extension = pkgs.vscode-extensions.yzhang.markdown-all-in-one;
+    extension = vscode-extensions.yzhang.markdown-all-in-one;
     formatterFor = [ "markdown" ];
   };
 
   local-history = configuredExtension {
-    extension = pkgs.vscode-extensions.xyz.local-history;
+    extension = vscode-extensions.xyz.local-history;
     settings =
       let
         historyGlobPath = "**/.history";
@@ -127,7 +132,7 @@ let
   };
 
   gitlens = configuredExtension {
-    extension = pkgs.vscode-extensions.eamodio.gitlens;
+    extension = vscode-extensions.eamodio.gitlens;
     settings = {
       "gitlens.currentLine.enabled" = false;
       "gitlens.remotes" = [
@@ -140,7 +145,7 @@ let
   };
 
   multiclip = configuredExtension {
-    extension = pkgs.vscode-extensions.slevesque.vscode-multiclip;
+    extension = vscode-extensions.slevesque.vscode-multiclip;
     settings = { "multiclip.bufferSize" = 100; };
     keybindings = [
       {
@@ -161,7 +166,7 @@ let
   };
 
   tla = configuredExtension {
-    extension = pkgs.vscode-extensions.alygin.vscode-tlaplus;
+    extension = vscode-extensions.alygin.vscode-tlaplus;
     settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
     keybindings = [
       {
@@ -173,7 +178,7 @@ let
   };
 
   command-runner = configuredExtension {
-    extension = pkgs.vscode-extensions.edonet.vscode-command-runner;
+    extension = vscode-extensions.edonet.vscode-command-runner;
     keybindings = [
       {
         key = "ctrl+cmd+enter";
@@ -185,25 +190,25 @@ let
   };
 
   nix-ide = configuredExtension {
-    extension = pkgs.vscode-extensions.jnoortheen.nix-ide;
+    extension = vscode-extensions.jnoortheen.nix-ide;
     settings = { "nix.enableLanguageServer" = true; };
   };
+  mkVscodeModule = content: { programs.vscode = content; };
 in
 {
-  programs.vscode =
-    mergeAll [
-      baseSettings
-      scala
-      metals
-      oneDarkPro
-      prettier
-      markdown
-      local-history
-      gitlens
-      multiclip
-      liveshare
-      tla
-      command-runner
-      nix-ide
-    ];
+  imports = map mkVscodeModule [
+    baseSettings
+    scala
+    metals
+    oneDarkPro
+    prettier
+    markdown
+    local-history
+    gitlens
+    multiclip
+    liveshare
+    tla
+    command-runner
+    nix-ide
+  ];
 }
