@@ -3,10 +3,10 @@
 let
   inherit (pkgs) vscode-utils vscode-extensions;
   marketplaceExtension = vscode-utils.extensionFromVscodeMarketplace;
-  vscode-lib = pkgs.callPackage ./lib.nix {};
-  inherit (vscode-lib) configuredExtension;
+  vscode-lib = import ./lib.nix;
+  inherit (vscode-lib) configuredExtension mkVscodeModule;
 
-  baseSettings = {
+  baseSettings = mkVscodeModule {
     enable = true;
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
@@ -193,10 +193,9 @@ let
     extension = vscode-extensions.jnoortheen.nix-ide;
     settings = { "nix.enableLanguageServer" = true; };
   };
-  mkVscodeModule = content: { programs.vscode = content; };
 in
 {
-  imports = map mkVscodeModule [
+  imports = [
     baseSettings
     scala
     metals

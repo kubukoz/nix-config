@@ -1,4 +1,3 @@
-{ lib }:
 let
   formatterSettings = { vscodeExtUniqueId, formatterFor }:
     let
@@ -9,38 +8,28 @@ let
     in
       builtins.listToAttrs (map toLine formatterFor);
 
-  # Simplified version of https://stackoverflow.com/a/54505212
-  # which also throws in the weird case
-  mergeAll = with lib;
-    zipAttrsWith (
-      n: values:
-        if tail values == [] then
-          # only one value - keeping it
-          head values
-        else if all isList values then
-          # all values are lists - concatenating
-          unique (concatLists values)
-        else if all isAttrs values then
-          # all values are attrsets - merging recursively
-          mergeAll values
-        else
-          throw "Duplicate, but unmergeable key: ${n}"
-    );
+  mkVscodeModule = content: { programs.vscode = content; };
 
   configuredExtension =
-    { extension, settings ? {}, keybindings ? [], formatterFor ? [] }: {
-      userSettings = mergeAll [
-        settings
-        (
-          formatterSettings {
-            inherit formatterFor;
-            inherit (extension) vscodeExtUniqueId;
-          }
-        )
-      ];
-      inherit keybindings;
-      extensions = [ extension ];
-    };
+    { extension, settings ? {}, keybindings ? [], formatterFor ? [] }:
+
+      let
+        baseModule = {
+          userSettings = settings;
+          inherit keybindings;
+          extensions = [ extension ];
+        };
+
+        formattingModule = {
+          userSettings =
+            formatterSettings {
+              inherit formatterFor;
+              inherit (extension) vscodeExtUniqueId;
+            };
+        };
+      in
+        { imports = map mkVscodeModule [ baseModule formattingModule ]; };
+
   overrideKeyBinding = originalKey: setting: [
     setting
     (
@@ -52,5 +41,5 @@ let
   ];
 in
 {
-  inherit configuredExtension overrideKeyBinding;
+  inherit configuredExtension overrideKeyBinding mkVscodeModule;
 }
