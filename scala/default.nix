@@ -12,7 +12,10 @@
     # (callPackage ./fury.nix { })
   ];
 
-  home.sessionVariables = { JAVA_HOME = "${pkgs.jdk}"; };
+  home.sessionVariables = {
+    JAVA_HOME = "${pkgs.jdk}";
+    JVM_DEBUG = "-J-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005";
+  };
 
   programs.sbt = {
     enable = true;
@@ -32,7 +35,5 @@
         [ dependencyGraph projectGraph ];
   };
 
-  home.file.".sbt/1.0/global.sbt".text = ''
-    libraryDependencies ++= Seq("com.kubukoz" %% "debug-utils" % "1.0.0")
-  '';
+  home.file.".sbt/1.0/global.sbt".text = builtins.readFile ./global.sbt;
 }
