@@ -18,19 +18,7 @@ stdenv.mkDerivation rec {
   bloop-coursier-channel = fetchurl {
     url =
       "https://github.com/scalacenter/bloop/releases/download/v${version}/bloop-coursier.json";
-    sha256 = "1fx80yrf03llhxcd8az5vzralz01wdfk7000q8l04rj1ax3daqia";
-  };
-
-  bloop-bash = fetchurl {
-    url =
-      "https://github.com/scalacenter/bloop/releases/download/v${version}/bash-completions";
-    sha256 = "1ldxlqv353gvhdn4yq7z506ywvnjv6fjsi8wigwhzg89876pwsys";
-  };
-
-  bloop-fish = fetchurl {
-    url =
-      "https://github.com/scalacenter/bloop/releases/download/v${version}/fish-completions";
-    sha256 = "1pa8h81l2498q8dbd83fzipr99myjwxpy8xdgzhvqzdmfv6aa4m0";
+    sha256 = "0crq4ra5w9gwfa9lr5bkx5xiwlzbnhkm2jn70viwm1nxgdh6z8dz";
   };
 
   bloop-zsh = fetchurl {
@@ -42,13 +30,7 @@ stdenv.mkDerivation rec {
   bloop-coursier = stdenv.mkDerivation rec {
     name = "${pname}-coursier-${version}";
 
-    platform =
-      if stdenv.isLinux && stdenv.isx86_64 then
-        "x86_64-pc-linux"
-      else if stdenv.isDarwin && stdenv.isx86_64 then
-        "x86_64-apple-darwin"
-      else
-        throw "unsupported platform";
+    platform = "x86_64-apple-darwin";
 
     phases = [ "installPhase" ];
     installPhase = ''
@@ -62,16 +44,6 @@ stdenv.mkDerivation rec {
       # Remove binary part of the coursier launcher script to make derivation output hash stable
       sed -i '5,$ d' $out/bloop
     '';
-
-    outputHashMode = "recursive";
-    outputHashAlgo = "sha256";
-    outputHash =
-      if stdenv.isLinux && stdenv.isx86_64 then
-        "1hg02a3ildgqv8864zg08hvk4y0kmsxsg7ncbsl933rclhk2lybd"
-      else if stdenv.isDarwin && stdenv.isx86_64 then
-        "1wcgrnbjrhn9v6lx6bm2g9ddx7zjbdbrb04i22mbqmp384j8d7fj"
-      else
-        throw "unsupported platform";
   };
 
   dontUnpack = true;
@@ -92,17 +64,6 @@ stdenv.mkDerivation rec {
     sed "s|\$(dirname \"\$0\")|$out|" -i $out/bloop
 
     #Install completions
-    installShellCompletion --name bloop --bash ${bloop-bash}
     installShellCompletion --name _bloop --zsh ${bloop-zsh}
-    installShellCompletion --name bloop.fish --fish ${bloop-fish}
   '';
-
-  meta = with stdenv.lib; {
-    homepage = "https://scalacenter.github.io/bloop/";
-    license = licenses.asl20;
-    description =
-      "A Scala build server and command-line tool to make the compile and test developer workflows fast and productive in a build-tool-agnostic way";
-    platforms = [ "x86_64-linux" "x86_64-darwin" ];
-    maintainers = with maintainers; [ tomahna ];
-  };
 }
