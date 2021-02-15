@@ -67,10 +67,12 @@
       tree
       websocat
       wget
-      (callPackage ./derivations/pidof.nix {})
       unrar
       youtube-dl
       bottom
+    ] ++ map (path: callPackage path {}) [
+      ./derivations/pidof.nix
+      ./derivations/coconut.nix
     ];
 
     # todo: remove user-specific path, get HM path another way, get HM to actually do this link... get Spotlight to use it.
