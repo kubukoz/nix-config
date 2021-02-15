@@ -16,5 +16,5 @@ writeScriptBin "vpn" ''
   ${passwordCommand} | \
     sudo openconnect vpn.disneystreaming.com \
       --user jkoslowski \
-      --background
-  ${vpnDance}''
+      --background''
+# ${vpnDance}''
