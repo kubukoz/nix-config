@@ -53,10 +53,12 @@
           sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
         };
       in
-      ''
-        source ${iterm2-shell-integration}
-        source ${toString ./secret-gitlab.sh}
-      '';
+        ''
+          source ${iterm2-shell-integration}
+          source ${toString ./secret-gitlab.sh}
+          # Hacky, because I don't have time to write wrappers for coursier apps right now
+          export PATH="$PATH:/Users/kubukoz/Library/Application Support/Coursier/bin"
+        '';
   };
 
 }
