@@ -14,6 +14,9 @@ My Nix / nix-darwin / Home Manager config.
 4. Pull this repo into `~/.nixpkgs`
 5. `nix-shell -p gnupg git-crypt`
 6. Generate gpg key: `gpg --gen-key`
+7. Export key to `keyserver.ubuntu.com`
+8. Import key on another machine with this
+9. `git-crypt add-gpg-user`
 
 ## Manual steps that still need to be taken care of manually when making changes
 
