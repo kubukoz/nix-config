@@ -4,7 +4,9 @@ let
 in
 {
   imports =
-    [ <home-manager/nix-darwin> ./system/zsh ./system/fonts ./system/vpnc ];
+    [ <home-manager/nix-darwin> ./system/zsh ./system/fonts ] ++ (
+      if (machine.work) then [ ./work/system-work.nix ] else []
+    );
 
   nix = {
     # Auto upgrade nix package and the daemon service.
@@ -37,7 +39,9 @@ in
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users."${machine.username}" = ./home.nix;
+    users."${machine.username}" = {
+      imports = [ ./home.nix ];
+    };
   };
 
   networking.hostName = machine.hostname;

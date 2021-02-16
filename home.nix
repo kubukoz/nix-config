@@ -18,16 +18,14 @@
     ./programs/ssh.nix
     ./programs/git.nix
     ./programs/neovim.nix
-    ./programs/openconnect
     ./programs/gh
     ./programs/zsh
     ./programs/ngrok
-    ./programs/aws
     ./scala
     ./node
     ./vscode
-    ./semisecret.nix
     ./link-apps.nix
+    ./semisecret.nix
   ];
 
   home = {
