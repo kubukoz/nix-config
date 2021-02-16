@@ -24,8 +24,8 @@
     ./scala
     ./node
     ./vscode
-    ./link-apps.nix
     ./semisecret.nix
+    ./link-apps.nix
   ];
 
   home = {
