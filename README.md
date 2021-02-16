@@ -20,6 +20,7 @@ My Nix / nix-darwin / Home Manager config.
 10. `nix-shell -p gnupg git-crypt`
 11. `git-crypt unlock`
 12. Follow manual steps to symlink & refresh nix channels
+13. Add file at `./system/machines/current.nix` with the machine's relative path (e.g. `./personal.nix`)
 
 ## Manual steps that still need to be taken care of manually when making changes
 
