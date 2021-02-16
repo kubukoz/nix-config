@@ -27,6 +27,7 @@
     ./node
     ./vscode
     ./semisecret.nix
+    ./link-apps.nix
   ];
 
   home = {
@@ -74,10 +75,5 @@
       ./derivations/pidof.nix
       ./derivations/coconut.nix
     ];
-
-    # todo: remove user-specific path, get HM path another way, get HM to actually do this link... get Spotlight to use it.
-    file."Applications".source =
-      "/nix/var/nix/profiles/per-user/kubukoz/home-manager/home-path/Applications";
   };
-
 }

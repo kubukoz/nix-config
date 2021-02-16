@@ -15,11 +15,11 @@ My Nix / nix-darwin / Home Manager config.
 5. Export key to `keyserver.ubuntu.com`
 6. Import key on another machine with this
 7. `git-crypt add-gpg-user` on another machine
-8. Pull this repo into `~/.nixpkgs`
-9. `nix-shell -p gnupg git-crypt`
-10. `git-crypt unlock`
-11. Follow manual steps to symlink & refresh nix channels
-12. [Install nix-darwin](https://github.com/LnL7/nix-darwin)
+8.  [Install nix-darwin](https://github.com/LnL7/nix-darwin)
+9. Pull this repo into `~/.nixpkgs`
+10. `nix-shell -p gnupg git-crypt`
+11. `git-crypt unlock`
+12. Follow manual steps to symlink & refresh nix channels
 
 ## Manual steps that still need to be taken care of manually when making changes
 
