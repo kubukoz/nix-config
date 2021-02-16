@@ -1,5 +1,6 @@
 { stdenv, gcc }:
-let version = "0.1.4";
+let
+  version = "0.1.4";
 in
 stdenv.mkDerivation {
   name = "pidof-${version}";
