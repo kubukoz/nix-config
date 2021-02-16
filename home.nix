@@ -47,7 +47,6 @@
       gnuplot
       httpie
       imgcat
-      iterm2
       lame
       niv
       rnix-lsp
