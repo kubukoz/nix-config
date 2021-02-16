@@ -27,3 +27,4 @@ My Nix / nix-darwin / Home Manager config.
 - `ln -s ~/.nixpkgs/.nix-channels ~/.nix-channels`
 - Refresh channels (`nix-channel --update`, might need adding the channels to be tracked first).
 - `mysudo` - see contents, copy it to sudoers.d - linking is not recommended to avoid inconsistencies while editing, which could break sudo.
+- iterm - move plist file to `~/Library/Preferences/com.googlecode.iterm2`
