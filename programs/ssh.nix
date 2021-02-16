@@ -7,10 +7,20 @@
         hostname = "ssh.github.com";
         port = 443;
       };
-      home = {
+      home-remote = {
         host = "home.kubukoz.com";
         hostname = "home.kubukoz.com";
         user = "debian";
+      };
+      home = {
+        host = "kubukoz-pro.local";
+        hostname = "kubukoz-pro.local";
+        user = "kubukoz";
+      };
+      work = {
+        host = "kubukoz-work.local";
+        hostname = "kubukoz-work.local";
+        user = "jkoslowski";
       };
     };
   };
