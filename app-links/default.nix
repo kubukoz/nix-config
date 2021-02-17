@@ -4,7 +4,7 @@ let
   mkAppLink = app:
     let
       appPath = "${app}/Applications/${app.mac-app.app}";
-      resourcePath = "${appPath}/Contents/Resources/${app.mac-app.icon}";
+      resourcePath = "${appPath}/Contents/Resources";
       executableContent = ''
         #!/bin/bash
         open ${appPath}'';
@@ -19,7 +19,7 @@ let
           <key>CFBundleGetInfoString</key>
           <string>${app.mac-app.label} ${app.version}</string>
           <key>CFBundleIconFile</key>
-          <string>icon.icns</string>
+          <string>${app.mac-app.icon}</string>
           <key>CFBundleDisplayName</key>
           <string>${app.mac-app.label}</string>
           <key>CFBundleName</key>
@@ -34,11 +34,10 @@ let
     in
       pkgs.runCommand "wrapper-${app.name}" {} ''
         mkdir -p Contents/MacOS
-        mkdir -p Contents/Resources
         echo "${infoContent}" > Contents/Info.plist
         echo "${executableContent}" > "Contents/MacOS/run-wrapped"
         chmod +x Contents/MacOS/run-wrapped
-        ln -s "${resourcePath}" "Contents/Resources/icon.icns"
+        ln -s "${resourcePath}" "Contents/Resources"
         mkdir -p "$out/${app.mac-app.app}"
         cp -R Contents "$out/${app.mac-app.app}"
       '';
