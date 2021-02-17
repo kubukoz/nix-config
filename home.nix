@@ -71,7 +71,6 @@
       bottom
     ] ++ map (path: callPackage path {}) [
       ./derivations/pidof.nix
-      ./derivations/firefox.nix
       ./derivations/coconut.nix
       ./derivations/cpuinfo.nix
       ./derivations/discord.nix
