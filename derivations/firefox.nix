@@ -16,7 +16,6 @@ callPackage ./mac-dmg-app.nix {
     mac-app = {
       label = "Firefox";
       icon = "firefox.icns";
-      app = "Firefox.app";
     };
   };
 }

@@ -9,4 +9,12 @@ callPackage ./mac-dmg-app.nix {
       "https://cdn.discordapp.com/apps/osx/${version}/Discord.dmg";
     sha256 = "1afb0qj23hmhsz9jgzwaj5gqsxdwdxi8bcc656s27qhydnbxbgpn";
   };
+
+  passthru = {
+    inherit version;
+    mac-app = {
+      label = "Discord";
+      icon = "electron.icns";
+    };
+  };
 }

@@ -21,4 +21,11 @@ stdenv.mkDerivation {
     cp -R cpuinfo.app "$out/Applications/cpuinfo.app"
   '';
 
+  passthru = {
+    inherit version;
+    mac-app = {
+      label = "cpuinfo";
+      icon = "AppIcon";
+    };
+  };
 }

@@ -11,10 +11,17 @@ let
         };
       };
     in
-    builtins.listToAttrs (map extension attrsets);
+      builtins.listToAttrs (map extension attrsets);
 in
 {
   vscode-extensions =
     # no overrides for now
-    self.lib.recursiveUpdate super.vscode-extensions (updatedExtensions [ ]);
+    self.lib.recursiveUpdate super.vscode-extensions (updatedExtensions []);
+
+  vscode = super.vscode // {
+    mac-app = {
+      label = "Visual Studio Code";
+      icon = "Code.icns";
+    };
+  };
 }

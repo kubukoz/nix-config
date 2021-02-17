@@ -20,5 +20,11 @@ stdenv.mkDerivation {
     mkdir -p "$out/Applications"
     cp -R coconutBattery.app "$out/Applications/coconutBattery.app"
   '';
-
+  passthru = {
+    inherit version;
+    mac-app = {
+      label = "coconutBattery";
+      icon = "AppIcon";
+    };
+  };
 }

@@ -14,7 +14,6 @@ callPackage ./mac-dmg-app.nix {
     mac-app = {
       label = "Signal";
       icon = "Signal.icns";
-      app = "Signal.app";
     };
   };
 }

@@ -1,13 +1,15 @@
 { pkgs, config, lib, ... }:
 let
   inherit (pkgs) symlinkJoin;
+  mkAppFile = app: "${app.mac-app.label}.app";
   mkAppLink = app:
     let
-      appPath = "${app}/Applications/${app.mac-app.app}";
+      appFile = mkAppFile app;
+      appPath = "${app}/Applications/${appFile}";
       resourcePath = "${appPath}/Contents/Resources";
       executableContent = ''
         #!/bin/bash
-        open ${appPath}'';
+        open "${appPath}"'';
 
       infoContent = ''
         <?xml version="1.0" encoding="UTF-8"?>
@@ -35,11 +37,11 @@ let
       pkgs.runCommand "wrapper-${app.name}" {} ''
         mkdir -p Contents/MacOS
         echo "${infoContent}" > Contents/Info.plist
-        echo "${executableContent}" > "Contents/MacOS/run-wrapped"
+        echo '${executableContent}' > "Contents/MacOS/run-wrapped"
         chmod +x Contents/MacOS/run-wrapped
         ln -s "${resourcePath}" "Contents/Resources"
-        mkdir -p "$out/${app.mac-app.app}"
-        cp -R Contents "$out/${app.mac-app.app}"
+        mkdir -p "$out/${appFile}"
+        cp -R Contents "$out/${appFile}"
       '';
   apps = config.home.packages;
   macApps = builtins.filter
@@ -51,8 +53,12 @@ in
     (
       builtins.concatStringsSep "\n" (
         [ "mkdir ~/Applications" ] ++ map (
-          app: ''
-            cp -R "${mkAppLink app}/${app.mac-app.app}" ~/Applications''
+          app:
+            let
+              appFile = mkAppFile app;
+            in
+              ''
+                cp -R "${mkAppLink app}/${appFile}" ~/Applications''
         ) macApps
       )
     );
