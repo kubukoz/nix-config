@@ -25,7 +25,7 @@
     ./node
     ./vscode
     ./semisecret.nix
-    ./link-apps.nix
+    ./app-links
   ];
 
   home = {

@@ -1,11 +1,12 @@
 { name
 , src
+, passthru ? {}
 , stdenv
 , undmg
 }:
 
 stdenv.mkDerivation {
-  inherit name src;
+  inherit name src passthru;
   buildInputs = [ undmg ];
   unpackPhase = ''
     mkdir temp;

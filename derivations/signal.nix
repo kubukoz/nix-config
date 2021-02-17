@@ -9,4 +9,12 @@ callPackage ./mac-dmg-app.nix {
       "https://updates.signal.org/desktop/signal-desktop-mac-${version}.dmg";
     sha256 = "0sayvjimxavd4c4h7n4i78rny4nk94cnlblwq90kw0ypfkx8garf";
   };
+  passthru = {
+    inherit version;
+    mac-app = {
+      label = "Signal";
+      icon = "Signal.icns";
+      app = "Signal.app";
+    };
+  };
 }
