@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   bloop-coursier-channel = fetchurl {
     url =
       "https://github.com/scalacenter/bloop/releases/download/v${version}/bloop-coursier.json";
-    sha256 = "0crq4ra5w9gwfa9lr5bkx5xiwlzbnhkm2jn70viwm1nxgdh6z8dz";
+    sha256 = "1hfd5gc98bp4p4m85jva2mlkh10q10n9s5136z8620mmjq93rx70";
   };
 
   bloop-zsh = fetchurl {

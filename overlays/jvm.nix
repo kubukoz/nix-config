@@ -9,6 +9,6 @@ in
   # to use jdk8 (at the time of writing, that's zulu).
   scala = super.scala.override { inherit jre; };
   bloop = self.callPackage ../derivations/bloop.nix {
-    version = "1.4.7";
+    version = "1.4.8";
   };
 }
