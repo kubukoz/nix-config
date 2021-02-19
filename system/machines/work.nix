@@ -3,6 +3,6 @@
   hostname = "kubukoz-work";
   work = true;
   bloop.memory = {
-    max-heap = "8G";
+    max-heap = "16G";
   };
 }
