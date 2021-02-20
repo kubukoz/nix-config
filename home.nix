@@ -42,6 +42,7 @@
       dhall-json
       dhall-lsp-server
       ffmpeg
+      graphviz
       gnuplot
       httpie
       imgcat
