@@ -42,6 +42,7 @@ in
       dcp = "docker-compose";
       nss = "nix-shell";
       nb = "nix-build";
+      ngc = "nix-collect-garbage -d";
     };
 
     initExtraBeforeCompInit = ''
