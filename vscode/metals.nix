@@ -8,7 +8,7 @@ configuredExtension {
   extension = vscode-extensions.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
-    "metals.serverVersion" = "0.9.10+151-aaa761e5-SNAPSHOT";
+    "metals.serverVersion" = "0.10.0";
     "metals.serverProperties" = [ "-Dmetals.verbose" ];
     "files.watcherExclude" = { "**/.metals" = true; };
   };
