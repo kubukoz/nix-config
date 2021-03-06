@@ -33,7 +33,16 @@
         };
       in
         [ dependencyGraph projectGraph ];
+    credentials = [
+      {
+        realm = "Sonatype Nexus Repository Manager";
+        host = "oss.sonatype.org";
+        user = "kubukoz";
+        passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+      }
+    ];
   };
 
-  home.file.".sbt/1.0/global.sbt".text = builtins.readFile ./global.sbt;
+  home.file.".sbt/1.0/global.sbt".text = builtins.readFile
+    ./global.sbt;
 }
