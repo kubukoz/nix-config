@@ -4,7 +4,7 @@ let
   inherit (pkgs) vscode-utils vscode-extensions;
   marketplaceExtension = vscode-utils.extensionFromVscodeMarketplace;
   vscode-lib = import ./lib.nix;
-  inherit (vscode-lib) configuredExtension mkVscodeModule;
+  inherit (vscode-lib) configuredExtension mkVscodeModule exclude;
 
   baseSettings = mkVscodeModule {
     enable = true;
@@ -44,12 +44,7 @@ let
 
   scala = configuredExtension {
     extension = vscode-extensions.scala-lang.scala;
-    settings = {
-      "files.watcherExclude" = {
-        "**/.bloop" = true;
-        "**/.ammonite" = true;
-      };
-    };
+    settings = exclude [ "**/.bloop" "**/.ammonite" ".metals" ];
   };
 
   prettier = configuredExtension {
@@ -93,10 +88,7 @@ let
       let
         historyGlobPath = "**/.history";
       in
-        {
-          "files.watcherExclude" = { "${historyGlobPath}" = true; };
-          "files.exclude" = { "${historyGlobPath}" = true; };
-        };
+        exclude [ historyGlobPath ];
   };
 
   gitlens = configuredExtension {

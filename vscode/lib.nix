@@ -8,6 +8,19 @@ let
     in
       builtins.listToAttrs (map toLine formatterFor);
 
+  exclude = paths: let
+    toObj = path: {
+      name = "${path}";
+      value = true;
+    };
+    obj = builtins.listToAttrs (map toObj paths);
+  in
+    {
+      "files.watcherExclude" = obj;
+      "files.exclude" = obj;
+      "search.exclude" = obj;
+    };
+
   mkVscodeModule = content: { programs.vscode = content; };
 
   configuredExtension =
@@ -41,5 +54,5 @@ let
   ];
 in
 {
-  inherit configuredExtension overrideKeyBinding mkVscodeModule;
+  inherit configuredExtension overrideKeyBinding mkVscodeModule exclude;
 }
