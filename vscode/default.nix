@@ -24,6 +24,7 @@ let
         shyykoserhiy.vscode-spotify
         timonwong.shellcheck
         github.vscode-pull-request-github
+        redhat.vscode-yaml
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
       # no license for this one lol
@@ -39,120 +40,137 @@ let
         version = "0.20.0";
         sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
       }
+      {
+        name = "swagger-viewer";
+        publisher = "Arjun";
+        version = "3.0.1";
+        sha256 = "01cz9ag06h0624v963ypnaahrpfzl0gv0nnw356llbv1pz90f6w5";
+      }
     ];
   };
 
-  scala = configuredExtension {
-    extension = vscode-extensions.scala-lang.scala;
-    settings = exclude [ "**/.bloop" "**/.ammonite" ".metals" ];
-  };
+  scala = configuredExtension
+    {
+      extension = vscode-extensions.scala-lang.scala;
+      settings = exclude [ "**/.bloop" "**/.ammonite" ".metals" ];
+    };
 
-  prettier = configuredExtension {
-    extension = vscode-extensions.esbenp.prettier-vscode;
-    formatterFor = [ "typescript" "typescriptreact" "json" "jsonc" ];
-  };
+  prettier = configuredExtension
+    {
+      extension = vscode-extensions.esbenp.prettier-vscode;
+      formatterFor = [ "typescript" "typescriptreact" "json" "jsonc" ];
+    };
 
-  oneDarkPro = configuredExtension {
-    extension = vscode-extensions.zhuangtongfa.material-theme;
-    settings =
-      let
-        themeName = "One Dark Pro";
-      in
-        {
-          "workbench.colorTheme" = themeName;
-          "oneDarkPro.italic" = false;
-          "editor.tokenColorCustomizations" = {
-            "[${themeName}]" =
-              let
-                # These have been stolen from https://github.com/joshdick/onedark.vim
-                yellow = "#e5c07b";
-                blue = "#61afef";
-              in
-                {
-                  "functions" = yellow;
-                  "variables" = yellow;
-                  "types" = blue;
-                };
+  oneDarkPro = configuredExtension
+    {
+      extension = vscode-extensions.zhuangtongfa.material-theme;
+      settings =
+        let
+          themeName = "One Dark Pro";
+        in
+          {
+            "workbench.colorTheme" = themeName;
+            "oneDarkPro.italic" = false;
+            "editor.tokenColorCustomizations" = {
+              "[${themeName}]" =
+                let
+                  # These have been stolen from https://github.com/joshdick/onedark.vim
+                  yellow = "#e5c07b";
+                  blue = "#61afef";
+                in
+                  {
+                    "functions" = yellow;
+                    "variables" = yellow;
+                    "types" = blue;
+                  };
+            };
           };
-        };
-  };
+    };
 
-  markdown = configuredExtension {
-    extension = vscode-extensions.yzhang.markdown-all-in-one;
-    formatterFor = [ "markdown" ];
-  };
+  markdown = configuredExtension
+    {
+      extension = vscode-extensions.yzhang.markdown-all-in-one;
+      formatterFor = [ "markdown" ];
+    };
 
-  local-history = configuredExtension {
-    extension = vscode-extensions.xyz.local-history;
-    settings =
-      let
-        historyGlobPath = "**/.history";
-      in
-        exclude [ historyGlobPath ];
-  };
+  local-history = configuredExtension
+    {
+      extension = vscode-extensions.xyz.local-history;
+      settings =
+        let
+          historyGlobPath = "**/.history";
+        in
+          exclude [ historyGlobPath ];
+    };
 
-  gitlens = configuredExtension {
-    extension = vscode-extensions.eamodio.gitlens;
-    settings = {
-      "gitlens.currentLine.enabled" = false;
-      "gitlens.remotes" = [
+  gitlens = configuredExtension
+    {
+      extension = vscode-extensions.eamodio.gitlens;
+      settings = {
+        "gitlens.currentLine.enabled" = false;
+        "gitlens.remotes" = [
+          {
+            domain = "github.bamtech.co";
+            type = "GitHub";
+          }
+        ];
+      };
+    };
+
+  multiclip = configuredExtension
+    {
+      extension = vscode-extensions.slevesque.vscode-multiclip;
+      settings = { "multiclip.bufferSize" = 100; };
+      keybindings = [
         {
-          domain = "github.bamtech.co";
-          type = "GitHub";
+          key = "shift+cmd+v shift+cmd+v";
+          command = "multiclip.list";
         }
       ];
     };
-  };
 
-  multiclip = configuredExtension {
-    extension = vscode-extensions.slevesque.vscode-multiclip;
-    settings = { "multiclip.bufferSize" = 100; };
-    keybindings = [
-      {
-        key = "shift+cmd+v shift+cmd+v";
-        command = "multiclip.list";
-      }
-    ];
-  };
-
-  liveshare = configuredExtension {
-    extension = marketplaceExtension {
-      name = "vsliveshare";
-      publisher = "ms-vsliveshare";
-      version = "1.0.3577";
-      sha256 = "1aprpx2mhkdg26x35hxlnlr0hx28znha1y6wrrd4cw549scssp9a";
+  liveshare = configuredExtension
+    {
+      extension = marketplaceExtension {
+        name = "vsliveshare";
+        publisher = "ms-vsliveshare";
+        version = "1.0.3577";
+        sha256 = "1aprpx2mhkdg26x35hxlnlr0hx28znha1y6wrrd4cw549scssp9a";
+      };
+      settings = { "liveshare.featureSet" = "insiders"; };
     };
-    settings = { "liveshare.featureSet" = "insiders"; };
-  };
 
-  tla = configuredExtension {
-    extension = vscode-extensions.alygin.vscode-tlaplus;
-    settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
-    keybindings = [
-      {
-        key = "ctrl+cmd+enter";
-        command = "tlaplus.model.check.run";
-        when = "editorLangId == tlaplus";
-      }
-    ];
-  };
+  tla = configuredExtension
+    {
+      extension = vscode-extensions.alygin.vscode-tlaplus;
+      settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
+      keybindings = [
+        {
+          key = "ctrl+cmd+enter";
+          command = "tlaplus.model.check.run";
+          when = "editorLangId == tlaplus";
+        }
+      ];
+    };
 
-  command-runner = configuredExtension {
-    extension = vscode-extensions.edonet.vscode-command-runner;
-    keybindings = [
-      {
-        key = "ctrl+cmd+enter";
-        command = "command-runner.run";
-        args = { command = "darwin-rebuild switch"; };
-        when = "editorLangId == nix";
-      }
-    ];
-  };
+  command-runner = configuredExtension
+    {
+      extension = vscode-extensions.edonet.vscode-command-runner;
+      keybindings = [
+        {
+          key = "ctrl+cmd+enter";
+          command = "command-runner.run";
+          args = { command = "darwin-rebuild switch"; };
+          when = "editorLangId == nix";
+        }
+      ];
+    };
 
-  nix-ide = configuredExtension {
-    extension = vscode-extensions.jnoortheen.nix-ide;
-    settings = { "nix.enableLanguageServer" = true; };
-  };
+  nix-ide = configuredExtension
+    {
+      extension = vscode-extensions.jnoortheen.nix-ide;
+      settings = { "nix.enableLanguageServer" = true; };
+    };
 in
 {
   imports = [
