@@ -66,7 +66,8 @@
       tokei
       tree
       websocat
-      wget
+      # todo wget doesn't build for some reason, just skipp for now because I don't really need it
+      # wget
       unrar
       youtube-dl
       bottom
