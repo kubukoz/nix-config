@@ -40,12 +40,6 @@ let
         version = "0.20.0";
         sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
       }
-      {
-        name = "swagger-viewer";
-        publisher = "Arjun";
-        version = "3.0.1";
-        sha256 = "01cz9ag06h0624v963ypnaahrpfzl0gv0nnw356llbv1pz90f6w5";
-      }
     ];
   };
 
