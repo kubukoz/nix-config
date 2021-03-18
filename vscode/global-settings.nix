@@ -16,7 +16,8 @@
   "typescript.preferences.quoteStyle" = "single";
   "window.zoomLevel" = 0;
   "workbench.editor.enablePreview" = false;
-  "workbench.editor.limit.value" = 5;
+  "workbench.editor.limit.enabled" = true;
+  "workbench.editor.limit.value" = 10;
   "workbench.editor.showTabs" = true;
   "workbench.editor.highlightModifiedTabs" = true;
   "workbench.startupEditor" = "none";
