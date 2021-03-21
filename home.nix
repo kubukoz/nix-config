@@ -4,7 +4,7 @@
   programs = {
     bat = {
       enable = true;
-      config.theme = "ansi-dark";
+      config.theme = "ansi";
     };
     broot.enable = true;
     fzf.enable = true;
