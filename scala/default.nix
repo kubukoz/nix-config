@@ -23,28 +23,28 @@
 
   programs.sbt = {
     enable = true;
-    plugins =
-      let
-        dependencyGraph = {
-          org = "net.virtual-void";
-          artifact = "sbt-dependency-graph";
-          version = "0.10.0-RC1";
-        };
-        projectGraph = {
-          org = "com.dwijnand";
-          artifact = "sbt-project-graph";
-          version = "0.4.0";
-        };
-      in
-        [ dependencyGraph projectGraph ];
-    credentials = [
-      {
-        realm = "Sonatype Nexus Repository Manager";
-        host = "oss.sonatype.org";
-        user = "kubukoz";
-        passwordCommand = "cat ${toString ./secret-sonatype.txt}";
-      }
-    ];
+    # plugins =
+    #   let
+    #     dependencyGraph = {
+    #       org = "net.virtual-void";
+    #       artifact = "sbt-dependency-graph";
+    #       version = "0.10.0-RC1";
+    #     };
+    #     projectGraph = {
+    #       org = "com.dwijnand";
+    #       artifact = "sbt-project-graph";
+    #       version = "0.4.0";
+    #     };
+    #   in
+    #     [ dependencyGraph projectGraph ];
+    # credentials = [
+    #   {
+    #     realm = "Sonatype Nexus Repository Manager";
+    #     host = "oss.sonatype.org";
+    #     user = "kubukoz";
+    #     passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+    #   }
+    # ];
   };
 
   home.file.".sbt/1.0/global.sbt".text = builtins.readFile
