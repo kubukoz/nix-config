@@ -1,13 +1,13 @@
 { callPackage }:
 let
-  version = "0.0.261";
+  version = "0.0.262";
 in
 callPackage ./mac-dmg-app.nix {
   name = "discord-mac-${version}";
   src = builtins.fetchurl {
     url =
       "https://cdn.discordapp.com/apps/osx/${version}/Discord.dmg";
-    sha256 = "1afb0qj23hmhsz9jgzwaj5gqsxdwdxi8bcc656s27qhydnbxbgpn";
+    sha256 = "03iws3g2m8rpmpmavp5ais0h1wbdknjiv7pxnmj3dqjig4xm0jab";
   };
 
   passthru = {
