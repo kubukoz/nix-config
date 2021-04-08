@@ -25,6 +25,7 @@ let
         timonwong.shellcheck
         github.vscode-pull-request-github
         redhat.vscode-yaml
+        dbaeumer.vscode-eslint
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
       # no license for this one lol
