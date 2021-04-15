@@ -5,6 +5,12 @@ in
 {
 
   home.packages = with pkgs; [ exa ];
+
+  programs.direnv = {
+    enable = true;
+    enableNixDirenvIntegration = true;
+  };
+
   programs.zsh = {
     enable = true;
     oh-my-zsh = {
@@ -34,6 +40,7 @@ in
       HYPHEN_INSENSITIVE = "true";
       COMPLETION_WAITING_DOTS = "true";
       ZSH_HIGHLIGHT_MAXLENGTH = "20";
+      JK_MACHINE_NAME = machine.shell-name;
     };
 
     shellAliases = {

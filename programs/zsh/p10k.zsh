@@ -810,15 +810,17 @@
   function prompt_example() {
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
   }
-  
+
   function prompt_nix_icon() {
-    p10k segment -f '#7eb7e1' -i '❄' -t 'jk'
+    p10k segment -f 201 -i '❄' -t $JK_MACHINE_NAME
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
   typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER}'
 
+
+  typeset -g POWERLEVEL9K_NIX_SHELL_FOREGROUND='#7eb7e1'
   # When instant prompt is disabled, prompt won't appear until zsh is fully initialized.
   # typeset -g POWERLEVEL9K_DISABLE_INSTANT_PROMPT=true
 }
