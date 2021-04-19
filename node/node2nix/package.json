@@ -1,4 +1,5 @@
 [
   "fx",
-  "@erosb/mvn-search"
+  "@erosb/mvn-search",
+  "asciicast2gif"
 ]
