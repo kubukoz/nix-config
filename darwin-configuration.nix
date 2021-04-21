@@ -34,6 +34,7 @@ in
       (import ./overlays/vscode.nix)
       (import ./overlays/signal.nix)
       (import ./overlays/slack.nix)
+      (import ./overlays/coursier.nix)
     ];
   };
 

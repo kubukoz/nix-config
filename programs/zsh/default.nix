@@ -68,8 +68,6 @@ in
         ''
           source ${iterm2-shell-integration}
           source ${toString ./secret-gitlab.sh}
-          # Hacky, because I don't have time to write wrappers for coursier apps right now
-          export PATH="$PATH:/Users/${machine.username}/Library/Application Support/Coursier/bin"
         '';
   };
 
