@@ -1,6 +1,6 @@
-{ mkCoursierPackage }:
+{ coursier-tools }:
 
-mkCoursierPackage {
+coursier-tools.coursierBootstrap {
   name = "giter8";
   artifact = "giter8";
   alias = "g8";

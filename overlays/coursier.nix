@@ -1,5 +1,5 @@
 self: super: {
-  mkCoursierPackage = import ../coursier {
+  coursier-tools = import ../coursier {
     inherit (super) stdenv coursier;
   };
 }

@@ -1,7 +1,8 @@
 { coursier-tools }:
 
 coursier-tools.coursierBootstrap {
-  name = "scalafix";
-  artifact = "scalafix";
+  name = "catscript";
+  artifact = "--contrib catscript";
+  alias = "catscript";
   version = "unstable";
 }

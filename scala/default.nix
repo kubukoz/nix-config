@@ -12,7 +12,7 @@
     (callPackage ../coursier/spotify-next.nix {})
     (callPackage ../coursier/giter8.nix {})
     (callPackage ../coursier/scalafix.nix {})
-    # (callPackage ./fury.nix { })
+    (callPackage ../coursier/catscript.nix {})
   ];
 
   home.sessionVariables = {
