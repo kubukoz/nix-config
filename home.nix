@@ -57,7 +57,6 @@
       pstree
       python2
       redis
-      signal-desktop
       sl
       slack
       speedtest-cli
