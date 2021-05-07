@@ -17,11 +17,4 @@ in
   vscode-extensions =
     # no overrides for now
     self.lib.recursiveUpdate super.vscode-extensions (updatedExtensions []);
-
-  vscode = super.vscode // {
-    mac-app = {
-      label = "Visual Studio Code";
-      icon = "Code.icns";
-    };
-  };
 }

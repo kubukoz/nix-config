@@ -25,7 +25,6 @@
     ./node
     ./vscode
     ./semisecret.nix
-    ./app-links
   ];
 
   home = {
@@ -58,7 +57,6 @@
       python2
       redis
       sl
-      slack
       speedtest-cli
       texlive.combined.scheme-basic
       tig
@@ -72,9 +70,6 @@
       bottom
     ] ++ map (path: callPackage path {}) [
       ./derivations/pidof.nix
-      ./derivations/coconut.nix
-      ./derivations/cpuinfo.nix
-      ./derivations/discord.nix
     ];
   };
 }

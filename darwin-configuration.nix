@@ -32,7 +32,6 @@ in
     overlays = [
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
-      (import ./overlays/slack.nix)
       (import ./overlays/coursier.nix)
     ];
   };
