@@ -23,7 +23,6 @@ in
       ".idea/"
       ".vscode/"
       ".bloop/"
-      ".scalafmt.conf"
       ".bsp/"
       "drop-fatals.diff"
     ];
