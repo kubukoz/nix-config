@@ -1,5 +1,5 @@
 def supportedVersion(s: String) =
-  Set("2.12","2.13","3.0.0-RC2","3.0.0-RC3").exists(s.startsWith)
+  Set("2.12","2.13","3.0.0-RC2").exists(s.startsWith)
 
 libraryDependencies ++= {
   if(supportedVersion(scalaVersion.value))
