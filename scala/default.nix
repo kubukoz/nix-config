@@ -13,6 +13,7 @@
     (callPackage ../coursier/giter8.nix {})
     (callPackage ../coursier/scalafix.nix {})
     (callPackage ../coursier/catscript.nix {})
+    (callPackage ../coursier/scala3-repl.nix {})
   ];
 
   home.sessionVariables = {
