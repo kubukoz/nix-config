@@ -68,6 +68,8 @@
       unrar
       youtube-dl
       bottom
+      rustc
+      cargo
     ] ++ map (path: callPackage path {}) [
       ./derivations/pidof.nix
     ];

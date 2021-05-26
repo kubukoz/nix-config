@@ -27,15 +27,10 @@ let
         github.vscode-pull-request-github
         redhat.vscode-yaml
         dbaeumer.vscode-eslint
+        usernamehw.errorlens
+        matklad.rust-analyzer
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
-      # no license for this one lol
-      {
-        name = "errorlens";
-        publisher = "usernamehw";
-        version = "3.2.4";
-        sha256 = "0caxmf6v0s5kgp6cp3j1kk7slhspjv5kzhn4sq3miyl5jkrn95kx";
-      }
       {
         name = "vscode-remote-extensionpack";
         publisher = "ms-vscode-remote";
