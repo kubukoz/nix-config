@@ -47,6 +47,7 @@
       httpie
       imgcat
       lame
+      ranger
       niv
       rnix-lsp
       nixpkgs-fmt
