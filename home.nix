@@ -70,6 +70,7 @@
       bottom
       rustc
       cargo
+      rustfmt
     ] ++ map (path: callPackage path {}) [
       ./derivations/pidof.nix
     ];

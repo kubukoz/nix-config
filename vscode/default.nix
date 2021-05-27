@@ -58,22 +58,29 @@ let
       settings =
         let
           themeName = "One Dark Pro";
+          # These have been stolen from https://github.com/joshdick/onedark.vim
+          yellow = "#e5c07b";
+          blue = "#61afef";
         in
           {
             "workbench.colorTheme" = themeName;
             "oneDarkPro.italic" = false;
             "editor.tokenColorCustomizations" = {
               "[${themeName}]" =
-                let
-                  # These have been stolen from https://github.com/joshdick/onedark.vim
-                  yellow = "#e5c07b";
-                  blue = "#61afef";
-                in
-                  {
-                    "functions" = yellow;
-                    "variables" = yellow;
-                    "types" = blue;
+                {
+                  functions = yellow;
+                  variables = yellow;
+                  types = blue;
+                };
+            };
+            "editor.semanticTokenColorCustomizations" = {
+              "[${themeName}]" = {
+                "rules" = {
+                  "variable:rust" = {
+                    "foreground" = yellow;
                   };
+                };
+              };
             };
           };
     };
