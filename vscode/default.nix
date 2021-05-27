@@ -65,21 +65,16 @@ let
           {
             "workbench.colorTheme" = themeName;
             "oneDarkPro.italic" = false;
-            "editor.tokenColorCustomizations" = {
-              "[${themeName}]" =
-                {
-                  functions = yellow;
-                  variables = yellow;
-                  types = blue;
-                };
-            };
-            "editor.semanticTokenColorCustomizations" = {
-              "[${themeName}]" = {
-                "rules" = {
-                  "variable:rust" = {
-                    "foreground" = yellow;
-                  };
-                };
+            "editor.tokenColorCustomizations"."[${themeName}]" =
+              {
+                functions = yellow;
+                variables = yellow;
+                types = blue;
+              };
+
+            "editor.semanticTokenColorCustomizations"."[${themeName}]"."rules" = {
+              "variable:rust" = {
+                "foreground" = yellow;
               };
             };
           };
