@@ -37,6 +37,12 @@ let
         version = "0.20.0";
         sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
       }
+      {
+        name = "nickel-syntax";
+        publisher = "kubukoz";
+        version = "0.0.1";
+        sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
+      }
     ];
   };
 
