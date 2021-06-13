@@ -1,8 +1,8 @@
-{ rustPlatform, installShellFiles, tree }:
+{ rustPlatform, installShellFiles }:
 
 rustPlatform.buildRustPackage {
   name = "hmm";
-  buildInputs = [ installShellFiles tree ];
+  buildInputs = [ installShellFiles ];
   cargoSha256 = "0m6snji1k83v4kdbhpw6j8gx6kfqgxgr6p3vr968vr0lk7izkn1z";
 
   src = builtins.fetchGit {
