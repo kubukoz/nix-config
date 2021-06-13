@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  inherit (pkgs.callPackage ./lib {}) programsFromTextFile;
+  inherit (pkgs.callPackage ./lib {}) programsFromListFile;
 in
 {
   programs = {
@@ -40,7 +40,7 @@ in
     packages =
 
       let
-        autoPrograms = programsFromTextFile ./programs/auto.txt;
+        autoPrograms = programsFromListFile ./programs/auto.nix;
       in
         autoPrograms ++ map (path: pkgs.callPackage path {}) [
           ./derivations/pidof.nix

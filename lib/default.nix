@@ -1,11 +1,11 @@
 { pkgs, lib }:
 
 let
-  programsFromTextFile = file:
+  programsFromListFile = file:
     let
-      autoProgramPaths = map (lib.splitString ".") (lib.splitString "\n" (lib.fileContents file));
+      autoProgramPaths = map (lib.splitString ".") (import file);
     in
       (map (path: lib.attrsets.getAttrFromPath path pkgs) autoProgramPaths);
 
 in
-{ inherit programsFromTextFile; }
+{ inherit programsFromListFile; }
