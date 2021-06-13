@@ -1,5 +1,8 @@
 { pkgs, lib, config, ... }:
 
+let
+  inherit (pkgs.callPackage ./lib {}) programsFromTextFile;
+in
 {
   programs = {
     bat = {
@@ -33,47 +36,14 @@
       EDITOR = "nvim";
     };
 
-    packages = with pkgs; [
-      asciinema
-      cachix
-      ctop
-      dhall
-      dhall-json
-      dhall-lsp-server
-      ffmpeg
-      gti
-      graphviz
-      gnuplot
-      httpie
-      imgcat
-      lame
-      ranger
-      niv
-      rnix-lsp
-      nixpkgs-fmt
-      pirate-get
-      plantuml
-      postgresql
-      pstree
-      python2
-      redis
-      sl
-      speedtest-cli
-      texlive.combined.scheme-basic
-      tig
-      tldr
-      tokei
-      tree
-      websocat
-      wget
-      unrar
-      youtube-dl
-      bottom
-      rustc
-      cargo
-      rustfmt
-    ] ++ map (path: callPackage path {}) [
-      ./derivations/pidof.nix
-    ];
+
+    packages =
+
+      let
+        autoPrograms = programsFromTextFile ./programs/auto.txt;
+      in
+        autoPrograms ++ map (path: pkgs.callPackage path {}) [
+          ./derivations/pidof.nix
+        ];
   };
 }
