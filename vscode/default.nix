@@ -28,9 +28,14 @@ let
         redhat.vscode-yaml
         dbaeumer.vscode-eslint
         usernamehw.errorlens
-        matklad.rust-analyzer
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "rust-analyzer";
+        publisher = "matklad";
+        version = "0.2.629";
+        sha256 = "1i0mn6dlflf1wrdnxw8gw91np6afmb05qq7v3cigk2cn0hh1pgsl";
+      }
       {
         name = "vscode-remote-extensionpack";
         publisher = "ms-vscode-remote";
