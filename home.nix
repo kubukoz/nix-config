@@ -44,6 +44,7 @@ in
       in
         autoPrograms ++ map (path: pkgs.callPackage path {}) [
           ./derivations/pidof.nix
+          ./derivations/hmm.nix
         ];
   };
 }
