@@ -3,12 +3,12 @@
 rustPlatform.buildRustPackage {
   name = "hmm";
   buildInputs = [ installShellFiles ];
-  cargoSha256 = "0m6snji1k83v4kdbhpw6j8gx6kfqgxgr6p3vr968vr0lk7izkn1z";
+  cargoSha256 = "077m3v3g4g2cb4vp3yrjaizfiixsny2cwkix6hdy6ih3qpm6wl2r";
 
   src = builtins.fetchGit {
     url = "git@github.com:kubukoz/hmm";
-    ref = "v0.2.3";
-    rev = "b6cba08e1f2695a84b1672a74c6bef321867dd42";
+    ref = "v0.3.0";
+    rev = "fa9b0f23004db25a87c06a9de7a1a0146283aff7";
   };
 
   postInstall = ''
