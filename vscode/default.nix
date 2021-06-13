@@ -29,7 +29,7 @@ let
         redhat.vscode-yaml
         dbaeumer.vscode-eslint
         usernamehw.errorlens
-        pkgsUnstable.vscode-extensions.matklad.rust-analyzer
+        matklad.rust-analyzer
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
       {
