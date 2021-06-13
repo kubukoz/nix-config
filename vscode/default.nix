@@ -29,7 +29,6 @@ let
         redhat.vscode-yaml
         dbaeumer.vscode-eslint
         usernamehw.errorlens
-        matklad.rust-analyzer
       ]
     ) ++ vscode-utils.extensionsFromVscodeMarketplace [
       {
@@ -47,6 +46,15 @@ let
     ];
   };
 
+  rust-analyzer = configuredExtension {
+    extension = vscode-utils.extensionFromVscodeMarketplace {
+      name = "rust-analyzer";
+      publisher = "matklad";
+      version = "0.2.629";
+      sha256 = "1i0mn6dlflf1wrdnxw8gw91np6afmb05qq7v3cigk2cn0hh1pgsl";
+    };
+    settings = { "rust-analyzer.serverPath" = "${pkgsUnstable.rust-analyzer}/bin/rust-analyzer"; };
+  };
   scala = configuredExtension
     {
       extension = vscode-extensions.scala-lang.scala;
@@ -187,5 +195,6 @@ in
     tla
     command-runner
     nix-ide
+    rust-analyzer
   ];
 }
