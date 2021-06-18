@@ -18,7 +18,7 @@ in
   };
 
   imports = [
-    ./programs/ssh.nix
+    ./programs/ssh
     ./programs/git.nix
     ./programs/neovim.nix
     ./programs/gh

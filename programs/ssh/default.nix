@@ -1,5 +1,5 @@
 { lib, ... }: {
-  imports = [ ./secret-ssh.nix ];
+  imports = [ ./semisecret-ssh.nix ];
   programs.ssh = {
     enable = true;
     matchBlocks = {
