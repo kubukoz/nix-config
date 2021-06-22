@@ -44,11 +44,17 @@ let
         sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
       }
       {
-        name = "graph-buddy";
-        publisher = "virtuslab";
-        version = "0.4.21";
-        sha256 = "0a7rl21r0pw6fh7ykh4y7cxxvbxah281i3nygf4g0zhzl3a7y263";
+        name = "indent-rainbow";
+        publisher = "oderwat";
+        version = "7.5.0";
+        sha256 = "0zm1m46gm4hl56y9555h3rg8xznygmxb5qlq9yl5wxdjsjcia4qk";
       }
+      # {
+      #   name = "graph-buddy";
+      #   publisher = "virtuslab";
+      #   version = "0.4.21";
+      #   sha256 = "0a7rl21r0pw6fh7ykh4y7cxxvbxah281i3nygf4g0zhzl3a7y263";
+      # }
     ];
   };
 
