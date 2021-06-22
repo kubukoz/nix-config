@@ -43,12 +43,6 @@ let
         version = "0.0.1";
         sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
       }
-      {
-        name = "indent-rainbow";
-        publisher = "oderwat";
-        version = "7.5.0";
-        sha256 = "0zm1m46gm4hl56y9555h3rg8xznygmxb5qlq9yl5wxdjsjcia4qk";
-      }
       # {
       #   name = "graph-buddy";
       #   publisher = "virtuslab";
@@ -58,6 +52,17 @@ let
     ];
   };
 
+  indent-rainbow = configuredExtension {
+    extension = vscode-utils.extensionFromVscodeMarketplace {
+      name = "indent-rainbow";
+      publisher = "oderwat";
+      version = "7.5.0";
+      sha256 = "0zm1m46gm4hl56y9555h3rg8xznygmxb5qlq9yl5wxdjsjcia4qk";
+    };
+    settings = {
+      "indentRainbow.includedLanguages" = [ "yaml" ];
+    };
+  };
   rust-analyzer = configuredExtension {
     extension = vscode-utils.extensionFromVscodeMarketplace {
       name = "rust-analyzer";
@@ -208,5 +213,6 @@ in
     command-runner
     nix-ide
     rust-analyzer
+    indent-rainbow
   ];
 }
