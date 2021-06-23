@@ -7,8 +7,8 @@ rustPlatform.buildRustPackage {
 
   src = builtins.fetchGit {
     url = "git@github.com:kubukoz/hmm";
-    ref = "v0.3.0";
-    rev = "fa9b0f23004db25a87c06a9de7a1a0146283aff7";
+    ref = "v0.3.1";
+    rev = "4bdba038572fd1ce6af506890e8045faff24ec61";
   };
 
   postInstall = ''

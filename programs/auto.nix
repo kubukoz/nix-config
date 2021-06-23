@@ -20,6 +20,7 @@
   "lame"
   "niv"
   "nixpkgs-fmt"
+  "nixfmt"
   "pirate-get"
   "plantuml"
   "postgresql"
