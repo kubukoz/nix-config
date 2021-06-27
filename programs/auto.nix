@@ -11,6 +11,7 @@
   "dhall"
   "dhall-json"
   "dhall-lsp-server"
+  "exiftool"
   "ffmpeg"
   "gnuplot"
   "graphviz"
