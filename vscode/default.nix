@@ -1,17 +1,18 @@
 { pkgs, lib, ... }:
 
 let
-  inherit (pkgs) vscode-utils vscode-extensions;
+  inherit (pkgs) vscode-extensions;
   inherit (pkgs.callPackage ../lib {}) attributesFromListFile;
   pkgsUnstable = import ../unstable.nix {};
-  marketplaceExtension = vscode-utils.extensionFromVscodeMarketplace;
   vscode-lib = import ./lib.nix;
-  inherit (vscode-lib) configuredExtension mkVscodeModule exclude;
+  inherit (vscode-lib) configuredExtension mkVscodeModule exclude extensionObject;
 
-  autoExtensions = attributesFromListFile {
+  auto-extensions = attributesFromListFile {
     file = ./extensions/auto.nix;
     root = vscode-extensions;
   };
+
+  managed = builtins.listToAttrs (map (extensionObject pkgs.vscode-utils) (import ./extensions/managed.nix));
 
   baseSettings = mkVscodeModule {
     enable = true;
@@ -19,46 +20,21 @@ let
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
-    extensions = autoExtensions ++ vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "vscode-remote-extensionpack";
-        publisher = "ms-vscode-remote";
-        version = "0.20.0";
-        sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
-      }
-      {
-        name = "nickel-syntax";
-        publisher = "kubukoz";
-        version = "0.0.1";
-        sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
-      }
-      {
-        name = "graph-buddy";
-        publisher = "virtuslab";
-        version = "0.4.21";
-        sha256 = "0a7rl21r0pw6fh7ykh4y7cxxvbxah281i3nygf4g0zhzl3a7y263";
-      }
+    extensions = auto-extensions ++ [
+      managed.ms-vscode-remote.vscode-remote-extensionpack
+      managed.kubukoz.nickel-syntax
+      managed.virtuslab.graph-buddy
     ];
   };
 
   indent-rainbow = configuredExtension {
-    extension = vscode-utils.extensionFromVscodeMarketplace {
-      name = "indent-rainbow";
-      publisher = "oderwat";
-      version = "7.5.0";
-      sha256 = "0zm1m46gm4hl56y9555h3rg8xznygmxb5qlq9yl5wxdjsjcia4qk";
-    };
+    extension = managed.oderwat.indent-rainbow;
     settings = {
       "indentRainbow.includedLanguages" = [ "yaml" ];
     };
   };
   rust-analyzer = configuredExtension {
-    extension = vscode-utils.extensionFromVscodeMarketplace {
-      name = "rust-analyzer";
-      publisher = "matklad";
-      version = "0.2.629";
-      sha256 = "1i0mn6dlflf1wrdnxw8gw91np6afmb05qq7v3cigk2cn0hh1pgsl";
-    };
+    extension = managed.matklad.rust-analyzer;
     settings = { "rust-analyzer.serverPath" = "${pkgsUnstable.rust-analyzer}/bin/rust-analyzer"; };
   };
   scala = configuredExtension
@@ -158,12 +134,7 @@ let
 
   liveshare = configuredExtension
     {
-      extension = marketplaceExtension {
-        name = "vsliveshare";
-        publisher = "ms-vsliveshare";
-        version = "1.0.3577";
-        sha256 = "1aprpx2mhkdg26x35hxlnlr0hx28znha1y6wrrd4cw549scssp9a";
-      };
+      extension = managed.ms-vsliveshare.vsliveshare;
       settings = { "liveshare.featureSet" = "insiders"; };
     };
 

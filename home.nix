@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 
 let
   inherit (pkgs.callPackage ./lib {}) attributesFromListFile;

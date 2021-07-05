@@ -1,4 +1,12 @@
 let
+  extensionObject = vscode-utils: attrs: {
+    name = attrs.publisher;
+    value = {
+      "${attrs.name}" =
+        vscode-utils.extensionFromVscodeMarketplace attrs;
+    };
+  };
+
   formatterSettings = { vscodeExtUniqueId, formatterFor }:
     let
       toLine = languageName: {
@@ -54,5 +62,5 @@ let
   ];
 in
 {
-  inherit configuredExtension overrideKeyBinding mkVscodeModule exclude;
+  inherit extensionObject configuredExtension overrideKeyBinding mkVscodeModule exclude;
 }

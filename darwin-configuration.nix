@@ -31,7 +31,6 @@ in
     config.allowUnfree = true;
     overlays = [
       (import ./overlays/jvm.nix)
-      (import ./overlays/vscode.nix)
       (import ./overlays/coursier.nix)
     ];
   };
