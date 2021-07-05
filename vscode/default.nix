@@ -2,10 +2,16 @@
 
 let
   inherit (pkgs) vscode-utils vscode-extensions;
+  inherit (pkgs.callPackage ../lib {}) attributesFromListFile;
   pkgsUnstable = import ../unstable.nix {};
   marketplaceExtension = vscode-utils.extensionFromVscodeMarketplace;
   vscode-lib = import ./lib.nix;
   inherit (vscode-lib) configuredExtension mkVscodeModule exclude;
+
+  autoExtensions = attributesFromListFile {
+    file = ./extensions/auto.nix;
+    root = vscode-extensions;
+  };
 
   baseSettings = mkVscodeModule {
     enable = true;
@@ -13,24 +19,7 @@ let
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
-    extensions = (
-      with vscode-extensions;
-      [
-        ms-azuretools.vscode-docker
-        dhall.dhall-lang
-        dhall.vscode-dhall-lsp-server
-        graphql.vscode-graphql
-        codezombiech.gitignore
-        mishkinf.goto-next-previous-member
-        baccata.scaladex-search
-        shyykoserhiy.vscode-spotify
-        timonwong.shellcheck
-        github.vscode-pull-request-github
-        redhat.vscode-yaml
-        dbaeumer.vscode-eslint
-        usernamehw.errorlens
-      ]
-    ) ++ vscode-utils.extensionsFromVscodeMarketplace [
+    extensions = autoExtensions ++ vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "vscode-remote-extensionpack";
         publisher = "ms-vscode-remote";
