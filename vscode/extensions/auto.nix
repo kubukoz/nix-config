@@ -1,3 +1,7 @@
+#
+# This file was written by hmm (Home Manager Manager).
+# Don't edit it manually!
+#
 [
   "baccata.scaladex-search"
   "codezombiech.gitignore"
