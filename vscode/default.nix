@@ -43,12 +43,12 @@ let
         version = "0.0.1";
         sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
       }
-      # {
-      #   name = "graph-buddy";
-      #   publisher = "virtuslab";
-      #   version = "0.4.21";
-      #   sha256 = "0a7rl21r0pw6fh7ykh4y7cxxvbxah281i3nygf4g0zhzl3a7y263";
-      # }
+      {
+        name = "graph-buddy";
+        publisher = "virtuslab";
+        version = "0.4.21";
+        sha256 = "0a7rl21r0pw6fh7ykh4y7cxxvbxah281i3nygf4g0zhzl3a7y263";
+      }
     ];
   };
 

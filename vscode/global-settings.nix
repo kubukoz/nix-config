@@ -9,6 +9,7 @@
   "editor.renderIndentGuides" = false;
   "editor.suggestSelection" = "first";
   "editor.tabSize" = 2;
+  "editor.inlineSuggest.enabled" = true;
   "files.autoSave" = "onFocusChange";
   "files.defaultLanguage" = "markdown";
   "files.insertFinalNewline" = true;
