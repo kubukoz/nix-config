@@ -1,3 +1,7 @@
+# This file was written by hmm (Home Manager Manager).
+# Don't edit it manually!
+# This file should always parse as an array of attrsets.
+#
 [
   {
     name = "nickel-syntax";
@@ -8,20 +12,20 @@
   {
     name = "rust-analyzer";
     publisher = "matklad";
-    version = "0.2.629";
-    sha256 = "1i0mn6dlflf1wrdnxw8gw91np6afmb05qq7v3cigk2cn0hh1pgsl";
+    version = "0.2.662";
+    sha256 = "01qxgn4cplxpawwkbpxcfpv1fx9q1n8ckspqzxa83qy9q8w78rmj";
   }
   {
     name = "vsliveshare";
     publisher = "ms-vsliveshare";
-    version = "1.0.3577";
-    sha256 = "1aprpx2mhkdg26x35hxlnlr0hx28znha1y6wrrd4cw549scssp9a";
+    version = "1.0.4531";
+    sha256 = "1idcfklcpnclf0n1l4xs2xxkmqm4smk3afkwijaj3qwcdzls0g06";
   }
   {
     name = "vscode-remote-extensionpack";
     publisher = "ms-vscode-remote";
-    version = "0.20.0";
-    sha256 = "04wrbfsb8p258pnmqifhc9immsbv9xb6j3fxw9hzvw6iqx2v3dbi";
+    version = "0.21.0";
+    sha256 = "14l8h84kvnkbqwmw875qa6y25hhxvx1dsg0g07gdl6n8cv5kvy2g";
   }
   {
     name = "indent-rainbow";
