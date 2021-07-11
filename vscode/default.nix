@@ -5,14 +5,17 @@ let
   inherit (pkgs.callPackage ../lib {}) attributesFromListFile;
   pkgsUnstable = import ../unstable.nix {};
   vscode-lib = import ./lib.nix;
-  inherit (vscode-lib) configuredExtension mkVscodeModule exclude extensionObject;
+  inherit (vscode-lib) configuredExtension mkVscodeModule exclude managedPackages;
 
   auto-extensions = attributesFromListFile {
     file = ./extensions/auto.nix;
     root = vscode-extensions;
   };
 
-  managed = builtins.listToAttrs (map (extensionObject pkgs.vscode-utils) (import ./extensions/managed.nix));
+  managed = managedPackages {
+    file = ./extensions/managed.nix;
+    inherit (pkgs) vscode-utils;
+  };
 
   baseSettings = mkVscodeModule {
     enable = true;

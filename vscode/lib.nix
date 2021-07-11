@@ -60,7 +60,8 @@ let
       }
     )
   ];
+  managedPackages = { file, vscode-utils }: builtins.listToAttrs (map (extensionObject vscode-utils) (import file));
 in
 {
-  inherit extensionObject configuredExtension overrideKeyBinding mkVscodeModule exclude;
+  inherit extensionObject configuredExtension overrideKeyBinding mkVscodeModule exclude managedPackages;
 }
