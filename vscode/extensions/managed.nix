@@ -43,7 +43,7 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.10.6";
-    sha256 = "11ihg8d94hfg731r280wj9nvymgd2plaw01my1mfibjxlaf1h2i3";
+    version = "1.10.7";
+    sha256 = "0b11n54fafydlm7il6qrd7yh45rfaj6qqcjzk381dynnqa5xz8yw";
   }
 ]
