@@ -19,8 +19,8 @@
   {
     name = "vsliveshare";
     publisher = "ms-vsliveshare";
-    version = "1.0.4568";
-    sha256 = "0v2psvb0cglc1zs19r8mi55hgbzkwgz6skl6iad6b108lh11cfkq";
+    version = "1.0.4580";
+    sha256 = "0k72nkxh975bgmvg5r64mzc53h4cn912hfr37lyxxcsxk0zfwm5m";
   }
   {
     name = "vscode-remote-extensionpack";
