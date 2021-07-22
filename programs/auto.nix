@@ -44,4 +44,5 @@
   "websocat"
   "wget"
   "youtube-dl"
+  "yq"
 ]
