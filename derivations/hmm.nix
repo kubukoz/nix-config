@@ -1,11 +1,11 @@
-{ rustPlatform, installShellFiles, stdenv, darwin }:
+{ rustPlatform, installShellFiles, openssl, stdenv, darwin }:
 
 rustPlatform.buildRustPackage {
   name = "hmm";
   buildInputs = let
     libs = if (stdenv.isDarwin) then [ darwin.apple_sdk.frameworks.Security ] else [];
   in
-    [ installShellFiles ] ++ libs;
+    [ installShellFiles openssl ] ++ libs;
   cargoSha256 = "0x750k3djzis48d6b11wxn0gsg423zh2hcqdi528vsy8zriaxr72";
 
   src = builtins.fetchGit {
