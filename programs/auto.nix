@@ -8,6 +8,7 @@
   "bottom"
   "cachix"
   "cargo"
+  "cowsay"
   "ctop"
   "dhall"
   "dhall-json"
