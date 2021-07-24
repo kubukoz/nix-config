@@ -8,6 +8,7 @@
   "bottom"
   "cachix"
   "cargo"
+  "clippy"
   "ctop"
   "dhall"
   "dhall-json"
