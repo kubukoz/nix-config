@@ -13,14 +13,14 @@
   {
     name = "rust-analyzer";
     publisher = "matklad";
-    version = "0.2.686";
-    sha256 = "17sq6df1a6c0sy4p8q9ggkfsgj681rwv06fvv03l104v9y2kybyk";
+    version = "0.2.702";
+    sha256 = "1xk43p2y086v41szcabmma3abach147dvwalngmxl00zf80g8aqm";
   }
   {
     name = "vsliveshare";
     publisher = "ms-vsliveshare";
-    version = "1.0.4583";
-    sha256 = "0isq4ahj0wia845rxmc4zqv1r0iz1128f3xpc8bqjb8dlcy4bjz6";
+    version = "1.0.4673";
+    sha256 = "1ys3lilc2r3n250s6pfvadrabnvqpzy74awjmvw79jrbvvk1iw1z";
   }
   {
     name = "vscode-remote-extensionpack";
