@@ -45,6 +45,7 @@
   "unrar"
   "websocat"
   "wget"
+  "xsv"
   "youtube-dl"
   "yq"
 ]
