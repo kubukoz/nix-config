@@ -10,6 +10,7 @@
   "editor.suggestSelection" = "first";
   "editor.tabSize" = 2;
   "editor.inlineSuggest.enabled" = true;
+  "editor.linkedEditing" = true;
   "files.autoSave" = "onFocusChange";
   "files.defaultLanguage" = "markdown";
   "files.insertFinalNewline" = true;
