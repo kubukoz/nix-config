@@ -13,8 +13,8 @@
   {
     name = "rust-analyzer";
     publisher = "matklad";
-    version = "0.2.702";
-    sha256 = "1xk43p2y086v41szcabmma3abach147dvwalngmxl00zf80g8aqm";
+    version = "0.2.710";
+    sha256 = "091wkpq65nqc86fnbwy9glpskvhl4w07k7zjy0jhry78qjlaizb3";
   }
   {
     name = "vsliveshare";
@@ -37,8 +37,8 @@
   {
     name = "graph-buddy";
     publisher = "virtuslab";
-    version = "0.4.37";
-    sha256 = "1srjzsccrxcvn44k3kyrv0lx7d3rvx3qk39y1427f3y3zfaxrmmk";
+    version = "0.4.41";
+    sha256 = "1qsg02n9mk4m0868j4clam4c9dnj9a1zck4zi7wzqri3rd4zd46n";
   }
   {
     name = "metals";
