@@ -1,7 +1,7 @@
 { coursier-tools }:
 
 let
-  version = "1.6.0";
+  version = "1.6.2";
 in
 coursier-tools.coursierBootstrap {
   name = "spotify-next";
