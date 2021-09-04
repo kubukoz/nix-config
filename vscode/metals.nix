@@ -14,8 +14,8 @@ configuredExtension {
   extension = managed.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
-    # "metals.serverVersion" = "0.10.4+155-56fbd612-SNAPSHOT";
-    "metals.serverProperties" = [ "-Dmetals.verbose" ];
+    "metals.serverVersion" = "0.10.6-M1+84-433b0161-SNAPSHOT";
+    "metals.serverProperties" = [ "-Dmetals.verbose" "-Xmx4g" ];
     "files.watcherExclude" = { "**/.metals" = true; };
   };
   keybindings = [
