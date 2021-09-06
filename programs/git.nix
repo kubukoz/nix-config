@@ -24,7 +24,6 @@ in
       ".vscode/"
       ".bloop/"
       ".bsp/"
-      "drop-fatals.diff"
     ];
 
     includes = [
