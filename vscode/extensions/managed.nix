@@ -13,14 +13,14 @@
   {
     name = "rust-analyzer";
     publisher = "matklad";
-    version = "0.2.735";
-    sha256 = "0qr6aw99r95cdkmrryd5xm8ap3bf3kmisl4iph64ivvs833cmjk9";
+    version = "0.2.743";
+    sha256 = "0j4njspzr2nz2lavy2d9hhxqay88v7g9d74dilnh7dgm8jqi8gny";
   }
   {
     name = "vsliveshare";
     publisher = "ms-vsliveshare";
-    version = "1.0.4761";
-    sha256 = "1sxjhpdjxc7anbd5fsqn957a1ln164mmn726h8v8l88lhx4lpjd9";
+    version = "1.0.4836";
+    sha256 = "1sigix4cdism09k53vd6vxa57mjkr9585n94vqnn9njlsfkbc4pf";
   }
   {
     name = "vscode-remote-extensionpack";
@@ -31,8 +31,8 @@
   {
     name = "indent-rainbow";
     publisher = "oderwat";
-    version = "7.5.0";
-    sha256 = "0zm1m46gm4hl56y9555h3rg8xznygmxb5qlq9yl5wxdjsjcia4qk";
+    version = "8.0.0";
+    sha256 = "1nb69vdra4l0jv4vg4xvlamwc5sprja0mhrp3kmixgs9f13g33kk";
   }
   {
     name = "graph-buddy";
@@ -43,8 +43,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.10.9";
-    sha256 = "0d7l2aaz9m0bq8fz7zrcmx457d4804wrg6k58298m46v1yvygiq6";
+    version = "1.10.10";
+    sha256 = "0fw86j0rhznn5pg3n0mbnid07368sh45ddifr7p0rl1b7vw9w3dr";
   }
   {
     name = "scaladex-search";
