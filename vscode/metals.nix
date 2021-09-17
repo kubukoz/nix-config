@@ -39,5 +39,10 @@ configuredExtension {
       key = "ctrl+shift+cmd+up";
       command = "metals.goto-super-method";
     }
+    {
+      key = "cmd+t";
+      command = "metals.symbol-search";
+      when = "editorLangId == scala";
+    }
   ];
 }
