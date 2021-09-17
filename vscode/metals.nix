@@ -42,7 +42,7 @@ configuredExtension {
     {
       key = "cmd+t";
       command = "metals.symbol-search";
-      when = "metals:enabled";
+      when = "editorLangId == scala";
     }
   ];
 }
