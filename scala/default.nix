@@ -12,7 +12,6 @@
     (callPackage ../coursier/spotify-next.nix {})
     (callPackage ../coursier/giter8.nix {})
     (callPackage ../coursier/scalafix.nix {})
-    (callPackage ../coursier/catscript.nix {})
     (callPackage ../coursier/scala3-repl.nix {})
   ];
 
@@ -37,14 +36,20 @@
         };
       in
         [ dependencyGraph projectGraph ];
-    credentials = [
-      {
-        realm = "Sonatype Nexus Repository Manager";
-        host = "oss.sonatype.org";
-        user = "kubukoz";
-        passwordCommand = "cat ${toString ./secret-sonatype.txt}";
-      }
-    ];
+    # credentials = [
+    #   {
+    #     realm = "Sonatype Nexus Repository Manager";
+    #     host = "oss.sonatype.org";
+    #     user = "kubukoz";
+    #     passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+    #   }
+    #   {
+    #     realm = "Sonatype Nexus Repository Manager";
+    #     host = "s01.oss.sonatype.org";
+    #     user = "kubukoz";
+    #     passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+    #   }
+    # ];
   };
 
   home.file.".sbt/1.0/global.sbt".text = builtins.readFile
