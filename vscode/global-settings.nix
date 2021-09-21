@@ -1,6 +1,8 @@
 {
   "editor.fontFamily" =
     "'JetBrains Mono', 'Meslo LGS NF', Monaco, 'Courier New', monospace";
+  "terminal.integrated.fontFamily" = "MesloLGS NF";
+  "terminal.integrated.fontSize" = 14;
   "breadcrumbs.enabled" = true;
   "debug.allowBreakpointsEverywhere" = true;
   "editor.cursorBlinking" = "solid";
@@ -15,12 +17,12 @@
   "files.defaultLanguage" = "markdown";
   "files.insertFinalNewline" = true;
   "files.trimTrailingWhitespace" = true;
-  "typescript.preferences.quoteStyle" = "single";
-  "window.zoomLevel" = 0;
   "workbench.editor.enablePreview" = false;
   "workbench.editor.limit.enabled" = true;
   "workbench.editor.limit.value" = 10;
   "workbench.editor.showTabs" = true;
   "workbench.editor.highlightModifiedTabs" = true;
   "workbench.startupEditor" = "none";
+  "window.zoomLevel" = 1;
+  "typescript.preferences.quoteStyle" = "single";
 }
