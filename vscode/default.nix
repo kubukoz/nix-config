@@ -135,12 +135,6 @@ let
       ];
     };
 
-  liveshare = configuredExtension
-    {
-      extension = managed.ms-vsliveshare.vsliveshare;
-      settings = { "liveshare.featureSet" = "insiders"; };
-    };
-
   tla = configuredExtension
     {
       extension = vscode-extensions.alygin.vscode-tlaplus;
@@ -184,7 +178,6 @@ in
     local-history
     gitlens
     multiclip
-    liveshare
     tla
     command-runner
     nix-ide

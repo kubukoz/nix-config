@@ -17,12 +17,6 @@
     sha256 = "0j4njspzr2nz2lavy2d9hhxqay88v7g9d74dilnh7dgm8jqi8gny";
   }
   {
-    name = "vsliveshare";
-    publisher = "ms-vsliveshare";
-    version = "1.0.4836";
-    sha256 = "1sigix4cdism09k53vd6vxa57mjkr9585n94vqnn9njlsfkbc4pf";
-  }
-  {
     name = "vscode-remote-extensionpack";
     publisher = "ms-vscode-remote";
     version = "0.21.0";
