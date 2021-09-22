@@ -28,12 +28,17 @@ in
   };
 
   nixpkgs = {
-    config.allowUnfree = true;
     overlays = [
       (import ./overlays/jvm.nix)
       (import ./overlays/coursier.nix)
       (import ./overlays/vscode.nix)
     ];
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "openssl-1.0.2u"
+      ];
+    };
   };
 
   home-manager = {
