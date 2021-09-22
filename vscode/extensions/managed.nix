@@ -13,8 +13,8 @@
   {
     name = "rust-analyzer";
     publisher = "matklad";
-    version = "0.2.743";
-    sha256 = "0j4njspzr2nz2lavy2d9hhxqay88v7g9d74dilnh7dgm8jqi8gny";
+    version = "0.2.751";
+    sha256 = "09icykk8d0rac0psrjiraqxhd6p66nd6f78jy26x90lby4b1ib2a";
   }
   {
     name = "vscode-remote-extensionpack";
