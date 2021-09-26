@@ -6,12 +6,12 @@ rustPlatform.buildRustPackage {
     libs = if (stdenv.isDarwin) then [ darwin.apple_sdk.frameworks.Security ] else [];
   in
     [ installShellFiles openssl ] ++ libs;
-  cargoSha256 = "0x750k3djzis48d6b11wxn0gsg423zh2hcqdi528vsy8zriaxr72";
+  cargoSha256 = "19khl2ssdrih10m6m2ip795h299zwkms513xdais10b6cdwrmn66";
 
   src = builtins.fetchGit {
     url = "git@github.com:kubukoz/hmm";
-    ref = "v0.5.0";
-    rev = "fdc7b455697782453721f1648a591c6e6b5c265f";
+    ref = "v0.5.1";
+    rev = "72e37f5196204104043c05bd98f13b32a99ac64c";
   };
 
   postInstall = ''
