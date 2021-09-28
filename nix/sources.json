@@ -1,0 +1,8 @@
+{
+    "nix-dss": {
+        "branch": "main",
+        "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
+        "rev": "b922f6e2572c42f814ccffd012bde2e8921d46f0",
+        "type": "git"
+    }
+}
