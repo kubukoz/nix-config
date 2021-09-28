@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  node2nix = pkgs.callPackage ./node2nix { };
+  node2nix = pkgs.callPackage ./node2nix {};
   sbt-search = pkgs.callPackage ./sbt-search.nix {
     mvn-search = node2nix."@erosb/mvn-search";
   };
