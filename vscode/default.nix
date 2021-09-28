@@ -3,7 +3,6 @@
 let
   inherit (pkgs) vscode-extensions;
   inherit (pkgs.callPackage ../lib {}) attributesFromListFile;
-  pkgsUnstable = import ../unstable.nix {};
   vscode-lib = import ./lib.nix;
   inherit (vscode-lib) configuredExtension mkVscodeModule exclude managedPackages;
 
@@ -38,7 +37,7 @@ let
   };
   rust-analyzer = configuredExtension {
     extension = managed.matklad.rust-analyzer;
-    settings = { "rust-analyzer.serverPath" = "${pkgsUnstable.rust-analyzer}/bin/rust-analyzer"; };
+    settings = { "rust-analyzer.serverPath" = "${pkgs.unstable.rust-analyzer}/bin/rust-analyzer"; };
   };
   scala = configuredExtension
     {

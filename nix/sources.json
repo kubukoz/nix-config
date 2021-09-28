@@ -4,5 +4,17 @@
         "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
         "rev": "b922f6e2572c42f814ccffd012bde2e8921d46f0",
         "type": "git"
+    },
+    "unstable": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "60dcbe9837101489af5f6db6171de3c3826224a2",
+        "sha256": "1avqlhdcj327lc6l0vwrxyw7nwc00d3fxk19l78gfjf94c24bqqp",
+        "type": "tarball",
+        "url": "https://github.com/nixos/nixpkgs/archive/60dcbe9837101489af5f6db6171de3c3826224a2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
