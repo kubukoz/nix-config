@@ -68,6 +68,10 @@ in
       source ${./p10k.zsh}
     '';
 
+    history = {
+      size = 100000;
+    };
+
     initExtra =
       let
         iterm2-shell-integration = builtins.fetchurl {
