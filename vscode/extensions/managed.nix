@@ -46,4 +46,10 @@
     version = "0.1.0";
     sha256 = "1mdcm79r681x64jjqjhs11zzm4k2vg48j8dzch9flmha6rd2a5br";
   }
+  {
+    name = "nix-env-selector";
+    publisher = "arrterian";
+    version = "1.0.7";
+    sha256 = "0mralimyzhyp4x9q98x3ck64ifbjqdp8cxcami7clvdvkmf8hxhf";
+  }
 ]
