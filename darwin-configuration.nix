@@ -81,9 +81,4 @@ in
   };
 
   system.stateVersion = 4;
-
-  system.activationScripts.postActivation.text = ''
-    echo "Clearing ~/Applications for Home Manager..." >&2
-    rm -r ~/Applications
-  '';
 }
