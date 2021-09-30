@@ -60,6 +60,7 @@ in
       nss = "nix-shell";
       nb = "nix-build";
       ngc = "nix-collect-garbage -d";
+      ncp = "nix-call-package";
     };
 
     initExtraBeforeCompInit = ''

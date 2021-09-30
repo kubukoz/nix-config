@@ -50,6 +50,7 @@ in
         autoPrograms ++ map (path: pkgs.callPackage path {}) [
           ./derivations/pidof.nix
           ./derivations/hmm.nix
+          ./derivations/nix-call-package.nix
         ];
   };
 }
