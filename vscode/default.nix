@@ -26,6 +26,7 @@ let
       managed.ms-vscode-remote.vscode-remote-extensionpack
       managed.kubukoz.nickel-syntax
       managed.virtuslab.graph-buddy
+      managed.arrterian.nix-env-selector
     ];
   };
 
