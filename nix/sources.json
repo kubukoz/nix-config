@@ -1,4 +1,16 @@
 {
+    "hmm": {
+        "branch": "main",
+        "description": "\"Home Manager\" Manager (hmm, hm²).",
+        "homepage": "",
+        "owner": "kubukoz",
+        "repo": "hmm",
+        "rev": "72e37f5196204104043c05bd98f13b32a99ac64c",
+        "sha256": "0n42ryvqbypl65qpy2jhm92flmw4qzx6zgpi6z2dyrclszlhvx7d",
+        "type": "tarball",
+        "url": "https://github.com/kubukoz/hmm/archive/72e37f5196204104043c05bd98f13b32a99ac64c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "home-manager": {
         "branch": "master",
         "description": "Manage a user environment using Nix  [maintainer=@rycee] ",
@@ -14,7 +26,7 @@
     "nix-dss": {
         "branch": "main",
         "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
-        "rev": "97bc3331f10502a2e143cef7897d01bd07de269c",
+        "rev": "d27b25319d77197d2cd8f204adac25522f746620",
         "type": "git"
     },
     "unstable": {
