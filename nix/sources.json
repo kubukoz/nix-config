@@ -25,8 +25,8 @@
     },
     "nix-dss": {
         "branch": "main",
-        "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
-        "rev": "0a2e5e668d395f204eb02f7b5e0e57ece6aaa3c1",
+        "repo": "ssh://git@github.bamtech.co/jkozlowski/nix-dss",
+        "rev": "e8408599a31ce8c7825b14fede911dc512cbf677",
         "type": "git"
     },
     "unstable": {
