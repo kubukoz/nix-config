@@ -21,7 +21,6 @@
   "httpie"
   "imgcat"
   "lame"
-  "mdsh"
   "niv"
   "nixfmt"
   "nixpkgs-fmt"
