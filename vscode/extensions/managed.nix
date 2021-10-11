@@ -11,12 +11,6 @@
     sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
   }
   {
-    name = "rust-analyzer";
-    publisher = "matklad";
-    version = "0.2.768";
-    sha256 = "0pgw9q46wg7adkfafwdbr1fgw62zv3kdxi2zzjlylrs3yd1drfrs";
-  }
-  {
     name = "vscode-remote-extensionpack";
     publisher = "ms-vscode-remote";
     version = "0.21.0";

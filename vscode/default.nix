@@ -37,7 +37,7 @@ let
     };
   };
   rust-analyzer = configuredExtension {
-    extension = managed.matklad.rust-analyzer;
+    extension = pkgs.unstable.vscode-extensions.matklad.rust-analyzer;
     settings = { "rust-analyzer.serverPath" = "${pkgs.unstable.rust-analyzer}/bin/rust-analyzer"; };
   };
   scala = configuredExtension
