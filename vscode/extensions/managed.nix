@@ -19,14 +19,14 @@
   {
     name = "indent-rainbow";
     publisher = "oderwat";
-    version = "8.1.0";
-    sha256 = "0mk1p79a2v3zwzd8bihp2wmnkfk19rglyzpjjxizl6qkhyb0qccp";
+    version = "8.2.0";
+    sha256 = "0j9dhzbga1ffdn68zr4ppibi95db1hdmldm7ynxi4g24qj4flyld";
   }
   {
     name = "graph-buddy";
     publisher = "virtuslab";
-    version = "0.4.42";
-    sha256 = "0alhhrqwr9jcdhhs20jkdzq75lfmyy1ay6wf4nj6caz5yh3x0b10";
+    version = "0.5.0";
+    sha256 = "10zgmqf1ssry9g6k9hq49sdpx8i8p71ak120hc5nrz18y4bqivxn";
   }
   {
     name = "metals";
