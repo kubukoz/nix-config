@@ -22,7 +22,6 @@
   "imgcat"
   "lame"
   "niv"
-  "nixfmt"
   "nixpkgs-fmt"
   "pirate-get"
   "plantuml"

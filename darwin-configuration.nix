@@ -9,12 +9,15 @@ in
       if (machine.work) then [ ./work/system-work.nix ] else []
     );
 
-  nix = {
-    # Auto upgrade nix package and the daemon service.
-    # better not XD
-    #  services.nix-daemon.enable = true;
-    package = pkgs.nix;
+  services.nix-daemon = {
+    enable = true;
+  };
 
+  nix = {
+    package = pkgs.nix;
+    trustedUsers = [ machine.username ];
+
+    # useSandbox = true;
     # https://github.com/LnL7/nix-darwin/issues/145
     # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
     # fixed according to https://github.com/LnL7/nix-darwin/blob/b3e96fdf6623dffa666f8de8f442cc1d89c93f60/CHANGELOG

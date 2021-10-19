@@ -6,8 +6,11 @@
       name = "${name}-${version}";
       buildInputs = [ coursier ];
       unpackPhase = "true";
+      COURSIER_JVM_CACHE = ".nix/COURSIER_JVM_CACHE";
+      COURSIER_CACHE = ".nix/COURSIER_CACHE";
+      COURSIER_ARCHIVE_CACHE = ".nix/COURSIER_ARCHIVE_CACHE";
       buildPhase = ''
-        coursier bootstrap ${artifact} -o ${alias}
+        cs bootstrap ${artifact} -o ${alias}
       '';
 
       installPhase = ''

@@ -61,6 +61,7 @@ in
       nb = "nix-build";
       ngc = "nix-collect-garbage -d";
       ncp = "nix-call-package";
+      coursier = "cs";
     };
 
     initExtraBeforeCompInit = ''
