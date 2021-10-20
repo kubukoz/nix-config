@@ -1,5 +1,8 @@
 { pkgs, config, ... }:
 
+let
+  sources = import ../nix/sources.nix {};
+in
 {
   imports = [ ./bloop.nix ];
 
@@ -13,6 +16,7 @@
     (callPackage ../coursier/giter8.nix {})
     (callPackage ../coursier/scalafix.nix {})
     (callPackage ../coursier/scala3-repl.nix {})
+    (callPackage sources.scala-cli {})
   ];
 
   home.sessionVariables = {

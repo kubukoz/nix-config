@@ -29,6 +29,18 @@
         "rev": "ab32f07129ba5cebfca94f32974acf5767d12637",
         "type": "git"
     },
+    "scala-cli": {
+        "branch": "main",
+        "description": "A Nix derivation for https://github.com/virtuslab/scala-cli",
+        "homepage": "",
+        "owner": "kubukoz",
+        "repo": "scala-cli.nix",
+        "rev": "79d4acec5c227c3f10d590b72456fc4f03eee4fa",
+        "sha256": "021c4igdic1cdppmxx65ndb4f10nzlqjzcnqfr1xzb96n6z5fv9s",
+        "type": "tarball",
+        "url": "https://github.com/kubukoz/scala-cli.nix/archive/79d4acec5c227c3f10d590b72456fc4f03eee4fa.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "unstable": {
         "branch": "master",
         "description": "Nix Packages collection",
