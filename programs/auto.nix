@@ -31,7 +31,6 @@
   "python2"
   "python3"
   "ranger"
-  "redis"
   "rnix-lsp"
   "rustc"
   "rustfmt"

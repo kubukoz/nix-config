@@ -59,8 +59,7 @@ in
       dcp = "docker-compose";
       nss = "nix-shell";
       nb = "nix-build";
-      ngc = "nix-collect-garbage -d";
-      ncp = "nix-call-package";
+      ngc = "sudo nix-collect-garbage -d";
       coursier = "cs";
     };
 

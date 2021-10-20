@@ -82,8 +82,5 @@ self: super: {
     in
       self.callPackage der {};
 
-  coursier-tools = import ../coursier {
-    inherit (super) stdenv;
-    inherit (self) coursier;
-  };
+  coursier-tools = self.callPackage ../coursier {};
 }

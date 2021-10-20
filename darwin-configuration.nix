@@ -14,10 +14,11 @@ in
   };
 
   nix = {
-    package = pkgs.nix;
+    # package = pkgs.nix;
     trustedUsers = [ machine.username ];
 
-    useSandbox = true;
+    # todo
+    useSandbox = false;
     # https://github.com/LnL7/nix-darwin/issues/145
     # https://github.com/LnL7/nix-darwin/issues/105#issuecomment-567742942
     # fixed according to https://github.com/LnL7/nix-darwin/blob/b3e96fdf6623dffa666f8de8f442cc1d89c93f60/CHANGELOG
