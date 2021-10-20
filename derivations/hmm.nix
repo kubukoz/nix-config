@@ -1,4 +1,4 @@
-{ rustPlatform, installShellFiles, openssl, stdenv, darwin }:
+{ rustPlatform, installShellFiles, openssl, stdenv, darwin, cacert }:
 
 let
   sources = import ../nix/sources.nix;
@@ -8,7 +8,7 @@ rustPlatform.buildRustPackage {
   buildInputs = let
     libs = if (stdenv.isDarwin) then [ darwin.apple_sdk.frameworks.Security ] else [];
   in
-    [ installShellFiles openssl ] ++ libs;
+    [ installShellFiles openssl cacert ] ++ libs;
   cargoSha256 = "19khl2ssdrih10m6m2ip795h299zwkms513xdais10b6cdwrmn66";
 
   src = sources.hmm;

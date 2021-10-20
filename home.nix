@@ -49,8 +49,7 @@ in
       in
         autoPrograms ++ map (path: pkgs.callPackage path {}) [
           ./derivations/pidof.nix
-          # todo openssl
-          # ./derivations/hmm.nix
+          ./derivations/hmm.nix
         ];
   };
 }
