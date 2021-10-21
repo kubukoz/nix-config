@@ -25,8 +25,8 @@
   {
     name = "graph-buddy";
     publisher = "virtuslab";
-    version = "0.5.0";
-    sha256 = "10zgmqf1ssry9g6k9hq49sdpx8i8p71ak120hc5nrz18y4bqivxn";
+    version = "0.5.1";
+    sha256 = "043bg8p6pr3n64ly58xj1g8lmaf4qxpcjxf6g0zd4qgl1j5w7rsk";
   }
   {
     name = "metals";
