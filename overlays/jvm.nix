@@ -1,6 +1,6 @@
 self: super:
 let
-  jre = super.callPackage ../derivations/graalvm {};
+  jre = super.graalvm11-ce;
   jdk = jre;
 in
 {
