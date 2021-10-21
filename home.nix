@@ -27,7 +27,6 @@ in
     ./scala
     ./node
     ./vscode
-    ./semisecret.nix
   ];
 
   home = {
