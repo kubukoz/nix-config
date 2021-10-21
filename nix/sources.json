@@ -35,10 +35,10 @@
         "homepage": "",
         "owner": "kubukoz",
         "repo": "scala-cli.nix",
-        "rev": "79d4acec5c227c3f10d590b72456fc4f03eee4fa",
-        "sha256": "021c4igdic1cdppmxx65ndb4f10nzlqjzcnqfr1xzb96n6z5fv9s",
+        "rev": "9def2b986709a8ad6386526460e58d5d2eca81df",
+        "sha256": "02gmqgzvzzf6pa9bcm0rsv8sr7j6488ibn38cnla5zzba3az718w",
         "type": "tarball",
-        "url": "https://github.com/kubukoz/scala-cli.nix/archive/79d4acec5c227c3f10d590b72456fc4f03eee4fa.tar.gz",
+        "url": "https://github.com/kubukoz/scala-cli.nix/archive/9def2b986709a8ad6386526460e58d5d2eca81df.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "unstable": {
