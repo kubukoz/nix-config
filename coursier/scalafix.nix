@@ -1,7 +1,7 @@
 { coursier-tools }:
 
 coursier-tools.coursierBootstrap {
-  name = "scalafix";
+  pname = "scalafix";
   artifact = "scalafix";
   version = "unstable";
 }
