@@ -12,7 +12,7 @@ in
     ammonite
     scalafmt
     coursier
-    (callPackage ../coursier/spotify-next.nix {})
+    (callPackage ../derivations/spotify-next.nix {})
     (callPackage ../coursier/giter8.nix {})
     (callPackage ../coursier/scalafix.nix {})
     (callPackage ../coursier/scala3-repl.nix {})
