@@ -2,7 +2,7 @@
 
 let
   version = "1.7.4";
-  pname = "spotify-next";
+  pname = "spotify-next-native";
   src = builtins.fetchurl {
     url = "https://github.com/kubukoz/spotify-next/releases/download/v${version}/spotify-next";
     sha256 = "1ivmlrp8j8xn2l6lngj5pdbl9rbkc99pbwp114x8bjrram4hqdga";
