@@ -8,6 +8,7 @@
   "bottom"
   "cachix"
   "cargo"
+  "chase"
   "clippy"
   "ctop"
   "dhall"
