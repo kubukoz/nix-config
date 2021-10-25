@@ -19,8 +19,8 @@
   {
     name = "indent-rainbow";
     publisher = "oderwat";
-    version = "8.2.1";
-    sha256 = "1crayfdisxn7l7kinn7q719r9a7fk2jrvf5wqw2b8xfay10a1lr3";
+    version = "8.2.2";
+    sha256 = "1xxljwh66f21fzmhw8icrmxxmfww1s67kf5ja65a8qb1x1rhjjgf";
   }
   {
     name = "graph-buddy";
