@@ -52,10 +52,4 @@
     version = "0.35.0";
     sha256 = "1l1w83yix8ya7si2g3w64mczh0m992c0cp2q0262qp3y0gspnm2j";
   }
-  {
-    name = "csharp";
-    publisher = "ms-dotnettools";
-    version = "1.23.16";
-    sha256 = "18jabkxxws6v6c01qy80g22qa65ifq44yzcc48ix3ni24dqjzkkw";
-  }
 ]

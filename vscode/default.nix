@@ -28,7 +28,6 @@ let
       managed.virtuslab.graph-buddy
       managed.arrterian.nix-env-selector
       managed.octref.vetur
-      managed.ms-dotnettools.csharp
     ];
   };
 
