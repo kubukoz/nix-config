@@ -25,14 +25,14 @@
   {
     name = "graph-buddy";
     publisher = "virtuslab";
-    version = "0.5.1";
-    sha256 = "043bg8p6pr3n64ly58xj1g8lmaf4qxpcjxf6g0zd4qgl1j5w7rsk";
+    version = "0.5.2";
+    sha256 = "11j18p4hmq19j3sgsmlk1gcq3zh7lxw1hspyy83jxpi9hcbh6ind";
   }
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.10.12";
-    sha256 = "14swh5kn0d7zzv2skz202xpm4hghsxv9jqrn98n4l07mlzrg5zgd";
+    version = "1.10.13";
+    sha256 = "014mcq2gmyvgyhh55z498b9iim7k87m2iibqfwmj5w2dpf3mfv3m";
   }
   {
     name = "scaladex-search";
@@ -45,5 +45,17 @@
     publisher = "arrterian";
     version = "1.0.7";
     sha256 = "0mralimyzhyp4x9q98x3ck64ifbjqdp8cxcami7clvdvkmf8hxhf";
+  }
+  {
+    name = "vetur";
+    publisher = "octref";
+    version = "0.35.0";
+    sha256 = "1l1w83yix8ya7si2g3w64mczh0m992c0cp2q0262qp3y0gspnm2j";
+  }
+  {
+    name = "csharp";
+    publisher = "ms-dotnettools";
+    version = "1.23.16";
+    sha256 = "18jabkxxws6v6c01qy80g22qa65ifq44yzcc48ix3ni24dqjzkkw";
   }
 ]
