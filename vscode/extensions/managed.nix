@@ -37,8 +37,8 @@
   {
     name = "scaladex-search";
     publisher = "baccata";
-    version = "0.1.0";
-    sha256 = "1mdcm79r681x64jjqjhs11zzm4k2vg48j8dzch9flmha6rd2a5br";
+    version = "0.2.0";
+    sha256 = "0xbikwlrascmn9nzyl4fxb2ql1dczd00ragp30a3yv8bax173bnz";
   }
   {
     name = "nix-env-selector";

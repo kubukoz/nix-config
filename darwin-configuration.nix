@@ -14,7 +14,7 @@ in
   };
 
   nix = {
-    package = pkgs.nix;
+    package = (import (import ./nix/sources.nix).unstable {}).nix;
     trustedUsers = [ machine.username ];
 
     # todo
