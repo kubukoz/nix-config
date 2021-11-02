@@ -26,7 +26,7 @@
     "nix-dss": {
         "branch": "main",
         "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
-        "rev": "44127b33271118f2c5774a06031b751ba3e7aa22",
+        "rev": "c56788b4fb52737fab2157b86f2e96a80f63bcc3",
         "type": "git"
     },
     "scala-cli": {
