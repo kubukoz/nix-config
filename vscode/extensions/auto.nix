@@ -11,6 +11,7 @@
   "dhall.vscode-dhall-lsp-server"
   "github.vscode-pull-request-github"
   "graphql.vscode-graphql"
+  "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
   "ms-azuretools.vscode-docker"
   "redhat.vscode-yaml"

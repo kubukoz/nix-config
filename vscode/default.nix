@@ -37,10 +37,6 @@ let
       "indentRainbow.includedLanguages" = [ "yaml" ];
     };
   };
-  rust-analyzer = configuredExtension {
-    extension = pkgs.vscode-extensions.matklad.rust-analyzer;
-    settings = { "rust-analyzer.serverPath" = "${pkgs.rust-analyzer}/bin/rust-analyzer"; };
-  };
   scala = configuredExtension
     {
       extension = vscode-extensions.scala-lang.scala;
@@ -182,7 +178,6 @@ in
     tla
     command-runner
     nix-ide
-    rust-analyzer
     indent-rainbow
   ];
 }
