@@ -6,7 +6,7 @@ in
 {
   imports =
     [ (home-manager + "/nix-darwin") ./system/zsh ./system/fonts ] ++ (
-      if (machine.work) then [ ./work/system-work.nix ] else []
+      if (machine.work) then [ ./work/system-work.nix ] else [ ]
     );
 
   services.nix-daemon = {
@@ -14,7 +14,7 @@ in
   };
 
   nix = {
-    package = (import (import ./nix/sources.nix).unstable {}).nix;
+    package = (import (import ./nix/sources.nix).unstable { }).nix;
     trustedUsers = [ machine.username ];
 
     # todo

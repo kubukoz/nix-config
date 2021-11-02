@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  inherit (pkgs.callPackage ./lib {}) attributesFromListFile;
+  inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
 in
 {
   programs = {
@@ -46,9 +46,9 @@ in
           root = pkgs;
         };
       in
-        autoPrograms ++ map (path: pkgs.callPackage path {}) [
-          ./derivations/pidof.nix
-          ./derivations/hmm.nix
-        ];
+      autoPrograms ++ map (path: pkgs.callPackage path { }) [
+        ./derivations/pidof.nix
+        ./derivations/hmm.nix
+      ];
   };
 }
