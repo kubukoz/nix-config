@@ -11,12 +11,6 @@
     sha256 = "010zn58j9kdb2jpxmlfyyyais51pwn7v2c5cfi4051ayd02b9n3s";
   }
   {
-    name = "vscode-remote-extensionpack";
-    publisher = "ms-vscode-remote";
-    version = "0.21.0";
-    sha256 = "14l8h84kvnkbqwmw875qa6y25hhxvx1dsg0g07gdl6n8cv5kvy2g";
-  }
-  {
     name = "indent-rainbow";
     publisher = "oderwat";
     version = "8.2.2";

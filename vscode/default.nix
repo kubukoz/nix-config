@@ -23,7 +23,6 @@ let
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
     extensions = auto-extensions ++ [
-      managed.ms-vscode-remote.vscode-remote-extensionpack
       managed.kubukoz.nickel-syntax
       managed.virtuslab.graph-buddy
       managed.arrterian.nix-env-selector
