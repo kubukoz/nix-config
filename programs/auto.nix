@@ -16,6 +16,7 @@
   "dhall-lsp-server"
   "exiftool"
   "ffmpeg"
+  "fx"
   "gnuplot"
   "graphviz"
   "gti"
