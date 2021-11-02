@@ -14,7 +14,7 @@ in
   };
 
   nix = {
-    # package = pkgs.nix;
+    package = pkgs.nix;
     trustedUsers = [ machine.username ];
 
     # todo
