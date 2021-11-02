@@ -19,6 +19,9 @@ in
 
     # todo
     useSandbox = false;
+    extraOptions = ''
+      extra-experimental-features = nix-command flakes
+    '';
   };
 
   nixpkgs = {
