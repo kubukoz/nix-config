@@ -7,7 +7,7 @@
   "baccata.scaladex-search"
   "codezombiech.gitignore"
   "github.vscode-pull-request-github"
-  # "matklad.rust-analyzer"
+  "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
   "ms-azuretools.vscode-docker"
   "redhat.vscode-yaml"

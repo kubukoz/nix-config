@@ -9,7 +9,7 @@ in
   home.packages = with pkgs; [
     jdk
     scala
-    # ammonite
+    ammonite
     scalafmt
     coursier
     (callPackage ../derivations/spotify-next.nix { })
