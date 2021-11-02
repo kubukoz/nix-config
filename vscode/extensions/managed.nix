@@ -40,4 +40,10 @@
     version = "0.35.0";
     sha256 = "1l1w83yix8ya7si2g3w64mczh0m992c0cp2q0262qp3y0gspnm2j";
   }
+  {
+    name = "mdx";
+    publisher = "silvenon";
+    version = "0.1.0";
+    sha256 = "1mzsqgv0zdlj886kh1yx1zr966yc8hqwmiqrb1532xbmgyy6adz3";
+  }
 ]

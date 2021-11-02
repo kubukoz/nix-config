@@ -26,6 +26,7 @@ let
       managed.kubukoz.nickel-syntax
       managed.arrterian.nix-env-selector
       managed.octref.vetur
+      managed.silvenon.mdx
     ];
   };
 
