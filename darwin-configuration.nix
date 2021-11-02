@@ -30,8 +30,6 @@ in
         ];
       }
     ];
-    # all
-    buildCores = 0;
   };
 
   nixpkgs = {
