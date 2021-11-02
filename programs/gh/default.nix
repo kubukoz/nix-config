@@ -1,10 +1,12 @@
 { config, ... }: {
   programs.gh = {
     enable = true;
-    gitProtocol = "ssh";
-    aliases = {
-      co = "pr checkout";
-      open = "repo view --web";
+    settings = {
+      git_protocol = "ssh";
+      aliases = {
+        co = "pr checkout";
+        open = "repo view --web";
+      };
     };
   };
 
