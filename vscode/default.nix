@@ -24,7 +24,6 @@ let
 
     extensions = auto-extensions ++ [
       managed.kubukoz.nickel-syntax
-      managed.virtuslab.graph-buddy
       managed.arrterian.nix-env-selector
       managed.octref.vetur
     ];

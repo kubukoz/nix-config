@@ -17,12 +17,6 @@
     sha256 = "1xxljwh66f21fzmhw8icrmxxmfww1s67kf5ja65a8qb1x1rhjjgf";
   }
   {
-    name = "graph-buddy";
-    publisher = "virtuslab";
-    version = "0.5.2";
-    sha256 = "11j18p4hmq19j3sgsmlk1gcq3zh7lxw1hspyy83jxpi9hcbh6ind";
-  }
-  {
     name = "metals";
     publisher = "scalameta";
     version = "1.10.13";
