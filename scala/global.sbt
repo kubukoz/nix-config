@@ -7,5 +7,3 @@ libraryDependencies ++= {
   else
     Nil
 }
-
-addDependencyTreePlugin
