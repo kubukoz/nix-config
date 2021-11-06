@@ -19,8 +19,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.10.13";
-    sha256 = "014mcq2gmyvgyhh55z498b9iim7k87m2iibqfwmj5w2dpf3mfv3m";
+    version = "1.10.14";
+    sha256 = "0vmwx2lpf4mld7bdmw1xa84i2h7bav3s0n973lqmspmm7s7amw7h";
   }
   {
     name = "scaladex-search";
