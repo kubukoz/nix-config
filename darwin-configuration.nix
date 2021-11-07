@@ -14,14 +14,15 @@ in
   };
 
   nix = {
-    package = (import (import ./nix/sources.nix).unstable {}).nix;
+    # package = (import (import ./nix/sources.nix).unstable {}).nix;
+    package = pkgs.nix;
     trustedUsers = [ machine.username ];
 
     # todo
     useSandbox = false;
-    extraOptions = ''
-      extra-experimental-features = nix-command flakes
-    '';
+    # extraOptions = ''
+    #   extra-experimental-features = nix-command flakes
+    # '';
   };
 
   nixpkgs = {
