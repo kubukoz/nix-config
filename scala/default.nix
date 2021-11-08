@@ -12,9 +12,9 @@ in
     ammonite
     scalafmt
     coursier
-    (callPackage ../derivations/spotify-next.nix { })
-    (callPackage ../coursier/giter8.nix { })
-    (import sources.scala-cli { inherit pkgs; })
+    (callPackage ../derivations/spotify-next.nix {})
+    (callPackage ../coursier/giter8.nix {})
+    (import sources.scala-cli {})
   ];
 
   home.sessionVariables = {
@@ -32,7 +32,7 @@ in
           version = "0.4.0";
         };
       in
-      [ projectGraph ];
+        [ projectGraph ];
     # credentials = [
     #   {
     #     realm = "Sonatype Nexus Repository Manager";
