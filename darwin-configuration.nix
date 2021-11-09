@@ -28,8 +28,8 @@ in
   nixpkgs = {
     overlays = [
       (import ./overlays/unstable.nix)
-      (import ./overlays/jvm.nix)
       (import ./overlays/coursier.nix)
+      (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
     ];
     config = {
