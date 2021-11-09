@@ -14,7 +14,7 @@ in
   };
 
   nix = {
-    # package = (import (import ./nix/sources.nix).unstable {}).nix;
+    # package = (import (import ./nix/sources.nix).unstable {}).nix_2_4;
     package = pkgs.nix;
     trustedUsers = [ machine.username ];
 

@@ -29,28 +29,16 @@
         "rev": "c56788b4fb52737fab2157b86f2e96a80f63bcc3",
         "type": "git"
     },
-    "scala-cli": {
-        "branch": "main",
-        "description": "A Nix derivation for https://github.com/virtuslab/scala-cli",
-        "homepage": "",
-        "owner": "kubukoz",
-        "repo": "scala-cli.nix",
-        "rev": "806ffcc0ec39b35fa5b206f38ed1588f161997a5",
-        "sha256": "1pwzbq1br4fcd9j5ra5a9yys5h4p58cyfck3zlw7yz4j6ywbr97d",
-        "type": "tarball",
-        "url": "https://github.com/kubukoz/scala-cli.nix/archive/806ffcc0ec39b35fa5b206f38ed1588f161997a5.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "unstable": {
-        "branch": "nix-2.4",
+        "branch": "master",
         "description": "Nix Packages collection",
         "homepage": "",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "482bd3695dfc425643cc29b56f0779bb3532bd13",
-        "sha256": "17lavvxsf4xadiw9s4qs3kac35giaf3hh2p6j7yp1fk45yv9piyl",
+        "rev": "db6044d5debaff0749420c3553d1b89fc6c5c5f8",
+        "sha256": "0v146zk889sap4hnw4wbricw6qmv8alvl5cml06hny6fvrgzvk0j",
         "type": "tarball",
-        "url": "https://github.com/nixos/nixpkgs/archive/482bd3695dfc425643cc29b56f0779bb3532bd13.tar.gz",
+        "url": "https://github.com/nixos/nixpkgs/archive/db6044d5debaff0749420c3553d1b89fc6c5c5f8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
