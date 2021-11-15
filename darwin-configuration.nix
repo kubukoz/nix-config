@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ config, ... }:
 let
   machine = import ./system/machines;
   home-manager = let sources = import ./nix/sources.nix; in sources.home-manager;
