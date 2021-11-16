@@ -21,7 +21,7 @@ in
     # todo
     useSandbox = false;
     extraOptions = ''
-      extra-experimental-features = nix-command flakes
+      experimental-features = nix-command flakes
     '';
   };
 
