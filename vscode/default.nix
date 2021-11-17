@@ -18,7 +18,7 @@ let
 
   baseSettings = mkVscodeModule {
     enable = true;
-    package = pkgs.hello // { pname = pkgs.vscode.pname; };
+    package = pkgs.runCommandNoCC "dummy" {} "mkdir $out" // { pname = pkgs.vscode.pname; };
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
