@@ -3,6 +3,7 @@
 , machine
 , home-manager
 , unstable
+, hmm
 , ...
 }:
 {
@@ -48,7 +49,7 @@
     users."${machine.username}" = {
       imports = [ ./home.nix ];
     };
-    extraSpecialArgs = { inherit machine; };
+    extraSpecialArgs = { inherit machine hmm; };
   };
 
   networking.hostName = machine.hostname;

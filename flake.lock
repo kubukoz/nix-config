@@ -36,6 +36,22 @@
         "type": "github"
       }
     },
+    "hmm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1627079471,
+        "narHash": "sha256-7fQN6deUZd/EN/G+b/rHhFfqRKpQCn9xMfT6hbfPglg=",
+        "owner": "kubukoz",
+        "repo": "hmm",
+        "rev": "72e37f5196204104043c05bd98f13b32a99ac64c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kubukoz",
+        "repo": "hmm",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -99,6 +115,7 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "hmm": "hmm",
         "home-manager": "home-manager",
         "nix-dss": "nix-dss",
         "nixpkgs": "nixpkgs",
