@@ -1,10 +1,12 @@
-{ pkgs, config, machine, ... }:
-let
-  home-manager = let sources = import ./nix/sources.nix; in sources.home-manager;
-in
+{ pkgs
+, config
+, machine
+, home-manager
+, ...
+}:
 {
   imports =
-    [ (home-manager + "/nix-darwin") ./system/zsh ./system/fonts ] ++ (
+    [ (home-manager.darwinModules.home-manager) ./system/zsh ./system/fonts ] ++ (
       if (machine.work) then [ ./work/system-work.nix ] else []
     );
 

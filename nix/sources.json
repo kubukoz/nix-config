@@ -11,18 +11,6 @@
         "url": "https://github.com/kubukoz/hmm/archive/72e37f5196204104043c05bd98f13b32a99ac64c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "home-manager": {
-        "branch": "master",
-        "description": "Manage a user environment using Nix  [maintainer=@rycee] ",
-        "homepage": "https://nix-community.github.io/home-manager/",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "5559ef002306dde0093f3d329725259cada9ed41",
-        "sha256": "1h1dj8pyhfxgaxmn1siwp9p58fn2ribd5r5bns45i5wph18713vp",
-        "type": "tarball",
-        "url": "https://github.com/nix-community/home-manager/archive/5559ef002306dde0093f3d329725259cada9ed41.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "nix-dss": {
         "branch": "main",
         "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
