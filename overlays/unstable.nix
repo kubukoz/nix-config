@@ -1,7 +1,5 @@
+{ unstable }:
 _: super:
-let
-  sources = import ../nix/sources.nix;
-in
 {
-  unstable = import sources.unstable { inherit (super) system; };
+  unstable = import unstable { inherit (super) system; };
 }

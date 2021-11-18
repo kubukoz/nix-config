@@ -2,6 +2,7 @@
 , config
 , machine
 , home-manager
+, unstable
 , ...
 }:
 {
@@ -28,7 +29,7 @@
 
   nixpkgs = {
     overlays = [
-      (import ./overlays/unstable.nix)
+      (import ./overlays/unstable.nix { inherit unstable; })
       (import ./overlays/coursier.nix)
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)

@@ -7,16 +7,17 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager?rev=5559ef002306dde0093f3d329725259cada9ed41";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    unstable.url = "github:nixos/nixpkgs?rev=b42d15105172721b2ec34981d574cab7956e80a9";
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager }:
+  outputs = { self, darwin, nixpkgs, home-manager, unstable }:
     {
       darwinConfigurations.kubukoz-work = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         modules = [ ./darwin-configuration.nix ];
         specialArgs = {
           machine = import ./system/machines/work.nix;
-          inherit home-manager;
+          inherit home-manager unstable;
         };
       };
     };
