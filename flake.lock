@@ -79,14 +79,14 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "vscode-extensions": "vscode-extensions"
+        "vscode-smithy": "vscode-smithy"
       },
       "locked": {
-        "lastModified": 1637202843,
-        "narHash": "sha256-/Bc1VnGWL95oXmB47hXngze3qELIy5CPg+XNUilFU7Q=",
+        "lastModified": 1637204520,
+        "narHash": "sha256-H3L0FujZ+5lvErNtrEqXZ3To2D/XXGnsJUkU05JO6O8=",
         "ref": "flakes",
-        "rev": "0d836bf121af3be86fbe6466fcbc354f4453bfe0",
-        "revCount": 108,
+        "rev": "3874863b7fecd74834840b3eb36491d51ad45f9f",
+        "revCount": 110,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
       },
@@ -138,53 +138,7 @@
         "type": "github"
       }
     },
-    "vscode-extensions": {
-      "inputs": {
-        "flake-utils": [
-          "nix-dss",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nix-dss",
-          "nixpkgs"
-        ],
-        "vscode-smithy": "vscode-smithy"
-      },
-      "locked": {
-        "narHash": "sha256-PZDX4Lsuj9bfXtEoBblWBrm5l5FZ+IluTrsjH+ytXLk=",
-        "path": "./vscode-extensions",
-        "type": "path"
-      },
-      "original": {
-        "path": "./vscode-extensions",
-        "type": "path"
-      }
-    },
     "vscode-smithy": {
-      "inputs": {
-        "flake-utils": [
-          "nix-dss",
-          "vscode-extensions",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nix-dss",
-          "vscode-extensions",
-          "nixpkgs"
-        ],
-        "vscode-smithy-src": "vscode-smithy-src"
-      },
-      "locked": {
-        "narHash": "sha256-GYLjI2KQYtMrLppI3qJgoz1nuHJqP3+utpAVcy+Aa+8=",
-        "path": "../programs/vscode-smithy",
-        "type": "path"
-      },
-      "original": {
-        "path": "../programs/vscode-smithy",
-        "type": "path"
-      }
-    },
-    "vscode-smithy-src": {
       "flake": false,
       "locked": {
         "lastModified": 1633104568,
