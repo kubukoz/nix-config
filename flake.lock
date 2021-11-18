@@ -82,11 +82,11 @@
         "vscode-smithy": "vscode-smithy"
       },
       "locked": {
-        "lastModified": 1637252755,
-        "narHash": "sha256-iOp+8AlZZIrUksUoJyZd6qCis78dDZLmn2+jk5XSQyk=",
+        "lastModified": 1637256002,
+        "narHash": "sha256-Ba0C5kRqvws+Pr4p4ZaulWihOItNmY1xoQfJURQ9pwA=",
         "ref": "flakes",
-        "rev": "afaf04bbb8ab0f37112f4cdd635f74e8d0bf2c35",
-        "revCount": 112,
+        "rev": "5b55a7973d0cdf18ae8e1e05518d33d590e74cde",
+        "revCount": 113,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
       },
