@@ -10,11 +10,5 @@
         "type": "tarball",
         "url": "https://github.com/kubukoz/hmm/archive/72e37f5196204104043c05bd98f13b32a99ac64c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nix-dss": {
-        "branch": "main",
-        "repo": "git@github.bamtech.co:jkozlowski/nix-dss",
-        "rev": "53e7aae409c0a688745cfacfedee5387fb0f073e",
-        "type": "git"
     }
 }

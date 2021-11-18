@@ -21,6 +21,21 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1637014545,
+        "narHash": "sha256-26IZAc5yzlD9FlDT54io1oqG/bBoyka+FJk5guaX4x4=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "bba5dcc8e0b20ab664967ad83d24d64cb64ec4f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -40,6 +55,29 @@
         "repo": "home-manager",
         "rev": "5559ef002306dde0093f3d329725259cada9ed41",
         "type": "github"
+      }
+    },
+    "nix-dss": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "vscode-extensions": "vscode-extensions"
+      },
+      "locked": {
+        "lastModified": 1637202843,
+        "narHash": "sha256-/Bc1VnGWL95oXmB47hXngze3qELIy5CPg+XNUilFU7Q=",
+        "ref": "flakes",
+        "rev": "0d836bf121af3be86fbe6466fcbc354f4453bfe0",
+        "revCount": 108,
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
+      },
+      "original": {
+        "ref": "flakes",
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
       }
     },
     "nixpkgs": {
@@ -62,6 +100,7 @@
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "nix-dss": "nix-dss",
         "nixpkgs": "nixpkgs",
         "unstable": "unstable"
       }
@@ -80,6 +119,68 @@
         "repo": "nixpkgs",
         "rev": "b42d15105172721b2ec34981d574cab7956e80a9",
         "type": "github"
+      }
+    },
+    "vscode-extensions": {
+      "inputs": {
+        "flake-utils": [
+          "nix-dss",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nix-dss",
+          "nixpkgs"
+        ],
+        "vscode-smithy": "vscode-smithy"
+      },
+      "locked": {
+        "narHash": "sha256-PZDX4Lsuj9bfXtEoBblWBrm5l5FZ+IluTrsjH+ytXLk=",
+        "path": "./vscode-extensions",
+        "type": "path"
+      },
+      "original": {
+        "path": "./vscode-extensions",
+        "type": "path"
+      }
+    },
+    "vscode-smithy": {
+      "inputs": {
+        "flake-utils": [
+          "nix-dss",
+          "vscode-extensions",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nix-dss",
+          "vscode-extensions",
+          "nixpkgs"
+        ],
+        "vscode-smithy-src": "vscode-smithy-src"
+      },
+      "locked": {
+        "narHash": "sha256-GYLjI2KQYtMrLppI3qJgoz1nuHJqP3+utpAVcy+Aa+8=",
+        "path": "../programs/vscode-smithy",
+        "type": "path"
+      },
+      "original": {
+        "path": "../programs/vscode-smithy",
+        "type": "path"
+      }
+    },
+    "vscode-smithy-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1633104568,
+        "narHash": "sha256-HxdqUwl0nYelrVjMH+Uy+RM/iY+Ei1slyj8YU3NZk/s=",
+        "ref": "master",
+        "rev": "ebdb450bdd920e554ccbe013da2687a71c92435e",
+        "revCount": 23,
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/oss/vscode-smithy"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/oss/vscode-smithy"
       }
     }
   },
