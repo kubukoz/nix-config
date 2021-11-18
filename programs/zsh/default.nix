@@ -1,7 +1,4 @@
-{ pkgs, config, ... }:
-let
-  machine = import ../../system/machines;
-in
+{ pkgs, config, machine, ... }:
 {
 
   home.packages = with pkgs; [ exa ];

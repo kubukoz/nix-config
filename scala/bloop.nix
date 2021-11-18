@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-let
-  machine = import ../system/machines;
-in
+{ pkgs, machine, ... }:
 {
   home.packages = [ pkgs.bloop ];
 

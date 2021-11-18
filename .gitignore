@@ -1,5 +1,4 @@
 graalvm/*.tar.gz
 scala/fury-*.tar.gz
 result
-system/machines/current.nix
 **/.DS_Store

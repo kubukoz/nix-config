@@ -1,6 +1,5 @@
-{ config, ... }:
+{ pkgs, config, machine, ... }:
 let
-  machine = import ./system/machines;
   home-manager = let sources = import ./nix/sources.nix; in sources.home-manager;
 in
 {
@@ -14,8 +13,8 @@ in
   };
 
   nix = {
-    package = (import (import ./nix/sources.nix).unstable {}).nix_2_4;
-    # package = pkgs.nix;
+    package = pkgs.unstable.nix_2_4;
+
     trustedUsers = [ machine.username ];
 
     # todo
@@ -46,6 +45,7 @@ in
     users."${machine.username}" = {
       imports = [ ./home.nix ];
     };
+    extraSpecialArgs = { inherit machine; };
   };
 
   networking.hostName = machine.hostname;
