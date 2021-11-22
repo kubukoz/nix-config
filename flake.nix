@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?rev=2182da1de8081da92f3c5c04e3fa5e5452266afc";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:kubukoz/home-manager?ref=sbt-password-command-fix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     unstable.url = "github:nixos/nixpkgs";
     nix-dss.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-dss?ref=flakes";

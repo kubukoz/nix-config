@@ -59,15 +59,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1637516270,
-        "narHash": "sha256-qTffAQ0kWA2qXMJUVMDsgXVbzMNI0BfR78vB/4QFA+o=",
-        "owner": "nix-community",
+        "lastModified": 1637601503,
+        "narHash": "sha256-Rsxqmbl4KGdk52A/qZsClaB4bvza3rdOa4YsElrOaJE=",
+        "owner": "kubukoz",
         "repo": "home-manager",
-        "rev": "15ae861e1bfad90e0d14106551544e9e07cbcb10",
+        "rev": "fc2dba70d7350b2b205e8cdd259637c328fed82d",
         "type": "github"
       },
       "original": {
-        "owner": "nix-community",
+        "owner": "kubukoz",
+        "ref": "sbt-password-command-fix",
         "repo": "home-manager",
         "type": "github"
       }
