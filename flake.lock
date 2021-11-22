@@ -39,11 +39,11 @@
     "hmm": {
       "flake": false,
       "locked": {
-        "lastModified": 1627079471,
-        "narHash": "sha256-7fQN6deUZd/EN/G+b/rHhFfqRKpQCn9xMfT6hbfPglg=",
+        "lastModified": 1637599320,
+        "narHash": "sha256-lG9Ae53EB7BudzLi3sJ+FdqeyGN0reh974tgBmwICpY=",
         "owner": "kubukoz",
         "repo": "hmm",
-        "rev": "72e37f5196204104043c05bd98f13b32a99ac64c",
+        "rev": "ff70c540564c9776c3fc46b493df5f79985349ab",
         "type": "github"
       },
       "original": {
