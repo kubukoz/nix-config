@@ -151,7 +151,7 @@ let
         {
           key = "ctrl+cmd+enter";
           command = "command-runner.run";
-          args = { command = "darwin-rebuild switch"; };
+          args = { command = "darwin-rebuild switch --flake ~/.nixpkgs"; };
           when = "editorLangId == nix";
         }
       ];
