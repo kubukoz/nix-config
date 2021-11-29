@@ -46,4 +46,16 @@
     version = "0.1.0";
     sha256 = "1mzsqgv0zdlj886kh1yx1zr966yc8hqwmiqrb1532xbmgyy6adz3";
   }
+  {
+    name = "vscode-unison";
+    publisher = "benfradet";
+    version = "0.3.0";
+    sha256 = "1x80s8l8djchg17553aiwaf4b49hf6awiayk49wyii0i26hlpjk1";
+  }
+  {
+    name = "unison-ui";
+    publisher = "tomsherman";
+    version = "0.0.4";
+    sha256 = "0jcjr9n81iwqhc75za0n78dizy6bhw524j34gn34izk19r7bjs8v";
+  }
 ]

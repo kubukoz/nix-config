@@ -27,6 +27,8 @@ let
       managed.arrterian.nix-env-selector
       managed.octref.vetur
       managed.silvenon.mdx
+      managed.benfradet.vscode-unison
+      managed.tomsherman.unison-ui
     ];
   };
 
