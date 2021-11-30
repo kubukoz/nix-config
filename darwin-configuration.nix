@@ -2,7 +2,6 @@
 , config
 , machine
 , home-manager
-, unstable
 , hmm
 , ...
 }:
@@ -17,7 +16,7 @@
   };
 
   nix = {
-    package = pkgs.unstable.nix_2_4;
+    package = pkgs.nix_2_4;
 
     trustedUsers = [ machine.username ];
 
@@ -30,7 +29,6 @@
 
   nixpkgs = {
     overlays = [
-      (import ./overlays/unstable.nix { inherit unstable; })
       (import ./overlays/coursier.nix)
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)

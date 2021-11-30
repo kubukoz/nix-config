@@ -14,7 +14,7 @@ in
     coursier
     (callPackage ../derivations/spotify-next.nix {})
     (callPackage ../coursier/giter8.nix {})
-    unstable.scala-cli
+    scala-cli
   ];
 
   home.sessionVariables = {
