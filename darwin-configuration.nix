@@ -7,9 +7,7 @@
 }:
 {
   imports =
-    [ (home-manager.darwinModules.home-manager) ./system/zsh ./system/fonts ] ++ (
-      if (machine.work) then [ ./work/system-work.nix ] else []
-    );
+    [ (home-manager.darwinModules.home-manager) ./system/zsh ./system/fonts ];
 
   services.nix-daemon = {
     enable = true;
