@@ -17,6 +17,7 @@ configuredExtension {
     # "metals.serverVersion" = "0.10.6-M1+84-433b0161-SNAPSHOT";
     "metals.serverProperties" = [ "-Dmetals.verbose" "-Xmx4g" "-Xss10m" "-XX:+CrashOnOutOfMemoryError" ];
     "files.watcherExclude" = { "**/.metals" = true; };
+    "metals.superMethodLensesEnabled" = false;
   };
   keybindings = [
     {
