@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
+    unstable.url = "github:kubukoz/nixpkgs/bloop-1411";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager?ref=sbt-password-command-fix";
@@ -13,7 +14,7 @@
     hmm.flake = false;
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, nix-dss, hmm }:
+  outputs = { self, darwin, unstable, nixpkgs, home-manager, nix-dss, hmm }:
     {
       darwinConfigurations.kubukoz-work = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
@@ -23,15 +24,32 @@
           inherit home-manager nix-dss hmm;
         };
       };
-      darwinConfigurations.kubukoz-max = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          ./darwin-configuration.nix
-        ];
-        specialArgs = {
-          machine = import ./system/machines/max.nix;
-          inherit home-manager nix-dss hmm nixpkgs;
+      darwinConfigurations.kubukoz-max =
+        let arm-overrides = final: prev:
+          let pkgs_x86 = import nixpkgs { localSystem = "x86_64-darwin"; }; in
+          let unstablepkgs_x86 = import unstable { localSystem = "x86_64-darwin"; }; in
+
+          if prev.stdenv.isAarch64 then {
+            inherit (pkgs_x86) scala-cli niv;
+            # inherit (pkgs_x86) bloop;
+            inherit (unstablepkgs_x86) bloop;
+          } else { };
+        in
+        darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          modules = [
+            {
+              nixpkgs.overlays = [ arm-overrides ];
+              nix.extraOptions = ''
+                extra-platforms = x86_64-darwin
+              '';
+            }
+            ./darwin-configuration.nix
+          ];
+          specialArgs = {
+            machine = import ./system/machines/max.nix;
+            inherit home-manager nix-dss hmm;
+          };
         };
-      };
     };
 }

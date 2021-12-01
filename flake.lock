@@ -117,7 +117,24 @@
         "hmm": "hmm",
         "home-manager": "home-manager",
         "nix-dss": "nix-dss",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "unstable": "unstable"
+      }
+    },
+    "unstable": {
+      "locked": {
+        "lastModified": 1636473450,
+        "narHash": "sha256-g9DqhYjhzQLJvgE7MI/fRkv//MsJeoi0yC2Cg43nSCg=",
+        "owner": "kubukoz",
+        "repo": "nixpkgs",
+        "rev": "e6902ae93dbb8a2183c1b2e081ebe94996945c6b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kubukoz",
+        "ref": "bloop-1411",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     }
   },
