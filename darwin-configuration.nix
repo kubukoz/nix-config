@@ -3,6 +3,7 @@
 , machine
 , home-manager
 , hmm
+, nixpkgs
 , ...
 }:
 {
@@ -27,6 +28,7 @@
 
   nixpkgs = {
     overlays = [
+      (import ./overlays/arm.nix { inherit nixpkgs; })
       (import ./overlays/coursier.nix)
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)

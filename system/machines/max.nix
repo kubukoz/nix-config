@@ -1,8 +1,8 @@
 {
   username = "kubukoz";
-  hostname = "kubukoz-pro";
+  hostname = "kubukoz-max";
   shell-name = "jk";
   bloop.memory = {
-    max-heap = "2G";
+    max-heap = "16G";
   };
 }

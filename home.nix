@@ -1,7 +1,7 @@
-{ pkgs, hmm, ... }:
+{ pkgs, lib, hmm, ... }:
 
 let
-  inherit (pkgs.callPackage ./lib {}) attributesFromListFile;
+  inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
 in
 {
   programs = {
@@ -46,9 +46,9 @@ in
           root = pkgs;
         };
       in
-        autoPrograms ++ [
-          (pkgs.callPackage ./derivations/pidof.nix {})
-          (pkgs.callPackage ./derivations/hmm.nix { src = hmm; })
-        ];
+      autoPrograms ++ [
+        (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
+        (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/hmm.nix { src = hmm; }))
+      ];
   };
 }

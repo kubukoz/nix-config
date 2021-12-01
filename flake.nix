@@ -23,5 +23,15 @@
           inherit home-manager nix-dss hmm;
         };
       };
+      darwinConfigurations.kubukoz-max = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./darwin-configuration.nix
+        ];
+        specialArgs = {
+          machine = import ./system/machines/max.nix;
+          inherit home-manager nix-dss hmm nixpkgs;
+        };
+      };
     };
 }
