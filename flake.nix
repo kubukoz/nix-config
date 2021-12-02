@@ -26,11 +26,20 @@
       };
       darwinConfigurations.kubukoz-max =
         let arm-overrides = final: prev:
-          let pkgs_x86 = import nixpkgs { localSystem = "x86_64-darwin"; }; in
-          let unstablepkgs_x86 = import unstable { localSystem = "x86_64-darwin"; }; in
+          let
+            mkPackages = source: import source {
+              localSystem = "x86_64-darwin";
+              config.permittedInsecurePackages = [
+                "openssl-1.0.2u"
+              ];
+            };
+
+            pkgs_x86 = mkPackages nixpkgs;
+            unstablepkgs_x86 = mkPackages unstable;
+          in
 
           {
-            inherit (pkgs_x86) scala-cli niv;
+            inherit (pkgs_x86) scala-cli niv openconnect;
             # inherit (pkgs_x86) bloop;
             inherit (unstablepkgs_x86) bloop;
           };
@@ -45,6 +54,7 @@
               '';
             }
             ./darwin-configuration.nix
+            ./work/vpn/configuration.nix
           ];
           specialArgs = {
             machine = import ./system/machines/max.nix;
