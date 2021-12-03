@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
-    unstable.url = "github:kubukoz/nixpkgs/bloop-1411";
+    unstable.url = "github:nixos/nixpkgs/master";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:kubukoz/home-manager?ref=sbt-password-command-fix";
+    home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # todo ref -> slash
     nix-dss.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-dss?ref=flakes";
     nix-dss.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";
@@ -39,9 +40,9 @@
           in
 
           {
-            inherit (pkgs_x86) scala-cli niv openconnect;
-            # inherit (pkgs_x86) bloop;
-            inherit (unstablepkgs_x86) bloop;
+            inherit (pkgs_x86) niv openconnect;
+            inherit (unstablepkgs_x86) scala-cli;
+            bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
           };
         in
         darwin.lib.darwinSystem {
