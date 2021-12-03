@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
-    unstable.url = "github:nixos/nixpkgs/master";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
@@ -15,7 +14,7 @@
     hmm.flake = false;
   };
 
-  outputs = { self, darwin, unstable, nixpkgs, home-manager, nix-dss, hmm }:
+  outputs = { self, darwin, nixpkgs, home-manager, nix-dss, hmm }:
     {
       darwinConfigurations.kubukoz-work = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
@@ -36,12 +35,10 @@
             };
 
             pkgs_x86 = mkPackages nixpkgs;
-            unstablepkgs_x86 = mkPackages unstable;
           in
 
           {
-            inherit (pkgs_x86) niv openconnect;
-            inherit (unstablepkgs_x86) scala-cli;
+            inherit (pkgs_x86) niv openconnect scala-cli;
             bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
           };
         in
