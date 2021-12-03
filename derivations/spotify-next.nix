@@ -1,11 +1,11 @@
 { stdenv, installShellFiles }:
 
 let
-  version = "1.7.4";
+  version = "1.7.8";
   pname = "spotify-next-native";
   src = builtins.fetchurl {
-    url = "https://github.com/kubukoz/spotify-next/releases/download/v${version}/spotify-next";
-    sha256 = "1ivmlrp8j8xn2l6lngj5pdbl9rbkc99pbwp114x8bjrram4hqdga";
+    url = "https://github.com/kubukoz/spotify-next/releases/download/v${version}/spotify-next-macos-10.15";
+    sha256 = "0ph9wr28gk65zzlyxg4sw2ml562iiab09w8dwcwy7cfr17q0lavz";
   };
   completions = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/kubukoz/spotify-next/v${version}/completions.zsh";
