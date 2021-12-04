@@ -13,6 +13,7 @@
   "niv"
   "nixfmt"
   "nixpkgs-fmt"
+  "nix-tree"
   "openssh"
   "pstree"
   "python2"

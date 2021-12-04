@@ -38,7 +38,7 @@
           in
 
           {
-            inherit (pkgs_x86) niv openconnect scala-cli;
+            inherit (pkgs_x86) niv openconnect scala-cli nix-tree;
             bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
           };
         in
