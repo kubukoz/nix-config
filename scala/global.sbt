@@ -3,7 +3,7 @@ def supportedVersion(s: String) =
 
 libraryDependencies ++= {
   if (supportedVersion(scalaVersion.value))
-    List("com.kubukoz" %% "debug-utils" % "1.1.3")
-  else
+  //   List("com.kubukoz" %% "debug-utils" % "1.1.3")
+  // else
     Nil
 }
