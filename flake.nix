@@ -38,19 +38,16 @@
       darwinConfigurations.kubukoz-max =
         let
           machine = import ./system/machines/max.nix;
+          mkPackages = source: import source {
+            localSystem = "x86_64-darwin";
+            config.permittedInsecurePackages = [
+              "openssl-1.0.2u"
+            ];
+          };
+
+          pkgs_x86 = mkPackages nixpkgs;
 
           arm-overrides = final: prev:
-            let
-              mkPackages = source: import source {
-                localSystem = "x86_64-darwin";
-                config.permittedInsecurePackages = [
-                  "openssl-1.0.2u"
-                ];
-              };
-
-              pkgs_x86 = mkPackages nixpkgs;
-            in
-
             {
               inherit (pkgs_x86) niv openconnect scala-cli nix-tree;
               bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
