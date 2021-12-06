@@ -15,14 +15,26 @@
 
   outputs = { self, darwin, nixpkgs, home-manager, nix-dss, hmm }:
     {
-      darwinConfigurations.kubukoz-work = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [ ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
-        specialArgs = {
+      darwinConfigurations.kubukoz-work =
+        let
           machine = import ./system/machines/work.nix;
-          inherit home-manager nix-dss hmm;
+          distributed-builds = {
+            nix = {
+              distributedBuilds = true;
+              buildMachines = let builders = import ./semisecret-builders.nix; in
+                [
+                  (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
+                ];
+            };
+          };
+        in
+        darwin.lib.darwinSystem {
+          system = "x86_64-darwin";
+          modules = [ distributed-builds ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
+          specialArgs = {
+            inherit machine home-manager nix-dss hmm;
+          };
         };
-      };
       darwinConfigurations.kubukoz-max =
         let
           machine = import ./system/machines/max.nix;
@@ -48,7 +60,7 @@
               distributedBuilds = true;
               buildMachines = let builders = import ./semisecret-builders.nix; in
                 [
-                  (builders.jk-nixos { sshKey = "/Users/${machine.username}/.ssh/id_ed25519"; })
+                  (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
                 ];
             };
           };
@@ -62,6 +74,7 @@
                 extra-platforms = x86_64-darwin
               '';
             }
+            distributed-builds
             ./darwin-configuration.nix
             ./work/vpn/configuration.nix
           ];
