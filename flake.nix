@@ -18,7 +18,7 @@
     {
       darwinConfigurations.kubukoz-work = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
-        modules = [ ./darwin-configuration.nix ./work/system-work.nix ];
+        modules = [ ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
         specialArgs = {
           machine = import ./system/machines/work.nix;
           inherit home-manager nix-dss hmm;
