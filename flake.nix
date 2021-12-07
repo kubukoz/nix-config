@@ -73,7 +73,6 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-            ./work/vpn/configuration.nix
           ];
           specialArgs = {
             inherit home-manager hmm machine;
