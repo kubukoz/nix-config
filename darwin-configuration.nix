@@ -3,6 +3,7 @@
 , machine
 , home-manager
 , hmm
+, unstable
 , ...
 }:
 {
@@ -30,6 +31,7 @@
       (import ./overlays/coursier.nix)
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
+      (_: _: { direnv = unstable.direnv; })
     ];
     config = {
       allowUnfree = true;

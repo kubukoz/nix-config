@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
+    unstable.url = "github:nixos/nixpkgs";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
@@ -13,10 +14,19 @@
     hmm.flake = false;
   };
 
-  outputs = { self, darwin, nixpkgs, home-manager, nix-dss, hmm }:
+  outputs =
+    { self
+    , darwin
+    , nixpkgs
+    , unstable
+    , home-manager
+    , nix-dss
+    , hmm
+    }:
     {
       darwinConfigurations.kubukoz-work =
         let
+          system = "x86_64-darwin";
           machine = import ./system/machines/work.nix;
           distributed-builds = {
             nix = {
@@ -29,14 +39,16 @@
           };
         in
         darwin.lib.darwinSystem {
-          system = "x86_64-darwin";
+          inherit system;
           modules = [ distributed-builds ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
           specialArgs = {
             inherit machine home-manager nix-dss hmm;
+            unstable = import unstable { inherit system; };
           };
         };
       darwinConfigurations.kubukoz-max =
         let
+          system = "aarch64-darwin";
           machine = import ./system/machines/max.nix;
           mkPackages = source: import source {
             localSystem = "x86_64-darwin";
@@ -63,7 +75,7 @@
           };
         in
         darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
+          inherit system;
           modules = [
             {
               nixpkgs.overlays = [ arm-overrides ];
@@ -76,6 +88,7 @@
           ];
           specialArgs = {
             inherit home-manager hmm machine;
+            unstable = import unstable { inherit system; };
           };
         };
     };
