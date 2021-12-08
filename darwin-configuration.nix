@@ -31,7 +31,10 @@
       (import ./overlays/coursier.nix)
       (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
-      (_: _: { direnv = unstable.direnv; })
+      (_: prev: {
+        direnv = unstable.direnv;
+        nix-direnv = prev.nix-direnv.override { enableFlakes = true; };
+      })
     ];
     config = {
       allowUnfree = true;
