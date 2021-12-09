@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
-    unstable.url = "github:nixos/nixpkgs";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
@@ -18,7 +17,6 @@
     { self
     , darwin
     , nixpkgs
-    , unstable
     , home-manager
     , nix-dss
     , hmm
@@ -43,7 +41,6 @@
           modules = [ distributed-builds ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
           specialArgs = {
             inherit machine home-manager nix-dss hmm;
-            unstable = import unstable { inherit system; };
           };
         };
       darwinConfigurations.kubukoz-max =
@@ -88,7 +85,6 @@
           ];
           specialArgs = {
             inherit home-manager hmm machine;
-            unstable = import unstable { inherit system; };
           };
         };
     };
