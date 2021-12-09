@@ -82,9 +82,11 @@
             }
             distributed-builds
             ./darwin-configuration.nix
+            ./work/vpn/configuration.nix
+            ./work/system-work.nix
           ];
           specialArgs = {
-            inherit home-manager hmm machine;
+            inherit home-manager hmm machine nix-dss;
           };
         };
     };
