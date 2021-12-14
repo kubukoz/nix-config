@@ -12,6 +12,7 @@
     (callPackage ../derivations/spotify-next.nix { })
     (callPackage ../coursier/giter8.nix { })
     scala-cli
+    sbt
   ];
 
   home.sessionVariables = {
@@ -20,7 +21,7 @@
   };
 
   programs.sbt = {
-    enable = true;
+    enable = false;
     plugins =
       let
         projectGraph = {
