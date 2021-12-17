@@ -7,7 +7,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-dss.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-dss?ref=flakes";
+    nix-dss.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-dss?ref=main";
     nix-dss.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";
     hmm.flake = false;
