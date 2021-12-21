@@ -57,7 +57,7 @@
           arm-overrides = final: prev:
             {
               inherit (pkgs_x86) niv openconnect scala-cli nix-tree;
-              bloop = pkgs_x86.bloop.override { jre = prev.openjdk17; };
+              bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
             };
           distributed-builds = {
             nix = {
