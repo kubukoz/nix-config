@@ -3,7 +3,6 @@
 , machine
 , home-manager
 , hmm
-, unstable
 , ...
 }:
 {
@@ -15,7 +14,7 @@
   };
 
   nix = {
-    package = unstable.legacyPackages.${pkgs.system}.nix;
+    package = pkgs.nix;
 
     trustedUsers = [ machine.username ];
 

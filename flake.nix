@@ -2,8 +2,7 @@
   description = "Jakub's system config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/release-21.11";
-    unstable.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:kubukoz/nixpkgs/rust-analyzer-fix-darwin";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
@@ -18,7 +17,6 @@
     { self
     , darwin
     , nixpkgs
-    , unstable
     , home-manager
     , nix-dss
     , hmm
