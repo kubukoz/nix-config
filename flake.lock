@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1640097765,
-        "narHash": "sha256-DWDsi+gGlVk1gDlt3RJj/sdwyDZjMgAvcQ/In/UBdQs=",
+        "lastModified": 1640117230,
+        "narHash": "sha256-W7LXeJavyIzNfNaoEsK65sEaCGqE9MVWvK0xSzNR4ls=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "e8f4288d16128a57418ace474360f37d6578a548",
+        "rev": "5851d9613edf8b2279746c7e5b9faac55ff17e8a",
         "type": "github"
       },
       "original": {
@@ -81,11 +81,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1639714286,
-        "narHash": "sha256-noJe44lugABWkWAeWY/lxUVjrchwRisxG8RuQqyUo+U=",
+        "lastModified": 1640274700,
+        "narHash": "sha256-cawuvKFR2kZreOg3cnEBrU1TY/ttpywL4tTRlXq5HFQ=",
         "ref": "main",
-        "rev": "0f4317bf091895f95ff379ce05f6df4ad843a03a",
-        "revCount": 121,
+        "rev": "cae377089bd5264991599d01f8cae71331b663a4",
+        "revCount": 122,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
       },
