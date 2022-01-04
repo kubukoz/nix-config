@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1640117230,
-        "narHash": "sha256-W7LXeJavyIzNfNaoEsK65sEaCGqE9MVWvK0xSzNR4ls=",
+        "lastModified": 1641152326,
+        "narHash": "sha256-yQXzXrjrilGzBjC+2kZVPZRgBPSdCLovSLmJ7Na7EDo=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "5851d9613edf8b2279746c7e5b9faac55ff17e8a",
+        "rev": "15635ae63878b83598a18ae421e8c819b691dc55",
         "type": "github"
       },
       "original": {
@@ -97,16 +97,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1640110285,
-        "narHash": "sha256-QSatAf4hw8IosDrj33/3uaMJby5s/5WVgDYRCsLGF4k=",
-        "owner": "kubukoz",
+        "lastModified": 1641262829,
+        "narHash": "sha256-ScS5SFK1zH5SDFpm68DELFPqb/1208ikpvFES+Rlc5w=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1f752d21b5f8ac4ec2f68578a7fe532219f9c46a",
+        "rev": "b51d023b20219ceb672b6b3e369988acb8e34b06",
         "type": "github"
       },
       "original": {
-        "owner": "kubukoz",
-        "ref": "rust-analyzer-fix-darwin",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "type": "github"
       }

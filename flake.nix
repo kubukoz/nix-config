@@ -2,7 +2,7 @@
   description = "Jakub's system config";
 
   inputs = {
-    nixpkgs.url = "github:kubukoz/nixpkgs/rust-analyzer-fix-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
