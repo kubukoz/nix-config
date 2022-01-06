@@ -21,7 +21,7 @@ in
       ".history/"
       "**/project/metals.sbt"
       ".idea/"
-      ".vscode/"
+      ".vscode/settings.json"
       ".bloop/"
       ".bsp/"
     ];
