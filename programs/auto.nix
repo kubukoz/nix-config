@@ -7,6 +7,7 @@
   "bottom"
   "cachix"
   "ctop"
+  "duf"
   "exiftool"
   "fx"
   "httpie"
