@@ -19,8 +19,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.11.0";
-    sha256 = "zrWgUr/sndh6WUpnMMYoWWrH4t56Vb3hhp2Z8EB9iig=";
+    version = "1.11.1";
+    sha256 = "0x8xj9i03ajnrlvppcf23kahbbrvwab2nqajz0hq752w2qga75gz";
   }
   {
     name = "scaladex-search";
@@ -55,7 +55,7 @@
   {
     name = "unison-ui";
     publisher = "tomsherman";
-    version = "0.0.4";
-    sha256 = "0jcjr9n81iwqhc75za0n78dizy6bhw524j34gn34izk19r7bjs8v";
+    version = "0.1.0";
+    sha256 = "1wf4lbrh1d32cb4zh8w9kysdn4cvf8yw9cjihvbqj4i1mwk00sad";
   }
 ]
