@@ -3,23 +3,23 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-dss.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-dss?ref=main";
-    nix-dss.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
+    nix-ds.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ds.inputs.flake-utils.follows = "flake-utils";
     hmm.url = "github:kubukoz/hmm";
-    hmm.flake = false;
+    hmm.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs =
     { self
     , darwin
     , nixpkgs
-    , home-manager
-    , nix-dss
-    , hmm
+    , ...
     }@inputs:
     {
       darwinConfigurations.kubukoz-work =
