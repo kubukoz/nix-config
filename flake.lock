@@ -73,7 +73,7 @@
         "type": "github"
       }
     },
-    "nix-dss": {
+    "nix-ds": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
@@ -87,21 +87,21 @@
         "rev": "cae377089bd5264991599d01f8cae71331b663a4",
         "revCount": 122,
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
+        "url": "ssh://git@github.bamtech.co/services-commons/nix-ds"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-dss"
+        "url": "ssh://git@github.bamtech.co/services-commons/nix-ds"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1641262829,
-        "narHash": "sha256-ScS5SFK1zH5SDFpm68DELFPqb/1208ikpvFES+Rlc5w=",
+        "lastModified": 1642099403,
+        "narHash": "sha256-ZlQvkfi4jJDVJFAcrHtNpF8MurPtDJo5bnGDCAVdHtE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b51d023b20219ceb672b6b3e369988acb8e34b06",
+        "rev": "ba97ea6dcbf56f4f826dd540e8f109896c90f3c0",
         "type": "github"
       },
       "original": {
@@ -115,7 +115,7 @@
         "darwin": "darwin",
         "hmm": "hmm",
         "home-manager": "home-manager",
-        "nix-dss": "nix-dss",
+        "nix-ds": "nix-ds",
         "nixpkgs": "nixpkgs"
       }
     }
