@@ -2,7 +2,7 @@
 
 let
   inherit (pkgs) vscode-extensions;
-  inherit (pkgs.callPackage ../lib {}) attributesFromListFile;
+  inherit (pkgs.callPackage ../lib { }) attributesFromListFile;
   vscode-lib = import ./lib.nix;
   inherit (vscode-lib) configuredExtension mkVscodeModule exclude managedPackages;
 
@@ -18,7 +18,7 @@ let
 
   baseSettings = mkVscodeModule {
     enable = true;
-    package = pkgs.runCommandNoCC "dummy" {} "mkdir $out" // { pname = pkgs.vscode.pname; };
+    package = pkgs.runCommandNoCC "dummy" { } "mkdir $out" // { pname = pkgs.vscode.pname; };
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
@@ -29,6 +29,7 @@ let
       managed.silvenon.mdx
       managed.benfradet.vscode-unison
       managed.tomsherman.unison-ui
+      managed.humao.rest-client
     ];
   };
 
@@ -61,34 +62,34 @@ let
           blue = "#61afef";
           light-grey = "#abb2bf";
         in
-          {
-            "workbench.colorTheme" = themeName;
-            "oneDarkPro.italic" = false;
-            "editor.tokenColorCustomizations"."[${themeName}]" =
-              {
-                functions = yellow;
-                variables = yellow;
-                types = blue;
-                "textMateRules" = [
-                  {
-                    "scope" = [ "support.function" "source.smithy" ];
-                    "settings" = {
-                      "foreground" = light-grey;
-                    };
-                  }
-                ];
-              };
+        {
+          "workbench.colorTheme" = themeName;
+          "oneDarkPro.italic" = false;
+          "editor.tokenColorCustomizations"."[${themeName}]" =
+            {
+              functions = yellow;
+              variables = yellow;
+              types = blue;
+              "textMateRules" = [
+                {
+                  "scope" = [ "support.function" "source.smithy" ];
+                  "settings" = {
+                    "foreground" = light-grey;
+                  };
+                }
+              ];
+            };
 
 
-            "editor.semanticTokenColorCustomizations"."[${themeName}]"."rules" = {
-              "variable:rust" = {
-                "foreground" = yellow;
-              };
-              "function:smithy" = {
-                "foreground" = blue;
-              };
+          "editor.semanticTokenColorCustomizations"."[${themeName}]"."rules" = {
+            "variable:rust" = {
+              "foreground" = yellow;
+            };
+            "function:smithy" = {
+              "foreground" = blue;
             };
           };
+        };
     };
 
   markdown = configuredExtension
@@ -104,7 +105,7 @@ let
         let
           historyGlobPath = "**/.history";
         in
-          exclude [ historyGlobPath ];
+        exclude [ historyGlobPath ];
     };
 
   gitlens = configuredExtension
