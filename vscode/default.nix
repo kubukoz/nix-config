@@ -24,13 +24,9 @@ let
 
     extensions = auto-extensions ++ [
       managed.kubukoz.nickel-syntax
-      managed.arrterian.nix-env-selector
-      managed.octref.vetur
       managed.silvenon.mdx
       managed.benfradet.vscode-unison
-      managed.tomsherman.unison-ui
       managed.humao.rest-client
-      managed.haskell.haskell
     ];
   };
 

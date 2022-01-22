@@ -15,4 +15,7 @@
   "shyykoserhiy.vscode-spotify"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
+  "arrterian.nix-env-selector"
+  "justusadam.language-haskell"
+  "haskell.haskell"
 ]
