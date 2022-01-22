@@ -19,8 +19,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.12.3";
-    sha256 = "0zfsk6kiq4rfyqwkdaqqpqx2szssizvxlslvzcckr2dhj7jw65d1";
+    version = "1.12.5";
+    sha256 = "0nw6i30vgzkwlkd6ain40vj4zkx0gixag53n9np1082v44xsipyv";
   }
   {
     name = "scaladex-search";
@@ -63,5 +63,11 @@
     publisher = "humao";
     version = "0.24.6";
     sha256 = "196pm7gv0488bpv1lklh8hpwmdqc4yimz389gad6nsna368m4m43";
+  }
+  {
+    name = "haskell";
+    publisher = "haskell";
+    version = "1.8.0";
+    sha256 = "0yzcibigxlvh6ilba1jpri2irsjnvyy74vzn3rydcywfc17ifkzs";
   }
 ]

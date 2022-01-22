@@ -30,6 +30,7 @@ let
       managed.benfradet.vscode-unison
       managed.tomsherman.unison-ui
       managed.humao.rest-client
+      managed.haskell.haskell
     ];
   };
 
