@@ -1,7 +1,7 @@
 { stdenv, coursier, jre, makeWrapper }:
 
 {
-  coursierBootstrap = { pname, version, artifact, alias ? pname, buildInputs ? [], ... }@args':
+  coursierBootstrap = { pname, version, artifact, alias ? pname, buildInputs ? [ ], ... }@args':
     let
       argsBuildInputs = buildInputs;
       args = builtins.removeAttrs args' [ "buildInputs" ];
@@ -31,5 +31,5 @@
         '';
       };
     in
-      stdenv.mkDerivation (baseArgs // args);
+    stdenv.mkDerivation (baseArgs // args);
 }
