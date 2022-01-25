@@ -103,7 +103,7 @@
         "type": "github"
       }
     },
-    "nix-work": {
+    "nix-ds": {
       "inputs": {
         "flake-utils": [
           "flake-utils"
@@ -113,18 +113,45 @@
         ]
       },
       "locked": {
-        "lastModified": 1642100202,
-        "narHash": "sha256-NE4BpDCOHi26BeaCGKv4+HjewXxm4xqEkEPE9O4z/eE=",
+        "lastModified": 1643072515,
+        "narHash": "sha256-Ixd/ZpmWo39DXJpCQmy9GZ1CwNUHGpr7dUWn7gSNUIs=",
         "ref": "main",
-        "rev": "6bdabe5d92f83ef72eb996e16aea9a6641ae5431",
-        "revCount": 123,
+        "rev": "5514fa68b7b583e64e566bc75b9175448f82cc8b",
+        "revCount": 124,
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/services-commons/nix-ds"
+        "url": "ssh://git@github.bamtech.co/services-commons/nix-dss"
       },
       "original": {
         "ref": "main",
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/services-commons/nix-ds"
+        "url": "ssh://git@github.bamtech.co/services-commons/nix-dss"
+      }
+    },
+    "nix-work": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nix-ds": [
+          "nix-ds"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1643072906,
+        "narHash": "sha256-vUnNmeLS01B1uZX8qNvLEH7XVxDaBvv6h6EcppnU8YI=",
+        "ref": "main",
+        "rev": "976d867db4bf6260fbcc8936a2495f194ada31e4",
+        "revCount": 2,
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       }
     },
     "nixpkgs": {
@@ -149,6 +176,7 @@
         "gitignore-source": "gitignore-source",
         "hmm": "hmm",
         "home-manager": "home-manager",
+        "nix-ds": "nix-ds",
         "nix-work": "nix-work",
         "nixpkgs": "nixpkgs"
       }

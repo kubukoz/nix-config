@@ -46,4 +46,16 @@
     version = "0.24.6";
     sha256 = "196pm7gv0488bpv1lklh8hpwmdqc4yimz389gad6nsna368m4m43";
   }
+  {
+    name = "swagger-viewer";
+    publisher = "Arjun";
+    version = "3.1.2";
+    sha256 = "1cjvc99x1q5w3i2vnbxrsl5a1dr9gb3s6s9lnwn6mq5db6iz1nlm";
+  }
+  {
+    name = "smithy";
+    publisher = "disneystreaming";
+    version = "0.0.2";
+    sha256 = "0rdh7b5s7ynsyfrq1r1170g65q9vvvfl3qbfvbh1b38ndvj2f0yq";
+  }
 ]

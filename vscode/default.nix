@@ -27,6 +27,8 @@ let
       managed.silvenon.mdx
       managed.benfradet.vscode-unison
       managed.humao.rest-client
+      managed.Arjun.swagger-viewer
+      managed.disneystreaming.smithy
     ];
   };
 

@@ -14,9 +14,16 @@
     hmm.inputs.flake-utils.follows = "flake-utils";
     hmm.inputs.gitignore-source.follows = "gitignore-source";
     hmm.inputs.nixpkgs.follows = "nixpkgs";
-    nix-work.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
+
+    # some dirty dancing to make sure only one nixpkgs is used
+    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-dss?ref=main";
+    nix-ds.inputs.nixpkgs.follows = "nixpkgs";
+    nix-ds.inputs.flake-utils.follows = "flake-utils";
+
+    nix-work.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-work?ref=main";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
+    nix-work.inputs.nix-ds.follows = "nix-ds";
   };
 
   outputs =
