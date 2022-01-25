@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+    stable.url = "github:nixos/nixpkgs/release-21.11";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -30,6 +31,7 @@
     { self
     , darwin
     , nixpkgs
+    , stable
     , nix-work
     , ...
     }@inputs:
@@ -46,12 +48,17 @@
           };
 
           pkgs_x86 = mkPackages nixpkgs;
+          pkgs_stable = mkPackages stable;
 
-          arm-overrides = final: prev:
-            {
-              inherit (pkgs_x86) niv openconnect scala-cli nix-tree;
-              bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
-            };
+          arm-overrides = final: prev: {
+            inherit (pkgs_x86) niv openconnect scala-cli nix-tree;
+            bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
+          };
+
+          stable-overrides = final: prev: {
+            inherit (pkgs_stable) neovim-unwrapped;
+          };
+
           distributed-builds = {
             nix = {
               distributedBuilds = true;
@@ -66,7 +73,7 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ arm-overrides ];
+              nixpkgs.overlays = [ arm-overrides stable-overrides ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin
               '';
