@@ -1,4 +1,2 @@
-graalvm/*.tar.gz
-scala/fury-*.tar.gz
 result
 **/.DS_Store

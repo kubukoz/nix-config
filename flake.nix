@@ -8,39 +8,25 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
-    nix-ds.inputs.nixpkgs.follows = "nixpkgs";
-    nix-ds.inputs.flake-utils.follows = "flake-utils";
+    gitignore-source.url = "github:hercules-ci/gitignore.nix";
+    gitignore-source.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";
     hmm.inputs.flake-utils.follows = "flake-utils";
+    hmm.inputs.gitignore-source.follows = "gitignore-source";
+    hmm.inputs.nixpkgs.follows = "nixpkgs";
+    nix-work.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
+    nix-work.inputs.nixpkgs.follows = "nixpkgs";
+    nix-work.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs =
     { self
     , darwin
     , nixpkgs
+    , nix-work
     , ...
     }@inputs:
     {
-      darwinConfigurations.kubukoz-work =
-        let
-          system = "x86_64-darwin";
-          machine = import ./system/machines/work.nix;
-          distributed-builds = {
-            nix = {
-              distributedBuilds = true;
-              buildMachines = let builders = import ./semisecret-builders.nix; in
-                [
-                  (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
-                ];
-            };
-          };
-        in
-        darwin.lib.darwinSystem {
-          inherit system;
-          modules = [ distributed-builds ./darwin-configuration.nix ./work/system-work.nix ./work/vpn/configuration.nix ];
-          specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
-        };
       darwinConfigurations.kubukoz-max =
         let
           system = "aarch64-darwin";
@@ -80,8 +66,7 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-            ./work/vpn/configuration.nix
-            ./work/system-work.nix
+            nix-work.darwinModule
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };
