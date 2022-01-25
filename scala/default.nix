@@ -36,13 +36,13 @@
         realm = "Sonatype Nexus Repository Manager";
         host = "oss.sonatype.org";
         user = "kubukoz";
-        passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+        passwordCommand = "cat ~/secrets/sonatype.txt";
       }
       {
         realm = "Sonatype Nexus Repository Manager";
         host = "s01.oss.sonatype.org";
         user = "kubukoz";
-        passwordCommand = "cat ${toString ./secret-sonatype.txt}";
+        passwordCommand = "cat ~/secrets/sonatype.txt";
       }
     ];
   };
