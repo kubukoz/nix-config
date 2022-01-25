@@ -1,7 +1,7 @@
 { coursier-tools, installShellFiles, lib }:
 
 let
-  version = "1.8.0";
+  version = "1.8.1";
   pname = "spotify-next";
   completions = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/kubukoz/spotify-next/v${version}/completions.zsh";
