@@ -69,11 +69,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642109618,
-        "narHash": "sha256-BX4+5e7btKLJMdp+rzwhoL6iGGCAWkFGu8e32xGtMEs=",
+        "lastModified": 1643074639,
+        "narHash": "sha256-5BPZ7Bb1YmkwyjLLEYCLR6hBRj3e1rRbuDyhEqBNtgw=",
         "owner": "kubukoz",
         "repo": "hmm",
-        "rev": "be5dd80d25783d5ad49f9b8c5981f67e331a84b5",
+        "rev": "d448652bb7242a8f22d56fe1f6b517659d807380",
         "type": "github"
       },
       "original": {
