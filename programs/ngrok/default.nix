@@ -2,5 +2,6 @@
   home.packages = [ pkgs.ngrok ];
 
   home.file.".ngrok2/ngrok.yml".source =
-    config.lib.file.mkOutOfStoreSymlink ./secret-ngrok.yml;
+    # a bit hacky, but I'll deal with this next time
+    config.lib.file.mkOutOfStoreSymlink ~/.nixpkgs/programs/ngrok/secret-ngrok.yml;
 }
