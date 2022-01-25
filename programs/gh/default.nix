@@ -11,5 +11,5 @@
   };
 
   home.file.".config/gh/hosts.yml".source =
-    config.lib.file.mkOutOfStoreSymlink ./secret-hosts.yml;
+    config.lib.file.mkOutOfStoreSymlink ~/secrets/.config/gh/hosts.yml;
 }

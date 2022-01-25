@@ -112,12 +112,6 @@ let
       extension = vscode-extensions.eamodio.gitlens;
       settings = {
         "gitlens.currentLine.enabled" = false;
-        "gitlens.remotes" = [
-          {
-            domain = "github.bamtech.co";
-            type = "GitHub";
-          }
-        ];
       };
     };
 
