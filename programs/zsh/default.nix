@@ -77,10 +77,9 @@
           sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
         };
       in
-        ''
-          source ${iterm2-shell-integration}
-          source ${toString ./secret-gitlab.sh}
-        '';
+      ''
+        source ${iterm2-shell-integration}
+      '';
   };
 
 }
