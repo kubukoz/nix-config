@@ -14,7 +14,7 @@
   };
 
   nix = {
-    package = pkgs.nix;
+    package = pkgs.nix_2_6;
 
     trustedUsers = [ machine.username ];
 
