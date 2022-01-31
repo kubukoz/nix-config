@@ -7,7 +7,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-    home-manager.url = "github:kubukoz/home-manager/sbt-password-command-fix";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     gitignore-source.url = "github:hercules-ci/gitignore.nix";
     gitignore-source.inputs.nixpkgs.follows = "nixpkgs";
