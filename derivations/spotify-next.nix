@@ -15,4 +15,6 @@ coursier-tools.coursierBootstrap {
   postInstall = ''
     installShellCompletion --name _${pname} --zsh ${completions}
   '';
+  mainClass = "com.kubukoz.next.Main";
+  sha256 = "sha256-F3B6dwt2Yahg36xaXs0i/lMLRGdFTOmCkC4hiVYf65k=";
 }

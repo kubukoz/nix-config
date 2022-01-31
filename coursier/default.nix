@@ -1,35 +1,42 @@
-{ stdenv, coursier, jre, makeWrapper }:
+{ stdenv, coursier, jre, makeWrapper, lib }:
 
 {
-  coursierBootstrap = { pname, version, artifact, alias ? pname, buildInputs ? [ ], ... }@args':
+  coursierBootstrap = { pname, version, artifact, alias ? pname, mainClass, sha256, buildInputs ? [ ], ... }@args':
     let
-      argsBuildInputs = buildInputs;
-      args = builtins.removeAttrs args' [ "buildInputs" ];
-      baseArgs = {
-        name = "${pname}-${version}";
-        buildInputs = [ coursier ] ++ argsBuildInputs;
-        unpackPhase = "true";
-        # todo: technically these aren't used anymore once we have the bootstrap.
-        # Something should be done to change the coursier cache of the runtime.
-        COURSIER_JVM_CACHE = ".nix/COURSIER_JVM_CACHE";
-        COURSIER_CACHE = ".nix/COURSIER_CACHE";
-        COURSIER_ARCHIVE_CACHE = ".nix/COURSIER_ARCHIVE_CACHE";
-        buildPhase = ''
-          cs bootstrap ${artifact} -o ${alias}
-        '';
-        nativeBuildInputs = [ makeWrapper ];
-        propagatedBuildInputs = [ jre ];
+      deps = stdenv.mkDerivation
+        {
+          pname = "${pname}-deps";
+          inherit version;
+          dontUnpack = true;
 
-        installPhase = ''
-          mkdir -p $out/bin
-          cp -r .nix $out/lib
-          cp ${alias} $out/lib/
-          # todo: do the same for all 3 cache dirs?
-          makeWrapper "$out/lib/${alias}" "$out/bin/${alias}" --set COURSIER_CACHE "$out/lib/COURSIER_CACHE"
+          buildInputs = [ coursier ];
+
+          COURSIER_CACHE = ".nix/COURSIER_CACHE";
+          buildCommand = ''
+            cs fetch ${artifact} > deps
+            mkdir -p $out/share/java
+            cp $(< deps) $out/share/java/
+          '';
+
+          outputHashMode = "recursive";
+          outputHashAlgo = "sha256";
+          outputHash = sha256;
+        };
+
+      argsBuildInputs = buildInputs;
+      extraArgs = builtins.removeAttrs args' [ "pname" "version" "artifact" "alias" "mainClass" "sha256" "buildInputs" ];
+      baseArgs = {
+        inherit pname version;
+        buildInputs = [ jre deps ] ++ argsBuildInputs;
+        nativeBuildInputs = [ makeWrapper ];
+
+        buildCommand = ''
+          makeWrapper ${jre}/bin/java $out/bin/${alias} \
+            --add-flags "-cp $CLASSPATH ${mainClass}"
 
           runHook postInstall
         '';
       };
     in
-    stdenv.mkDerivation (baseArgs // args);
+    stdenv.mkDerivation (baseArgs // extraArgs);
 }
