@@ -50,7 +50,7 @@
           pkgs_x86 = mkPackages nixpkgs;
 
           arm-overrides = final: prev: {
-            inherit (pkgs_x86) openconnect scala-cli;
+            inherit (pkgs_x86) openconnect scala-cli nix-tree;
             bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
             nix_2_6 = nix-upstream.defaultPackage.${system};
           };
