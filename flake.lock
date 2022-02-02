@@ -176,18 +176,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1643832742,
-        "narHash": "sha256-0zHGnHHlm/l4Vjr6qIrT8q8kzUYvmGKzmn49a2cVW4U=",
+        "lastModified": 1643833029,
+        "narHash": "sha256-q7eoVCMd8OKLd/359MbrB5L7NobSYTap1rmJ5WE75JY=",
         "ref": "main",
-        "rev": "0bf2b31eb84d3a61b0622ade21678f1cd831c214",
-        "revCount": 4,
+        "rev": "1ef9c2d711637beac36304589c845e9849026922",
+        "revCount": 5,
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
+        "url": "file:///Users/kubukoz/dev/nix-work"
       },
       "original": {
-        "ref": "main",
         "type": "git",
-        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
+        "url": "file:///Users/kubukoz/dev/nix-work"
       }
     },
     "nixpkgs": {
