@@ -76,7 +76,7 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-            nix-work.darwinModule
+            nix-work.darwinModules.all
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };
