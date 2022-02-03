@@ -19,8 +19,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.12.14";
-    sha256 = "1qjgf68gybp0hvq5v34vqm69xlwwbclzjy00jaagja49a04qwgx2";
+    version = "1.12.18";
+    sha256 = "104h3qfdn0y4138g3mdw1209qqh3mj3jsdsbzpnw2plk1cmr3nx5";
   }
   {
     name = "scaladex-search";
@@ -57,5 +57,59 @@
     publisher = "disneystreaming";
     version = "0.0.2";
     sha256 = "0rdh7b5s7ynsyfrq1r1170g65q9vvvfl3qbfvbh1b38ndvj2f0yq";
+  }
+  {
+    name = "vscode-command-runner";
+    publisher = "edonet";
+    version = "0.0.122";
+    sha256 = "1lvwvcs18azqhkzyvhf83ckfhfdgcqrw2gxb2myspqj59783hfpg";
+  }
+  {
+    name = "copilot";
+    publisher = "github";
+    version = "1.7.4812";
+    sha256 = "1yl7m90m38pv8nz4dwcszjsa1sf253459xln17mngmc8z9wd3d3a";
+  }
+  {
+    name = "gitignore";
+    publisher = "codezombiech";
+    version = "0.7.0";
+    sha256 = "0fm4sxx1cb679vn4v85dw8dfp5x0p74m9p2b56gqkvdap0f2q351";
+  }
+  {
+    name = "goto-next-previous-member";
+    publisher = "mishkinf";
+    version = "0.0.6";
+    sha256 = "07rpnbkb51835gflf4fpr0v7fhj8hgbhsgcz2wpag8wdzdxc3025";
+  }
+  {
+    name = "vscode-graphql";
+    publisher = "graphql";
+    version = "0.3.50";
+    sha256 = "1yf6v2vsgmq86ysb6vxzbg2gh6vz03fsz0d0rhpvpghayrjlk5az";
+  }
+  {
+    name = "nix-ide";
+    publisher = "jnoortheen";
+    version = "0.1.19";
+    sha256 = "1ms96ij6z4bysdhqgdaxx2znvczyhzx57iifbqws50m1c3m7pkx7";
+  }
+  {
+    name = "material-theme";
+    publisher = "zhuangtongfa";
+    version = "3.13.17";
+    sha256 = "100riqnvc2j315i1lvnwxmgga17s369xxvds5skgnk2yi2xnm2g9";
+  }
+  {
+    name = "shellcheck";
+    publisher = "timonwong";
+    version = "0.18.4";
+    sha256 = "00cii58md6v028h0xfvbdjvg3r44451mi0lfmjwiwif5xcw3wnlx";
+  }
+  {
+    name = "vscode-tlaplus";
+    publisher = "alygin";
+    version = "1.5.4";
+    sha256 = "0mf98244z6wzb0vj6qdm3idgr2sr5086x7ss2khaxlrziif395dx";
   }
 ]
