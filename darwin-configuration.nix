@@ -2,9 +2,8 @@
 , config
 , machine
 , home-manager
-, hmm
 , ...
-}:
+}@inputs:
 {
   imports =
     [ (home-manager.darwinModules.home-manager) ./system/zsh ./system/fonts ];
@@ -46,7 +45,10 @@
     users."${machine.username}" = {
       imports = [ ./home.nix ];
     };
-    extraSpecialArgs = { inherit machine hmm; };
+    extraSpecialArgs = {
+      inherit machine;
+      inherit (inputs) hmm dynein;
+    };
   };
 
   networking.hostName = machine.hostname;

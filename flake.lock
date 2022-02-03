@@ -21,6 +21,32 @@
         "type": "github"
       }
     },
+    "dynein": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "gitignore-source": [
+          "gitignore-source"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1643913825,
+        "narHash": "sha256-L8SQcHN8RXqnO7byVDSU9ZSu3YRiiMolinNcT4wq+T0=",
+        "owner": "kubukoz",
+        "repo": "dynein",
+        "rev": "c7bf0c537f3d7687c6bfbf19af7f1f2d7c1a015f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kubukoz",
+        "repo": "dynein",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1642700792,
@@ -237,6 +263,7 @@
     "root": {
       "inputs": {
         "darwin": "darwin",
+        "dynein": "dynein",
         "flake-utils": "flake-utils",
         "gitignore-source": "gitignore-source",
         "hmm": "hmm",
