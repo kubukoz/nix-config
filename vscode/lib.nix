@@ -1,12 +1,4 @@
 let
-  extensionObject = vscode-utils: attrs: {
-    name = attrs.publisher;
-    value = {
-      "${attrs.name}" =
-        vscode-utils.extensionFromVscodeMarketplace attrs;
-    };
-  };
-
   formatterSettings = { vscodeExtUniqueId, formatterFor }:
     let
       toLine = languageName: {
@@ -14,15 +6,16 @@ let
         value = { "editor.defaultFormatter" = vscodeExtUniqueId; };
       };
     in
-      builtins.listToAttrs (map toLine formatterFor);
+    builtins.listToAttrs (map toLine formatterFor);
 
-  exclude = paths: let
-    toObj = path: {
-      name = "${path}";
-      value = true;
-    };
-    obj = builtins.listToAttrs (map toObj paths);
-  in
+  exclude = paths:
+    let
+      toObj = path: {
+        name = "${path}";
+        value = true;
+      };
+      obj = builtins.listToAttrs (map toObj paths);
+    in
     {
       "files.watcherExclude" = obj;
       "files.exclude" = obj;
@@ -32,24 +25,24 @@ let
   mkVscodeModule = content: { programs.vscode = content; };
 
   configuredExtension =
-    { extension, settings ? {}, keybindings ? [], formatterFor ? [] }:
+    { extension, settings ? { }, keybindings ? [ ], formatterFor ? [ ] }:
 
-      let
-        baseModule = {
-          userSettings = settings;
-          inherit keybindings;
-          extensions = [ extension ];
-        };
+    let
+      baseModule = {
+        userSettings = settings;
+        inherit keybindings;
+        extensions = [ extension ];
+      };
 
-        formattingModule = {
-          userSettings =
-            formatterSettings {
-              inherit formatterFor;
-              inherit (extension) vscodeExtUniqueId;
-            };
-        };
-      in
-        { imports = map mkVscodeModule [ baseModule formattingModule ]; };
+      formattingModule = {
+        userSettings =
+          formatterSettings {
+            inherit formatterFor;
+            inherit (extension) vscodeExtUniqueId;
+          };
+      };
+    in
+    { imports = map mkVscodeModule [ baseModule formattingModule ]; };
 
   overrideKeyBinding = originalKey: setting: [
     setting
@@ -60,8 +53,7 @@ let
       }
     )
   ];
-  managedPackages = { file, vscode-utils }: builtins.listToAttrs (map (extensionObject vscode-utils) (import file));
 in
 {
-  inherit extensionObject configuredExtension overrideKeyBinding mkVscodeModule exclude managedPackages;
+  inherit configuredExtension overrideKeyBinding mkVscodeModule exclude;
 }

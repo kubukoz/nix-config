@@ -1,17 +1,11 @@
 { pkgs, ... }:
 let
   vscode-lib = import ./lib.nix;
-  inherit (vscode-lib) configuredExtension managedPackages;
+  inherit (vscode-lib) configuredExtension;
   inherit (pkgs) vscode-utils vscode-extensions;
-
-  managed = managedPackages {
-    file = ./extensions/managed.nix;
-    inherit (pkgs) vscode-utils;
-  };
-
 in
 configuredExtension {
-  extension = managed.scalameta.metals;
+  extension = vscode-extensions.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
     "metals.serverVersion" = "0.11.1+74-558d667d-SNAPSHOT";

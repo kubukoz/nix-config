@@ -4,16 +4,11 @@ let
   inherit (pkgs) vscode-extensions;
   inherit (pkgs.callPackage ../lib { }) attributesFromListFile;
   vscode-lib = import ./lib.nix;
-  inherit (vscode-lib) configuredExtension mkVscodeModule exclude managedPackages;
+  inherit (vscode-lib) configuredExtension mkVscodeModule exclude;
 
   auto-extensions = attributesFromListFile {
     file = ./extensions/auto.nix;
     root = vscode-extensions;
-  };
-
-  managed = managedPackages {
-    file = ./extensions/managed.nix;
-    inherit (pkgs) vscode-utils;
   };
 
   baseSettings = mkVscodeModule {
@@ -22,18 +17,11 @@ let
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
-    extensions = auto-extensions ++ [
-      managed.kubukoz.nickel-syntax
-      managed.silvenon.mdx
-      managed.benfradet.vscode-unison
-      managed.humao.rest-client
-      managed.Arjun.swagger-viewer
-      managed.disneystreaming.smithy
-    ];
+    extensions = auto-extensions;
   };
 
   indent-rainbow = configuredExtension {
-    extension = managed.oderwat.indent-rainbow;
+    extension = vscode-extensions.oderwat.indent-rainbow;
     settings = {
       "indentRainbow.includedLanguages" = [ "yaml" ];
     };
