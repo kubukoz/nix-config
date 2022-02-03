@@ -4,10 +4,14 @@
 # This file should always parse as an array of string literals.
 #
 [
+  "arrterian.nix-env-selector"
   "baccata.scaladex-search"
   "codezombiech.gitignore"
+  "github.copilot"
   "github.vscode-pull-request-github"
   "graphql.vscode-graphql"
+  "haskell.haskell"
+  "justusadam.language-haskell"
   "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
   "ms-azuretools.vscode-docker"
@@ -15,7 +19,4 @@
   "shyykoserhiy.vscode-spotify"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
-  "arrterian.nix-env-selector"
-  "justusadam.language-haskell"
-  "haskell.haskell"
 ]
