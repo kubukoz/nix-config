@@ -13,6 +13,7 @@
   "github.copilot"
   "github.vscode-pull-request-github"
   "graphql.vscode-graphql"
+  "hashicorp.terraform"
   "haskell.haskell"
   "humao.rest-client"
   "justusadam.language-haskell"
