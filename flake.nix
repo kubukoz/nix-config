@@ -25,7 +25,7 @@
     nix-ds.inputs.nixpkgs.follows = "nixpkgs";
     nix-ds.inputs.flake-utils.follows = "flake-utils";
 
-    nix-work.url = "/Users/kubukoz/dev/nix-work";
+    nix-work.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-work?ref=main";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
     nix-work.inputs.nix-ds.follows = "nix-ds";

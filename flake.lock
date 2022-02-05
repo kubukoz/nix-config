@@ -208,11 +208,12 @@
         "rev": "1ef9c2d711637beac36304589c845e9849026922",
         "revCount": 5,
         "type": "git",
-        "url": "file:///Users/kubukoz/dev/nix-work"
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       },
       "original": {
+        "ref": "main",
         "type": "git",
-        "url": "file:///Users/kubukoz/dev/nix-work"
+        "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       }
     },
     "nixpkgs": {
