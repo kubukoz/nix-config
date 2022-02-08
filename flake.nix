@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nix-upstream.url = "github:nixos/nix/2.6.0";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +35,6 @@
     , darwin
     , nixpkgs
     , nix-work
-    , nix-upstream
     , ...
     }@inputs:
     {
@@ -56,7 +54,6 @@
           arm-overrides = final: prev: {
             inherit (pkgs_x86) openconnect scala-cli;
             bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
-            nix_2_6 = nix-upstream.defaultPackage.${system};
           };
 
           distributed-builds = {
