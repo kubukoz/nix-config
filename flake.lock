@@ -154,11 +154,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1643072515,
-        "narHash": "sha256-Ixd/ZpmWo39DXJpCQmy9GZ1CwNUHGpr7dUWn7gSNUIs=",
+        "lastModified": 1644338446,
+        "narHash": "sha256-m4wJaS2i06YlnBRkzfoQbM27FVNC4Ye+8SvTHpXtsJ4=",
         "ref": "main",
-        "rev": "5514fa68b7b583e64e566bc75b9175448f82cc8b",
-        "revCount": 124,
+        "rev": "0b873826e7f501bdce09ebe9da197c041dfe50f3",
+        "revCount": 125,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/services-commons/nix-dss"
       },
