@@ -23,7 +23,7 @@ let
   indent-rainbow = configuredExtension {
     extension = vscode-extensions.oderwat.indent-rainbow;
     settings = {
-      "indentRainbow.includedLanguages" = [ "yaml" ];
+      "indentRainbow.includedLanguages" = [ "yaml" "dockercompose" ];
     };
   };
   scala = configuredExtension
