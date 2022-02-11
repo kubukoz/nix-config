@@ -21,6 +21,7 @@
   "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
   "ms-azuretools.vscode-docker"
+  "ms-python.vscode-pylance"
   "redhat.vscode-yaml"
   "shyykoserhiy.vscode-spotify"
   "silvenon.mdx"
