@@ -26,5 +26,4 @@
   "silvenon.mdx"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
-  "znck.grammarly"
 ]
