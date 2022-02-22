@@ -9,6 +9,7 @@ in
       enable = true;
       config.theme = "ansi";
     };
+    less.enable = true;
     broot.enable = true;
     fzf.enable = true;
     htop.enable = true;
