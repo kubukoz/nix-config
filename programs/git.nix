@@ -11,6 +11,8 @@ in
     userName = "Jakub Kozłowski";
     userEmail = "kubukoz@gmail.com";
 
+    delta.enable = true;
+
     aliases = {
       dif = "diff --staged";
       rekt = "reset --hard HEAD";
