@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-nix build ~/.nixpkgs#darwinConfigurations.${HOSTNAME}.system
+nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --dry-run
+nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system
 nix store diff-closures /run/current-system ./result
 
 
