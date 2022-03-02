@@ -15,6 +15,8 @@
       plugins = [ "git" "docker" "docker-compose" ];
     };
 
+    enableAutosuggestions = true;
+
     plugins = [
       {
         name = "fzf-tab";
@@ -24,11 +26,6 @@
           rev = "cb8a784343a422ba6d8bdf60acaf4714a6a6d5f7";
           sha256 = "0255whjb3k526q1276z21w6lvalx0b2q6jsd571l69ks1bx7mr9g";
         };
-      }
-      rec {
-        name = "zsh-autosuggestions";
-        src = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
-        file = "${name}.zsh"; # override default with .plugin.zsh
       }
       {
         name = "zsh-nix-shell";
