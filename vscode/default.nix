@@ -38,47 +38,6 @@ let
       formatterFor = [ "typescript" "typescriptreact" "javascript" "javascriptreact" "json" "jsonc" ];
     };
 
-  oneDarkPro = configuredExtension
-    {
-      extension = vscode-extensions.zhuangtongfa.material-theme;
-      settings =
-        let
-          themeName = "One Dark Pro";
-          # These have been stolen from https://github.com/joshdick/onedark.vim
-          yellow = "#e5c07b";
-          blue = "#61afef";
-          light-grey = "#abb2bf";
-        in
-        {
-          "workbench.colorTheme" = themeName;
-          "oneDarkPro.italic" = false;
-          "editor.tokenColorCustomizations"."[${themeName}]" =
-            {
-              functions = yellow;
-              variables = yellow;
-              types = blue;
-              "textMateRules" = [
-                {
-                  "scope" = [ "support.function" "source.smithy" ];
-                  "settings" = {
-                    "foreground" = light-grey;
-                  };
-                }
-              ];
-            };
-
-
-          "editor.semanticTokenColorCustomizations"."[${themeName}]"."rules" = {
-            "variable:rust" = {
-              "foreground" = yellow;
-            };
-            "function:smithy" = {
-              "foreground" = blue;
-            };
-          };
-        };
-    };
-
   markdown = configuredExtension
     {
       extension = vscode-extensions.yzhang.markdown-all-in-one;
@@ -150,9 +109,9 @@ in
 {
   imports = [
     baseSettings
+    ./theme.nix
     scala
     ./metals.nix
-    oneDarkPro
     prettier
     markdown
     local-history
