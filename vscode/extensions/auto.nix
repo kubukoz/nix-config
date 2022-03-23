@@ -10,6 +10,7 @@
   "benfradet.vscode-unison"
   "codezombiech.gitignore"
   "disneystreaming.smithy"
+  "flix.flix"
   "github.copilot"
   "github.vscode-pull-request-github"
   "graphql.vscode-graphql"
