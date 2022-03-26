@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs-legacy.url = "github:nixos/nixpkgs/820df5143b09125fa5541cb6ea877d79e018775d";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +35,7 @@
     { self
     , darwin
     , nixpkgs
+    , nixpkgs-legacy
     , nix-work
     , ...
     }@inputs:
@@ -50,11 +52,15 @@
           };
 
           pkgs_x86 = mkPackages nixpkgs;
+          pkgs_legacy = mkPackages nixpkgs-legacy;
 
           arm-overrides = final: prev: {
-            inherit (pkgs_x86) openconnect scala-cli;
-            bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
+            inherit (pkgs_x86) openconnect/* scala-cli */;
+            # bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
+            bloop = pkgs_legacy.bloop.override { jre = prev.openjdk11; };
+            scala-cli = pkgs_legacy.scala-cli;
           };
+
 
           distributed-builds = {
             nix = {
