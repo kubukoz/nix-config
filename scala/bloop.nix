@@ -12,6 +12,6 @@
     ];
   };
 
-  # home.file.".bloop/bloop.json".text =
-  #   builtins.toJSON { javaOptions = [ "-Xmx${machine.bloop.memory.max-heap}" ]; };
+  home.file.".bloop/bloop.json".text =
+    builtins.toJSON { javaOptions = [ "-Xmx${machine.bloop.memory.max-heap}" ]; };
 }
