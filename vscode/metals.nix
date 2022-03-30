@@ -9,7 +9,12 @@ configuredExtension {
   formatterFor = [ "scala" ];
   settings = {
     # "metals.serverVersion" = "0.11.1+114-58f06ff8-SNAPSHOT";
-    "metals.serverProperties" = [ "-Dmetals.verbose" "-Xmx4g" "-Xss10m" "-XX:+CrashOnOutOfMemoryError" ];
+    "metals.serverProperties" = [
+      "-Dmetals.verbose"
+      "-Xmx4g"
+      "-Xss10m"
+      "-XX:+CrashOnOutOfMemoryError"
+    ];
     "files.watcherExclude" = { "**/.metals" = true; };
     "metals.superMethodLensesEnabled" = false;
   };

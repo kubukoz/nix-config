@@ -13,5 +13,11 @@
   };
 
   home.file.".bloop/bloop.json".text =
-    builtins.toJSON { javaOptions = [ "-Xmx${machine.bloop.memory.max-heap}" ]; };
+    builtins.toJSON {
+      javaOptions = [
+        "-Xmx${machine.bloop.memory.max-heap}"
+        "-Xss10m"
+        "-XX:+CrashOnOutOfMemoryError"
+      ];
+    };
 }
