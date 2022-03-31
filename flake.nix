@@ -29,10 +29,6 @@
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
     nix-work.inputs.nix-ds.follows = "nix-ds";
-
-    smithy4s-nix.url = "github:kubukoz/smithy4s-nix";
-    smithy4s-nix.inputs.nixpkgs.follows = "nixpkgs";
-    smithy4s-nix.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs =
@@ -40,7 +36,6 @@
     , darwin
     , nixpkgs
     , nixpkgs-legacy
-    , smithy4s-nix
     , nix-work
     , ...
     }@inputs:
@@ -81,7 +76,7 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ arm-overrides smithy4s-nix.overlays.default ];
+              nixpkgs.overlays = [ arm-overrides ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin
               '';

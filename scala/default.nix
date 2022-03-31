@@ -13,7 +13,6 @@
     (callPackage ../coursier/giter8.nix { })
     scala-cli
     sbt
-    pkgs.smithy4s.codegen
   ];
 
   home.sessionVariables = {
