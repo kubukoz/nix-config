@@ -6,6 +6,6 @@
 [{
   name = "metals";
   publisher = "scalameta";
-  version = "1.13.7";
-  sha256 = "0iswb2fh6gsqhrh30bzvq34bmxfc29bnliijr436dv396k50ycbp";
+  version = "1.13.10";
+  sha256 = "14i7ppkqkq0zkfsjvb73vvb8cbk3bh0vqx6wrlk806ap79g4zj4g";
 }]
