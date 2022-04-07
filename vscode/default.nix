@@ -44,15 +44,6 @@ let
       formatterFor = [ "markdown" ];
     };
 
-  local-history = configuredExtension
-    {
-      extension = vscode-extensions.xyz.local-history;
-      settings =
-        let
-          historyGlobPath = "**/.history";
-        in
-        exclude [ historyGlobPath ];
-    };
 
   gitlens = configuredExtension
     {
@@ -114,7 +105,6 @@ in
     ./metals.nix
     prettier
     markdown
-    local-history
     gitlens
     multiclip
     tla
