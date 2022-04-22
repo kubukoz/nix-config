@@ -1,4 +1,4 @@
-{ pkgs, lib, hmm, dynein, system, ... }:
+{ pkgs, lib, system, ... }:
 
 let
   inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
@@ -49,8 +49,8 @@ in
       in
       autoPrograms ++ [
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
-        hmm.defaultPackage.${pkgs.stdenv.system}
-        dynein.defaultPackage.${pkgs.stdenv.system}
+        pkgs.hmm
+        pkgs.dynein
       ];
   };
 }

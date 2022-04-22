@@ -29,6 +29,7 @@
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
     nix-work.inputs.nix-ds.follows = "nix-ds";
+
   };
 
   outputs =
@@ -61,6 +62,10 @@
             scala-cli = pkgs_legacy.scala-cli;
           };
 
+          extra-packages = final: prev: {
+            hmm = inputs.hmm.defaultPackage.${system};
+            dynein = inputs.dynein.defaultPackage.${system};
+          };
 
           distributed-builds = {
             nix = {
@@ -76,7 +81,10 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [ arm-overrides ];
+              nixpkgs.overlays = [
+                arm-overrides
+                extra-packages
+              ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin
               '';

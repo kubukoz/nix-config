@@ -47,7 +47,6 @@
     };
     extraSpecialArgs = {
       inherit machine;
-      inherit (inputs) hmm dynein;
     };
   };
 
