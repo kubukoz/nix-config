@@ -94,7 +94,10 @@ let
   nix-ide = configuredExtension
     {
       extension = vscode-extensions.jnoortheen.nix-ide;
-      settings = { "nix.enableLanguageServer" = true; };
+      settings = {
+        "nix.enableLanguageServer" = true;
+        "files.associations" = { "flake.lock" = "json"; };
+      };
     };
 in
 {
