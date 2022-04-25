@@ -16,4 +16,10 @@
     version = "0.0.4";
     sha256 = "1nl73rg0nqzgp2r3sv968h4bcv2p4f3lj0pjar3s8jgm4jlln4qi";
   }
+  {
+    name = "sourcegraph";
+    publisher = "sourcegraph";
+    version = "2.2.1";
+    sha256 = "0clqxlrrjrgiycch480hcywqwhnrdfpw2d5bdvj1zxlvc8cxhsmw";
+  }
 ]
