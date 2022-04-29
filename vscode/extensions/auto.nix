@@ -8,6 +8,7 @@
   "arrterian.nix-env-selector"
   "baccata.scaladex-search"
   "benfradet.vscode-unison"
+  "bungcip.better-toml"
   "codezombiech.gitignore"
   "disneystreaming.smithy"
   "github.copilot"
