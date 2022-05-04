@@ -56,7 +56,7 @@
             inherit (pkgs_x86) openconnect/* scala-cli */;
             # bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
             bloop = pkgs_legacy.bloop.override { jre = prev.openjdk11; };
-            scala-cli = pkgs_legacy.scala-cli;
+            scala-cli = pkgs_x86.scala-cli;
           };
 
           extra-packages = final: prev: {
