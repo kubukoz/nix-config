@@ -45,12 +45,12 @@
         let
           system = "aarch64-darwin";
           machine = import ./system/machines/max.nix;
-          mkPackages = source: import source {
+          mkIntelPackages = source: import source {
             localSystem = "x86_64-darwin";
           };
 
-          pkgs_x86 = mkPackages nixpkgs;
-          pkgs_legacy = mkPackages nixpkgs-legacy;
+          pkgs_x86 = mkIntelPackages nixpkgs;
+          pkgs_legacy = mkIntelPackages nixpkgs-legacy;
 
           arm-overrides = final: prev: {
             inherit (pkgs_x86) openconnect/* scala-cli */;
