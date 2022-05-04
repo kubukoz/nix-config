@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nixpkgs-legacy.url = "github:nixos/nixpkgs/820df5143b09125fa5541cb6ea877d79e018775d";
+    nixpkgs-legacy.url = "github:Tomahna/nixpkgs/bloop";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
