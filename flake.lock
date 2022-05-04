@@ -34,11 +34,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1643913825,
-        "narHash": "sha256-L8SQcHN8RXqnO7byVDSU9ZSu3YRiiMolinNcT4wq+T0=",
+        "lastModified": 1651666295,
+        "narHash": "sha256-nFRQWlBb7HNZQlFHbbhe4qVqC6BN+zHBF5/bO/LupR0=",
         "owner": "kubukoz",
         "repo": "dynein",
-        "rev": "c7bf0c537f3d7687c6bfbf19af7f1f2d7c1a015f",
+        "rev": "55e5352dd666f4acb10306a876d2e03947309c50",
         "type": "github"
       },
       "original": {
