@@ -47,9 +47,6 @@
           machine = import ./system/machines/max.nix;
           mkPackages = source: import source {
             localSystem = "x86_64-darwin";
-            config.permittedInsecurePackages = [
-              "openssl-1.0.2u"
-            ];
           };
 
           pkgs_x86 = mkPackages nixpkgs;
