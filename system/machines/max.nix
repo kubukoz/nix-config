@@ -6,4 +6,5 @@
   bloop.memory = {
     max-heap = "16G";
   };
+  system = "aarch64-darwin";
 }

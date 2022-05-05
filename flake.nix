@@ -43,8 +43,8 @@
     {
       darwinConfigurations.kubukoz-max =
         let
-          system = "aarch64-darwin";
           machine = import ./system/machines/max.nix;
+          inherit (machine) system;
           mkIntelPackages = source: import source {
             localSystem = "x86_64-darwin";
           };
@@ -53,10 +53,8 @@
           pkgs_legacy = mkIntelPackages nixpkgs-legacy;
 
           arm-overrides = final: prev: {
-            inherit (pkgs_x86) openconnect/* scala-cli */;
-            # bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
-            bloop = pkgs_legacy.bloop.override { jre = prev.openjdk11; };
-            scala-cli = pkgs_x86.scala-cli;
+            inherit (pkgs_x86) openconnect scala-cli;
+            bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
           };
 
           extra-packages = final: prev: {
