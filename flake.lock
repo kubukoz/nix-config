@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1647446925,
-        "narHash": "sha256-y221DCv2UwA33WvUO/3Jkbs89SUwd1FjVdgqkpSIMeE=",
+        "lastModified": 1651872390,
+        "narHash": "sha256-yNoJVjpNqTDxI2LzLkUlE7Iwd/JwC6ue2DwLVyjlpP8=",
         "ref": "main",
-        "rev": "b1ced6ebe7ce6bbcae24647e932797d86260b2d7",
-        "revCount": 9,
+        "rev": "1265886df39428835e5afc8e4ec5f8f2e9e25678",
+        "revCount": 10,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       },
