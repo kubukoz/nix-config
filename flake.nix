@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nixpkgs-legacy.url = "github:Tomahna/nixpkgs/bloop";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +35,6 @@
     { self
     , darwin
     , nixpkgs
-    , nixpkgs-legacy
     , nix-work
     , ...
     }@inputs:
@@ -50,7 +48,6 @@
           };
 
           pkgs_x86 = mkIntelPackages nixpkgs;
-          pkgs_legacy = mkIntelPackages nixpkgs-legacy;
 
           arm-overrides = final: prev: {
             inherit (pkgs_x86) openconnect scala-cli;

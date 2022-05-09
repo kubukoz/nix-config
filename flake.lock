@@ -194,22 +194,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-legacy": {
-      "locked": {
-        "lastModified": 1651405432,
-        "narHash": "sha256-AGtsYsMXMSwlZKnhMjl05Q6qvQCMjqMHpv8AwPE5O24=",
-        "owner": "Tomahna",
-        "repo": "nixpkgs",
-        "rev": "53d9b6397c151d71ade76609a10e557c88987e2a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Tomahna",
-        "ref": "bloop",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "darwin": "darwin",
@@ -220,8 +204,7 @@
         "home-manager": "home-manager",
         "nix-ds": "nix-ds",
         "nix-work": "nix-work",
-        "nixpkgs": "nixpkgs",
-        "nixpkgs-legacy": "nixpkgs-legacy"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
