@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1644338446,
-        "narHash": "sha256-m4wJaS2i06YlnBRkzfoQbM27FVNC4Ye+8SvTHpXtsJ4=",
+        "lastModified": 1652111146,
+        "narHash": "sha256-mr91J70wYrRJv02h91DJ4+kYIB0+5DtYnnLINKvUFTI=",
         "ref": "main",
-        "rev": "0b873826e7f501bdce09ebe9da197c041dfe50f3",
-        "revCount": 125,
+        "rev": "ba553e61f1d215ee56fe6a9471266ece1ed6a5d7",
+        "revCount": 126,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/services-commons/nix-dss"
       },
@@ -165,11 +165,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1651872390,
-        "narHash": "sha256-yNoJVjpNqTDxI2LzLkUlE7Iwd/JwC6ue2DwLVyjlpP8=",
+        "lastModified": 1652111175,
+        "narHash": "sha256-QjLoO/VtEfjeIxUZBS4mi0a9HNvVn9PLuPInI+RM1Fw=",
         "ref": "main",
-        "rev": "1265886df39428835e5afc8e4ec5f8f2e9e25678",
-        "revCount": 10,
+        "rev": "20482c16794325b1a78ef76f81e07cfee1031d1f",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       },
