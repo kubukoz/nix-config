@@ -4,6 +4,7 @@
 # This file should always parse as an array of string literals.
 #
 [
+  "Rubymaniac.vscode-direnv"
   "baccata.scaladex-search"
   "bungcip.better-toml"
   "codezombiech.gitignore"
