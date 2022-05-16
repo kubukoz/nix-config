@@ -16,9 +16,10 @@
   ];
 
   home.sessionVariables = {
-    JAVA_HOME = "${pkgs.jdk}";
     JVM_DEBUG = "-J-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005";
   };
+
+  programs.java.enable = true;
 
   programs.sbt = {
     enable = false;
