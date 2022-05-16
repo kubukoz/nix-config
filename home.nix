@@ -34,8 +34,6 @@ in
     sessionVariables = {
       LANG = "en_US.UTF-8";
       EDITOR = "nvim";
-      # Apparently nix-direnv or direnv sets this to something weird
-      GNUPGHOME = "~/.gnupg";
     };
 
 

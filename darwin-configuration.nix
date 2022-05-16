@@ -36,6 +36,8 @@
     };
   };
 
+  users.users.${machine.username}.home = machine.homedir;
+
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
