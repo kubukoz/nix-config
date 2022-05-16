@@ -1,5 +1,38 @@
 {
   "nodes": {
+    "bamc": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648571860,
+        "narHash": "sha256-L4zPoT2gMnfH0bkpdrLJzUVs4B2Nk1IQ/MZi1vJX6Q8=",
+        "ref": "develop",
+        "rev": "3cf516293d8b08f6714d02deca526d3f583bd2a0",
+        "revCount": 841,
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/ced-go/bamc"
+      },
+      "original": {
+        "ref": "develop",
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/ced-go/bamc"
+      }
+    },
+    "create-account": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1642704219,
+        "narHash": "sha256-0h8wBoeSyZU2QACXORbMa25MLxrFNk9KHmSvFL3Mfek=",
+        "ref": "master",
+        "rev": "e9823ac0014c9c7c272ddd3c51bcc45903dd1879",
+        "revCount": 7,
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/tcoghlan/create-account"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.bamtech.co/tcoghlan/create-account"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -130,6 +163,8 @@
     },
     "nix-ds": {
       "inputs": {
+        "bamc": "bamc",
+        "create-account": "create-account",
         "flake-utils": [
           "flake-utils"
         ],
@@ -138,11 +173,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652111146,
-        "narHash": "sha256-mr91J70wYrRJv02h91DJ4+kYIB0+5DtYnnLINKvUFTI=",
+        "lastModified": 1652721931,
+        "narHash": "sha256-OSqLvFWZLvBelBTgPGucyKOT21MvS5WMv9+Un+w/0LI=",
         "ref": "main",
-        "rev": "ba553e61f1d215ee56fe6a9471266ece1ed6a5d7",
-        "revCount": 126,
+        "rev": "dd7658eed609a6eee954e5e9b40b37bb1f376449",
+        "revCount": 131,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/services-commons/nix-dss"
       },
@@ -154,8 +189,14 @@
     },
     "nix-work": {
       "inputs": {
+        "darwin": [
+          "darwin"
+        ],
         "flake-utils": [
           "flake-utils"
+        ],
+        "home-manager": [
+          "home-manager"
         ],
         "nix-ds": [
           "nix-ds"
@@ -165,11 +206,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652111175,
-        "narHash": "sha256-QjLoO/VtEfjeIxUZBS4mi0a9HNvVn9PLuPInI+RM1Fw=",
+        "lastModified": 1652722755,
+        "narHash": "sha256-nzwP8MF81yXWiyQZPUDq+rLwrQLrGUxlt+toTeRavV8=",
         "ref": "main",
-        "rev": "20482c16794325b1a78ef76f81e07cfee1031d1f",
-        "revCount": 11,
+        "rev": "0ab16dde1cb95ae9835ea3a15401b76f2406f03b",
+        "revCount": 12,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/jkozlowski/nix-work"
       },

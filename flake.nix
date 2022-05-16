@@ -28,6 +28,8 @@
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
     nix-work.inputs.nix-ds.follows = "nix-ds";
+    nix-work.inputs.home-manager.follows = "home-manager";
+    nix-work.inputs.darwin.follows = "darwin";
 
   };
 
