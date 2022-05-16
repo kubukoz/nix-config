@@ -22,4 +22,10 @@
     version = "2.2.2";
     sha256 = "0ns9lx9jjx48vvrprfx1439mbycvvxv6672672g71yyiq5d5lzxd";
   }
+  {
+    name = "vscode-direnv";
+    publisher = "Rubymaniac";
+    version = "0.0.2";
+    sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
+  }
 ]
