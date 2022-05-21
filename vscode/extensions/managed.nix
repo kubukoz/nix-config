@@ -28,4 +28,10 @@
     version = "0.0.2";
     sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
   }
+  {
+    name = "codespaces";
+    publisher = "GitHub";
+    version = "1.8.1";
+    sha256 = "047nx49iz897aipm4f0h4iaw138wcb6a59yjd1z7nzpcsd2bgw66";
+  }
 ]
