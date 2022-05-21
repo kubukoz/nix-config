@@ -7,7 +7,6 @@
   "bottom"
   "cachix"
   "ctop"
-  "dbaeumer.vscode-eslint"
   "duf"
   "exa"
   "exiftool"
