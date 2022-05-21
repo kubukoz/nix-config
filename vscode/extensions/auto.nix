@@ -8,6 +8,7 @@
   "baccata.scaladex-search"
   "bungcip.better-toml"
   "codezombiech.gitignore"
+  "dbaeumer.vscode-eslint"
   "disneystreaming.smithy"
   "github.copilot"
   "github.vscode-pull-request-github"
