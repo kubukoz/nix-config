@@ -35,7 +35,7 @@ let
   prettier = configuredExtension
     {
       extension = vscode-extensions.esbenp.prettier-vscode;
-      formatterFor = [ "typescript" "typescriptreact" "javascript" "javascriptreact" "json" "jsonc" ];
+      formatterFor = [ "typescript" "typescriptreact" "javascript" "javascriptreact" "json" "jsonc" "html" ];
     };
 
   markdown = configuredExtension
