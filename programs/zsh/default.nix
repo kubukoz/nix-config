@@ -18,12 +18,22 @@
     plugins = [
       {
         name = "fzf-tab";
-        src = pkgs.zsh-fzf-tab;
+        src = pkgs.fetchFromGitHub {
+          owner = "Aloxaf";
+          repo = "fzf-tab";
+          rev = "cb8a784343a422ba6d8bdf60acaf4714a6a6d5f7";
+          sha256 = "0255whjb3k526q1276z21w6lvalx0b2q6jsd571l69ks1bx7mr9g";
+        };
       }
       {
         name = "zsh-nix-shell";
         file = "nix-shell.plugin.zsh";
-        src = pkgs.zsh-nix-shell;
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.4.0";
+          sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
+        };
       }
     ];
 
