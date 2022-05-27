@@ -43,7 +43,7 @@
     {
       darwinConfigurations.kubukoz-max =
         let
-          machine = import ./system/machines/max.nix;
+          machine = import ./machines/max.nix;
           inherit (machine) system;
           mkIntelPackages = source: import source {
             localSystem = "x86_64-darwin";
