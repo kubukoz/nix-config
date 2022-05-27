@@ -21,8 +21,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "Aloxaf";
           repo = "fzf-tab";
-          rev = "cb8a784343a422ba6d8bdf60acaf4714a6a6d5f7";
-          sha256 = "0255whjb3k526q1276z21w6lvalx0b2q6jsd571l69ks1bx7mr9g";
+          rev = "7e0eee64df6c7c81a57792674646b5feaf89f263";
+          sha256 = "sha256-ixUnuNtxxmiigeVjzuV5uG6rIBPY/1vdBZF2/Qv0Trs=";
         };
       }
       {
@@ -31,8 +31,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "chisui";
           repo = "zsh-nix-shell";
-          rev = "v0.4.0";
-          sha256 = "037wz9fqmx0ngcwl9az55fgkipb745rymznxnssr3rx9irb6apzg";
+          rev = "af6f8a266ea1875b9a3e86e14796cadbe1cfbf08";
+          sha256 = "sha256-BjgMhILEL/qdgfno4LR64LSB8n9pC9R+gG7IQWwgyfQ=";
         };
       }
     ];
