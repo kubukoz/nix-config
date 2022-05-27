@@ -19,6 +19,7 @@ in
   };
 
   imports = [
+    ./fonts
     ./programs/ssh
     ./programs/git.nix
     ./programs/neovim.nix
