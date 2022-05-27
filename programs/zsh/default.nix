@@ -8,6 +8,8 @@
 
   programs.zsh = {
     enable = true;
+    enableSyntaxHighlighting = true;
+    enableCompletion = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "docker" "docker-compose" ];

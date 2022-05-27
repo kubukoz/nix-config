@@ -6,7 +6,7 @@
 }@inputs:
 {
   imports =
-    [ (home-manager.darwinModules.home-manager) ./system/zsh ];
+    [ (home-manager.darwinModules.home-manager) ];
 
   services.nix-daemon = {
     enable = true;
