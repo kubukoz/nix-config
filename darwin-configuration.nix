@@ -12,6 +12,9 @@
     enable = true;
   };
 
+  # This sets NIX_PATH, maybe don't remove
+  programs.zsh.enable = true;
+
   nix = {
     package = pkgs.nix;
 
