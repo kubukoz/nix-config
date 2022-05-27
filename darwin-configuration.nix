@@ -17,8 +17,7 @@
 
     trustedUsers = [ machine.username ];
 
-    # todo
-    useSandbox = false;
+    useSandbox = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
