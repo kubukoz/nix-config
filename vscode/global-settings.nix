@@ -8,7 +8,6 @@
   "editor.cursorBlinking" = "solid";
   "editor.formatOnSave" = true;
   "editor.minimap.enabled" = false;
-  "editor.renderIndentGuides" = false;
   "editor.suggestSelection" = "first";
   "editor.tabSize" = 2;
   "editor.inlineSuggest.enabled" = true;
