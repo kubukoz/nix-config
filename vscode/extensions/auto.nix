@@ -5,6 +5,7 @@
 #
 [
   "Rubymaniac.vscode-direnv"
+  "antfu.slidev"
   "baccata.scaladex-search"
   "bungcip.better-toml"
   "codezombiech.gitignore"
