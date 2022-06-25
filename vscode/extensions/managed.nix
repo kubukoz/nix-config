@@ -28,10 +28,4 @@
     version = "0.0.2";
     sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
   }
-  {
-    name = "slidev";
-    publisher = "antfu";
-    version = "0.3.3";
-    sha256 = "0pqiwcvn5c8kwqlmz4ribwwra69gbiqvz41ig4fh29hkyh078rfk";
-  }
 ]
