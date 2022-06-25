@@ -26,6 +26,8 @@ in
       ".vscode/settings.json"
       ".bloop/"
       ".bsp/"
+      ".scala-build/"
+      ".direnv/"
     ];
 
     includes = [
