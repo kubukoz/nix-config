@@ -23,5 +23,4 @@
   "sourcegraph.sourcegraph"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
-  "voorjaar.windicss-intellisense"
 ]
