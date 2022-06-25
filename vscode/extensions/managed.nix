@@ -28,10 +28,4 @@
     version = "0.0.2";
     sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
   }
-  {
-    name = "windicss-intellisense";
-    publisher = "voorjaar";
-    version = "0.23.5";
-    sha256 = "1il25m35k9xp5r9ikkp1d9lnzjfi0gvnmxsgw2m0dl7h8ds47vcb";
-  }
 ]
