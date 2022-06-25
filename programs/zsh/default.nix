@@ -10,12 +10,12 @@
     enable = true;
     enableSyntaxHighlighting = true;
     enableCompletion = true;
+    enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "docker" "docker-compose" ];
     };
 
-    enableAutosuggestions = true;
 
     plugins = [
       {
