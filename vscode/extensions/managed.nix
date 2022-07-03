@@ -34,4 +34,10 @@
     version = "1.31.6194";
     sha256 = "1305l7alabs8bw6yj7m3pcvihbrag1gmmmg80pb0qxzgj7g2xdd1";
   }
+  {
+    name = "scaladex-search";
+    publisher = "baccata";
+    version = "0.3.0";
+    sha256 = "1ws22f5p4gf1vgpr0gwr2nzcz7lk7armvxxj2m8yzg5nr2kwmgis";
+  }
 ]
