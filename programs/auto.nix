@@ -11,7 +11,6 @@
   "exa"
   "exiftool"
   "fx"
-  "httpie"
   "jless"
   "niv"
   "nix-tree"
@@ -28,7 +27,5 @@
   "tldr"
   "tokei"
   "tree"
-  "wget"
   "youtube-dl"
-  "yq"
 ]
