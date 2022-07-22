@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -39,7 +38,6 @@
     , darwin
     , nixpkgs
     , nix-work
-    , nixpkgs-unstable
     , ...
     }@inputs:
     {
@@ -53,11 +51,9 @@
 
           pkgs_x86 = mkIntelPackages nixpkgs;
 
-          pkgs_x86_unstable = mkIntelPackages nixpkgs-unstable;
-
           arm-overrides = final: prev: {
-            inherit (pkgs_x86) openconnect; # scala-cli;
-            scala-cli = pkgs_x86_unstable.scala-cli.override { jre = prev.openjdk17; };
+            inherit (pkgs_x86) openconnect;
+            scala-cli = pkgs_x86.scala-cli.override { jre = prev.openjdk17; };
             bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
           };
 
