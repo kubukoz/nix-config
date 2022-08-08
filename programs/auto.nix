@@ -11,6 +11,7 @@
   "exa"
   "exiftool"
   "fx"
+  "httpie"
   "jless"
   "niv"
   "nix-tree"
