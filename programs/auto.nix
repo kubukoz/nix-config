@@ -27,4 +27,5 @@
   "tokei"
   "tree"
   "youtube-dl"
+  "yq"
 ]
