@@ -8,9 +8,8 @@ configuredExtension {
   extension = vscode-extensions.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
-    # "metals.serverVersion" = "0.11.1+114-58f06ff8-SNAPSHOT";
     "metals.serverProperties" = [
-      "-Dmetals.verbose"
+      "-Dmetals.verbose=true"
       "-Xmx4g"
       "-Xss10m"
       "-XX:+CrashOnOutOfMemoryError"
