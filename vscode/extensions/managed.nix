@@ -7,20 +7,20 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.18.8";
-    sha256 = "1x6hwlq9m20w4kzyi59zvwjd3xg94g18r7q4mq5hl8jqwfdcqdj4";
+    version = "1.19.5";
+    sha256 = "12wl8h7n6a435i4y0ghqw53r3w2zx6xlakzf0q8vrpbb5ii3l1kr";
   }
   {
     name = "smithy";
     publisher = "disneystreaming";
-    version = "0.0.4";
-    sha256 = "1nl73rg0nqzgp2r3sv968h4bcv2p4f3lj0pjar3s8jgm4jlln4qi";
+    version = "0.0.6";
+    sha256 = "1mdf3jxfzg23lrsywnhhz56xkyvjajfky26jggr2mgspm2ppbfny";
   }
   {
     name = "sourcegraph";
     publisher = "sourcegraph";
-    version = "2.2.7";
-    sha256 = "1cm15s73rzcv4m0c99wscxky0p6v2h8xckdn0qxhp88nv9k2khq8";
+    version = "2.2.8";
+    sha256 = "09gg8f7xsmxvba6bp85gsdp7dzc7gr57hx95fp22xwk9r1cks13i";
   }
   {
     name = "vscode-direnv";
@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.39.6432";
-    sha256 = "073kbjnf44hzy2n6zf5dns2ps9p8r929mg6az11darza3nk98vbn";
+    version = "1.41.6508";
+    sha256 = "1yb78vzbnl469bjy07wwhphlmjjk74pnvxp7y2hz8a43hdi25r5x";
   }
   {
     name = "scaladex-search";
