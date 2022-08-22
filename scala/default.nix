@@ -22,7 +22,7 @@
   programs.java.enable = true;
 
   programs.sbt = {
-    enable = false;
+    enable = true;
     plugins =
       let
         projectGraph = {
