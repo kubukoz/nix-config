@@ -18,10 +18,12 @@
   nix = {
     package = pkgs.nix;
 
-    trustedUsers = [ machine.username ];
+    settings = {
+      trusted-users = [ machine.username ];
 
-    # todo
-    useSandbox = false;
+      # todo
+      sandbox = false;
+    };
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
