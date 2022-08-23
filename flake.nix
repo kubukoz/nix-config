@@ -21,7 +21,7 @@
     dynein.inputs.nixpkgs.follows = "nixpkgs";
 
     # some dirty dancing to make sure only one nixpkgs is used
-    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-dss?ref=main";
+    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
     nix-ds.inputs.nixpkgs.follows = "nixpkgs";
     nix-ds.inputs.flake-utils.follows = "flake-utils";
 
