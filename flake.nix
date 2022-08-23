@@ -8,6 +8,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.inputs.utils.follows = "flake-utils";
     gitignore-source.url = "github:hercules-ci/gitignore.nix";
     gitignore-source.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";

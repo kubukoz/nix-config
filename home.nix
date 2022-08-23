@@ -51,5 +51,7 @@ in
         pkgs.hmm
         pkgs.dynein
       ];
+
+    stateVersion = "22.05";
   };
 }
