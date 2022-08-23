@@ -7,8 +7,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.19.5";
-    sha256 = "12wl8h7n6a435i4y0ghqw53r3w2zx6xlakzf0q8vrpbb5ii3l1kr";
+    version = "1.19.7";
+    sha256 = "1hxfha1997xp1xadwkj9wf96cf69h63bi9mp8zqrparbgzaqj8jb";
   }
   {
     name = "smithy";
@@ -19,8 +19,8 @@
   {
     name = "sourcegraph";
     publisher = "sourcegraph";
-    version = "2.2.8";
-    sha256 = "09gg8f7xsmxvba6bp85gsdp7dzc7gr57hx95fp22xwk9r1cks13i";
+    version = "2.2.9";
+    sha256 = "06vc5cdn0aqcsmbfhpqxd3icz0nx23dm9f6zr4cj2ns1s731qsjk";
   }
   {
     name = "vscode-direnv";
@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.41.6508";
-    sha256 = "1yb78vzbnl469bjy07wwhphlmjjk74pnvxp7y2hz8a43hdi25r5x";
+    version = "1.42.6544";
+    sha256 = "00clcavm06f7963hr3h9lnm5ib1c9nz5r078fgy79y43a7xg71g5";
   }
   {
     name = "scaladex-search";
