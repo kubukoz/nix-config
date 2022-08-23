@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, machine, ... }:
 
 {
   imports = [ ./bloop.nix ];
@@ -37,13 +37,13 @@
         realm = "Sonatype Nexus Repository Manager";
         host = "oss.sonatype.org";
         user = "kubukoz";
-        passwordCommand = "cat ~/secrets/sonatype.txt";
+        passwordCommand = "cat ${machine.homedir}/secrets/sonatype.txt";
       }
       {
         realm = "Sonatype Nexus Repository Manager";
         host = "s01.oss.sonatype.org";
         user = "kubukoz";
-        passwordCommand = "cat ~/secrets/sonatype.txt";
+        passwordCommand = "cat ${machine.homedir}/secrets/sonatype.txt";
       }
     ];
   };
