@@ -13,8 +13,8 @@
   {
     name = "smithy";
     publisher = "disneystreaming";
-    version = "0.0.6";
-    sha256 = "1mdf3jxfzg23lrsywnhhz56xkyvjajfky26jggr2mgspm2ppbfny";
+    version = "0.0.7";
+    sha256 = "18zjnc9n0w7da1b1c6ig1lkdwvs49nirkn5gdkd5zr211pkl4ci6";
   }
   {
     name = "sourcegraph";
