@@ -70,7 +70,7 @@
                 [
                   (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
                   (builders.jk-nixbuild { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
-                  (builders.jk-work { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
+                  # (builders.jk-work { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
                 ];
             };
           };
