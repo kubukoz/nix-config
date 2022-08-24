@@ -26,6 +26,7 @@
   "tldr"
   "tokei"
   "tree"
+  "wget"
   "youtube-dl"
   "yq"
 ]
