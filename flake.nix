@@ -2,7 +2,7 @@
   description = "Jakub's system config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs.url = "github:kubukoz/nixpkgs/scala-cli-completions-fix";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -70,6 +70,7 @@
                 [
                   (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
                   (builders.jk-nixbuild { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
+                  (builders.jk-work { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
                 ];
             };
           };

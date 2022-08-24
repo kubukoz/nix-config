@@ -225,15 +225,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661294815,
-        "narHash": "sha256-uH6qxd+pu9dHeoFQ7ItJSnqb1vAXl+dgVz33+NIiKOQ=",
-        "owner": "nixos",
+        "lastModified": 1661294718,
+        "narHash": "sha256-COq/vDwm+z0PWVGEklm+7GMQD/GZPtztGWmx0z6TGfc=",
+        "owner": "kubukoz",
         "repo": "nixpkgs",
-        "rev": "bac0c1c763624f189f87052a8866f50120813212",
+        "rev": "c68dc2bf279745b44a712be4caa0939c6ddf08f7",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "kubukoz",
+        "ref": "scala-cli-completions-fix",
         "repo": "nixpkgs",
         "type": "github"
       }
