@@ -92,5 +92,24 @@
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };
+      darwinConfigurations.kubukoz-work =
+        let
+          system = "x86_64-darwin";
+          machine = import ./machines/work.nix;
+
+          extra-packages = final: prev: {
+            hmm = inputs.hmm.defaultPackage.${system};
+            dynein = inputs.dynein.defaultPackage.${system};
+          };
+        in
+        darwin.lib.darwinSystem {
+          inherit system;
+          modules = [
+            ./darwin-configuration.nix
+            nix-work.darwinModules.all
+            { nixpkgs.overlays = [ extra-packages ]; }
+          ];
+          specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
+        };
     };
 }
