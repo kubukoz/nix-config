@@ -101,6 +101,15 @@
             hmm = inputs.hmm.defaultPackage.${system};
             dynein = inputs.dynein.defaultPackage.${system};
           };
+          distributed-builds = {
+            nix = {
+              distributedBuilds = true;
+              buildMachines = let builders = import ./semisecret-builders.nix; in
+                [
+                  (builders.jk-max { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
+                ];
+            };
+          };
         in
         darwin.lib.darwinSystem {
           inherit system;
@@ -108,6 +117,7 @@
             ./darwin-configuration.nix
             nix-work.darwinModules.all
             { nixpkgs.overlays = [ extra-packages ]; }
+            distributed-builds
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };
