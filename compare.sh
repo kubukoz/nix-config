@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --dry-run --impure
-nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --impure
+nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --dry-run --impure --print-build-logs
+nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --impure --print-build-logs
 nix store diff-closures /run/current-system ./result
 
 
