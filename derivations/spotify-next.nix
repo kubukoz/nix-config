@@ -1,11 +1,11 @@
 { coursier-tools, installShellFiles, lib }:
 
 let
-  version = "1.11.0";
+  version = "1.11.1";
   pname = "spotify-next";
   completions = builtins.fetchurl {
     url = "https://raw.githubusercontent.com/kubukoz/spotify-next/v${version}/completions.zsh";
-    sha256 = "sha256:1ffzfh9m65i5cs7c8v953dn0xampk952f362px146n1p86sgxr4k";
+    sha256 = "sha256:0bni575srlacr8q4sxx7bxwrrjp6azhx28fji87hiiv0llc5a6jy";
   };
 in
 coursier-tools.coursierBootstrap {
@@ -16,5 +16,5 @@ coursier-tools.coursierBootstrap {
     installShellCompletion --name _${pname} --zsh ${completions}
   '';
   mainClass = "com.kubukoz.next.Main";
-  sha256 = "sha256-sDkPaE+xNGaRqwfhAJCm/oxkiJ3XLeVfgukZ7Pa/vCU=";
+  sha256 = "sha256-V3rNjuNVx6XQEQwprdizaDDVpwuH0l9SMy7HAUU88yA=";
 }
