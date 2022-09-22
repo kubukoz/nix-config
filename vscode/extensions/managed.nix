@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.45.6792";
-    sha256 = "1g3ra63v2a3yqvmsk3znkkh368gdbw1nscm6wc7qdnck5wy32xlw";
+    version = "1.46.6822";
+    sha256 = "1i13068bl3cp7qg8jmn62jq8715kvvp8lrfmm2drplbx9l5ndg9g";
   }
   {
     name = "scaladex-search";
