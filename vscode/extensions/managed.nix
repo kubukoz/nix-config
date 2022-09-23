@@ -7,8 +7,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.19.9";
-    sha256 = "0jkj5bn7cyv9bgc14kmzncybkm4zi3dsfrkxg7vqak5my1jnypdr";
+    version = "1.19.10";
+    sha256 = "0zp3pf69wbh0zdx01z342xmx8nyalq4899rgqhvj0w6xwcwl2jmd";
   }
   {
     name = "smithy";
