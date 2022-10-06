@@ -40,11 +40,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1661264599,
-        "narHash": "sha256-TnpHCTTMrINokMH4xUNisp74UcvBAToRSUfCuAOFw/E=",
+        "lastModified": 1664210064,
+        "narHash": "sha256-df6nKVZe/yAhmJ9csirTPahc0dldwm3HBhCVNA6qWr0=",
         "owner": "lnl7",
         "repo": "nix-darwin",
-        "rev": "2f3c9bb364a3add2a2649f720b359ee9b8012094",
+        "rev": "02d2551c927b7d65ded1b3c7cd13da5cc7ae3fcf",
         "type": "github"
       },
       "original": {
@@ -176,11 +176,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652721931,
-        "narHash": "sha256-OSqLvFWZLvBelBTgPGucyKOT21MvS5WMv9+Un+w/0LI=",
+        "lastModified": 1663182563,
+        "narHash": "sha256-pDHLcavN7tQ+o7oEGKRIJrWJfUCfASlvgi9na1GN52k=",
         "ref": "main",
-        "rev": "dd7658eed609a6eee954e5e9b40b37bb1f376449",
-        "revCount": 131,
+        "rev": "855c30d74bd2edf60f541660ef660c719466cea1",
+        "revCount": 134,
         "type": "git",
         "url": "ssh://git@github.bamtech.co/services-commons/nix-ds"
       },
@@ -225,11 +225,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1663846470,
-        "narHash": "sha256-pXdsi67t8Ybk5rTALoIH8PHT9Lr4X/HFB9G1ucCDo2g=",
+        "lastModified": 1665095519,
+        "narHash": "sha256-Zq0OVnHPrxqsgXqcqE6AYoeH6BPamcJt2je7dqi/HG8=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8fcb549a66d1996c88a63fb9b74a28e4663923c9",
+        "rev": "f65793f87cafbcc1e6dd4a016eb5c21dc9a6733a",
         "type": "github"
       },
       "original": {
