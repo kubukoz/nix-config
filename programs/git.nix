@@ -18,6 +18,11 @@ in
       rekt = "reset --hard HEAD";
     };
 
+    signing = {
+      key = "A1DC9B6A8B59D4D6";
+      signByDefault = true;
+    };
+
     ignores = [
       ".metals/"
       ".history/"
