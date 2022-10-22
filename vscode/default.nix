@@ -97,7 +97,7 @@ let
       settings = {
         "nix.enableLanguageServer" = true;
         "files.associations" = { "flake.lock" = "json"; };
-      };
+      } // exclude [ ".direnv/" ];
     };
 in
 {

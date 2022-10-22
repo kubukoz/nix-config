@@ -32,7 +32,7 @@ in
       ".bloop/"
       ".bsp/"
       ".scala-build/"
-      ".direnv/"
+      "**/.direnv/"
     ];
 
     includes = [
