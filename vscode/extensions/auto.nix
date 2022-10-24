@@ -7,7 +7,7 @@
   "Rubymaniac.vscode-direnv"
   "antfu.slidev"
   "baccata.scaladex-search"
-  "bungcip.better-toml"
+  "tamasfe.even-better-toml"
   "codezombiech.gitignore"
   "dbaeumer.vscode-eslint"
   "disneystreaming.smithy"
