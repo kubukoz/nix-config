@@ -48,8 +48,8 @@ in
       in
       autoPrograms ++ [
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
-        pkgs.hmm
-        pkgs.dynein
+        # pkgs.hmm
+        # pkgs.dynein
       ];
 
     stateVersion = "22.05";
