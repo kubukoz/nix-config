@@ -95,6 +95,21 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1656928814,
+        "narHash": "sha256-RIFfgBuKz6Hp89yRr7+NR5tzIAbn52h8vT6vXkYjZoM=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "7e2a3b3dfd9af950a856d66b0a7d01e3c18aa249",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "gitignore-source": {
       "inputs": {
         "nixpkgs": [
@@ -115,17 +130,32 @@
         "type": "github"
       }
     },
-    "hmm": {
+    "gitignore-source_2": {
       "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "gitignore-source": [
-          "gitignore-source"
-        ],
         "nixpkgs": [
+          "hmm",
           "nixpkgs"
         ]
+      },
+      "locked": {
+        "lastModified": 1658402513,
+        "narHash": "sha256-wk38v/mbLsOo6+IDmmH1H0ADR87iq9QTTD1BP9X2Ags=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "f2ea0f8ff1bce948ccb6b893d15d5ea3efaf1364",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+    "hmm": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "gitignore-source": "gitignore-source_2",
+        "nixpkgs": "nixpkgs"
       },
       "locked": {
         "lastModified": 1658506716,
@@ -225,6 +255,21 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1658504988,
+        "narHash": "sha256-W/TtazL/aFuQ760+3yTCtBfUPl8djaGFRXdMqh4Ua78=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "87cb1156a91a8bd9c0a3488904582d692064df8b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1666747306,
         "narHash": "sha256-r63fDVH6S3VgEhc2o2J8KJ9Gxs0GuYZdle+IY018y60=",
         "owner": "kubukoz",
@@ -249,7 +294,7 @@
         "home-manager": "home-manager",
         "nix-ds": "nix-ds",
         "nix-work": "nix-work",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },

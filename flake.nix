@@ -12,9 +12,9 @@
     gitignore-source.url = "github:hercules-ci/gitignore.nix";
     gitignore-source.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";
-    hmm.inputs.flake-utils.follows = "flake-utils";
-    hmm.inputs.gitignore-source.follows = "gitignore-source";
-    hmm.inputs.nixpkgs.follows = "nixpkgs";
+    # hmm.inputs.flake-utils.follows = "flake-utils";
+    # hmm.inputs.gitignore-source.follows = "gitignore-source";
+    # hmm.inputs.nixpkgs.follows = "nixpkgs";
     dynein.url = "github:kubukoz/dynein";
     dynein.inputs.flake-utils.follows = "flake-utils";
     dynein.inputs.gitignore-source.follows = "gitignore-source";

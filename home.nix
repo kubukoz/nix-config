@@ -48,7 +48,7 @@ in
       in
       autoPrograms ++ [
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
-        # pkgs.hmm
+        pkgs.hmm
         # pkgs.dynein
       ];
 
