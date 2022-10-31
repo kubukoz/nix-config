@@ -35,16 +35,6 @@ in
       "**/.direnv/"
     ];
 
-    includes = [
-      {
-        condition = "gitdir:~/dev/";
-        contents.user = {
-          name = "Jakub Kozlowski";
-          email = "jakub.kozlowski@disneystreaming.com";
-        };
-      }
-    ];
-
     extraConfig = {
       pull = { ff = "only"; };
       init.defaultBranch = "main";

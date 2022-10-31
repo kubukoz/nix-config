@@ -19,26 +19,12 @@
     # dynein.inputs.flake-utils.follows = "flake-utils";
     # dynein.inputs.gitignore-source.follows = "gitignore-source";
     # dynein.inputs.nixpkgs.follows = "nixpkgs";
-
-    # some dirty dancing to make sure only one nixpkgs is used
-    nix-ds.url = "git+ssh://git@github.bamtech.co/services-commons/nix-ds?ref=main";
-    nix-ds.inputs.nixpkgs.follows = "nixpkgs";
-    nix-ds.inputs.flake-utils.follows = "flake-utils";
-
-    nix-work.url = "git+ssh://git@github.bamtech.co/jkozlowski/nix-work?ref=main";
-    nix-work.inputs.nixpkgs.follows = "nixpkgs";
-    nix-work.inputs.flake-utils.follows = "flake-utils";
-    nix-work.inputs.nix-ds.follows = "nix-ds";
-    nix-work.inputs.home-manager.follows = "home-manager";
-    nix-work.inputs.darwin.follows = "darwin";
-
   };
 
   outputs =
     { self
     , darwin
     , nixpkgs
-    , nix-work
     , ...
     }@inputs:
     {
@@ -89,7 +75,6 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-            nix-work.darwinModules.all
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };
@@ -116,7 +101,6 @@
           inherit system;
           modules = [
             ./darwin-configuration.nix
-            nix-work.darwinModules.all
             { nixpkgs.overlays = [ extra-packages ]; }
             distributed-builds
           ];
