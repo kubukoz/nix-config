@@ -56,7 +56,6 @@
                 [
                   (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
                   (builders.jk-nixbuild { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
-                  # (builders.jk-work { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
                 ];
             };
           };
@@ -75,34 +74,6 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-          ];
-          specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
-        };
-      darwinConfigurations.kubukoz-work =
-        let
-          system = "x86_64-darwin";
-          machine = import ./machines/work.nix;
-
-          extra-packages = final: prev: {
-            hmm = inputs.hmm.defaultPackage.${system};
-            dynein = inputs.dynein.defaultPackage.${system};
-          };
-          distributed-builds = {
-            nix = {
-              distributedBuilds = true;
-              buildMachines = let builders = import ./semisecret-builders.nix; in
-                [
-                  (builders.jk-max { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
-                ];
-            };
-          };
-        in
-        darwin.lib.darwinSystem {
-          inherit system;
-          modules = [
-            ./darwin-configuration.nix
-            { nixpkgs.overlays = [ extra-packages ]; }
-            distributed-builds
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };

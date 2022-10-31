@@ -18,11 +18,6 @@
         hostname = "kubukoz-max.local";
         user = "kubukoz";
       };
-      work = {
-        host = "kubukoz-work.local";
-        hostname = "kubukoz-work.local";
-        user = "jkoslowski";
-      };
     };
   };
 }
