@@ -15,10 +15,6 @@
     # hmm.inputs.flake-utils.follows = "flake-utils";
     # hmm.inputs.gitignore-source.follows = "gitignore-source";
     # hmm.inputs.nixpkgs.follows = "nixpkgs";
-    dynein.url = "github:kubukoz/dynein/pinned";
-    # dynein.inputs.flake-utils.follows = "flake-utils";
-    # dynein.inputs.gitignore-source.follows = "gitignore-source";
-    # dynein.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -46,7 +42,6 @@
 
           extra-packages = final: prev: {
             hmm = inputs.hmm.defaultPackage.${system};
-            dynein = inputs.dynein.defaultPackage.${system};
           };
 
           distributed-builds = {
