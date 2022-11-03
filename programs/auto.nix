@@ -13,7 +13,7 @@
   "fx"
   "httpie"
   "jless"
-  "niv"
+  "nix-output-monitor"
   "nix-tree"
   "nixfmt"
   "nixpkgs-fmt"
