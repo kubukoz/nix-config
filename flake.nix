@@ -2,7 +2,7 @@
   description = "Jakub's system config";
 
   inputs = {
-    nixpkgs.url = "github:kubukoz/nixpkgs/options-json-darwin";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,16 +28,12 @@
         let
           machine = import ./machines/max.nix;
           inherit (machine) system;
-          mkIntelPackages = source: import source {
-            localSystem = "x86_64-darwin";
-          };
 
-          pkgs_x86 = mkIntelPackages nixpkgs;
+          # waiting for this to appear in nixpkgs as per https://github.com/NixOS/nixpkgs/pull/161657
+          pkgsx86_64Darwin = import nixpkgs { localSystem = "x86_64-darwin"; };
 
           arm-overrides = final: prev: {
-            inherit (pkgs_x86) openconnect;
-            scala-cli = pkgs_x86.scala-cli.override { jre = prev.openjdk17; };
-            bloop = pkgs_x86.bloop.override { jre = prev.openjdk11; };
+            bloop = pkgsx86_64Darwin.bloop.override { jre = prev.jre; };
           };
 
           extra-packages = final: prev: {

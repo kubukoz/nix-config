@@ -32,7 +32,6 @@
   nixpkgs = {
     overlays = [
       (import ./overlays/coursier.nix)
-      (import ./overlays/jvm.nix)
       (import ./overlays/vscode.nix)
       (_: prev: { nix-direnv = prev.nix-direnv.override { enableFlakes = true; }; })
     ];
