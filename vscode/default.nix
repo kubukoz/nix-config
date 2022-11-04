@@ -111,7 +111,7 @@ let
             sha256 = "sha256-V9e5Zl0jj6PzrlMiNnN/igtDW2OjJZu9p6466LKSiTo=";
             executable = true;
           };
-          "extension" = "grammar.js";
+          "extension" = "js";
         }
       ];
     };
