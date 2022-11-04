@@ -18,7 +18,6 @@
   "llvm-vs-code-extensions.vscode-clangd"
   "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
-  "neandertech.langoustine-vscode"
   "redhat.vscode-yaml"
   "shyykoserhiy.vscode-spotify"
   "silvenon.mdx"
