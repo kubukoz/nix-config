@@ -40,10 +40,4 @@
     version = "0.3.0";
     sha256 = "1ws22f5p4gf1vgpr0gwr2nzcz7lk7armvxxj2m8yzg5nr2kwmgis";
   }
-  {
-    name = "langoustine-vscode";
-    publisher = "neandertech";
-    version = "0.0.2";
-    sha256 = "0w71aaladjx4r076xi37ks6r9iiqi1x7i2fbwjzf591k4brz01gq";
-  }
 ]

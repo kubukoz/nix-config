@@ -100,22 +100,6 @@ let
       } // exclude [ ".direnv/" ];
     };
 
-  langoustine = configuredExtension {
-    extension = vscode-extensions.neandertech.langoustine-vscode;
-    settings = {
-      "langoustine-vscode.servers" = [
-        {
-          "name" = "grammar-js-lsp";
-          "command" = pkgs.fetchurl {
-            url = "https://github.com/keynmol/grammar-js-lsp/releases/download/v0.0.3/grammar-js-lsp-macos";
-            sha256 = "sha256-V9e5Zl0jj6PzrlMiNnN/igtDW2OjJZu9p6466LKSiTo=";
-            executable = true;
-          };
-          "extension" = "js";
-        }
-      ];
-    };
-  };
 in
 {
   imports = [
@@ -131,6 +115,5 @@ in
     command-runner
     nix-ide
     indent-rainbow
-    langoustine
   ];
 }
