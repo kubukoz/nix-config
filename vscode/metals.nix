@@ -14,7 +14,6 @@ configuredExtension {
       "-Xss10m"
       "-XX:+CrashOnOutOfMemoryError"
     ];
-    "files.watcherExclude" = { "**/.metals" = true; };
     "metals.superMethodLensesEnabled" = false;
   };
   keybindings = [

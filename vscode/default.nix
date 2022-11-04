@@ -29,7 +29,7 @@ let
   scala = configuredExtension
     {
       extension = vscode-extensions.scala-lang.scala;
-      settings = exclude [ "**/.bloop" "**/.ammonite" ".metals" ];
+      settings = exclude [ "**/.bloop" "**/.ammonite" "**/.metals" "**/.scala-build" ];
     };
 
   prettier = configuredExtension
