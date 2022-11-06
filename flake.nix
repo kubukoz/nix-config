@@ -29,11 +29,8 @@
           machine = import ./machines/max.nix;
           inherit (machine) system;
 
-          # waiting for this to appear in nixpkgs as per https://github.com/NixOS/nixpkgs/pull/161657
-          pkgsx86_64Darwin = import nixpkgs { localSystem = "x86_64-darwin"; };
-
           arm-overrides = final: prev: {
-            bloop = pkgsx86_64Darwin.bloop.override { jre = prev.jre; };
+            bloop = prev.pkgsx86_64Darwin.bloop.override { jre = prev.jre; };
           };
 
           extra-packages = final: prev: {
