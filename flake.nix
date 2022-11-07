@@ -15,12 +15,14 @@
     # hmm.inputs.flake-utils.follows = "flake-utils";
     # hmm.inputs.gitignore-source.follows = "gitignore-source";
     # hmm.inputs.nixpkgs.follows = "nixpkgs";
+    nix-work.url = "/Users/kubukoz/dev/nix-work";
   };
 
   outputs =
     { self
     , darwin
     , nixpkgs
+    , nix-work
     , ...
     }@inputs:
     {
@@ -62,6 +64,7 @@
             }
             distributed-builds
             ./darwin-configuration.nix
+            nix-work.darwinModules.default
           ];
           specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
         };

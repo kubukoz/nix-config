@@ -135,6 +135,21 @@
         "type": "github"
       }
     },
+    "nix-work": {
+      "locked": {
+        "lastModified": 1667836697,
+        "narHash": "sha256-ik4sAsBJ/7JjCaleFW+v/0ZkaK/mkPqaM//hD1P+lS0=",
+        "ref": "refs/heads/main",
+        "rev": "760f28057fa07f916edb546650c2c7782885cfe9",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/nix-work"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/nix-work"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1658504988,
@@ -173,6 +188,7 @@
         "gitignore-source": "gitignore-source",
         "hmm": "hmm",
         "home-manager": "home-manager",
+        "nix-work": "nix-work",
         "nixpkgs": "nixpkgs_2"
       }
     }
