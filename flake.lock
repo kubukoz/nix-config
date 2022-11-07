@@ -135,10 +135,31 @@
         "type": "github"
       }
     },
-    "nix-work": {
+    "nix-sxm": {
       "locked": {
-        "lastModified": 1667839236,
-        "narHash": "sha256-L2ikC6zJXXcNEdRi/Tj5HDRfmvWHM6QdlqHz6iJMlfc=",
+        "lastModified": 1667845896,
+        "narHash": "sha256-RkXng+GGpuzgYpLRhM+94aOel3B9dfHd0frgaQOPd6M=",
+        "ref": "refs/heads/main",
+        "rev": "f2eca64258f8670cf8be41bb6e54cdc10718486a",
+        "revCount": 3,
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/nix-sxm"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/nix-sxm"
+      }
+    },
+    "nix-work": {
+      "inputs": {
+        "nix-sxm": "nix-sxm"
+      },
+      "locked": {
+        "lastModified": 1667845907,
+        "narHash": "sha256-sX8P//66vr89f55yMAFLxNLqO8R3FJXQ791MSTUyHhM=",
+        "ref": "refs/heads/main",
+        "rev": "14053fb76203e1d91f61b3cb968101c048d00756",
+        "revCount": 7,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
