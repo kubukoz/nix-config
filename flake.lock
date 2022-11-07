@@ -137,11 +137,8 @@
     },
     "nix-work": {
       "locked": {
-        "lastModified": 1667837927,
-        "narHash": "sha256-ibtNwsbqIJoDse/QgXm+vr+r8QTTfFOXyW3ZJxU4GY4=",
-        "ref": "refs/heads/main",
-        "rev": "e621a1888b36fccbdbd38bfa20575663397ebaa4",
-        "revCount": 4,
+        "lastModified": 1667839236,
+        "narHash": "sha256-L2ikC6zJXXcNEdRi/Tj5HDRfmvWHM6QdlqHz6iJMlfc=",
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
