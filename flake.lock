@@ -138,10 +138,7 @@
     "nix-sxm": {
       "locked": {
         "lastModified": 1667927699,
-        "narHash": "sha256-7CQZpHTjXR/HBebLeavkQXmkpKkKDyLVm17eGNNKZNo=",
-        "ref": "refs/heads/main",
-        "rev": "7bcfa82c8a56c0b1e5ce16781bc1863976a44bc4",
-        "revCount": 9,
+        "narHash": "sha256-1lnZLSQ6FQ0tetu1SZ2jAGyLcT5Ad7+O4DQ2msgNM3I=",
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
       },
@@ -156,10 +153,7 @@
       },
       "locked": {
         "lastModified": 1667927813,
-        "narHash": "sha256-aZHZuH2cgm7uEwH4Jw6ovobEyNoV0fIZn5gwHhQUXbM=",
-        "ref": "refs/heads/main",
-        "rev": "2814e2b25cb36fc38551a9629b1cb4b9415dfce3",
-        "revCount": 10,
+        "narHash": "sha256-qz+U+Hzidy5XaZ7xxbXCFqx569VneCcHo2Ax/YmJY6w=",
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
