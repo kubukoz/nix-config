@@ -152,8 +152,11 @@
         "nix-sxm": "nix-sxm"
       },
       "locked": {
-        "lastModified": 1667927813,
+        "lastModified": 1668028760,
         "narHash": "sha256-qz+U+Hzidy5XaZ7xxbXCFqx569VneCcHo2Ax/YmJY6w=",
+        "ref": "refs/heads/main",
+        "rev": "f08c73a504d54a908898119db42c7dbe5d99a87f",
+        "revCount": 11,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
