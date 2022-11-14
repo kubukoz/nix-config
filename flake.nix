@@ -16,6 +16,7 @@
     # hmm.inputs.gitignore-source.follows = "gitignore-source";
     # hmm.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";
+    nix-work.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
