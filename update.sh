@@ -5,4 +5,4 @@ set -e
 
 nix flake update
 
-./compare.sh
+./compare.sh commit
