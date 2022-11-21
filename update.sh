@@ -4,5 +4,6 @@ set -e
 # hmm vscode managed update
 
 nix flake update
+git add flake.lock
 
 ./compare.sh commit
