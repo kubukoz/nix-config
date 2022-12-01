@@ -4,6 +4,7 @@
 # This file should always parse as an array of string literals.
 #
 [
+  "JakeBecker.elixir-ls"
   "Rubymaniac.vscode-direnv"
   "antfu.slidev"
   "baccata.scaladex-search"
