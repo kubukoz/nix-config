@@ -46,4 +46,10 @@
     version = "0.4.1";
     sha256 = "0p63i5bffw5wpim3xnq04aqx6hx5ad08lvz9m5clas2b7wwhrm1h";
   }
+  {
+    name = "elixir-ls";
+    publisher = "JakeBecker";
+    version = "0.12.0";
+    sha256 = "1jk9cjvmkk16qrkxp2h1psxypzapqhi2l94hwp3s0476rdr4c1v7";
+  }
 ]
