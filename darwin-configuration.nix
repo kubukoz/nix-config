@@ -31,6 +31,7 @@
 
   nixpkgs = {
     overlays = [
+      (final: prev: { jre = final.openjdk17; jdk = final.openjdk17; })
       (import ./overlays/coursier.nix)
       (import ./overlays/vscode.nix)
       (_: prev: { nix-direnv = prev.nix-direnv.override { enableFlakes = true; }; })

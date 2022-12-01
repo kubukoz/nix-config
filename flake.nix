@@ -36,7 +36,7 @@
           inherit (machine) system;
 
           arm-overrides = final: prev: {
-            bloop = prev.pkgsx86_64Darwin.bloop.override { jre = prev.jre; };
+            bloop = prev.pkgsx86_64Darwin.bloop.override { jre = final.jre; };
           };
 
           extra-packages = final: prev: {
