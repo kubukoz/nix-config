@@ -2,7 +2,7 @@
   description = "Jakub's system config";
 
   inputs = {
-    nixpkgs.url = "github:kubukoz/nixpkgs/bloop-native-build";
+    nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +36,7 @@
           inherit (machine) system;
 
           arm-overrides = final: prev: {
-            # bloop = prev.pkgsx86_64Darwin.bloop.override { jre = final.jre; };
+            bloop = prev.pkgsx86_64Darwin.bloop.override { jre = final.jre; };
           };
 
           extra-packages = final: prev: {

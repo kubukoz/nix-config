@@ -207,16 +207,15 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1669860118,
-        "narHash": "sha256-H5hQWodwbt/wcCVywAfuNJ6VaNVw2djaMS6vuU2azVw=",
-        "owner": "kubukoz",
+        "lastModified": 1669945859,
+        "narHash": "sha256-Ba568QhHSjhyrpamxbfRcVYYt7bGE6QOk2U/1Xh48EI=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "892217ffb26ed5cc60ca02fd10ba6bce62a9993b",
+        "rev": "975b5083923b915d33dd57670e03553de1e5a3d6",
         "type": "github"
       },
       "original": {
-        "owner": "kubukoz",
-        "ref": "bloop-native-build",
+        "owner": "nixos",
         "repo": "nixpkgs",
         "type": "github"
       }
