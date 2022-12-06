@@ -1,10 +1,4 @@
 { pkgs, ... }:
-let
-  git-changelog = pkgs.writeScriptBin "git-changelog" ''
-    LAST_TAG="$(git tag --list "v*" --sort=authordate | tail -n 1)"
-    git log --pretty=oneline --pretty=format:%s "$LAST_TAG"..."master" | grep -E '#'
-  '';
-in
 {
   programs.git = {
     enable = true;
@@ -41,5 +35,5 @@ in
     };
   };
 
-  home.packages = [ pkgs.git-crypt git-changelog ];
+  home.packages = [ pkgs.git-crypt ];
 }
