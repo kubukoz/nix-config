@@ -24,15 +24,15 @@ in
     };
 
     ignores = [
-      ".metals/"
-      ".history/"
+      "**/.metals/"
       "**/project/metals.sbt"
-      ".idea/"
-      ".vscode/settings.json"
-      ".bloop/"
-      ".bsp/"
-      ".scala-build/"
+      "**/.idea/"
+      "**/.vscode/settings.json"
+      "**/.bloop/"
+      "**/.bsp/"
+      "**/.scala-build/"
       "**/.direnv/"
+      "**/.DS_Store"
     ];
 
     extraConfig = {
