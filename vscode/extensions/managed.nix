@@ -13,8 +13,8 @@
   {
     name = "smithy";
     publisher = "disneystreaming";
-    version = "0.0.7";
-    sha256 = "18zjnc9n0w7da1b1c6ig1lkdwvs49nirkn5gdkd5zr211pkl4ci6";
+    version = "0.0.8";
+    sha256 = "0hi5ab1aa76byq4g1037mia077z7zv1262fj7r6kfglg315y40q5";
   }
   {
     name = "sourcegraph";
@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.61.7372";
-    sha256 = "1znrij8al8r8x7j9ra13ahpbsiwf66qnayqcg3nd60pbrjkv5g4r";
+    version = "1.62.7527";
+    sha256 = "0hjhs4bczip0cf5r31izs1iqz0ppdpzdhjhygwdmg64iky87qm3r";
   }
   {
     name = "scaladex-search";
