@@ -76,6 +76,8 @@
       in
       ''
         source ${iterm2-shell-integration}
+        # rancher
+        export PATH="$HOME/.rd/bin:$PATH"
       '';
   };
 
