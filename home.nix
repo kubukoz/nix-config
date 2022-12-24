@@ -26,7 +26,6 @@ in
     ./programs/zsh
     ./programs/ngrok
     ./scala
-    ./node
     ./vscode
   ];
 
