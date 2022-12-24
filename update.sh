@@ -7,3 +7,4 @@ nix flake update
 git add flake.lock
 
 ./compare.sh commit
+git show
