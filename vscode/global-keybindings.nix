@@ -15,6 +15,15 @@ in
     key = "alt+cmd+z";
     command = "git.revertSelectedRanges";
   }
+  # overridden below
+  {
+    key = "cmd+alt+t";
+    command = "-workbench.action.closeOtherEditors";
+  }
+  {
+    key = "cmd+alt+t";
+    command = "editor.action.goToTypeDefinition";
+  }
 ] ++ overrideKeyBinding "f2" {
   key = "cmd+r cmd+r";
   command = "editor.action.rename";
