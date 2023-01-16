@@ -99,30 +99,6 @@
         "type": "github"
       }
     },
-    "mach-nix": {
-      "inputs": {
-        "flake-utils": [
-          "nix-work",
-          "nix-sxm",
-          "flake-utils"
-        ],
-        "nixpkgs": "nixpkgs",
-        "pypi-deps-db": "pypi-deps-db"
-      },
-      "locked": {
-        "lastModified": 1672487114,
-        "narHash": "sha256-YIcQtXNQSofFSRDO8Y/uCtXAMguc8HqpY83TstgkH+k=",
-        "owner": "DavHau",
-        "repo": "mach-nix",
-        "rev": "68a85753555ed67ff53f0d0320e5ac3c725c7400",
-        "type": "github"
-      },
-      "original": {
-        "owner": "DavHau",
-        "repo": "mach-nix",
-        "type": "github"
-      }
-    },
     "naersk": {
       "inputs": {
         "nixpkgs": [
@@ -151,18 +127,21 @@
           "nix-work",
           "flake-utils"
         ],
-        "mach-nix": "mach-nix",
         "nixpkgs": [
           "nix-work",
           "nixpkgs"
+        ],
+        "sde": [
+          "nix-work",
+          "sde"
         ]
       },
       "locked": {
-        "lastModified": 1673396167,
-        "narHash": "sha256-X8ouVztPr88uKqtYsCBb4bYf2U5skXSIxqdRK7CPlv8=",
-        "ref": "refs/heads/main",
-        "rev": "d8db51b009600af7f065ccd99d771f669294ddc6",
-        "revCount": 25,
+        "lastModified": 1673892526,
+        "narHash": "sha256-Rs0mFwBv7NRjcZ72KqvGG6XVCzDDHS2dDjujse/rYc0=",
+        "ref": "refs/heads/add-sde",
+        "rev": "a1f4b7a70be67ef3d6d1c2d6e0428659591df26f",
+        "revCount": 28,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
       },
@@ -185,14 +164,15 @@
         "nix-sxm": "nix-sxm",
         "nixpkgs": [
           "nixpkgs"
-        ]
+        ],
+        "sde": "sde"
       },
       "locked": {
-        "lastModified": 1673396189,
-        "narHash": "sha256-r3cnrOM5vWOWElMUA3t0uTM5SJGjHKNgpP+ZNe4Y1rw=",
+        "lastModified": 1673892731,
+        "narHash": "sha256-KRoiZsJO30DbeW6ck2hcAsefRh6jd/hUplUMgD08ED0=",
         "ref": "refs/heads/main",
-        "rev": "4f3ac25fc827f2e37d7a36c40b8dbb85c3e3cd4f",
-        "revCount": 28,
+        "rev": "97501610a54061b5381f07f34bff3b797d0b33b7",
+        "revCount": 30,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
@@ -202,21 +182,6 @@
       }
     },
     "nixpkgs": {
-      "locked": {
-        "lastModified": 1643805626,
-        "narHash": "sha256-AXLDVMG+UaAGsGSpOtQHPIKB+IZ0KSd9WS77aanGzgc=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "554d2d8aa25b6e583575459c297ec23750adb6cb",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "ref": "nixos-unstable",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
       "locked": {
         "lastModified": 1673606088,
         "narHash": "sha256-wdYD41UwNwPhTdMaG0AIe7fE1bAdyHe6bB4HLUqUvck=",
@@ -232,19 +197,36 @@
         "type": "github"
       }
     },
-    "pypi-deps-db": {
+    "onelogin-aws-assume-role": {
       "flake": false,
       "locked": {
-        "lastModified": 1661155889,
-        "narHash": "sha256-t00mBTZhmZBT4jteO6pJbU0wyRS6/ep4pKmQNeztEms=",
-        "owner": "DavHau",
-        "repo": "pypi-deps-db",
-        "rev": "49c620f3de2b557c9d5c44f58a00fee59f27d1b0",
+        "lastModified": 1673304852,
+        "narHash": "sha256-Cle2br/nVfu+KeKsvkEUCD4k4HVAryNd/X2zGKRZf4k=",
+        "owner": "onelogin",
+        "repo": "onelogin-python-aws-assume-role",
+        "rev": "bbc825c8d003a72d6761a2ac20d9298886d665ff",
         "type": "github"
       },
       "original": {
-        "owner": "DavHau",
-        "repo": "pypi-deps-db",
+        "owner": "onelogin",
+        "repo": "onelogin-python-aws-assume-role",
+        "type": "github"
+      }
+    },
+    "onelogin-sdk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1657129356,
+        "narHash": "sha256-KfrYvsNr+RZOTmhJHYcLhxvKy00vUmejvcX9d1e6Rqo=",
+        "owner": "onelogin",
+        "repo": "onelogin-python-sdk",
+        "rev": "a811720cc230507f328f2cc4379237ec205be6f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "onelogin",
+        "ref": "2.0.4",
+        "repo": "onelogin-python-sdk",
         "type": "github"
       }
     },
@@ -255,7 +237,34 @@
         "hmm": "hmm",
         "home-manager": "home-manager",
         "nix-work": "nix-work",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
+      }
+    },
+    "sde": {
+      "inputs": {
+        "flake-utils": [
+          "nix-work",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nix-work",
+          "nixpkgs"
+        ],
+        "onelogin-aws-assume-role": "onelogin-aws-assume-role",
+        "onelogin-sdk": "onelogin-sdk"
+      },
+      "locked": {
+        "lastModified": 1673884486,
+        "narHash": "sha256-NXY3gH9qChqrayItJNA9AogLqctD5Lt3EfhUjh+itS4=",
+        "ref": "refs/heads/nixify",
+        "rev": "09e40b6c0eedafc28fd360fa009dd85cbcf451df",
+        "revCount": 93,
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/.sde"
+      },
+      "original": {
+        "type": "git",
+        "url": "file:///Users/kubukoz/dev/.sde"
       }
     }
   },
