@@ -9,12 +9,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.inputs.utils.follows = "flake-utils";
-    gitignore-source.url = "github:hercules-ci/gitignore.nix";
-    gitignore-source.inputs.nixpkgs.follows = "nixpkgs";
     hmm.url = "github:kubukoz/hmm";
-    # hmm.inputs.flake-utils.follows = "flake-utils";
-    # hmm.inputs.gitignore-source.follows = "gitignore-source";
-    # hmm.inputs.nixpkgs.follows = "nixpkgs";
+    hmm.inputs.flake-utils.follows = "flake-utils";
+    hmm.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
@@ -40,7 +37,7 @@
           };
 
           extra-packages = final: prev: {
-            hmm = inputs.hmm.defaultPackage.${system};
+            hmm = inputs.hmm.packages.${system}.default;
           };
 
           distributed-builds = {
