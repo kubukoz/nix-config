@@ -24,11 +24,11 @@
     "flake-compat": {
       "flake": false,
       "locked": {
-        "lastModified": 1668681692,
-        "narHash": "sha256-Ht91NGdewz8IQLtWZ9LCeNXMSXHUss+9COoqu6JLmXU=",
+        "lastModified": 1673956053,
+        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
         "owner": "edolstra",
         "repo": "flake-compat",
-        "rev": "009399224d5e398d03b22badca40a37ac85412a1",
+        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
         "type": "github"
       },
       "original": {
@@ -137,11 +137,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1673892526,
-        "narHash": "sha256-Rs0mFwBv7NRjcZ72KqvGG6XVCzDDHS2dDjujse/rYc0=",
-        "ref": "refs/heads/add-sde",
-        "rev": "a1f4b7a70be67ef3d6d1c2d6e0428659591df26f",
-        "revCount": 28,
+        "lastModified": 1673971476,
+        "narHash": "sha256-5A+A4Lcs05CK1ch3vMwZg/acLc1zuMXviNRaDUnhEc0=",
+        "ref": "refs/heads/main",
+        "rev": "8ccbe84b20071d45496d7d4f74e2c376f8e0e340",
+        "revCount": 29,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
       },
@@ -168,11 +168,11 @@
         "sde": "sde"
       },
       "locked": {
-        "lastModified": 1673892929,
-        "narHash": "sha256-t8emd6w80QhGZ5OwuAyn7lJSq+Qh/B4dNTlqtU4S1us=",
+        "lastModified": 1673971535,
+        "narHash": "sha256-68jx7beaeqZRm01q/G5rVim1ny8YJzMIflhm0X6WoVk=",
         "ref": "refs/heads/main",
-        "rev": "8496cab6f081a66d73b11c66e0a4164d1270a412",
-        "revCount": 31,
+        "rev": "dde667a8efc3914951ac082d87757aac426d119d",
+        "revCount": 32,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
