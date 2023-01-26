@@ -47,6 +47,7 @@ in
       autoPrograms ++ [
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
         pkgs.hmm
+        (pkgs.callPackage ./node2nix { }).dexsearch
       ];
 
     stateVersion = "22.05";
