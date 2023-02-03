@@ -70,8 +70,8 @@
     initExtra =
       let
         iterm2-shell-integration = builtins.fetchurl {
-          url = "https://iterm2.com/shell_integration/zsh";
-          sha256 = "1h38yggxfm8pyq3815mjd2rkb411v9g1sa0li884y0bjfaxgbnd4";
+          url = "https://raw.githubusercontent.com/gnachman/iTerm2/90626bbb104f1ca1f0ed73aff57edf7608ec5f29/Resources/shell_integration/iterm2_shell_integration.zsh";
+          sha256 = "sha256:1xk6kx5kdn5wbqgx2f63vnafhkynlxnlshxrapkwkd9zf2531bqa";
         };
       in
       ''
