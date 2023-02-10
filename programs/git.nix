@@ -32,6 +32,7 @@
     extraConfig = {
       pull = { ff = "only"; };
       init.defaultBranch = "main";
+      rerere.enabled = true;
     };
   };
 
