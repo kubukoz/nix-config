@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
 nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --dry-run --impure --print-build-logs 2>&1 | nom
 nix build ~/.nixpkgs#darwinConfigurations."${HOSTNAME}".system --impure --print-build-logs 2>&1 | nom

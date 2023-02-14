@@ -13,7 +13,7 @@ let
 
   baseSettings = mkVscodeModule {
     enable = true;
-    package = pkgs.runCommand "dummy" { } "mkdir $out" // { pname = pkgs.vscode.pname; };
+    package = pkgs.runCommand "dummy" { } "mkdir $out" // { pname = pkgs.vscode.pname; version = "0.0.0"; };
     userSettings = import ./global-settings.nix;
     keybindings = import ./global-keybindings.nix { inherit vscode-lib; };
 
