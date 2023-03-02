@@ -168,11 +168,11 @@
         "sde": "sde"
       },
       "locked": {
-        "lastModified": 1677777107,
-        "narHash": "sha256-Z+0b7X0jnhm/AiniTzG//cT6e4A07GBMAfgnxcq0An0=",
+        "lastModified": 1677778762,
+        "narHash": "sha256-neh4jzHUpagOleZLYOnTULwvQzQf9MIymgT+JpSJUDw=",
         "ref": "refs/heads/main",
-        "rev": "9f8386b7320664cbc5f5458f269cb2db333464b6",
-        "revCount": 39,
+        "rev": "216f75134f77abd3e9defbbd1d7edd4f683d6c29",
+        "revCount": 40,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
