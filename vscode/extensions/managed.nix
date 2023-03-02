@@ -7,8 +7,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.21.4";
-    sha256 = "0rb78rdpv8v54zx6had19w0hzf06kwkdjbq9rsyjaydycy8rj7c2";
+    version = "1.22.0";
+    sha256 = "1zrq1xsdhhd09i7dsff3fb0g59s1z9gqg948jlcj8vxg5fa3whrd";
   }
   {
     name = "smithy";
@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.76.9071";
-    sha256 = "1g5z028qy6h7s20iixbqxhxr5nawhqsxhl6b1w638l7kmi98p97x";
+    version = "1.77.9225";
+    sha256 = "1awqw7bpyvw72hnj9l1hx21djgjpjl15h5pq5la408ll4rd2645m";
   }
   {
     name = "scaladex-search";
