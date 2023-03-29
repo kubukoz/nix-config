@@ -21,22 +21,6 @@
         "type": "github"
       }
     },
-    "flake-compat": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1673956053,
-        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "edolstra",
-        "repo": "flake-compat",
-        "type": "github"
-      }
-    },
     "flake-utils": {
       "locked": {
         "lastModified": 1676283394,
@@ -122,7 +106,6 @@
     },
     "nix-sxm": {
       "inputs": {
-        "flake-compat": "flake-compat",
         "flake-utils": [
           "nix-work",
           "flake-utils"
@@ -131,17 +114,19 @@
           "nix-work",
           "nixpkgs"
         ],
+        "onelogin-aws-assume-role": "onelogin-aws-assume-role",
+        "onelogin-sdk": "onelogin-sdk",
         "sde": [
           "nix-work",
           "sde"
         ]
       },
       "locked": {
-        "lastModified": 1675199853,
-        "narHash": "sha256-QeWvYpeslJ3FQ7vpXTyFAvZJfzBmAXuA+GsZLW5zP94=",
+        "lastModified": 1678360455,
+        "narHash": "sha256-aQReh5/q6kE78L7X3Jpi2pP0YrM+nWdPS3S8aEKm4qY=",
         "ref": "refs/heads/main",
-        "rev": "8f62460d1b65ac8bb3c49d1fed8d861b110b8b6d",
-        "revCount": 33,
+        "rev": "1d8ea498ed7d29c5e3d1c4a885012dedf6d095e8",
+        "revCount": 55,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
       },
@@ -168,11 +153,11 @@
         "sde": "sde"
       },
       "locked": {
-        "lastModified": 1677778762,
-        "narHash": "sha256-neh4jzHUpagOleZLYOnTULwvQzQf9MIymgT+JpSJUDw=",
+        "lastModified": 1680030517,
+        "narHash": "sha256-zUWmVlQ2hNC7q7fOPAhJp/yMBydrrdHKogQewfOPf/s=",
         "ref": "refs/heads/main",
-        "rev": "216f75134f77abd3e9defbbd1d7edd4f683d6c29",
-        "revCount": 40,
+        "rev": "38ae068a0caca102597b53d148b347c2e3b59d25",
+        "revCount": 41,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
@@ -241,30 +226,16 @@
       }
     },
     "sde": {
-      "inputs": {
-        "flake-utils": [
-          "nix-work",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nix-work",
-          "nixpkgs"
-        ],
-        "onelogin-aws-assume-role": "onelogin-aws-assume-role",
-        "onelogin-sdk": "onelogin-sdk"
-      },
+      "flake": false,
       "locked": {
-        "lastModified": 1673969840,
-        "narHash": "sha256-asjPjEaaLfhANfVwButHqWuuopv6N6QG5dMhjA2hFAw=",
-        "ref": "refs/heads/main",
-        "rev": "8ade269f9eca4357823302852800865455f3d899",
-        "revCount": 83,
-        "type": "git",
-        "url": "file:///Users/kubukoz/dev/.sde"
+        "lastModified": 1680027492,
+        "narHash": "sha256-1vwlz3EsX7lzh8JyNdOswlpskX3C4xWw73giMlf55gM=",
+        "path": "/Users/kubukoz/dev/.sde",
+        "type": "path"
       },
       "original": {
-        "type": "git",
-        "url": "file:///Users/kubukoz/dev/.sde"
+        "path": "/Users/kubukoz/dev/.sde",
+        "type": "path"
       }
     }
   },
