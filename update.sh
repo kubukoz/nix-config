@@ -8,4 +8,5 @@ git add flake.lock
 
 ./compare.sh commit
 darwin-rebuild switch --flake ~/.nixpkgs --impure
+git push
 git show
