@@ -14,7 +14,6 @@
   "disneystreaming.smithy"
   "github.copilot"
   "github.vscode-pull-request-github"
-  "graphql.vscode-graphql"
   "hashicorp.terraform"
   "llvm-vs-code-extensions.vscode-clangd"
   "matklad.rust-analyzer"
