@@ -7,3 +7,4 @@
 //   // else
 //   Nil
 // }
+Global / onChangedBuildSource := ReloadOnSourceChanges
