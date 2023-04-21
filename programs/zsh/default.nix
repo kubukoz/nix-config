@@ -65,6 +65,7 @@
 
     history = {
       size = 100000;
+      # path = "$HOME/.zsh_history_video";
     };
 
     initExtra =
