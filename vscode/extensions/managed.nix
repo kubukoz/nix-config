@@ -17,12 +17,6 @@
     sha256 = "1mfkxmzyyra9bhdg6202xqvy0m0009zkaz1vj11dxqvc28cbmal0";
   }
   {
-    name = "sourcegraph";
-    publisher = "sourcegraph";
-    version = "2.2.16";
-    sha256 = "0gkyah36613lz2mk2lj6dqzrfmf07j241lv1qfwpmaqrh36wrjp5";
-  }
-  {
     name = "vscode-direnv";
     publisher = "Rubymaniac";
     version = "0.0.2";

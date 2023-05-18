@@ -19,7 +19,6 @@
   "matklad.rust-analyzer"
   "mishkinf.goto-next-previous-member"
   "redhat.vscode-yaml"
-  "sourcegraph.sourcegraph"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
 ]
