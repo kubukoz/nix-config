@@ -7,14 +7,14 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.23.0";
-    sha256 = "1r0f6307klh3vk2cv74gixi651fy0vka8p9m2c4xykq52lavkqqf";
+    version = "1.23.1";
+    sha256 = "1sqsclkhfnrhfczwlki4g82w4q0dqdg73532zcb17519krd0i2ih";
   }
   {
     name = "smithy";
     publisher = "disneystreaming";
-    version = "0.0.9";
-    sha256 = "sha256-lz2yKNDBxIueVdsIcsbTdUrOVJ3lVXNUCLbZptFW6Ls=";
+    version = "0.0.10";
+    sha256 = "1mfkxmzyyra9bhdg6202xqvy0m0009zkaz1vj11dxqvc28cbmal0";
   }
   {
     name = "sourcegraph";
@@ -31,8 +31,8 @@
   {
     name = "copilot";
     publisher = "github";
-    version = "1.83.41";
-    sha256 = "17ig38dxgmxcpv7lh9m35pllp2v6mwgi0yl6xz8kmihxwckp6xbq";
+    version = "1.86.82";
+    sha256 = "114ig175iz6fv40wiiq7xprdr1apikvl0jkkh8ygvfr6n27amila";
   }
   {
     name = "scaladex-search";
@@ -43,13 +43,13 @@
   {
     name = "slidev";
     publisher = "antfu";
-    version = "0.4.1";
-    sha256 = "0p63i5bffw5wpim3xnq04aqx6hx5ad08lvz9m5clas2b7wwhrm1h";
+    version = "0.4.2";
+    sha256 = "19wzqqpwixsd28fdrlpcl5n6blzqp69gmksj4203lxbkdklyhri8";
   }
   {
     name = "elixir-ls";
     publisher = "JakeBecker";
-    version = "0.14.5";
-    sha256 = "0gzzhw5vc04lr4blrdd2xbgf4qjjz1iw8xm3j1p1dzjd582knd75";
+    version = "0.14.7";
+    sha256 = "0h1qgq8a921vwjf2h9d158ck4636bc4dvgadzc0a615clr120k26";
   }
 ]
