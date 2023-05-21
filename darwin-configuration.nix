@@ -56,6 +56,8 @@
 
   networking.hostName = machine.hostname;
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   system.defaults = {
     LaunchServices = { LSQuarantine = false; };
     NSGlobalDomain = {
