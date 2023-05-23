@@ -24,5 +24,4 @@
   "workbench.startupEditor" = "none";
   "window.zoomLevel" = 1;
   "typescript.preferences.quoteStyle" = "single";
-  "extensions.autoUpdate" = false;
 }
