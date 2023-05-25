@@ -34,16 +34,4 @@
     version = "0.3.3";
     sha256 = "1gf2908z29yr2235skn90a19crz04g700c6yxbai2j4w1yw7ggzv";
   }
-  {
-    name = "slidev";
-    publisher = "antfu";
-    version = "0.4.2";
-    sha256 = "19wzqqpwixsd28fdrlpcl5n6blzqp69gmksj4203lxbkdklyhri8";
-  }
-  {
-    name = "elixir-ls";
-    publisher = "JakeBecker";
-    version = "0.14.7";
-    sha256 = "0h1qgq8a921vwjf2h9d158ck4636bc4dvgadzc0a615clr120k26";
-  }
 ]
