@@ -8,7 +8,6 @@
   "baccata.scaladex-search"
   "codezombiech.gitignore"
   "disneystreaming.smithy"
-  "github.copilot"
   "github.vscode-pull-request-github"
   "mishkinf.goto-next-previous-member"
   "redhat.vscode-yaml"

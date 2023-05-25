@@ -23,12 +23,6 @@
     sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
   }
   {
-    name = "copilot";
-    publisher = "github";
-    version = "1.86.82";
-    sha256 = "114ig175iz6fv40wiiq7xprdr1apikvl0jkkh8ygvfr6n27amila";
-  }
-  {
     name = "scaladex-search";
     publisher = "baccata";
     version = "0.3.3";
