@@ -23,6 +23,4 @@ My Nix / nix-darwin / Home Manager config.
 
 ## Manual steps that still need to be taken care of manually when making changes
 
-- `ln -s ~/.nixpkgs/.nix-channels ~/.nix-channels`
-- Refresh channels (`nix-channel --update`, might need adding the channels to be tracked first).
 - iterm - move plist file to `~/Library/Preferences/com.googlecode.iterm2`
