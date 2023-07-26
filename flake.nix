@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-master.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +40,10 @@
             hmm = inputs.hmm.packages.${system}.default;
           };
 
+          unstable-overrides = final: prev: {
+            scala-cli = (import inputs.nixpkgs-master { inherit (machine) system; }).scala-cli.override { jre = final.jre; };
+          };
+
           distributed-builds = {
             nix = {
               distributedBuilds = true;
@@ -57,6 +62,7 @@
               nixpkgs.overlays = [
                 arm-overrides
                 extra-packages
+                unstable-overrides
               ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin

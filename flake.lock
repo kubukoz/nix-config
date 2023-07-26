@@ -182,6 +182,21 @@
         "type": "github"
       }
     },
+    "nixpkgs-master": {
+      "locked": {
+        "lastModified": 1690397937,
+        "narHash": "sha256-VTnw6FvxX0HN6ozVNv5GkAWKzN53qh14Nwzk2l4cGRA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "f784435e840c17be5cf4ceb277794f15329a07a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "onelogin-aws-assume-role": {
       "flake": false,
       "locked": {
@@ -222,7 +237,8 @@
         "hmm": "hmm",
         "home-manager": "home-manager",
         "nix-work": "nix-work",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-master": "nixpkgs-master"
       }
     },
     "sde": {
