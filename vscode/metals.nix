@@ -15,6 +15,7 @@ configuredExtension {
       "-XX:+CrashOnOutOfMemoryError"
     ];
     "metals.superMethodLensesEnabled" = false;
+    "metals.enableSemanticHighlighting" = false;
   };
   keybindings = [
     {
