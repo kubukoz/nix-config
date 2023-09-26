@@ -8,7 +8,7 @@
   "cachix"
   "ctop"
   "duf"
-  "exa"
+  "eza"
   "exiftool"
   "fx"
   "httpie"

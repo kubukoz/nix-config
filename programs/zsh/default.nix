@@ -48,7 +48,7 @@
     };
 
     shellAliases = {
-      lsd = "exa --long --header --git --all";
+      lsd = "eza --long --header --git --all";
       dps = "docker-compose ps";
       dcp = "docker-compose";
       nss = "nix-shell";
