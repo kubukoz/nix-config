@@ -122,11 +122,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1694124177,
-        "narHash": "sha256-n+31WOVy97LdpFLtRhXkPD/ATTz1Cyzy9tmNQV+8UoA=",
-        "ref": "refs/heads/main",
-        "rev": "1242cafa422e12b79a0696062892ce4716e220e5",
-        "revCount": 60,
+        "lastModified": 1701795693,
+        "narHash": "sha256-lajr+OaSq+8n3P3ZdXnbvmHfCoRnAFNS4IT7cLRh+pE=",
+        "ref": "refs/heads/update-sde",
+        "rev": "7570ae1d54d23f6097bfa51b435fc4695682bf4a",
+        "revCount": 67,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
       },
@@ -153,11 +153,11 @@
         "sde": "sde"
       },
       "locked": {
-        "lastModified": 1697469714,
-        "narHash": "sha256-02q0FSFebXaWttk5JLxt1hU3xj04YzG2RwumUZTSxg8=",
+        "lastModified": 1701795858,
+        "narHash": "sha256-SRl3vqmpmGRTi//ifO1cMsNU5DXdC9MU2eG/fBmBQuI=",
         "ref": "refs/heads/main",
-        "rev": "15817c87c287be26c862cd69e17a45d4626e87ee",
-        "revCount": 53,
+        "rev": "c6de7a435aa72e7b322221ba84d4056ad181c13b",
+        "revCount": 55,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
@@ -200,15 +200,16 @@
     "onelogin-aws-assume-role": {
       "flake": false,
       "locked": {
-        "lastModified": 1673304852,
-        "narHash": "sha256-Cle2br/nVfu+KeKsvkEUCD4k4HVAryNd/X2zGKRZf4k=",
+        "lastModified": 1669154163,
+        "narHash": "sha256-cHaelV6Mkgpv5XaJFRzqJLWfdZ9ctG7GPAMkGnvIpT0=",
         "owner": "onelogin",
         "repo": "onelogin-python-aws-assume-role",
-        "rev": "bbc825c8d003a72d6761a2ac20d9298886d665ff",
+        "rev": "a3d0a4ce4874ad777ac48381ccead9eece73886f",
         "type": "github"
       },
       "original": {
         "owner": "onelogin",
+        "ref": "v1.10.1",
         "repo": "onelogin-python-aws-assume-role",
         "type": "github"
       }
@@ -244,8 +245,8 @@
     "sde": {
       "flake": false,
       "locked": {
-        "lastModified": 1693858917,
-        "narHash": "sha256-+kAyBCqP0ffTxK4nBwb3LeNGNfUz37SozTCghMVI4Vg=",
+        "lastModified": 1701795714,
+        "narHash": "sha256-dC9lCnLZsbB4k2B4FCwQIv69TTd94Gcz+s70GSCaZ1o=",
         "path": "/Users/kubukoz/dev/.sde",
         "type": "path"
       },
