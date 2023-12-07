@@ -51,9 +51,9 @@
       lsd = "eza --long --header --git --all";
       dps = "docker-compose ps";
       dcp = "docker-compose";
-      nss = "nix-shell";
-      nb = "nix-build";
-      ngc = "nix-collect-garbage -d";
+      nss = "nix develop";
+      nb = "nix build";
+      ngc = "sudo nix-collect-garbage -d";
       coursier = "cs";
     };
 
