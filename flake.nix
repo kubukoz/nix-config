@@ -34,7 +34,7 @@
 
           unstable-overrides = final: prev: {
             scala-cli = (import inputs.nixpkgs-master { inherit (machine) system; }).scala-cli.override { jre = final.jre; };
-            pkgsx86_64Darwin.bloop = (import inputs.nixpkgs-master { inherit (machine) system; }).pkgsx86_64Darwin.bloop.override { jre = final.jre; };
+            # pkgsx86_64Darwin.bloop = (import inputs.nixpkgs-master { inherit (machine) system; }).pkgsx86_64Darwin.bloop.override { jre = final.jre; };
           };
 
           extra-packages = final: prev: {
