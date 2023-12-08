@@ -122,10 +122,10 @@
         ]
       },
       "locked": {
-        "lastModified": 1701795693,
-        "narHash": "sha256-lajr+OaSq+8n3P3ZdXnbvmHfCoRnAFNS4IT7cLRh+pE=",
-        "ref": "refs/heads/update-sde",
-        "rev": "7570ae1d54d23f6097bfa51b435fc4695682bf4a",
+        "lastModified": 1702046756,
+        "narHash": "sha256-d3gqP/b6RwqUpubegJR8gk7pTuzMxZdnt3GpF3RrMMQ=",
+        "ref": "refs/heads/main",
+        "rev": "f7ef89f479fec1516aed6e9eb731eac8e9a27d2e",
         "revCount": 67,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-sxm"
@@ -153,11 +153,11 @@
         "sde": "sde"
       },
       "locked": {
-        "lastModified": 1701795858,
-        "narHash": "sha256-SRl3vqmpmGRTi//ifO1cMsNU5DXdC9MU2eG/fBmBQuI=",
+        "lastModified": 1702046792,
+        "narHash": "sha256-cGhDz/Q5bTwR/aie5heKQHTlRVaeXw4zpCpjhjSqWkk=",
         "ref": "refs/heads/main",
-        "rev": "c6de7a435aa72e7b322221ba84d4056ad181c13b",
-        "revCount": 55,
+        "rev": "da2a3386a627cdaad97f51efa3b1575a12c47c5c",
+        "revCount": 56,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
