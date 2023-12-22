@@ -10,7 +10,7 @@ in
       config.theme = "ansi";
     };
     less.enable = true;
-    broot.enable = true;
+    # broot.enable = true;
     fzf.enable = true;
     htop.enable = true;
     jq.enable = true;
