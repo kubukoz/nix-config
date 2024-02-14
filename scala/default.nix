@@ -17,6 +17,9 @@
 
   home.sessionVariables = {
     JVM_DEBUG = "-J-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005";
+    # configured to make it easier to enter this directory
+    # but the actual value is the same as the default
+    COURSIER_CACHE = "${machine.homedir}/Library/Caches/Coursier/v1";
   };
 
   programs.java.enable = true;
