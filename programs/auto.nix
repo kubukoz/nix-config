@@ -10,6 +10,7 @@
   "duf"
   "eza"
   "exiftool"
+  "ffmpeg"
   "fx"
   "httpie"
   "jless"
