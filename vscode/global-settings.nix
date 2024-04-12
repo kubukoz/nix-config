@@ -19,7 +19,7 @@
   "workbench.editor.enablePreview" = false;
   "workbench.editor.limit.enabled" = true;
   "workbench.editor.limit.value" = 10;
-  "workbench.editor.showTabs" = true;
+  "workbench.editor.showTabs" = "multiple";
   "workbench.editor.highlightModifiedTabs" = true;
   "workbench.startupEditor" = "none";
   "window.zoomLevel" = 1;
