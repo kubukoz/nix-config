@@ -7,14 +7,14 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.25.0";
-    sha256 = "1ka29q2xj3qxkvgy2hlkkiagkrvfb29j6sczn3hvqf8r3h1cl20i";
+    version = "1.31.0";
+    sha256 = "1zlxg1irf18v3nrbf78ix15kpwyz24p2jiqgc8c73cbg2lc8x3dh";
   }
   {
     name = "smithy";
     publisher = "disneystreaming";
-    version = "0.0.12";
-    sha256 = "1mdv7jmiay43y41ymaxbxhn7l17mmj17lra8nv97px8g0vciiz1f";
+    version = "0.0.13";
+    sha256 = "1k0kshghmv6dsz1d52jl48l9656fqvqji3nbqgwqcs6fp1l7q6p8";
   }
   {
     name = "vscode-direnv";
