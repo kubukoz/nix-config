@@ -147,11 +147,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1715119951,
-        "narHash": "sha256-varKRJ0uM9J2I5e3xTtwrpnyJNsG/eILXkcJAKaO5Dw=",
+        "lastModified": 1719964086,
+        "narHash": "sha256-EhnV9gl33/9lDTDmGt9WXyfpCJA1hEcmu2Jzk3F1R/M=",
         "ref": "refs/heads/main",
-        "rev": "8b14a61e18398c3b67c36c5047a868dcc2c9ca45",
-        "revCount": 63,
+        "rev": "6462fa5c4da56be226d830ded4d5e4455550946d",
+        "revCount": 64,
         "type": "git",
         "url": "file:///Users/kubukoz/dev/nix-work"
       },
