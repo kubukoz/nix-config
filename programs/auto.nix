@@ -28,6 +28,6 @@
   "tokei"
   "tree"
   "wget"
-  "youtube-dl"
+  "yt-dlp"
   "yq"
 ]
