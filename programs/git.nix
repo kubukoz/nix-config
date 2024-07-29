@@ -27,6 +27,7 @@
       "**/.scala-build/"
       "**/.direnv/"
       "**/.DS_Store"
+      "**/smithyql-log.txt"
     ];
 
     extraConfig = {
