@@ -27,7 +27,8 @@
   "tldr"
   "tokei"
   "tree"
+  "unison-ucm"
   "wget"
-  "yt-dlp"
   "yq"
+  "yt-dlp"
 ]
