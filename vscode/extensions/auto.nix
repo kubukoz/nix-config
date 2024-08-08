@@ -6,6 +6,7 @@
 [
   "Rubymaniac.vscode-direnv"
   "baccata.scaladex-search"
+  "benfradet.vscode-unison"
   "codezombiech.gitignore"
   "disneystreaming.smithy"
   "github.vscode-pull-request-github"
