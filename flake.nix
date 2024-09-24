@@ -34,15 +34,11 @@
 
           unstable-overrides = final: prev: {
             scala-cli = (import inputs.nixpkgs-master { inherit (machine) system; }).scala-cli.override { jre = final.jre; };
-            # pkgsx86_64Darwin.bloop = (import inputs.nixpkgs-master { inherit (machine) system; }).pkgsx86_64Darwin.bloop.override { jre = final.jre; };
+            bloop = (import inputs.nixpkgs-master { inherit (machine) system; }).bloop.override { jre = final.jre; };
           };
 
           extra-packages = final: prev: {
             hmm = inputs.hmm.packages.${system}.default;
-          };
-
-          arm-overrides = final: prev: {
-            bloop = prev.pkgsx86_64Darwin.bloop.override { jre = final.jre; };
           };
 
           distributed-builds = {
@@ -63,7 +59,6 @@
               nixpkgs.overlays = [
                 unstable-overrides
                 extra-packages
-                arm-overrides
               ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin
