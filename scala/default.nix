@@ -26,15 +26,15 @@
 
   programs.sbt = {
     enable = true;
-    plugins =
-      let
-        projectGraph = {
-          org = "com.dwijnand";
-          artifact = "sbt-project-graph";
-          version = "0.4.0";
-        };
-      in
-      [ projectGraph ];
+    # plugins =
+    #   let
+    #     projectGraph = {
+    #       org = "com.dwijnand";
+    #       artifact = "sbt-project-graph";
+    #       version = "0.4.0";
+    #     };
+    #   in
+    #   [ projectGraph ];
     credentials = [
       {
         realm = "Sonatype Nexus Repository Manager";
