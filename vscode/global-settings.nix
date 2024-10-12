@@ -24,4 +24,5 @@
   "workbench.startupEditor" = "none";
   "window.zoomLevel" = 1;
   "typescript.preferences.quoteStyle" = "single";
+  "githubPullRequests.terminalLinksHandler" = "github";
 }
