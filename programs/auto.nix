@@ -16,7 +16,7 @@
   "nil"
   "nix-output-monitor"
   "nix-tree"
-  "nixfmt"
+  "nixfmt-classic"
   "openssh"
   "python3"
   "ranger"
