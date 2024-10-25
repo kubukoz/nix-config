@@ -17,12 +17,6 @@
     sha256 = "14k1fdwfhixfnmamwnzncyvg5s8433nxglrd3bwrsxs534jxlwbn";
   }
   {
-    name = "vscode-direnv";
-    publisher = "Rubymaniac";
-    version = "0.0.2";
-    sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
-  }
-  {
     name = "scaladex-search";
     publisher = "baccata";
     version = "0.3.5";

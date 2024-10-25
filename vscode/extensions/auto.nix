@@ -4,9 +4,7 @@
 # This file should always parse as an array of string literals.
 #
 [
-  "Rubymaniac.vscode-direnv"
   "baccata.scaladex-search"
-  "benfradet.vscode-unison"
   "codezombiech.gitignore"
   "disneystreaming.smithy"
   "github.vscode-pull-request-github"
