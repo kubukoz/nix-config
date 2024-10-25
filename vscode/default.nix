@@ -67,19 +67,6 @@ let
       ];
     };
 
-  tla = configuredExtension
-    {
-      extension = vscode-extensions.alygin.vscode-tlaplus;
-      settings = { "tlaplus.tlc.statisticsSharing" = "share"; };
-      keybindings = [
-        {
-          key = "ctrl+cmd+enter";
-          command = "tlaplus.model.check.run";
-          when = "editorLangId == tlaplus";
-        }
-      ];
-    };
-
   command-runner = configuredExtension
     {
       extension = vscode-extensions.edonet.vscode-command-runner;
@@ -113,7 +100,6 @@ in
     markdown
     gitlens
     multiclip
-    tla
     command-runner
     nix-ide
     indent-rainbow
