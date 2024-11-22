@@ -20,6 +20,7 @@
   "openssh"
   "python3"
   "ranger"
+  "ripgrep"
   "tig"
   "tldr"
   "tokei"
