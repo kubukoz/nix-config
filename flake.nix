@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-master.url = "github:nixos/nixpkgs";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=pull/360905/head";
     flake-utils.url = "github:numtide/flake-utils";
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +33,7 @@
           inherit (machine) system;
 
           unstable-overrides = final: prev: {
-            scala-cli = (import inputs.nixpkgs-master { inherit (machine) system; }).scala-cli.override { jre = final.jre; };
-            bloop = (import inputs.nixpkgs-master { inherit (machine) system; }).bloop.override { jre = final.jre; };
+            unison-ucm = (import inputs.nixpkgs-unstable { inherit (machine) system; }).unison-ucm;
           };
 
           extra-packages = final: prev: {
