@@ -44,10 +44,13 @@
           distributed-builds = {
             nix = {
               distributedBuilds = true;
-              buildMachines = let builders = import ./semisecret-builders.nix; in
+              buildMachines =
+                let builders = import ./semisecret-builders.nix;
+                    sshKey = "${machine.homedir}/.ssh/id_ed25519"; in
                 [
-                  # (builders.jk-nixos { sshKey = "${machine.homedir}/.ssh/id_ed25519"; maxJobs = 2; })
-                  (builders.jk-nixbuild { sshKey = "${machine.homedir}/.ssh/id_ed25519"; })
+                  # (builders.jk-nixos { inherit sshKey; maxJobs = 2; })
+                  (builders.jk-nixbuild { inherit sshKey; })
+                  # (builders.jk-rasp { inherit sshKey; })
                 ];
             };
           };
