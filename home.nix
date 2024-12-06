@@ -1,9 +1,7 @@
 { pkgs, lib, system, ... }:
 
-let
-  inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
-in
-{
+let inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
+in {
   programs = {
     bat = {
       enable = true;
@@ -35,7 +33,6 @@ in
       EDITOR = "nvim";
     };
 
-
     packages =
 
       let
@@ -43,9 +40,9 @@ in
           file = ./programs/auto.nix;
           root = pkgs;
         };
-      in
-      autoPrograms ++ [
-        (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
+      in autoPrograms ++ [
+        (lib.mkIf pkgs.stdenv.isx86_64
+          (pkgs.callPackage ./derivations/pidof.nix { }))
         pkgs.hmm
         (pkgs.callPackage ./node2nix { }).dexsearch
       ];
