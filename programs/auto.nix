@@ -12,7 +12,6 @@
   "ffmpeg"
   "httpie"
   "jless"
-  "nil"
   "nix-output-monitor"
   "nix-tree"
   "nixfmt-classic"
