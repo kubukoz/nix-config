@@ -1,8 +1,6 @@
 { stdenv, gcc }:
-let
-  version = "0.1.4";
-in
-stdenv.mkDerivation {
+let version = "0.1.4";
+in stdenv.mkDerivation {
   name = "pidof-${version}";
   buildInputs = [ gcc ];
   src = builtins.fetchTarball {

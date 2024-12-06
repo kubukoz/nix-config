@@ -19,58 +19,51 @@
     nix-work.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs =
-    { self
-    , darwin
-    , nixpkgs
-    , nix-work
-    , ...
-    }@inputs:
-    {
-      darwinConfigurations.kubukoz-max =
-        let
-          machine = import ./machines/max.nix;
+  outputs = { self, darwin, nixpkgs, nix-work, ... }@inputs: {
+    darwinConfigurations.kubukoz-max = let
+      machine = import ./machines/max.nix;
+      inherit (machine) system;
+
+      unstable-overrides = final: prev: {
+        unison-ucm = (import inputs.nixpkgs-unstable {
           inherit (machine) system;
+        }).unison-ucm;
+      };
 
-          unstable-overrides = final: prev: {
-            unison-ucm = (import inputs.nixpkgs-unstable { inherit (machine) system; }).unison-ucm;
-          };
+      extra-packages = final: prev: {
+        hmm = inputs.hmm.packages.${system}.default;
+      };
 
-          extra-packages = final: prev: {
-            hmm = inputs.hmm.packages.${system}.default;
-          };
-
-          distributed-builds = {
-            nix = {
-              distributedBuilds = true;
-              buildMachines =
-                let builders = import ./semisecret-builders.nix;
-                    sshKey = "${machine.homedir}/.ssh/id_ed25519"; in
-                [
-                  # (builders.jk-nixos { inherit sshKey; maxJobs = 2; })
-                  (builders.jk-nixbuild { inherit sshKey; })
-                  # (builders.jk-rasp { inherit sshKey; })
-                ];
-            };
-          };
-        in
-        darwin.lib.darwinSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.overlays = [
-                unstable-overrides
-                extra-packages
-              ];
-              nix.extraOptions = ''
-                extra-platforms = x86_64-darwin
-              '';
-            }
-            distributed-builds
-            ./darwin-configuration.nix
-            nix-work.darwinModules.default
+      distributed-builds = {
+        nix = {
+          distributedBuilds = true;
+          buildMachines = let
+            builders = import ./semisecret-builders.nix;
+            sshKey = "${machine.homedir}/.ssh/id_ed25519";
+          in [
+            # (builders.jk-nixos { inherit sshKey; maxJobs = 2; })
+            (builders.jk-nixbuild { inherit sshKey; })
+            # (builders.jk-rasp { inherit sshKey; })
           ];
-          specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ] // { inherit machine; };
+        };
+      };
+    in darwin.lib.darwinSystem {
+      inherit system;
+      modules = [
+        {
+          nixpkgs.overlays = [ unstable-overrides extra-packages ];
+          nix.extraOptions = ''
+            extra-platforms = x86_64-darwin
+          '';
+        }
+        distributed-builds
+        ./darwin-configuration.nix
+        nix-work.darwinModules.default
+      ];
+      specialArgs = builtins.removeAttrs inputs [ "self" "darwin" "nixpkgs" ]
+        // {
+          inherit machine;
         };
     };
+  };
 }

@@ -1,5 +1,4 @@
-{ pkgs, machine, ... }:
-{
+{ pkgs, machine, ... }: {
   home.packages = [ pkgs.bloop ];
 
   programs.sbt = {
@@ -12,12 +11,11 @@
     # ];
   };
 
-  home.file.".bloop/bloop.json".text =
-    builtins.toJSON {
-      javaOptions = [
-        "-Xmx${machine.bloop.memory.max-heap}"
-        "-Xss10m"
-        "-XX:+CrashOnOutOfMemoryError"
-      ];
-    };
+  home.file.".bloop/bloop.json".text = builtins.toJSON {
+    javaOptions = [
+      "-Xmx${machine.bloop.memory.max-heap}"
+      "-Xss10m"
+      "-XX:+CrashOnOutOfMemoryError"
+    ];
+  };
 }

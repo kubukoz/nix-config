@@ -1,3 +1,1 @@
-self: super: {
-  coursier-tools = self.callPackage ../coursier {};
-}
+self: super: { coursier-tools = self.callPackage ../coursier { }; }

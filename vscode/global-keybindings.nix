@@ -1,8 +1,6 @@
 { vscode-lib }:
-let
-  inherit (vscode-lib) overrideKeyBinding;
-in
-[
+let inherit (vscode-lib) overrideKeyBinding;
+in [
   {
     key = "cmd+k cmd+n";
     command = "explorer.newFile";
@@ -27,8 +25,7 @@ in
 ] ++ overrideKeyBinding "f2" {
   key = "cmd+r cmd+r";
   command = "editor.action.rename";
-  when =
-    "editorHasRenameProvider && editorTextFocus && !editorReadonly";
+  when = "editorHasRenameProvider && editorTextFocus && !editorReadonly";
 } ++ overrideKeyBinding "shift-alt+f5" {
   key = "ctrl+shift+alt+up";
   command = "workbench.action.editor.previousChange";

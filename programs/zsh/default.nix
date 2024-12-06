@@ -1,5 +1,4 @@
-{ pkgs, config, machine, ... }:
-{
+{ pkgs, config, machine, ... }: {
 
   programs.direnv = {
     enable = true;
@@ -15,7 +14,6 @@
       enable = true;
       plugins = [ "git" "docker" "docker-compose" ];
     };
-
 
     plugins = [
       {
@@ -68,18 +66,17 @@
       # path = "/Users/kubukoz/.zsh_history_video";
     };
 
-    initExtra =
-      let
-        iterm2-shell-integration = builtins.fetchurl {
-          url = "https://raw.githubusercontent.com/gnachman/iTerm2/90626bbb104f1ca1f0ed73aff57edf7608ec5f29/Resources/shell_integration/iterm2_shell_integration.zsh";
-          sha256 = "sha256:1xk6kx5kdn5wbqgx2f63vnafhkynlxnlshxrapkwkd9zf2531bqa";
-        };
-      in
-      ''
-        source ${iterm2-shell-integration}
-        # rancher
-        export PATH="$HOME/.rd/bin:$PATH"
-      '';
+    initExtra = let
+      iterm2-shell-integration = builtins.fetchurl {
+        url =
+          "https://raw.githubusercontent.com/gnachman/iTerm2/90626bbb104f1ca1f0ed73aff57edf7608ec5f29/Resources/shell_integration/iterm2_shell_integration.zsh";
+        sha256 = "sha256:1xk6kx5kdn5wbqgx2f63vnafhkynlxnlshxrapkwkd9zf2531bqa";
+      };
+    in ''
+      source ${iterm2-shell-integration}
+      # rancher
+      export PATH="$HOME/.rd/bin:$PATH"
+    '';
   };
 
 }

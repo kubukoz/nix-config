@@ -1,16 +1,7 @@
-{ pkgs
-, config
-, machine
-, home-manager
-, ...
-}@inputs:
-{
-  imports =
-    [ (home-manager.darwinModules.home-manager) ];
+{ pkgs, config, machine, home-manager, ... }@inputs: {
+  imports = [ (home-manager.darwinModules.home-manager) ];
 
-  services.nix-daemon = {
-    enable = true;
-  };
+  services.nix-daemon = { enable = true; };
 
   # This sets NIX_PATH, maybe don't remove
   programs.zsh.enable = true;
@@ -31,13 +22,14 @@
 
   nixpkgs = {
     overlays = [
-      (final: prev: { jre = final.openjdk21; jdk = final.openjdk21; })
+      (final: prev: {
+        jre = final.openjdk21;
+        jdk = final.openjdk21;
+      })
       (import ./overlays/coursier.nix)
       (import ./overlays/vscode.nix)
     ];
-    config = {
-      allowUnfree = true;
-    };
+    config = { allowUnfree = true; };
   };
 
   users.users.${machine.username}.home = machine.homedir;
@@ -45,12 +37,8 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users."${machine.username}" = {
-      imports = [ ./home.nix ];
-    };
-    extraSpecialArgs = {
-      inherit machine;
-    };
+    users."${machine.username}" = { imports = [ ./home.nix ]; };
+    extraSpecialArgs = { inherit machine; };
   };
 
   networking.hostName = machine.hostname;

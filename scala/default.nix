@@ -16,7 +16,8 @@
   ];
 
   home.sessionVariables = {
-    JVM_DEBUG = "-J-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005";
+    JVM_DEBUG =
+      "-J-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005";
     # configured to make it easier to enter this directory
     # but the actual value is the same as the default
     COURSIER_CACHE = "${machine.homedir}/Library/Caches/Coursier/v1";
@@ -51,6 +52,5 @@
     ];
   };
 
-  home.file.".sbt/1.0/global.sbt".text = builtins.readFile
-    ./global.sbt;
+  home.file.".sbt/1.0/global.sbt".text = builtins.readFile ./global.sbt;
 }

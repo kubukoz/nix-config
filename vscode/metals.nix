@@ -3,8 +3,7 @@ let
   vscode-lib = import ./lib.nix;
   inherit (vscode-lib) configuredExtension;
   inherit (pkgs) vscode-utils vscode-extensions;
-in
-configuredExtension {
+in configuredExtension {
   extension = vscode-extensions.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
