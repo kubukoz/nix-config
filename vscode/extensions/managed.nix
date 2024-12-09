@@ -1,3 +1,4 @@
+#
 # This file was written by hmm (Home Manager Manager).
 # Don't edit it manually!
 # This file should always parse as an array of attrsets.
@@ -6,8 +7,8 @@
   {
     name = "metals";
     publisher = "scalameta";
-    version = "1.42.1";
-    sha256 = "0pg4krg6ism9vgfz2xfgyrg08i40bp9i1s2rzvh9aksh7cfb9rd3";
+    version = "1.43.1";
+    sha256 = "07968z76gf3sm61f0wb3kvjs5wgja21b4pgg31rlcm5jmyqhsr25";
   }
   {
     name = "smithy";
