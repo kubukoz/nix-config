@@ -91,7 +91,7 @@ let
       "files.associations" = { "flake.lock" = "json"; };
       "nix.serverPath" = pkgs.lib.getExe pkgs.nil;
       "nix.serverSettings" = {
-        nil.formatting.command = [ (pkgs.lib.getExe pkgs.nixfmt) ];
+        nil.formatting.command = [ (pkgs.lib.getExe pkgs.nixfmt-classic) ];
       };
     } // exclude [ ".direnv/" ];
   };
