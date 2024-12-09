@@ -25,4 +25,5 @@
   "window.zoomLevel" = 1;
   "typescript.preferences.quoteStyle" = "single";
   "githubPullRequests.terminalLinksHandler" = "github";
+  "editor.accessibilitySupport" = "off";
 }
