@@ -1,4 +1,4 @@
-{ pkgs, config, machine, ... }: {
+{ pkgs, machine, ... }: {
 
   programs.direnv = {
     enable = true;
@@ -35,6 +35,15 @@
           sha256 = "sha256-BjgMhILEL/qdgfno4LR64LSB8n9pC9R+gG7IQWwgyfQ=";
         };
       }
+      # {
+      #   name = "mill-zsh-completions";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "carlosedp";
+      #     repo = "mill-zsh-completions";
+      #     rev = "62c8a058bcc7e3c87e66d0230ed6b1e3b2d9934d";
+      #     sha256 = "sha256-HRsEFsI3VDiYFgN7xnXQgjTE9IBSZ81DTSltp8CECoM=";
+      #   };
+      # }
     ];
 
     localVariables = {
@@ -46,13 +55,13 @@
     };
 
     shellAliases = {
-      lsd = "eza --long --header --git --all";
-      dps = "docker-compose ps";
-      dcp = "docker-compose";
-      nss = "nix develop";
-      nb = "nix build";
-      ngc = "sudo nix-collect-garbage -d";
-      coursier = "cs";
+      lsd = "${pkgs.lib.getExe pkgs.eza} --long --header --git --all";
+      dps = "${pkgs.lib.getExe pkgs.docker-compose} ps";
+      dcp = "${pkgs.lib.getExe pkgs.docker-compose}";
+      nss = "${pkgs.lib.getExe pkgs.nix} develop";
+      nb = "${pkgs.lib.getExe pkgs.nix} build";
+      ngc = "sudo ${pkgs.nix}/bin/nix-collect-garbage -d";
+      coursier = "${pkgs.lib.getExe pkgs.coursier}";
     };
 
     initExtraBeforeCompInit = ''
@@ -60,6 +69,8 @@
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source ${./p10k.zsh}
     '';
+
+    # source /nix/store/yks41y2b7wglvy7dcs8by6325n44m5wk-source/mill-zsh-completions.plugin.zsh
 
     history = {
       size = 100000;
@@ -74,7 +85,8 @@
       };
     in ''
       source ${iterm2-shell-integration}
-      # rancher
+
+      # rancher - added via programs/zsh/default.nix
       export PATH="$HOME/.rd/bin:$PATH"
     '';
   };
