@@ -15,6 +15,7 @@
   "files.defaultLanguage" = "markdown";
   "files.insertFinalNewline" = true;
   "files.trimTrailingWhitespace" = true;
+  "git.openRepositoryInParentFolders" = "always";
   "githubPullRequests.terminalLinksHandler" = "github";
   "terminal.integrated.fontFamily" = "MesloLGS NF";
   "terminal.integrated.fontSize" = 14;
