@@ -16,7 +16,6 @@ let
       obj = builtins.listToAttrs (map toObj paths);
     in {
       "files.watcherExclude" = obj;
-      "files.exclude" = obj;
       "search.exclude" = obj;
     };
 
