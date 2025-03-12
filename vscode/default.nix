@@ -34,6 +34,7 @@ let
   scala = configuredExtension {
     extension = vscode-extensions.scala-lang.scala;
     settings = exclude [
+      "**/.idea"
       "**/.bloop"
       "**/.ammonite"
       "**/.metals"
