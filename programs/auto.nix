@@ -7,6 +7,7 @@
   "bottom"
   "cachix"
   "ctop"
+  "dua"
   "duf"
   "exiftool"
   "eza"
