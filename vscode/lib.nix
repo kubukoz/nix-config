@@ -19,7 +19,7 @@ let
       "search.exclude" = obj;
     };
 
-  mkVscodeModule = content: { programs.vscode = content; };
+  mkVscodeModule = content: { programs.vscode.profiles.default = content; };
 
   configuredExtension =
     { extension, settings ? { }, keybindings ? [ ], formatterFor ? [ ] }:

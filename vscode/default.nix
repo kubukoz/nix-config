@@ -12,11 +12,6 @@ let
   };
 
   baseSettings = mkVscodeModule {
-    enable = true;
-    package = pkgs.runCommand "dummy" { } "mkdir $out" // {
-      pname = pkgs.vscode.pname;
-      version = "0.0.0";
-    };
     enableExtensionUpdateCheck = false;
     enableUpdateCheck = false;
     userSettings = import ./global-settings.nix;
@@ -98,6 +93,14 @@ let
   };
 
 in {
+  programs.vscode = {
+    enable = true;
+    package = pkgs.runCommand "dummy" { } "mkdir $out" // {
+      pname = pkgs.vscode.pname;
+      version = "0.0.0";
+    };
+  };
+
   imports = [
     baseSettings
     ./theme.nix

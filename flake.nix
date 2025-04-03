@@ -5,11 +5,11 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.url = "github:nix-darwin/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hmm.url = "github:kubukoz/hmm";
+    hmm.url = "/Users/kubukoz/projects/hmm";
     hmm.inputs.flake-utils.follows = "flake-utils";
     hmm.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";

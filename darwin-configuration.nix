@@ -1,12 +1,12 @@
 { pkgs, config, machine, home-manager, ... }@inputs: {
   imports = [ (home-manager.darwinModules.home-manager) ];
 
-  services.nix-daemon = { enable = true; };
-
   # This sets NIX_PATH, maybe don't remove
   programs.zsh.enable = true;
 
   nix = {
+    enable = true;
+
     package = pkgs.nix;
 
     settings = {
@@ -43,7 +43,7 @@
 
   networking.hostName = machine.hostname;
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   system.defaults = {
     LaunchServices = { LSQuarantine = false; };
