@@ -9,7 +9,7 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hmm.url = "/Users/kubukoz/projects/hmm";
+    hmm.url = "github:kubukoz/hmm";
     hmm.inputs.flake-utils.follows = "flake-utils";
     hmm.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";

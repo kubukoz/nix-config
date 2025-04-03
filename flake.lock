@@ -50,17 +50,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1743700734,
+        "lastModified": 1743701373,
         "narHash": "sha256-PyXWKWzyC1KidE7h2AVlg/VHy12djd8ZZhKB0fKdevU=",
-        "ref": "refs/heads/update-flakes-2025",
-        "rev": "e63b05a8c345c7bf5ee568aecefc848509dc25fd",
-        "revCount": 83,
-        "type": "git",
-        "url": "file:///Users/kubukoz/projects/hmm"
+        "owner": "kubukoz",
+        "repo": "hmm",
+        "rev": "d3aad1d75c768f3e8afe817100fa45c8d78a882a",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///Users/kubukoz/projects/hmm"
+        "owner": "kubukoz",
+        "repo": "hmm",
+        "type": "github"
       }
     },
     "home-manager": {
