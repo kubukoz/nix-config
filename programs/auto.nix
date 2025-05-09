@@ -15,7 +15,6 @@
   "httpie"
   "jless"
   "metals"
-  "nil"
   "nix-output-monitor"
   "nix-tree"
   "nixfmt-classic"
