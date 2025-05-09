@@ -14,6 +14,7 @@
   "ffmpeg"
   "httpie"
   "jless"
+  "metals"
   "nix-output-monitor"
   "nix-tree"
   "nixfmt-classic"
