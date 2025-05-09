@@ -5,7 +5,6 @@
 #
 [
   "bottom"
-  "busybox"
   "cachix"
   "ctop"
   "dua"
