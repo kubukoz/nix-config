@@ -88,6 +88,7 @@
 
       # rancher - added via programs/zsh/default.nix
       export PATH="$HOME/.rd/bin:$PATH"
+      export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
     '';
   };
 
