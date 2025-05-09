@@ -17,6 +17,7 @@
   "metals"
   "nix-output-monitor"
   "nix-tree"
+  "nixd"
   "nixfmt-classic"
   "ntfy-sh"
   "openssh"
