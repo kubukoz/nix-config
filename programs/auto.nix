@@ -23,7 +23,6 @@
   "python3"
   "ranger"
   "ripgrep"
-  "rustup"
   "tig"
   "tldr"
   "tokei"
