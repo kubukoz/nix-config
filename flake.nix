@@ -28,6 +28,9 @@
         unison-ucm = (import inputs.nixpkgs-unstable {
           inherit (machine) system;
         }).unison-ucm;
+        scala-cli = (import inputs.nixpkgs-unstable {
+          inherit (machine) system;
+        }).scala-cli;
       };
 
       extra-packages = final: prev: {
