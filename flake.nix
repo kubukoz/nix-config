@@ -24,14 +24,11 @@
       machine = import ./machines/max.nix;
       inherit (machine) system;
 
-      unstable-overrides = final: prev: {
-        unison-ucm = (import inputs.nixpkgs-unstable {
-          inherit (machine) system;
-        }).unison-ucm;
-        scala-cli = (import inputs.nixpkgs-unstable {
-          inherit (machine) system;
-        }).scala-cli;
-      };
+      unstable-overrides = final: prev:
+        let
+          unstable =
+            (import inputs.nixpkgs-unstable { inherit (machine) system; });
+        in { inherit (unstable) unison-ucm scala-cli metals; };
 
       extra-packages = final: prev: {
         hmm = inputs.hmm.packages.${system}.default;
