@@ -1,4 +1,4 @@
-{ pkgs, machine, ... }: {
+{ pkgs, machine, lib, ... }: {
 
   programs.direnv = {
     enable = true;
@@ -64,12 +64,6 @@
       coursier = "${pkgs.lib.getExe pkgs.coursier}";
     };
 
-    initExtraBeforeCompInit = ''
-      # powerlevel10k
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ${./p10k.zsh}
-    '';
-
     # source /nix/store/yks41y2b7wglvy7dcs8by6325n44m5wk-source/mill-zsh-completions.plugin.zsh
 
     history = {
@@ -77,20 +71,28 @@
       # path = "/Users/kubukoz/.zsh_history_video";
     };
 
-    initExtra = let
-      iterm2-shell-integration = builtins.fetchurl {
-        url =
-          "https://raw.githubusercontent.com/gnachman/iTerm2/90626bbb104f1ca1f0ed73aff57edf7608ec5f29/Resources/shell_integration/iterm2_shell_integration.zsh";
-        sha256 = "sha256:1xk6kx5kdn5wbqgx2f63vnafhkynlxnlshxrapkwkd9zf2531bqa";
-      };
-    in ''
-      source ${iterm2-shell-integration}
+    initContent = lib.mkMerge [
+      (lib.mkOrder 550 ''
+        # powerlevel10k
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        source ${./p10k.zsh}
+      '')
+      (let
+        iterm2-shell-integration = builtins.fetchurl {
+          url =
+            "https://raw.githubusercontent.com/gnachman/iTerm2/90626bbb104f1ca1f0ed73aff57edf7608ec5f29/Resources/shell_integration/iterm2_shell_integration.zsh";
+          sha256 =
+            "sha256:1xk6kx5kdn5wbqgx2f63vnafhkynlxnlshxrapkwkd9zf2531bqa";
+        };
+      in ''
+        source ${iterm2-shell-integration}
 
-      # rancher - added via programs/zsh/default.nix
-      export PATH="$HOME/.rd/bin:$PATH"
-      export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
-      export PATH="$HOME/.cargo/bin:$PATH"
-    '';
+        # rancher - added via programs/zsh/default.nix
+        export PATH="$HOME/.rd/bin:$PATH"
+        export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
+        export PATH="$HOME/.cargo/bin:$PATH"
+      '')
+    ];
   };
 
 }
