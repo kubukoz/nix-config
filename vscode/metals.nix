@@ -13,7 +13,7 @@ in configuredExtension {
       "-Xss10m"
       "-XX:+CrashOnOutOfMemoryError"
     ];
-    "metals.serverVersion" = "1.6.0+5-504901db-SNAPSHOT";
+    "metals.serverVersion" = "1.6.0+27-cb36d9ab-SNAPSHOT";
     "metals.superMethodLensesEnabled" = false;
     "metals.enableSemanticHighlighting" = false;
   };
