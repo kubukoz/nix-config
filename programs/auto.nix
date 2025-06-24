@@ -15,6 +15,7 @@
   "httpie"
   "jless"
   "metals"
+  "nap"
   "nil"
   "nix-output-monitor"
   "nix-tree"
