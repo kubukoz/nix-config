@@ -26,6 +26,7 @@
   "python3"
   "ranger"
   "ripgrep"
+  "ssm-session-manager-plugin"
   "tig"
   "tldr"
   "tokei"
