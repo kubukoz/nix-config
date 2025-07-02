@@ -50,9 +50,9 @@
         passwordCommand = "cat ${machine.homedir}/secrets/sonatype-s01.txt";
       }
       {
-        realm = "Sonatype Central";
-        host = "central.sonatype.org";
-        user = "SAc7aklX";
+        realm = "Sonatype Nexus Repository Manager";
+        host = "central.sonatype.com";
+        user = "tw8rGqms";
         passwordCommand = "cat ${machine.homedir}/secrets/sonatype-central.txt";
       }
     ];
