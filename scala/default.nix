@@ -49,6 +49,12 @@
         user = "ofcQe0gV";
         passwordCommand = "cat ${machine.homedir}/secrets/sonatype-s01.txt";
       }
+      {
+        realm = "Sonatype Central";
+        host = "central.sonatype.org";
+        user = "SAc7aklX";
+        passwordCommand = "cat ${machine.homedir}/secrets/sonatype-central.txt";
+      }
     ];
   };
 
