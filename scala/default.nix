@@ -52,7 +52,7 @@
       {
         realm = "Sonatype Nexus Repository Manager";
         host = "central.sonatype.com";
-        user = "tw8rGqms";
+        user = "v3uZaOIU";
         passwordCommand = "cat ${machine.homedir}/secrets/sonatype-central.txt";
       }
     ];
