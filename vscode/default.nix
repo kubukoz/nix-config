@@ -31,7 +31,6 @@ let
     settings = exclude [
       "**/.idea"
       "**/.bloop"
-      "**/.ammonite"
       "**/.metals"
       "**/.scala-build"
       "**/target"
