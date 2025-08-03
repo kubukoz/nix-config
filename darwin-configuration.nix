@@ -45,8 +45,6 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  system.primaryUser = "kubukoz";
-
   system.defaults = {
     LaunchServices = { LSQuarantine = false; };
     NSGlobalDomain = {
