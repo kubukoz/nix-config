@@ -45,6 +45,7 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  system.primaryUser = machine.username;
   system.defaults = {
     LaunchServices = { LSQuarantine = false; };
     NSGlobalDomain = {
