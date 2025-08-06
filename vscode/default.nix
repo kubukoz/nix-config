@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let
-  inherit (pkgs) vscode-extensions;
+  inherit (pkgs) vscode-extensions vscode-utils;
   inherit (pkgs.callPackage ../lib { }) attributesFromListFile;
   vscode-lib = import ./lib.nix;
   inherit (vscode-lib) configuredExtension mkVscodeModule exclude;
@@ -75,7 +75,9 @@ let
     keybindings = [{
       key = "ctrl+cmd+enter";
       command = "command-runner.run";
-      args = { command = "darwin-rebuild switch --flake ~/.nixpkgs --impure"; };
+      args = {
+        command = "sudo darwin-rebuild switch --flake ~/.nixpkgs --impure";
+      };
       when = "editorLangId == nix";
     }];
   };
@@ -101,6 +103,30 @@ in {
   };
 
   imports = [
+    (let
+      pkl = let
+        name = "pkl";
+        vscodeExtPublisher = "apple";
+        version = "0.20.0";
+      in vscode-utils.buildVscodeExtension {
+        inherit name vscodeExtPublisher version;
+        pname = name;
+        vscodeExtName = name;
+        vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
+        src = builtins.fetchurl {
+          name = "${name}-vscode.zip";
+          url =
+            "https://github.com/apple/pkl-vscode/releases/download/0.20.0/pkl-vscode-0.20.0.vsix";
+          sha256 = "1jwfrhchvgxlwj2fpbj5cgl5llxjlh4khqik9mba1yksjjy5xf3c";
+        };
+      };
+    in configuredExtension {
+      extension = pkl;
+      settings = {
+        "pkl.lsp.java.path" = lib.getExe pkgs.jdk24;
+        "pkl.cli.path" = pkgs.pkl;
+      };
+    })
     baseSettings
     ./theme.nix
     scala

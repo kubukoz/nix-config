@@ -7,6 +7,6 @@ nix flake update
 git add flake.lock
 
 ./compare.sh commit
-darwin-rebuild switch --flake ~/.nixpkgs --impure
+sudo darwin-rebuild switch --flake ~/.nixpkgs --impure
 git push
 git show
