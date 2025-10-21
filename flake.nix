@@ -9,9 +9,6 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    hmm.url = "github:kubukoz/hmm";
-    hmm.inputs.flake-utils.follows = "flake-utils";
-    hmm.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
@@ -30,9 +27,7 @@
             (import inputs.nixpkgs-unstable { inherit (machine) system; });
         in { inherit (unstable) unison-ucm scala-cli metals; };
 
-      extra-packages = final: prev: {
-        hmm = inputs.hmm.packages.${system}.default;
-      };
+      extra-packages = final: prev: { };
 
       distributed-builds = {
         nix = {

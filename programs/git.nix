@@ -1,12 +1,13 @@
 { pkgs, ... }: {
+  programs.delta.enable = true;
+  programs.delta.enableGitIntegration = true;
+
   programs.git = {
     enable = true;
-    userName = "Jakub Kozłowski";
-    userEmail = "kubukoz@gmail.com";
+    settings.user.name = "Jakub Kozłowski";
+    settings.user.email = "kubukoz@gmail.com";
 
-    delta.enable = true;
-
-    aliases = {
+    settings.alias = {
       dif = "diff --staged";
       rekt = "reset --hard HEAD";
     };
@@ -29,7 +30,7 @@
       "**/smithyql-log.txt"
     ];
 
-    extraConfig = {
+    settings = {
       pull = { ff = "only"; };
       init.defaultBranch = "main";
       rerere.enabled = true;

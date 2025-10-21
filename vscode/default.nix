@@ -123,7 +123,7 @@ in {
     in configuredExtension {
       extension = pkl;
       settings = {
-        "pkl.lsp.java.path" = lib.getExe pkgs.jdk24;
+        "pkl.lsp.java.path" = lib.getExe pkgs.jdk25;
         "pkl.cli.path" = pkgs.pkl;
       };
     })

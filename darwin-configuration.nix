@@ -23,8 +23,8 @@
   nixpkgs = {
     overlays = [
       (final: prev: {
-        jre = final.openjdk21;
-        jdk = final.openjdk21;
+        jre = final.openjdk25;
+        jdk = final.openjdk25;
       })
       (import ./overlays/coursier.nix)
       (import ./overlays/vscode.nix)
