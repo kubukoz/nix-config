@@ -28,6 +28,7 @@
       "**/.direnv/"
       "**/.DS_Store"
       "**/smithyql-log.txt"
+      "**/.claude/settings.local.json"
     ];
 
     settings = {
