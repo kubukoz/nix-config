@@ -11,6 +11,7 @@
   "exiftool"
   "eza"
   "ffmpeg"
+  "go"
   "httpie"
   "jd-diff-patch"
   "jless"
