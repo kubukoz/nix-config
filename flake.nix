@@ -23,9 +23,11 @@
 
       unstable-overrides = final: prev:
         let
-          unstable =
-            (import inputs.nixpkgs-unstable { inherit (machine) system; });
-        in { inherit (unstable) unison-ucm scala-cli metals; };
+          unstable = (import inputs.nixpkgs-unstable {
+            inherit (machine) system;
+            config.allowUnfree = true;
+          });
+        in { inherit (unstable) unison-ucm scala-cli metals claude-code; };
 
       extra-packages = final: prev: { };
 
