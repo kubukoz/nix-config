@@ -33,6 +33,7 @@
   "tokei"
   "tree"
   "unison-ucm"
+  "uv"
   "wget"
   "yq"
   "yt-dlp"
