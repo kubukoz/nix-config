@@ -16,6 +16,7 @@ in configuredExtension {
     # "metals.serverVersion" = "1.6.0+80-ee29b401-SNAPSHOT";
     "metals.superMethodLensesEnabled" = false;
     "metals.enableSemanticHighlighting" = false;
+    "metals.startMcpServer" = true;
     "metals.mcpClient" = "claude";
   };
   keybindings = [
