@@ -98,8 +98,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1769621008,
-        "narHash": "sha256-rd7xwUiHF/39fo7mu3iwW9NPtxBPaAwiPUPyA34cNe4=",
+        "lastModified": 1769626648,
+        "narHash": "sha256-C1qHhjI/SehhtTBOrxbQRetcCfpQY5bwjL9XQtPpfYA=",
         "path": "/Users/kubukoz/dev/nix-work",
         "type": "path"
       },
