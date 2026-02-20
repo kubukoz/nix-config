@@ -22,6 +22,10 @@ in [
     key = "cmd+alt+t";
     command = "editor.action.goToTypeDefinition";
   }
+  {
+    key = "cmd+r cmd+e";
+    command = "unison.editDefinitionAtCursor";
+  }
 ] ++ overrideKeyBinding "f2" {
   key = "cmd+r cmd+r";
   command = "editor.action.rename";
