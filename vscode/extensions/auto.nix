@@ -11,4 +11,5 @@
   "redhat.vscode-yaml"
   "timonwong.shellcheck"
   "usernamehw.errorlens"
+  "haskell.haskell"
 ]
