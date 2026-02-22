@@ -26,6 +26,10 @@ in [
     key = "cmd+r cmd+e";
     command = "unison.editDefinitionAtCursor";
   }
+  {
+    key = "cmd+r cmd+s";
+    command = "unison.openOnShare";
+  }
 ] ++ overrideKeyBinding "f2" {
   key = "cmd+r cmd+r";
   command = "editor.action.rename";
