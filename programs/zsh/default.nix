@@ -59,7 +59,7 @@
       dps = "${pkgs.lib.getExe pkgs.docker-compose} ps";
       dcp = "${pkgs.lib.getExe pkgs.docker-compose}";
       nss = "${pkgs.lib.getExe pkgs.nix} develop";
-      nb = "${pkgs.lib.getExe pkgs.nix} build";
+      nb = "${pkgs.lib.getExe pkgs.nix} build --print-build-logs";
       ngc = "sudo ${pkgs.nix}/bin/nix-collect-garbage -d";
       coursier = "${pkgs.lib.getExe pkgs.coursier}";
     };

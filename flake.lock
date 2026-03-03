@@ -71,8 +71,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1771606145,
-        "narHash": "sha256-zhFCHnZBQjGBDydgLgyjkIFBJaTid4lN61n4SE+fjxI=",
+        "lastModified": 1772467527,
+        "narHash": "sha256-O+ryRCzFOdrdPitWUFIGe+3edJOczeTgAujayvuyelI=",
         "path": "/Users/kubukoz/dev/nix-sxm",
         "type": "path"
       },
@@ -98,8 +98,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1771606158,
-        "narHash": "sha256-QeQ7aE+zlf3jhEF54y8SA0TyxhjMO2WcnvDJLiu19VA=",
+        "lastModified": 1772575011,
+        "narHash": "sha256-rY2JjDoCWN3JAnqYaj2T2R8CgawwJx4qwlmtL1V/0Go=",
         "path": "/Users/kubukoz/dev/nix-work",
         "type": "path"
       },
