@@ -38,6 +38,7 @@
       vcs                     # git status
       nix_shell               # nix shell
       virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
+      prod_account            # prod warning
       # prompt_char           # prompt symbol
   )
 
@@ -63,6 +64,7 @@
       # kubecontext             # current kubernetes context (https://kubernetes.io/)
       # terraform               # terraform workspace (https://www.terraform.io)
       aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
+      sxm_role                # SXM default AWS role
       # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
       # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
       context                 # user@hostname
@@ -813,6 +815,17 @@
 
   function prompt_nix_icon() {
     p10k segment -f 201 -i '❄' -t $JK_MACHINE_NAME
+  }
+
+  function prompt_prod_account() {
+    [[ $AWS_PROFILE == *prod* ]] || return
+    p10k segment -f 1 -t 'PROD ACCOUNT'
+  }
+
+  # WORK specific
+  function prompt_sxm_role() {
+    [[ -n $SXM_DEFAULT_AWS_ROLE ]] || return
+    p10k segment -f 208 -t $SXM_DEFAULT_AWS_ROLE
   }
 
   # User-defined prompt segments can be customized the same way as built-in segments.
