@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.delta.enable = true;
   programs.delta.enableGitIntegration = true;
 
@@ -33,7 +34,9 @@
     ];
 
     settings = {
-      pull = { ff = "only"; };
+      pull = {
+        ff = "only";
+      };
       init.defaultBranch = "main";
       rerere.enabled = true;
       log.date = "local";

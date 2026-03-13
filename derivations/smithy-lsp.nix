@@ -1,9 +1,17 @@
-{ stdenv, makeWrapper, setJavaClassPath, jre, lib, coursier }:
+{
+  stdenv,
+  makeWrapper,
+  setJavaClassPath,
+  jre,
+  lib,
+  coursier,
+}:
 
 let
   pname = "smithy-language-server";
   version = "0.7.0";
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   inherit pname version;
 
   deps = stdenv.mkDerivation {
@@ -19,7 +27,10 @@ in stdenv.mkDerivation rec {
     outputHash = "sha256-pi7tPAhKTJ2KEUgBQRFQlMItqd4K9lYXwNxYSVSY9/Y=";
   };
 
-  nativeBuildInputs = [ makeWrapper setJavaClassPath ];
+  nativeBuildInputs = [
+    makeWrapper
+    setJavaClassPath
+  ];
   buildInputs = [ deps ];
 
   dontUnpack = true;

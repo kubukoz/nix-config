@@ -1,7 +1,14 @@
-{ pkgs, lib, system, ... }:
+{
+  pkgs,
+  lib,
+  system,
+  ...
+}:
 
-let inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
-in {
+let
+  inherit (pkgs.callPackage ./lib { }) attributesFromListFile;
+in
+{
   programs = {
     bat = {
       enable = true;
@@ -71,9 +78,10 @@ in {
 
           echo "Created test file: $TEST_FILE"
         '';
-      in autoPrograms ++ [
-        (lib.mkIf pkgs.stdenv.isx86_64
-          (pkgs.callPackage ./derivations/pidof.nix { }))
+      in
+      autoPrograms
+      ++ [
+        (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
         (pkgs.callPackage ./derivations/smithy-lsp.nix { })
         create-test-file
       ];

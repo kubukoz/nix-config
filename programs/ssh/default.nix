@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   imports = [ ./semisecret-ssh.nix ];
   programs.ssh = {
     enable = true;

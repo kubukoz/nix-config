@@ -1,4 +1,5 @@
-{ config, machine, ... }: {
+{ config, machine, ... }:
+{
   programs.gh = {
     enable = true;
     settings = {
@@ -10,6 +11,7 @@
     };
   };
 
-  home.file.".config/gh/hosts.yml".source = config.lib.file.mkOutOfStoreSymlink
-    (machine.homedir + "/secrets/.config/gh/hosts.yml");
+  home.file.".config/gh/hosts.yml".source = config.lib.file.mkOutOfStoreSymlink (
+    machine.homedir + "/secrets/.config/gh/hosts.yml"
+  );
 }

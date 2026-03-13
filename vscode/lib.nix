@@ -1,20 +1,26 @@
 let
-  formatterSettings = { vscodeExtUniqueId, formatterFor }:
+  formatterSettings =
+    { vscodeExtUniqueId, formatterFor }:
     let
       toLine = languageName: {
         name = "[${languageName}]";
-        value = { "editor.defaultFormatter" = vscodeExtUniqueId; };
+        value = {
+          "editor.defaultFormatter" = vscodeExtUniqueId;
+        };
       };
-    in builtins.listToAttrs (map toLine formatterFor);
+    in
+    builtins.listToAttrs (map toLine formatterFor);
 
-  exclude = paths:
+  exclude =
+    paths:
     let
       toObj = path: {
         name = "${path}";
         value = true;
       };
       obj = builtins.listToAttrs (map toObj paths);
-    in {
+    in
+    {
       "files.watcherExclude" = obj;
       "search.exclude" = obj;
     };
@@ -22,7 +28,12 @@ let
   mkVscodeModule = content: { programs.vscode.profiles.default = content; };
 
   configuredExtension =
-    { extension, settings ? { }, keybindings ? [ ], formatterFor ? [ ] }:
+    {
+      extension,
+      settings ? { },
+      keybindings ? [ ],
+      formatterFor ? [ ],
+    }:
 
     let
       baseModule = {
@@ -37,13 +48,30 @@ let
           inherit (extension) vscodeExtUniqueId;
         };
       };
-    in { imports = map mkVscodeModule [ baseModule formattingModule ]; };
+    in
+    {
+      imports = map mkVscodeModule [
+        baseModule
+        formattingModule
+      ];
+    };
 
   overrideKeyBinding = originalKey: setting: [
     setting
-    (setting // {
-      key = originalKey;
-      command = "-${setting.command}";
-    })
+    (
+      setting
+      // {
+        key = originalKey;
+        command = "-${setting.command}";
+      }
+    )
   ];
-in { inherit configuredExtension overrideKeyBinding mkVscodeModule exclude; }
+in
+{
+  inherit
+    configuredExtension
+    overrideKeyBinding
+    mkVscodeModule
+    exclude
+    ;
+}

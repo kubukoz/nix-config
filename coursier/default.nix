@@ -1,8 +1,23 @@
-{ stdenv, coursier, jre, makeWrapper, lib }:
+{
+  stdenv,
+  coursier,
+  jre,
+  makeWrapper,
+  lib,
+}:
 
 {
-  coursierBootstrap = { pname, version, artifact, alias ? pname, mainClass
-    , sha256, buildInputs ? [ ], ... }@args':
+  coursierBootstrap =
+    {
+      pname,
+      version,
+      artifact,
+      alias ? pname,
+      mainClass,
+      sha256,
+      buildInputs ? [ ],
+      ...
+    }@args':
     let
       deps = stdenv.mkDerivation {
         pname = "${pname}-deps";
@@ -35,7 +50,11 @@
       ];
       baseArgs = {
         inherit pname version;
-        buildInputs = [ jre deps ] ++ argsBuildInputs;
+        buildInputs = [
+          jre
+          deps
+        ]
+        ++ argsBuildInputs;
         nativeBuildInputs = [ makeWrapper ];
 
         buildCommand = ''
@@ -45,5 +64,6 @@
           runHook postInstall
         '';
       };
-    in stdenv.mkDerivation (baseArgs // extraArgs);
+    in
+    stdenv.mkDerivation (baseArgs // extraArgs);
 }

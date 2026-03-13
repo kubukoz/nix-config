@@ -1,4 +1,5 @@
-{ pkgs, machine, ... }: {
+{ pkgs, machine, ... }:
+{
   home.packages = [ pkgs.bloop ];
 
   programs.sbt = {

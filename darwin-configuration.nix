@@ -1,4 +1,11 @@
-{ pkgs, config, machine, home-manager, ... }@inputs: {
+{
+  pkgs,
+  config,
+  machine,
+  home-manager,
+  ...
+}@inputs:
+{
   imports = [ (home-manager.darwinModules.home-manager) ];
 
   # This sets NIX_PATH, maybe don't remove
@@ -29,7 +36,9 @@
       (import ./overlays/coursier.nix)
       (import ./overlays/vscode.nix)
     ];
-    config = { allowUnfree = true; };
+    config = {
+      allowUnfree = true;
+    };
   };
 
   users.users.${machine.username}.home = machine.homedir;
@@ -37,7 +46,9 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    users."${machine.username}" = { imports = [ ./home.nix ]; };
+    users."${machine.username}" = {
+      imports = [ ./home.nix ];
+    };
     extraSpecialArgs = { inherit machine; };
   };
 
@@ -47,7 +58,9 @@
 
   system.primaryUser = machine.username;
   system.defaults = {
-    LaunchServices = { LSQuarantine = false; };
+    LaunchServices = {
+      LSQuarantine = false;
+    };
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark"; # Dark mode
       ApplePressAndHoldEnabled = false; # No accents
@@ -56,8 +69,7 @@
       AppleKeyboardUIMode = 3; # full control
       NSAutomaticQuoteSubstitutionEnabled = false; # No smart quotes
       NSAutomaticDashSubstitutionEnabled = false; # No em dash
-      NSNavPanelExpandedStateForSaveMode =
-        true; # Default to expanded "save" windows
+      NSNavPanelExpandedStateForSaveMode = true; # Default to expanded "save" windows
       NSNavPanelExpandedStateForSaveMode2 = true; # don't ask
     };
     dock = {

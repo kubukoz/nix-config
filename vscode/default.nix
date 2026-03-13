@@ -23,7 +23,10 @@ let
   indent-rainbow = configuredExtension {
     extension = vscode-extensions.oderwat.indent-rainbow;
     settings = {
-      "indentRainbow.includedLanguages" = [ "yaml" "dockercompose" ];
+      "indentRainbow.includedLanguages" = [
+        "yaml"
+        "dockercompose"
+      ];
     };
   };
   scala = configuredExtension {
@@ -58,42 +61,54 @@ let
 
   gitlens = configuredExtension {
     extension = vscode-extensions.eamodio.gitlens;
-    settings = { "gitlens.currentLine.enabled" = false; };
+    settings = {
+      "gitlens.currentLine.enabled" = false;
+    };
   };
 
   multiclip = configuredExtension {
     extension = vscode-extensions.slevesque.vscode-multiclip;
-    settings = { "multiclip.bufferSize" = 100; };
-    keybindings = [{
-      key = "shift+cmd+v shift+cmd+v";
-      command = "multiclip.list";
-    }];
+    settings = {
+      "multiclip.bufferSize" = 100;
+    };
+    keybindings = [
+      {
+        key = "shift+cmd+v shift+cmd+v";
+        command = "multiclip.list";
+      }
+    ];
   };
 
   command-runner = configuredExtension {
     extension = vscode-extensions.edonet.vscode-command-runner;
-    keybindings = [{
-      key = "ctrl+cmd+enter";
-      command = "command-runner.run";
-      args = {
-        command = "sudo darwin-rebuild switch --flake ~/.nixpkgs --impure";
-      };
-      when = "editorLangId == nix";
-    }];
+    keybindings = [
+      {
+        key = "ctrl+cmd+enter";
+        command = "command-runner.run";
+        args = {
+          command = "sudo darwin-rebuild switch --flake ~/.nixpkgs --impure";
+        };
+        when = "editorLangId == nix";
+      }
+    ];
   };
 
   nix-ide = configuredExtension {
     extension = vscode-extensions.jnoortheen.nix-ide;
     settings = {
       "nix.enableLanguageServer" = true;
-      "files.associations" = { "flake.lock" = "json"; };
+      "files.associations" = {
+        "flake.lock" = "json";
+      };
       "nix.serverSettings" = {
         nil.formatting.command = [ (pkgs.lib.getExe pkgs.nixfmt) ];
       };
-    } // exclude [ ".direnv/" ];
+    }
+    // exclude [ ".direnv/" ];
   };
 
-in {
+in
+{
   programs.vscode = {
     enable = true;
     package = pkgs.runCommand "dummy" { } "mkdir $out" // {
@@ -103,31 +118,35 @@ in {
   };
 
   imports = [
-    (let
-      pkl = let
-        name = "pkl";
-        vscodeExtPublisher = "apple";
-        version = "0.20.0";
-      in vscode-utils.buildVscodeExtension {
-        inherit name vscodeExtPublisher version;
-        pname = name;
-        vscodeExtName = name;
-        vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
-        buildInputs = [ pkgs.unzip ];
-        src = builtins.fetchurl {
-          name = "${name}-vscode.zip";
-          url =
-            "https://github.com/apple/pkl-vscode/releases/download/0.21.0/pkl-vscode-0.21.0.vsix";
-          sha256 = "sha256-6URLP5G7U9V7p46bh2EoaUHx5Dp7D9Q+hjs0TGnX60k=";
+    (
+      let
+        pkl =
+          let
+            name = "pkl";
+            vscodeExtPublisher = "apple";
+            version = "0.20.0";
+          in
+          vscode-utils.buildVscodeExtension {
+            inherit name vscodeExtPublisher version;
+            pname = name;
+            vscodeExtName = name;
+            vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
+            buildInputs = [ pkgs.unzip ];
+            src = builtins.fetchurl {
+              name = "${name}-vscode.zip";
+              url = "https://github.com/apple/pkl-vscode/releases/download/0.21.0/pkl-vscode-0.21.0.vsix";
+              sha256 = "sha256-6URLP5G7U9V7p46bh2EoaUHx5Dp7D9Q+hjs0TGnX60k=";
+            };
+          };
+      in
+      configuredExtension {
+        extension = pkl;
+        settings = {
+          "pkl.lsp.java.path" = lib.getExe pkgs.jdk25;
+          "pkl.cli.path" = pkgs.pkl;
         };
-      };
-    in configuredExtension {
-      extension = pkl;
-      settings = {
-        "pkl.lsp.java.path" = lib.getExe pkgs.jdk25;
-        "pkl.cli.path" = pkgs.pkl;
-      };
-    })
+      }
+    )
     baseSettings
     ./theme.nix
     scala
