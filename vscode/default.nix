@@ -107,6 +107,37 @@ let
     // exclude [ ".direnv/" ];
   };
 
+  pkl = (
+    let
+      pkl =
+        let
+          name = "pkl";
+          vscodeExtPublisher = "apple";
+          version = "0.22.0";
+          sha256 = "0c678iiyaayk1as47xf20pa2phdxkc7y4cgn92qc55z0j36lvxjg";
+        in
+        vscode-utils.buildVscodeExtension {
+          inherit name vscodeExtPublisher version;
+          pname = name;
+          vscodeExtName = name;
+          vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
+          buildInputs = [ pkgs.unzip ];
+          src = builtins.fetchurl {
+            name = "${name}-vscode.zip";
+            url = "https://github.com/apple/pkl-vscode/releases/download/${version}/pkl-vscode-${version}.vsix";
+            inherit sha256;
+          };
+        };
+    in
+    configuredExtension {
+      extension = pkl;
+      settings = {
+        "pkl.lsp.java.path" = lib.getExe pkgs.jdk25;
+        "pkl.cli.path" = pkgs.pkl;
+      };
+    }
+  );
+
 in
 {
   programs.vscode = {
@@ -118,35 +149,6 @@ in
   };
 
   imports = [
-    (
-      let
-        pkl =
-          let
-            name = "pkl";
-            vscodeExtPublisher = "apple";
-            version = "0.20.0";
-          in
-          vscode-utils.buildVscodeExtension {
-            inherit name vscodeExtPublisher version;
-            pname = name;
-            vscodeExtName = name;
-            vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
-            buildInputs = [ pkgs.unzip ];
-            src = builtins.fetchurl {
-              name = "${name}-vscode.zip";
-              url = "https://github.com/apple/pkl-vscode/releases/download/0.21.0/pkl-vscode-0.21.0.vsix";
-              sha256 = "sha256-6URLP5G7U9V7p46bh2EoaUHx5Dp7D9Q+hjs0TGnX60k=";
-            };
-          };
-      in
-      configuredExtension {
-        extension = pkl;
-        settings = {
-          "pkl.lsp.java.path" = lib.getExe pkgs.jdk25;
-          "pkl.cli.path" = pkgs.pkl;
-        };
-      }
-    )
     baseSettings
     ./theme.nix
     scala
@@ -158,5 +160,6 @@ in
     command-runner
     nix-ide
     indent-rainbow
+    pkl
   ];
 }
