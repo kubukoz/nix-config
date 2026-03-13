@@ -23,7 +23,7 @@
   "nix-tree"
   "nixd"
   "nixfmt-classic"
-  "ntfy-sh"
+  # "ntfy-sh" broken
   "openssh"
   "python3"
   "ranger"
