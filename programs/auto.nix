@@ -22,7 +22,7 @@
   "nix-output-monitor"
   "nix-tree"
   "nixd"
-  "nixfmt-classic"
+  "nixfmt"
   # "ntfy-sh" broken
   "openssh"
   "python3"

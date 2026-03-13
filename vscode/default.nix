@@ -88,7 +88,7 @@ let
       "nix.enableLanguageServer" = true;
       "files.associations" = { "flake.lock" = "json"; };
       "nix.serverSettings" = {
-        nil.formatting.command = [ (pkgs.lib.getExe pkgs.nixfmt-classic) ];
+        nil.formatting.command = [ (pkgs.lib.getExe pkgs.nixfmt) ];
       };
     } // exclude [ ".direnv/" ];
   };
