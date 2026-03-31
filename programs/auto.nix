@@ -12,7 +12,7 @@
   "eza"
   "ffmpeg"
   "go"
-  "haskell-language-server"
+  # "haskell-language-server"
   "httpie"
   "jd-diff-patch"
   "jless"
