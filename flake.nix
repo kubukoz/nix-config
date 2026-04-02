@@ -25,6 +25,21 @@
       ...
     }@inputs:
     {
+      packages = builtins.listToAttrs (
+        builtins.map (system: {
+          name = system;
+          value.bindgen =
+            let
+              pkgs = import nixpkgs { inherit system; };
+            in
+            pkgs.callPackage ./derivations/bindgen/package.nix { };
+        }) [
+          "aarch64-darwin"
+          "x86_64-darwin"
+          "x86_64-linux"
+          "aarch64-linux"
+        ]
+      );
       darwinConfigurations.kubukoz-max =
         let
           machine = import ./machines/max.nix;
