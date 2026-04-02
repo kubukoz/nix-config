@@ -83,7 +83,6 @@ in
       ++ [
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
         (pkgs.callPackage ./derivations/smithy-lsp.nix { })
-        (pkgs.callPackage ./derivations/bindgen/package.nix { })
         create-test-file
       ];
 
