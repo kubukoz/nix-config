@@ -9,6 +9,8 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    cellar.url = "github:virtuslab/cellar";
+    cellar.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.inputs.flake-utils.follows = "flake-utils";
@@ -22,6 +24,7 @@
       darwin,
       nixpkgs,
       nix-work,
+      cellar,
       ...
     }@inputs:
     {
@@ -89,6 +92,7 @@
               nixpkgs.overlays = [
                 unstable-overrides
                 extra-packages
+                cellar.overlays.default
               ];
               nix.extraOptions = ''
                 extra-platforms = x86_64-darwin

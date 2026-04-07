@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "cellar": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775574873,
+        "narHash": "sha256-oHiwfSoC3Aa/qbxOONq10La0VVhCKYWBajBsEd1iPG8=",
+        "owner": "virtuslab",
+        "repo": "cellar",
+        "rev": "bf3adc38a1de2b3f022bc440835067416e66c59f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "virtuslab",
+        "repo": "cellar",
+        "type": "github"
+      }
+    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -141,6 +161,7 @@
     },
     "root": {
       "inputs": {
+        "cellar": "cellar",
         "darwin": "darwin",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
