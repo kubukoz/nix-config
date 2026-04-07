@@ -32,6 +32,7 @@ in
     ./programs/ngrok
     ./scala
     ./vscode
+    ./claude
   ];
 
   home = {
