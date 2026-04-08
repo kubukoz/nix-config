@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775574873,
-        "narHash": "sha256-oHiwfSoC3Aa/qbxOONq10La0VVhCKYWBajBsEd1iPG8=",
+        "lastModified": 1775662005,
+        "narHash": "sha256-RGYLq5Gxi2yH0jofICTF39EdvqHu2B7XLTOH5jno1wI=",
         "owner": "virtuslab",
         "repo": "cellar",
-        "rev": "bf3adc38a1de2b3f022bc440835067416e66c59f",
+        "rev": "d05911477f9264166b00d2922360ea3a622c62d0",
         "type": "github"
       },
       "original": {
