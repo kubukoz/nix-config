@@ -31,6 +31,7 @@
       "**/smithyql-log.txt"
       "**/.claude/settings.local.json"
       ".mcp.json"
+      "**/.cellar"
     ];
 
     settings = {
