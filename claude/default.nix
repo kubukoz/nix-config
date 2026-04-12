@@ -22,4 +22,15 @@
       };
     };
   };
+
+  home.packages =
+    let
+      claude-personal = pkgs.writeShellScriptBin "claude-personal" ''
+        #!/bin/bash
+        exec ${pkgs.claude-code}/bin/claude "$@"
+      '';
+    in
+    [
+      claude-personal
+    ];
 }
