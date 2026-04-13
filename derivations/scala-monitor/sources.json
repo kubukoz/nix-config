@@ -1,0 +1,13 @@
+{
+  "version": "0.3.0",
+  "assets": {
+    "aarch64-darwin": {
+      "asset": "scala-monitor-darwin",
+      "sha256": "sha256-VEr++MFthQsKqYePPMV+iQwuR+pDReYo/UBN2tUNp/U="
+    },
+    "x86_64-linux": {
+      "asset": "scala-monitor-linux",
+      "sha256": "sha256-VcLFVwEEXT0b5vy0m6T1/sEtmop5xSPRfYC2Mvb2Fzk="
+    }
+  }
+}

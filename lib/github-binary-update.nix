@@ -9,6 +9,9 @@
   coreutils,
 }:
 {
+  owner,
+  repo,
+  sourcesFile,
   platforms,
   pname,
   version,
@@ -27,7 +30,7 @@ writeShellScript "${pname}-update-script" ''
     ]
   }
 
-  latest_version=$(curl -s "https://api.github.com/repos/indoorvivants/sn-bindgen/releases?per_page=1" | jq ".[0].tag_name" --raw-output | sed 's/^v//')
+  latest_version=$(curl -s "https://api.github.com/repos/${owner}/${repo}/releases?per_page=1" | jq ".[0].tag_name" --raw-output | sed 's/^v//')
 
   if [[ "${version}" = "$latest_version" ]]; then
       echo "The new version same as the old version."
@@ -35,13 +38,13 @@ writeShellScript "${pname}-update-script" ''
   fi
 
   nixpkgs=$(git rev-parse --show-toplevel)
-  sources_json="$nixpkgs/derivations/bindgen/sources.json"
+  sources_json="$nixpkgs/${sourcesFile}"
 
   platform_assets=()
 
   for platform in ${lib.concatStringsSep " " platforms}; do
     asset=$(jq ".assets.\"$platform\".asset" --raw-output < $sources_json)
-    release_asset_url="https://github.com/indoorvivants/sn-bindgen/releases/download/v$latest_version/$asset"
+    release_asset_url="https://github.com/${owner}/${repo}/releases/download/v$latest_version/$asset"
 
     asset_hash=$(nix-prefetch-url "$release_asset_url")
 
