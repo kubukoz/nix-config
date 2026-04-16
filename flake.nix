@@ -53,7 +53,7 @@
             let
               unstable = (
                 import inputs.nixpkgs-unstable {
-                  inherit (machine) system;
+                  system = prev.stdenv.hostPlatform.system;
                   config.allowUnfree = true;
                 }
               );
@@ -86,9 +86,9 @@
           };
         in
         darwin.lib.darwinSystem {
-          inherit system;
           modules = [
             {
+              nixpkgs.hostPlatform = system;
               nixpkgs.overlays = [
                 unstable-overrides
                 extra-packages
