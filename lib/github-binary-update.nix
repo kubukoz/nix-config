@@ -30,12 +30,15 @@ writeShellScript "${pname}-update-script" ''
     ]
   }
 
+  echo "${pname}: checking for updates..."
   latest_version=$(curl -s "https://api.github.com/repos/${owner}/${repo}/releases?per_page=1" | jq ".[0].tag_name" --raw-output | sed 's/^v//')
 
   if [[ "${version}" = "$latest_version" ]]; then
-      echo "The new version same as the old version."
+      echo "${pname}: already up to date (${version})"
       exit 0
   fi
+
+  echo "${pname}: updating ${version} -> $latest_version"
 
   nixpkgs=$(git rev-parse --show-toplevel)
   sources_json="$nixpkgs/${sourcesFile}"
@@ -46,7 +49,11 @@ writeShellScript "${pname}-update-script" ''
     asset=$(jq ".assets.\"$platform\".asset" --raw-output < $sources_json)
     release_asset_url="https://github.com/${owner}/${repo}/releases/download/v$latest_version/$asset"
 
-    asset_hash=$(nix-prefetch-url "$release_asset_url")
+    echo "${pname}: fetching $asset for $platform..."
+    asset_file=$(mktemp /private/tmp/github-binary-update.XXXXXX)
+    curl -sL -o "$asset_file" "$release_asset_url"
+    asset_hash=$(nix hash file --sri "$asset_file")
+    rm "$asset_file"
 
     asset_object=$(jq --compact-output --null-input \
       --arg asset "$asset" \
@@ -60,4 +67,6 @@ writeShellScript "${pname}-update-script" ''
     jq -s "map ( { (.platform): . | del(.platform) }) | add" | \
     jq --arg version $latest_version \
       '{ version: $version, assets: . }' > $sources_json
+
+  echo "${pname}: updated to $latest_version"
 ''
