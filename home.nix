@@ -86,6 +86,7 @@ in
         (pkgs.callPackage ./derivations/scala-monitor/package.nix { })
         pkgs.cellar
         create-test-file
+        pkgs.codex
       ];
 
     stateVersion = "22.05";
