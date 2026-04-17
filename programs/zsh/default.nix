@@ -77,7 +77,8 @@
     # source /nix/store/yks41y2b7wglvy7dcs8by6325n44m5wk-source/mill-zsh-completions.plugin.zsh
 
     history = {
-      size = 100000;
+      size = 1000000;
+      save = 1000000;
       # path = "/Users/kubukoz/.zsh_history_video";
     };
 

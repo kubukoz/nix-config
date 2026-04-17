@@ -29,7 +29,7 @@
   "ranger"
   "ripgrep"
   "ssm-session-manager-plugin"
-  "stack"
+  # "stack"
   "tig"
   "tldr"
   "tokei"
