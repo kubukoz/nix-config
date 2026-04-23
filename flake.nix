@@ -64,6 +64,7 @@
                 scala-cli
                 metals
                 claude-code
+                codex
                 ;
             };
 
