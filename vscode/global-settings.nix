@@ -3,7 +3,7 @@
   "debug.allowBreakpointsEverywhere" = true;
   "editor.accessibilitySupport" = "off";
   "editor.cursorBlinking" = "solid";
-  "editor.fontFamily" = "'JetBrains Mono', 'Meslo LGS NF', Monaco, 'Courier New', monospace";
+  "editor.fontFamily" = "JetBrainsMono Nerd Font";
   "editor.formatOnSave" = true;
   "editor.inlineSuggest.enabled" = true;
   "editor.linkedEditing" = true;
