@@ -67,6 +67,11 @@
                 metals
                 claude-code
                 codex
+                # zsh 5.9 on the pinned nixpkgs rev hangs on $(...) under the
+                # new autoconf 2.73 (C23 default breaks the sigsuspend probe).
+                # Fixed by NixOS/nixpkgs#513971 on unstable. Drop this once
+                # the main nixpkgs input catches up past 19b2d2ac.
+                zsh
                 ;
             };
 
