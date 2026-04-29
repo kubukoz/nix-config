@@ -1,21 +1,21 @@
 {
-  "version": "0.4.3",
+  "version": "0.4.4",
   "assets": {
     "aarch64-darwin": {
       "asset": "sn-bindgen-aarch64-apple-darwin",
-      "sha256": "sha256-0WpzLHfnMHoyviBiP6Yf+9IHZ6mTl4+j7yRLkat4By4="
+      "sha256": "sha256-5P5D3PMThvvriBnj+Ficv1eVxNBlKLL0O5ovPDQOtfU="
     },
     "aarch64-linux": {
       "asset": "sn-bindgen-aarch64-pc-linux",
-      "sha256": "sha256-rSa5X1r5pc673Mx4PUc5Xt4a2ZQTETPnhuaKMowetKI="
+      "sha256": "sha256-TLbeJzZI7Rqb1MLYK0gaGFoUQlU5jW1E7qa0oruTB6M="
     },
     "x86_64-darwin": {
       "asset": "sn-bindgen-x86_64-apple-darwin",
-      "sha256": "sha256-clx7XJFkScxmdiMpy4HwM1baZlUSMq9kjEgZxei+nmc="
+      "sha256": "sha256-BbAEpr1gzxfT1vQph42gO5yTfwTX8JGcNHxwltb99hU="
     },
     "x86_64-linux": {
       "asset": "sn-bindgen-x86_64-pc-linux",
-      "sha256": "sha256-DeyN3T8EQ5dIBs1E0Lv5HqJZyGcCUBy9ZQxqbQjETCs="
+      "sha256": "sha256-z05m0cwM9ubrOiMKXZUKQqR9f9drtEY0owN+4dL+sqM="
     }
   }
 }

@@ -29,19 +29,21 @@
     }@inputs:
     {
       packages = builtins.listToAttrs (
-        builtins.map (system: {
-          name = system;
-          value.bindgen =
-            let
-              pkgs = import nixpkgs { inherit system; };
-            in
-            pkgs.callPackage ./derivations/bindgen/package.nix { };
-        }) [
-          "aarch64-darwin"
-          "x86_64-darwin"
-          "x86_64-linux"
-          "aarch64-linux"
-        ]
+        builtins.map
+          (system: {
+            name = system;
+            value.bindgen =
+              let
+                pkgs = import nixpkgs { inherit system; };
+              in
+              pkgs.callPackage ./derivations/bindgen/package.nix { };
+          })
+          [
+            "aarch64-darwin"
+            "x86_64-darwin"
+            "x86_64-linux"
+            "aarch64-linux"
+          ]
       );
       darwinConfigurations.kubukoz-max =
         let
@@ -68,7 +70,12 @@
                 ;
             };
 
-          extra-packages = final: prev: { };
+          extra-packages = final: prev: {
+            # upstream's checkPhase runs `make test-fish`, which invokes fish.
+            # fish dies on SIGKILL in the darwin sandbox (mach-lookup is denied),
+            # so Hydra can't publish a cache hit and we'd have to build locally.
+            direnv = prev.direnv.overrideAttrs (old: { doCheck = false; });
+          };
 
           distributed-builds = {
             nix = {

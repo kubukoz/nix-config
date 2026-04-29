@@ -14,8 +14,6 @@
     ammonite
     scalafmt
     coursier
-    (callPackage ../derivations/spotify-next.nix { })
-    (callPackage ../coursier/giter8.nix { })
     scala-cli
     sbt
   ];

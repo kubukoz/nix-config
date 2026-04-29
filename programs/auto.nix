@@ -38,5 +38,4 @@
   "uv"
   "wget"
   "yq"
-  "yt-dlp"
 ]
