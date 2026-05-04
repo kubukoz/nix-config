@@ -27,6 +27,12 @@
     let
       claude-personal = pkgs.writeShellScriptBin "claude-personal" ''
         #!/bin/bash
+        case "$PWD/" in
+          "$HOME/dev/"*)
+            echo "claude-personal: refusing to run inside $HOME/dev" >&2
+            exit 1
+            ;;
+        esac
         exec ${pkgs.claude-code}/bin/claude "$@"
       '';
     in
