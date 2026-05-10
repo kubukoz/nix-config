@@ -5,6 +5,27 @@
   ...
 }:
 
+let
+  sbt-publish-snapshot = pkgs.writeShellApplication {
+    name = "sbt-publish-snapshot";
+    runtimeInputs = [ pkgs.sbt pkgs.git ];
+    text = ''
+      set -euo pipefail
+
+      ORG="com.kubukoz"
+      BASE_VERSION="''${BASE_VERSION:-0.0.0}"
+      VERSION="''${BASE_VERSION}-kubukoz.$(git rev-parse --short HEAD)-SNAPSHOT"
+
+      sbt \
+        "set ThisBuild / organization := \"$ORG\"" \
+        "set ThisBuild / organizationName := \"kubukoz\"" \
+        "set ThisBuild / version := \"$VERSION\"" \
+        "set ThisBuild / tlMimaPreviousVersions := Set.empty" \
+        "set ThisBuild / tlFatalWarnings := false" \
+        "+publish"
+    '';
+  };
+in
 {
   imports = [ ./bloop.nix ];
 
@@ -16,6 +37,7 @@
     coursier
     scala-cli
     sbt
+    sbt-publish-snapshot
   ];
 
   home.sessionVariables = {
