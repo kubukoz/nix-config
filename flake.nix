@@ -67,20 +67,8 @@
                 metals
                 claude-code
                 codex
-                # zsh 5.9 on the pinned nixpkgs rev hangs on $(...) under the
-                # new autoconf 2.73 (C23 default breaks the sigsuspend probe).
-                # Fixed by NixOS/nixpkgs#513971 on unstable. Drop this once
-                # the main nixpkgs input catches up past 19b2d2ac.
-                zsh
                 ;
             };
-
-          extra-packages = final: prev: {
-            # upstream's checkPhase runs `make test-fish`, which invokes fish.
-            # fish dies on SIGKILL in the darwin sandbox (mach-lookup is denied),
-            # so Hydra can't publish a cache hit and we'd have to build locally.
-            direnv = prev.direnv.overrideAttrs (old: { doCheck = false; });
-          };
 
           distributed-builds = {
             nix = {
@@ -104,7 +92,6 @@
               nixpkgs.hostPlatform = system;
               nixpkgs.overlays = [
                 unstable-overrides
-                extra-packages
                 cellar.overlays.default
               ];
               nix.extraOptions = ''
