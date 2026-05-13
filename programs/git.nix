@@ -33,6 +33,8 @@
       "**/.claude/settings.local.json"
       ".mcp.json"
       "**/.cellar"
+      # while I test it out
+      "git-town.toml"
     ];
 
     settings = {
