@@ -11,6 +11,7 @@
   "exiftool"
   "eza"
   "ffmpeg"
+  "git-town"
   "go"
   # "haskell-language-server"
   "httpie"
