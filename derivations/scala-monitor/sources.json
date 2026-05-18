@@ -1,13 +1,13 @@
 {
-  "version": "0.5.5",
+  "version": "0.5.6",
   "assets": {
     "aarch64-darwin": {
       "asset": "scala-monitor-aarch64-apple-darwin",
-      "sha256": "sha256-NZCPtC0Pdku2jFE+OpKdgkAm7/SL0Xq2laUmCS5oMsI="
+      "sha256": "sha256-M4/JSgOvuSRd44x8NS9+1bB3vPEFkmFiZfJTONhMuzY="
     },
     "x86_64-linux": {
       "asset": "scala-monitor-x86_64-pc-linux",
-      "sha256": "sha256-orM4ZL6468YYwWEsGdhv5F/snlbQb4dlOjmE283uSyA="
+      "sha256": "sha256-RSVWEL9P4lyfIVrJ1zVaU2NeIhN9/zJkGH5eoC+HMKU="
     }
   }
 }

@@ -17,6 +17,7 @@
   installCheckPhase ? null,
   extraNativeBuildInputs ? [ ],
   extraBuildInputs ? [ ],
+  postInstall ? "",
 }:
 
 let
@@ -58,6 +59,8 @@ stdenv.mkDerivation {
     install -Dm755 ${mainProgram} $out/bin/${mainProgram}
     runHook postInstall
   '';
+
+  inherit postInstall;
 
   doInstallCheck = installCheckPhase != null;
   inherit installCheckPhase;
