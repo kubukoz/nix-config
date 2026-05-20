@@ -8,12 +8,12 @@ configuredExtension {
   extension = vscode-extensions.scalameta.metals;
   formatterFor = [ "scala" ];
   settings = {
-    "metals.serverProperties" = [
-      "-Dmetals.verbose=true"
-      "-Xmx4g"
-      "-Xss10m"
-      "-XX:+CrashOnOutOfMemoryError"
-    ];
+    # "metals.serverProperties" = [
+    #   "-Dmetals.verbose=true"
+    #   "-Xmx4g"
+    #   "-Xss10m"
+    #   "-XX:+CrashOnOutOfMemoryError"
+    # ];
     # "metals.serverVersion" = "1.6.0+80-ee29b401-SNAPSHOT";
     "metals.superMethodLensesEnabled" = false;
     "metals.enableSemanticHighlighting" = false;
