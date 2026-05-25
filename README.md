@@ -24,3 +24,4 @@ My Nix / nix-darwin / Home Manager config.
 ## Manual steps that still need to be taken care of manually when making changes
 
 - iterm - move plist file to `~/Library/Preferences/com.googlecode.iterm2`
+- gpg signing - install pinentry via brew (`brew install pinentry-mac`) so gpg-agent can prompt for the passphrase. If signing fails with `No pinentry`, run `gpgconf --kill gpg-agent` to restart the agent.
