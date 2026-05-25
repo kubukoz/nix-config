@@ -29,6 +29,7 @@
   "python3"
   "ranger"
   "ripgrep"
+  "rustup"
   "ssm-session-manager-plugin"
   # "stack"
   "tig"
