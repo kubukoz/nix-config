@@ -67,6 +67,10 @@
                 metals
                 claude-code
                 codex
+                # nixpkgs-unstable channel has highlight 4.20 with shellscript-crash-fix.patch
+                # that's already upstream; pull from unstable until the channel catches up.
+                # https://github.com/NixOS/nixpkgs/issues/527203
+                highlight
                 ;
             };
 
