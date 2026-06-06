@@ -102,6 +102,7 @@
           export PATH="$HOME/.rd/bin:$PATH"
           export PATH="$HOME/Library/Application Support/Coursier/bin:$PATH"
           export PATH="$HOME/.cargo/bin:$PATH"
+          export PATH="/opt/homebrew/bin:$PATH"
         ''
       )
     ];
