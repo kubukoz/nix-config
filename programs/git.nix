@@ -35,6 +35,7 @@
       "**/.cellar"
       # while I test it out
       "git-town.toml"
+      ".claude/"
     ];
 
     settings = {
