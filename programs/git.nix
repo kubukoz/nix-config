@@ -45,6 +45,13 @@
       init.defaultBranch = "main";
       rerere.enabled = true;
       log.date = "local";
+
+      merge.tool = "conflict-boss";
+      mergetool.conflict-boss = {
+        # Debug build for now; point at the release binary once it's stable.
+        cmd = ''/Users/kubukoz/projects/conflict-boss/target/debug/conflict-boss --batch --yes-i-know --yes-i-really-know --base "$BASE" --ours "$LOCAL" --theirs "$REMOTE" --out "$MERGED"'';
+        trustExitCode = true;
+      };
     };
   };
 
