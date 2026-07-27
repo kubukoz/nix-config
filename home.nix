@@ -93,6 +93,7 @@ in
         (lib.mkIf pkgs.stdenv.isx86_64 (pkgs.callPackage ./derivations/pidof.nix { }))
         # (pkgs.callPackage ./derivations/smithy-lsp.nix { })
         (pkgs.callPackage ./derivations/scala-monitor/package.nix { })
+        (pkgs.callPackage ./derivations/scalex/package.nix { })
         pkgs.cellar
         create-test-file
       ];

@@ -1,0 +1,9 @@
+{
+  "version": "1.40.0",
+  "assets": {
+    "aarch64-darwin": {
+      "asset": "scalex-macos-arm64",
+      "sha256": "sha256-zDEoXMkF4oukZKLKpuRdsW5YNByWRCFjLqz2woKXJ4E="
+    }
+  }
+}
