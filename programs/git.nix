@@ -33,6 +33,7 @@
       "**/.claude/settings.local.json"
       ".mcp.json"
       "**/.cellar"
+      "**/.scalex"
       # while I test it out
       "git-town.toml"
       ".claude/"
