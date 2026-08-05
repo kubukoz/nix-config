@@ -121,7 +121,7 @@ let
           pname = name;
           vscodeExtName = name;
           vscodeExtUniqueId = "${vscodeExtPublisher}.${name}";
-          buildInputs = [ pkgs.unzip ];
+          nativeBuildInputs = [ pkgs.unzip ];
           src = builtins.fetchurl {
             name = "${name}-vscode.zip";
             url = "https://github.com/apple/pkl-vscode/releases/download/${version}/pkl-vscode-${version}.vsix";
