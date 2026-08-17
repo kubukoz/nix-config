@@ -1,30 +1,27 @@
-{ lib, ... }:
+{ ... }:
 {
   imports = [ ./semisecret-ssh.nix ];
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "*" = {
-        forwardAgent = false;
-        serverAliveInterval = 0;
-        serverAliveCountMax = 3;
-        compression = false;
+        ForwardAgent = false;
+        ServerAliveInterval = 0;
+        ServerAliveCountMax = 3;
+        Compression = false;
       };
-      gh = {
-        host = "github.com";
-        hostname = "ssh.github.com";
-        port = 443;
+      "github.com" = {
+        HostName = "ssh.github.com";
+        Port = 443;
       };
-      home = {
-        host = "kubukoz-pro.local";
-        hostname = "kubukoz-pro.local";
-        user = "kubukoz";
+      "kubukoz-pro.local" = {
+        HostName = "kubukoz-pro.local";
+        User = "kubukoz";
       };
-      max = {
-        host = "kubukoz-max.local";
-        hostname = "kubukoz-max.local";
-        user = "kubukoz";
+      "kubukoz-max.local" = {
+        HostName = "kubukoz-max.local";
+        User = "kubukoz";
       };
     };
   };
