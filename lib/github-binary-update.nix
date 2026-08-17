@@ -31,7 +31,26 @@ writeShellScript "${pname}-update-script" ''
   }
 
   echo "${pname}: checking for updates..."
-  latest_version=$(curl -s "https://api.github.com/repos/${owner}/${repo}/releases?per_page=1" | jq ".[0].tag_name" --raw-output | sed 's/^v//')
+
+  # The API call is anonymous (60 req/h) unless we pass a token. GH_TOKEN is
+  # exported by update.sh; NIX_CONFIG's access-tokens only covers nix's own
+  # fetcher, not this curl.
+  auth_args=()
+  if [[ -n "''${GH_TOKEN:-}" ]]; then
+    auth_args=(--header "Authorization: Bearer $GH_TOKEN")
+  fi
+
+  # --fail turns 403/429/404 into a non-zero exit rather than a JSON error
+  # object that jq happily reduces to the string "null".
+  releases=$(curl -sS --fail "''${auth_args[@]}" \
+    "https://api.github.com/repos/${owner}/${repo}/releases?per_page=1")
+
+  latest_version=$(jq ".[0].tag_name // empty" --raw-output <<< "$releases" | sed 's/^v//')
+
+  if [[ -z "$latest_version" ]]; then
+    echo "${pname}: could not determine latest version, skipping" >&2
+    exit 1
+  fi
 
   if [[ "${version}" = "$latest_version" ]]; then
       echo "${pname}: already up to date (${version})"
@@ -51,7 +70,11 @@ writeShellScript "${pname}-update-script" ''
 
     echo "${pname}: fetching $asset for $platform..."
     asset_file=$(mktemp /private/tmp/github-binary-update.XXXXXX)
-    curl -sL -o "$asset_file" "$release_asset_url"
+    if ! curl -sSL --fail -o "$asset_file" "$release_asset_url"; then
+      rm -f "$asset_file"
+      echo "${pname}: failed to download $asset from $release_asset_url" >&2
+      exit 1
+    fi
     asset_hash=$(nix hash file --sri "$asset_file")
     rm "$asset_file"
 

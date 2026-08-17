@@ -5,9 +5,11 @@ set -euo pipefail
 # access-tokens setting there is ignored and GitHub fetches go out anonymous
 # (60 req/h -> HTTP 429). We're in trusted-users, so NIX_CONFIG from the client
 # is honoured. Exported here so child scripts inherit it too.
-gh_token=$(gh auth token --hostname github.com)
-export NIX_CONFIG="access-tokens = github.com=${gh_token}"
-unset gh_token
+# GH_TOKEN additionally covers the plain curl calls to api.github.com in the
+# per-package update scripts, which NIX_CONFIG does not reach.
+GH_TOKEN=$(gh auth token --hostname github.com)
+export GH_TOKEN
+export NIX_CONFIG="access-tokens = github.com=${GH_TOKEN}"
 
 ./update-github.sh
 
