@@ -17,7 +17,7 @@
   "httpie"
   "jd-diff-patch"
   "jless"
-  "metals"
+  # "metals"
   "nap"
   "nil"
   "nix-output-monitor"
