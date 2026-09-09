@@ -13,7 +13,6 @@
     cellar.inputs.nixpkgs.follows = "nixpkgs";
     nix-work.url = "/Users/kubukoz/dev/nix-work";
     nix-work.inputs.nixpkgs.follows = "nixpkgs";
-    nix-work.inputs.flake-utils.follows = "flake-utils";
     nix-work.inputs.darwin.follows = "darwin";
     nix-work.inputs.home-manager.follows = "home-manager";
   };
