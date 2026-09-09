@@ -26,6 +26,7 @@
   "nixfmt"
   # "ntfy-sh" broken
   "openssh"
+  "pkl"
   "python3"
   "ranger"
   "ripgrep"
