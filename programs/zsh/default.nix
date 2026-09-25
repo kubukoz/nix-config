@@ -72,6 +72,7 @@
       nb = "${pkgs.lib.getExe pkgs.nix} build --print-build-logs";
       ngc = "sudo ${pkgs.nix}/bin/nix-collect-garbage -d";
       coursier = "${pkgs.lib.getExe pkgs.coursier}";
+      ccp = pkgs.lib.getExe pkgs.claude-code;
     };
 
     # source /nix/store/yks41y2b7wglvy7dcs8by6325n44m5wk-source/mill-zsh-completions.plugin.zsh
