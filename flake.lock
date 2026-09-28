@@ -112,8 +112,8 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1790614914,
-        "narHash": "sha256-qXWK9CmQbCHS7r40urD+uSELlwtehoYonCZPjGp2CFI=",
+        "lastModified": 1790634522,
+        "narHash": "sha256-8qBLsjDp6hfjErjjhn0DM+EoNMB427AUJmU9FdDRJxs=",
         "path": "/Users/kubukoz/dev/nix-sxm",
         "type": "path"
       },
@@ -136,8 +136,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1790614947,
-        "narHash": "sha256-Uh0Q8yfPT1mcq2AfvtpDYKwJRfxPlNlNJ0GNJsv8eYE=",
+        "lastModified": 1790634872,
+        "narHash": "sha256-tMFWzeeh3bTA71/XbktBsvRbmmBN1sHlMShGlE0rs9M=",
         "path": "/Users/kubukoz/dev/nix-work",
         "type": "path"
       },
