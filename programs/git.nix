@@ -37,6 +37,7 @@
       # while I test it out
       "git-town.toml"
       ".claude/"
+      ".envrc.local"
     ];
 
     settings = {
