@@ -105,7 +105,7 @@
             }
             distributed-builds
             ./darwin-configuration.nix
-            nix-work.darwinModules.default
+            # nix-work.darwinModules.default
           ];
           specialArgs =
             builtins.removeAttrs inputs [
