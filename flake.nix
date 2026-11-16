@@ -72,6 +72,8 @@
                 # that's already upstream; pull from unstable until the channel catches up.
                 # https://github.com/NixOS/nixpkgs/issues/527203
                 highlight
+                # nixpkgs-unstable channel's pkl fails to build (gradle can't resolve kotlin-dsl plugin)
+                pkl
                 ;
             };
 
