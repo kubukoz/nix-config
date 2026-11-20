@@ -38,5 +38,6 @@
     in
     [
       claude-personal
+      pkgs.rtk
     ];
 }
